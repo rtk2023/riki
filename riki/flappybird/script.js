@@ -1,11 +1,11 @@
 const bird = document.getElementById('bird');
 const gameContainer = document.getElementById('game-container');
 
-let birdY = gameContainer.clientHeight / 2 - 20;
-let birdVelocity = 0;
-let gravity = 0.1;
-let isJumping = false;
-let isGameOver = true;
+let birdY = gameContainer.clientHeight / 2 - 20; // Noteikta putna sākuma pozīcija vidū 
+let birdVelocity = 0; // Putna paātrinājums
+let gravity = 0.1; // Gravitācija
+let isJumping = false; // Vai putns pašlaik lido
+let isGameOver = true; // Vai spēle ir beigusies
 
 function jump() {
     if (isGameOver) {
@@ -13,19 +13,21 @@ function jump() {
     }
 
     if (!isJumping) {
-        birdVelocity = -4;
+        birdVelocity = -4; // Samazināts lidojuma spēks
+        isJumping = true;
     }
 }
 
 function startGame() {
     if (isGameOver) {
         isGameOver = false;
-        birdY = gameContainer.clientHeight / 2 - 20;
+        birdY = gameContainer.clientHeight / 2 - 20; // Atiestata putnu uz vidu
         birdVelocity = 0;
         isJumping = false;
     }
 }
 
+// sāk spēli uz jebkura taustiņa nospiešanas
 window.addEventListener('keydown', startGame);
 
 window.addEventListener('keydown', (event) => {
@@ -34,24 +36,26 @@ window.addEventListener('keydown', (event) => {
     }
 });
 
-let pipeX = gameContainer.clientWidth;
-let pipeSpacing = 200;
+let pipeX = gameContainer.clientWidth; // Pielāgo caurules sākuma pozīciju
+let pipeSpacing = 200; // Pielāgo caurules attālumu
 
 function createPipe() {
     if (isGameOver) {
         return;
     }
 
+    // Izveido augšējās caurules
     const topPipe = document.createElement('div');
     topPipe.className = 'pipe';
-    const topPipeHeight = Math.random() * 200 + 100;
+    const topPipeHeight = Math.random() * 200 + 100; // Nosaka augšējās caurules augstumu
     topPipe.style.height = topPipeHeight + 'px';
-    topPipe.style.left = pipeX + 'px';
+    topPipe.style.left = pipeX + 'px'; 
     gameContainer.appendChild(topPipe);
 
+    // Izveido apakšējās caurules
     const bottomPipe = document.createElement('div');
     bottomPipe.className = 'pipe';
-    const bottomPipeHeight = gameContainer.clientHeight - topPipeHeight - pipeSpacing;
+    const bottomPipeHeight = gameContainer.clientHeight - topPipeHeight - pipeSpacing; 
     bottomPipe.style.height = bottomPipeHeight + 'px';
     bottomPipe.style.left = pipeX + 'px';
     bottomPipe.style.top = topPipeHeight + pipeSpacing + 'px';
@@ -67,6 +71,7 @@ function createPipe() {
             gameContainer.removeChild(bottomPipe);
         }
 
+        // sadursmes noteikšana ar caurulēm
         const birdRect = bird.getBoundingClientRect();
         const topPipeRect = topPipe.getBoundingClientRect();
         const bottomPipeRect = bottomPipe.getBoundingClientRect();
@@ -82,16 +87,18 @@ function createPipe() {
 
         topPipe.style.left = pipeX - 4 + 'px';
         bottomPipe.style.left = pipeX - 4 + 'px';
-    }, 1);
+    }, 20);
 
     pipeX += pipeSpacing;
 }
 
 function gameover() {
     isGameOver = true;
+    // alert('Spēle beigusies!');
     window.location.reload();
 }
 
+// Palielina intervālu, lai caurules parādītos tuvāk sākumam
 setInterval(createPipe, 1000);
 
 function gameLoop() {
