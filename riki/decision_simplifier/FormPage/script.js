@@ -1,4 +1,5 @@
-$(document).ready(function() {
+$(document).ready(function() 
+{
     const step1 = $("#step1");
     const step2 = $("#step2");
     const step3 = $("#step3");
@@ -7,20 +8,23 @@ $(document).ready(function() {
     step2.hide();
     step3.hide();
 
-    $("#nextStep").click(function() {
+    $("#nextStep").click(function() 
+    {
         step1.hide();
         step2.show();
     });
 
     // Обработка отправки формы на первом этапе
-    $('#step1Form').submit(function(e) {
+    $('#step1Form').submit(function(e) 
+    {
         e.preventDefault();
         step1.hide();
         step2.show();
     });
 
     // Обработка отправки формы на втором этапе
-    $('#step2Form').submit(function(e) {
+    $('#step2Form').submit(function(e) 
+    {
         e.preventDefault();
         step2.hide();
         step3.show();
@@ -29,7 +33,8 @@ $(document).ready(function() {
     const variants = $("#variants");
     let variantCount = 1;
 
-    $("#addVariant").click(function() {
+    $("#addVariant").click(function() 
+    {
         variants.append(`
             <div class="variant">
                 <label for="variant${variantCount}">Variants:</label>
@@ -40,7 +45,8 @@ $(document).ready(function() {
         variantCount++;
     });
 
-    variants.on("click", ".removeVariant", function() {
+    variants.on("click", ".removeVariant", function() 
+    {
         $(this).parent().remove();
     });
 });
