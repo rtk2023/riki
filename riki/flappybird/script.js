@@ -14,7 +14,6 @@ function jump() {
 
     if (!isJumping) {
         birdVelocity = -4; // Samazināts lidojuma spēks
-        isJumping = true;
     }
 }
 
@@ -87,7 +86,7 @@ function createPipe() {
 
         topPipe.style.left = pipeX - 4 + 'px';
         bottomPipe.style.left = pipeX - 4 + 'px';
-    }, 20);
+    }, 1);
 
     pipeX += pipeSpacing;
 }
