@@ -82,7 +82,7 @@ function createPipe() {
 
         topPipe.style.left = pipeX - 4 + 'px';
         bottomPipe.style.left = pipeX - 4 + 'px';
-    }, 20);
+    }, 1);
 
     pipeX += pipeSpacing;
 }
