@@ -2,7 +2,7 @@
 - Spēle kurā jaizvairās no zaļajām caurulēm spiežot "space bar".
 
 # Zināmās kļūdas:
-- Nav.
+- Dažreiz caurules ielādējas par vēlu.
 
 # Iespējamie uzlabojumi:
 - Advancētāki sprite,
