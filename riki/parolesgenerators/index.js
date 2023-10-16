@@ -149,6 +149,10 @@ function calculatePasswordStrength(password) {
 }
 
 function copyToClipboard() {
+	if (!passStr.length) {
+		alert("Parole nav uzģenerēta!")
+		return;
+	}
 	const passwordToCopy = passStr;
 	const textArea = document.createElement('textarea');
 	textArea.value = passwordToCopy;

@@ -9,9 +9,11 @@
 </head>
 
 <body>
-  <div class="form-container">
+  <div class="container">
+    <!--Header-->
     <h2>Paroles ģenerators</h2>
-
+    <h3>Rīks paroles ģenerēšanai, pēc lietotāja ievadītiem parametriem</h3>
+    <!--Body-->
     <div class="checkbox-group">
       <label>
         <input checked type="checkbox" onclick="toggleElement(this, 'userInputNums')"> Iekļaut skaitļus
@@ -41,6 +43,13 @@
     <button type="button" onclick="generatePassword()">Ģenerēt paroli</button>
 
     <button type="button" onclick="copyToClipboard()">Kopēt paroli</button>
+
+    <!--Footer-->
+    <div class="checkbox-group">
+		<a href="../index.html">Citi rīki</a>
+		&nbsp; <!--TODO: Atrast citu veidu kā pievienot atstarpi-->
+		<a href="https://github.com/rtk2023/riki"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png" alt="Github Repo IMG" style="width: 80px;height: 20px"></a>
+	</div>
   </div>
   <script src="script.js" defer></script>
 </body>

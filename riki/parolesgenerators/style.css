@@ -8,7 +8,7 @@ body {
   height: 100vh;
 }
 
-.form-container {
+.container {
   display: inline-block;
   background-color: #fff;
   border-radius: 8px;
@@ -25,11 +25,6 @@ body {
 
 .checkbox-group label {
   margin-right: 10px;
-}
-
-.sub-category {
-  display: none;
-  margin-top: 10px;
 }
 
 input {
