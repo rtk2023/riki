@@ -23,7 +23,7 @@ function App() {
       image.onload = function() {
         const canvas = document.createElement("canvas");
         const ctx = canvas.getContext("2d") as any;
-        const scale = 200 / image.width;
+        const scale = 400 / image.width;
         const canvasW = image.width * scale;
         const canvasH = image.height * scale;
         canvas.width = canvasW;
@@ -33,18 +33,18 @@ function App() {
 
         for (let y = 0; y < canvasH; y++) {
           for (let x = 0; x < canvasW; x++) {
-            if (y % 2 == 0 && x % 2 == 0) {
+            if (y % 8 === 0 && x % 4 === 0) {
               const pixel = ctx.getImageData(x, y, 1, 1);
               const data = pixel.data;
               const intent = Math.floor((data[0] + data[1] + data[2]) / 3);
-              if (data[3] != 0) {
+              if (data[3] !== 0) {
                 result += getAscii(intent);
               } else {
                 result += " ";
               }
             }
           }
-          if (y % 2 == 0) {
+          if (y % 8 === 0) {
             result += "\n";
           }
         }
@@ -56,11 +56,21 @@ function App() {
   }
 
   return (
-    <main>
-      <textarea readOnly value={text}></textarea>
-      <input type="file" accept=".jpg, .jpeg, .png" onChange={handleFileChange} />
-      <button onClick={submit}>Submit</button>
-    </main>
+    <div className="container">
+            <div className="main">
+                <div className="logo">
+                <h1>{"Ascii converter!"}</h1>
+                <p><i>{"|、"}<br />{"(˚ˎ 。7"}<br />{"|、˜〵"}<br />{"じしˍ,)ノ"}</i></p>
+                </div>
+                <div className="settings">
+                    <div className="file">
+                        <input onChange={handleFileChange} type="file" id="image" accept=".jpg, .jpeg, .png" />
+                    </div>
+                </div>
+                <input onClick={submit} className="submit" type="button" value="Submit" />
+            </div>
+            <textarea readOnly value={text}></textarea>
+    </div>
   )
 }
 
