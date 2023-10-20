@@ -1,3 +1,8 @@
+/**
+ * JavaScript file for the tool page and the tool
+ */
+
+
 const toolForm = $("#tool-form");
 const toolFormTitle = $("#tool-form-title");
 const toolContinueButton = $("#tool-continue");
