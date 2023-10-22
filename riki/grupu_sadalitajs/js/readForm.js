@@ -1,6 +1,6 @@
 import {stableMatchMembers} from "./stableMatch.js";
 
-export function getData(formId) {
+export function getData(formId, groupAmount) {
     getSpreadsheetId(formId).then(function (spreadsheetId) {
         const queryString = window.location.href;
         const urlParams = new URLSearchParams(queryString);
@@ -31,12 +31,10 @@ export function getData(formId) {
                 }
 
                 // Execute algorithm
-
-
-                console.log(stableMatchMembers(memberData, 3));
+                drawTable(stableMatchMembers(memberData, parseInt(groupAmount)));
             })
             .catch(error => {
-                alert("Kļūda meklējot izklājlapu. Pārbaudiet vai ir pievienota izklājlapa formai.");
+                alert("Kļūda meklējot izklājlapu. Pārbaudiet vai formai ir pievienota izklājlapa.");
             });
     }).catch(function () {
         alert("Nepareizs Formas ID");
@@ -68,4 +66,48 @@ function getSpreadsheetId(formId){
                 reject(error);
             });
     })
+}
+
+function drawTable(array) {
+    const tableContainer = document.getElementById('table-container');
+    tableContainer.innerHTML = "";
+
+    const table = document.createElement('table');
+    tableContainer.appendChild(table);
+
+    // Create the table header
+    const thead = document.createElement('thead');
+    const headerRow = document.createElement('tr');
+    const indexHeader = document.createElement('th');
+    indexHeader.textContent = 'Grupas nr.';
+    headerRow.appendChild(indexHeader);
+
+    for (let i = 0; i < array[0].length; i++) {
+        const nameHeader = document.createElement('th');
+        nameHeader.textContent = `Dalībnieks nr. ${i + 1}`;
+        headerRow.appendChild(nameHeader);
+    }
+
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+
+    // Create the table body
+    const tbody = document.createElement('tbody');
+
+    for (let i = 0; i < array.length; i++) {
+        const row = document.createElement('tr');
+        const indexCell = document.createElement('td');
+        indexCell.textContent = i + 1;
+        row.appendChild(indexCell);
+
+        for (let j = 0; j < array[i].length; j++) {
+            const nameCell = document.createElement('td');
+            nameCell.textContent = array[i][j];
+            row.appendChild(nameCell);
+        }
+
+        tbody.appendChild(row);
+    }
+
+    table.appendChild(tbody);
 }
