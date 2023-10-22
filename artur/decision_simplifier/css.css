@@ -1,132 +1,47 @@
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    font-size: 18px;
-    background-color: #0c2f5d;
-    color: #ced4da;
-    display: flex; /* Используем flex-контейнер для разделения на левую и правую части */
-    flex-direction: column; /* Отображение элементов в колонке */
-    justify-content: center; /* Центрирование по вертикали */
-    align-items: center; /* Центрирование по горизонтали */
-}
-
-.left {
-    flex: 1;
-    padding: 20px;
-    background-color: #051529;
-    width: 50%; /* Половина ширины страницы */
-}
-
-.left h1 {
-    font-family: 'Arial', sans-serif;
-    font-size: 40px;
-    color: #ced4da;
-    text-align: center; /* Выравнивание текста по центру */
-}
-
-.left p {
-    color: #ced4da;
-    font-size: 20px;
-    text-align: center; /* Выравнивание текста по центру */
-}
-
-.right {
-    flex: 1;
-    padding: 20px;
-    background-color: #0c2f5d;
-    width: 50%; /* Половина ширины страницы */
-}
-
-.right h2 {
-    font-family: 'Arial', sans-serif;
-    font-size: 30px;
-    color: #ced4da;
-    text-align: center; /* Выравнивание текста по центру */
-}
-
-.right p {
-    font-size: 18px;
-    color: #ced4da;
-    text-align: center; /* Выравнивание текста по центру */
-}
-
-.btn {
-    display: block;
-    margin: 20px auto; /* Выравнивание кнопки по центру */
-    padding: 10px 20px;
-    background-color: #0056b3;
-    color: #ced4da;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-.info {
-    padding: 20px;
-}
-
-footer {
-    text-align: center;
-    padding: 10px 0;
-    background-color: #051529;
-}
-
-/* ... (предыдущие стили) */
-
-/* ... (предыдущие стили) */
-
-/* ... (предыдущие стили) */
-
-.container {
+    background-color: #181f29;
+    color: #fff;
     display: flex;
-    flex-direction: row; /* Измените на горизонтальное направление */
-    margin: 0;
-    padding: 0;
-    max-width: 100%;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
-    position: relative;
+    margin: 0;
 }
 
-.left {
-    flex: 1;
-    background-color: #051529;
+.left-section, .right-section {
+    background-color: #293447; 
+    padding: 20px;
     text-align: center;
-    color: #fff;
-    position: relative;
-}
-
-.left-content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 100%;
-    width: 100%; /* Займет всю ширину левого блока */
-}
-
-.right {
-    flex: 2;
-    background-color: #0c2f5d;
-    text-align: center;
-    color: #fff;
-    position: relative;
-}
-
-.right-content {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    height: 100%;
+    height: 100vh;
 }
 
-footer {
-    text-align: left; /* Поставим текст в лево */
-    padding: 10px 20px; /* Добавим немного отступов слева и справа */
-    background-color: #0c2f5d;
-    color: #fff;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+.btn-primary {
+    background-color: #007bff;
+}
+
+h1 {
+    color: #007bff;
+}
+
+
+.left-section {
+    background-color: #223344; 
+}
+
+
+.right-section {
+    background-color: #2f4860; 
+}
+/* Выравнивание текста h1 */
+h1 {
+    margin: 0;
+}
+
+/* Установка отступа между текстами h1 */
+.left-section h1 {
+    margin-bottom: 10px;
 }
