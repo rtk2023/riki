@@ -1,0 +1,144 @@
+{
+  "entries": [
+    {
+      "name": "Person 1",
+      "ratings": {
+        "Person 2": 8,
+        "Person 3": 7,
+        "Person 4": 9,
+        "Person 5": 6,
+        "Person 6": 5,
+        "Person 7": 8,
+        "Person 8": 7,
+        "Person 9": 6,
+        "Person 10": 9
+      }
+    },
+    {
+      "name": "Person 2",
+      "ratings": {
+        "Person 1": 7,
+        "Person 3": 9,
+        "Person 4": 8,
+        "Person 5": 6,
+        "Person 6": 7,
+        "Person 7": 8,
+        "Person 8": 6,
+        "Person 9": 5,
+        "Person 10": 9
+      }
+    },
+    {
+      "name": "Person 3",
+      "ratings": {
+        "Person 1": 9,
+        "Person 2": 8,
+        "Person 4": 7,
+        "Person 5": 7,
+        "Person 6": 8,
+        "Person 7": 9,
+        "Person 8": 6,
+        "Person 9": 5,
+        "Person 10": 7
+      }
+    },
+    {
+      "name": "Person 4",
+      "ratings": {
+        "Person 1": 8,
+        "Person 2": 7,
+        "Person 3": 9,
+        "Person 5": 6,
+        "Person 6": 8,
+        "Person 7": 7,
+        "Person 8": 5,
+        "Person 9": 6,
+        "Person 10": 7
+      }
+    },
+    {
+      "name": "Person 5",
+      "ratings": {
+        "Person 1": 6,
+        "Person 2": 6,
+        "Person 3": 7,
+        "Person 4": 8,
+        "Person 6": 6,
+        "Person 7": 5,
+        "Person 8": 4,
+        "Person 9": 5,
+        "Person 10": 4
+      }
+    },
+    {
+      "name": "Person 6",
+      "ratings": {
+        "Person 1": 5,
+        "Person 2": 7,
+        "Person 3": 8,
+        "Person 4": 8,
+        "Person 5": 6,
+        "Person 7": 7,
+        "Person 8": 6,
+        "Person 9": 7,
+        "Person 10": 8
+      }
+    },
+    {
+      "name": "Person 7",
+      "ratings": {
+        "Person 1": 8,
+        "Person 2": 8,
+        "Person 3": 9,
+        "Person 4": 7,
+        "Person 5": 5,
+        "Person 6": 7,
+        "Person 8": 6,
+        "Person 9": 5,
+        "Person 10": 7
+      }
+    },
+    {
+      "name": "Person 8",
+      "ratings": {
+        "Person 1": 7,
+        "Person 2": 6,
+        "Person 3": 6,
+        "Person 4": 5,
+        "Person 5": 4,
+        "Person 6": 6,
+        "Person 7": 6,
+        "Person 9": 4,
+        "Person 10": 5
+      }
+    },
+    {
+      "name": "Person 9",
+      "ratings": {
+        "Person 1": 6,
+        "Person 2": 5,
+        "Person 3": 5,
+        "Person 4": 6,
+        "Person 5": 5,
+        "Person 6": 7,
+        "Person 7": 5,
+        "Person 8": 4,
+        "Person 10": 5
+      }
+    },
+    {
+      "name": "Person 10",
+      "ratings": {
+        "Person 1": 9,
+        "Person 2": 9,
+        "Person 3": 7,
+        "Person 4": 7,
+        "Person 5": 4,
+        "Person 6": 8,
+        "Person 7": 7,
+        "Person 8": 5,
+        "Person 9": 5
+      }
+    }
+  ]
+}

@@ -1,11 +1,9 @@
-import {Config} from "./loadConfig.js";
-
-
-const config = new Config();
+import {readForm} from "./readForm.js";
 
 let submit = document.form.submit;
 submit.addEventListener("click", function (){
-    config.getGoogleAPIKey().then(function (data) {
-        console.log(data);
-    });
+    let formId = document.form.formId.value;
+    let form = new readForm();
+
+    form.readForm(formId);
 })
