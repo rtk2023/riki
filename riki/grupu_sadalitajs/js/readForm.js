@@ -7,8 +7,6 @@ export function getData(formId, groupAmount) {
         const token = urlParams.get('access_token');
         const range = 'A1:Z100';
 
-        alert(token);
-
         // Get associated spreadsheet id
         const formUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}`;
 
@@ -75,7 +73,9 @@ function drawTable(array) {
     tableContainer.innerHTML = "";
 
     const table = document.createElement('table');
+    table.classList.add("table");
     tableContainer.appendChild(table);
+    document.getElementsByTagName("table")
 
     // Create the table header
     const thead = document.createElement('thead');
