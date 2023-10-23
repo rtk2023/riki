@@ -154,7 +154,9 @@ function loadNextToolStep()
         }
     }
 
-    initializeForm("The problem", currentStepForm);
+    initializeForm("Decision Simplifier", currentStepForm);
+
+    setJsonFormArrayIcons();
 }
 
 
@@ -205,12 +207,12 @@ function getFirstToolStepFormObject()
             name:
             {
                 type: 'string',
-                title: 'Name for the problem',
+                title: 'Ievadiet jūsu problēmu',
             },
             description:
             {
                 type: 'string',
-                title: 'What is the problem about?',
+                title: 'Par ko ir problēma?',
             }
         },
         form: [
@@ -245,7 +247,7 @@ function getSecondToolStepFormObject()
                 type: 'array',
                 items:
                 {
-                    title: 'Solutions for the problem',
+                    title: 'Problēmas risinājumi',
                     type: "string"
                 }
             }
@@ -257,7 +259,7 @@ function getSecondToolStepFormObject()
                 items:
                 [{
                     key: "solutions[]",
-                    title: "Solution - {{idx}}",
+                    title: "Problēma risinajums - {{idx}}",
                     htmlClass: 'solution-input'
                 }]
             }
@@ -280,7 +282,7 @@ function getThirdToolStepFormObject()
             solution:
             {
                 type: "string",
-                title: "The solution",
+                title: "Risinajums",
                 readonly: true
             },
             advantages:
@@ -288,7 +290,7 @@ function getThirdToolStepFormObject()
                 type: 'array',
                 items:
                 {
-                    title: 'Advantages of the solution',
+                    title: 'Risinājuma priekšrocības',
                     type: "string"
                 }
             }
@@ -301,7 +303,7 @@ function getThirdToolStepFormObject()
                 items:
                 [{
                     key: "advantages[]",
-                    title: "Advantage - {{idx}}",
+                    title: "Priekšrocība - {{idx}}",
                     htmlClass: 'advantage-input'
                 }]
             }
@@ -328,7 +330,7 @@ function getFourthToolStepFormObject()
             solution:
             {
                 type: "string",
-                title: "The solution",
+                title: "Risinajums",
                 readonly: true
             },
             disadvantages:
@@ -336,7 +338,7 @@ function getFourthToolStepFormObject()
                 type: 'array',
                 items:
                 {
-                    title: 'Disadvantages of the solution',
+                    title: 'Risinājuma trūkumi',
                     type: "string"
                 }
             }
@@ -349,7 +351,7 @@ function getFourthToolStepFormObject()
                 items:
                 [{
                     key: "disadvantages[]",
-                    title: "Disadvantage - {{idx}}"
+                    title: "Trūkums - {{idx}}"
                 }]
             }
         ],
@@ -364,4 +366,15 @@ function getFourthToolStepFormObject()
     };
 
     return fourthStepFormObject;
+}
+
+function setJsonFormArrayIcons()
+{
+    console.log('work');
+    $('.glyphicon').removeClass('glyphicon');
+    $('.glyphicon-plus-sign').addClass('ri-add-circle-fill remixIcon');
+    $('.glyphicon-plus-sign').removeClass('glyphicon-plus-sign');
+    
+    $('.glyphicon-minus-sign').addClass('ri-indeterminate-circle-fill remixIcon');
+    $('.glyphicon-minus-sign').removeClass('glyphicon-minus-sign');
 }
