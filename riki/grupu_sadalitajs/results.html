@@ -9,17 +9,31 @@
 
     <!--  Stylesheets  -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-    <form action="" method="get" name="form" onsubmit="return false">
-        <input type="text" name="formId">
-        <input type="number" name="groupAmount">
-        <button type="submit" name="submit">Ģenerēt grupas</button>
-        <div id="jsonOutput"></div>
-    </form>
+    <div class="container">
+        <h1>Grupu sadalītājs</h1>
 
-    <!--  Results of stable-matching  -->
-    <div id="table-container"></div>
+        <form action="" method="get" name="form" onsubmit="return false">
+            <label>Formas ID:
+                <br>
+                <input type="text" name="formId">
+            </label>
+            
+            <label>Grupu skaits:
+                <br>
+                <input type="number" name="groupAmount">
+            </label>
+            
+            <button type="submit" name="submit">Ģenerēt grupas</button>
+            <div id="jsonOutput"></div>
+        </form>
+    
+        <!--  Results of stable-matching  -->
+        <div id="table-container"></div>
+    </div>
+    
 
     <!--  Scripts  -->
     <script src="js/script.js" type="module"></script>

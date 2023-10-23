@@ -7,6 +7,8 @@ export function getData(formId, groupAmount) {
         const token = urlParams.get('access_token');
         const range = 'A1:Z100';
 
+        alert(token);
+
         // Get associated spreadsheet id
         const formUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}`;
 
