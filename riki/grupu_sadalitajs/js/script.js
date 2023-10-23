@@ -7,7 +7,7 @@ submit.addEventListener("click", function (){
 
     if (formId === ""){
         alert("Formas ID ir obligāts lauks")
-    }else if(groupAmount>2){
+    }else if(groupAmount<2 && groupAmount>10){
         alert('Jābūt vismaz 2 grupām')
     }else{
         getData(formId, groupAmount);

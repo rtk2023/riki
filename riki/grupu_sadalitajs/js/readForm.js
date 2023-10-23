@@ -69,13 +69,15 @@ function getSpreadsheetId(formId){
 }
 
 function drawTable(array) {
+    console.log(array)
     const tableContainer = document.getElementById('table-container');
     tableContainer.innerHTML = "";
 
     const table = document.createElement('table');
+
+    // Add table class for bootstrap
     table.classList.add("table");
     tableContainer.appendChild(table);
-    document.getElementsByTagName("table")
 
     // Create the table header
     const thead = document.createElement('thead');
@@ -84,7 +86,15 @@ function drawTable(array) {
     indexHeader.textContent = 'Grupas nr.';
     headerRow.appendChild(indexHeader);
 
-    for (let i = 0; i < array[0].length; i++) {
+    // Determine the maximum number of columns in any subarray
+    let maxColumns = 0;
+    for (let i = 0; i < array.length; i++) {
+        if (array[i].length > maxColumns) {
+            maxColumns = array[i].length;
+        }
+    }
+
+    for (let i = 0; i < maxColumns; i++) {
         const nameHeader = document.createElement('th');
         nameHeader.textContent = `Dalībnieks nr. ${i + 1}`;
         headerRow.appendChild(nameHeader);
@@ -102,9 +112,13 @@ function drawTable(array) {
         indexCell.textContent = i + 1;
         row.appendChild(indexCell);
 
-        for (let j = 0; j < array[i].length; j++) {
+        for (let j = 0; j < maxColumns; j++) {
             const nameCell = document.createElement('td');
-            nameCell.textContent = array[i][j];
+            if (j < array[i].length) {
+                nameCell.textContent = array[i][j];
+            } else {
+                nameCell.textContent = ''; // Fill empty cells with empty string
+            }
             row.appendChild(nameCell);
         }
 
