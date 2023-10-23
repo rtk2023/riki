@@ -1,0 +1,142 @@
+body {
+    background-color: #0F0F0F;
+    font-family: 'Space Mono', monospace;
+  }
+  
+  .container {
+    padding: 100px;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    height: 70vh;
+  }
+  
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .logo h1,
+  .logo p {
+    color: #ffffff;
+    font-size: 18px;
+  }
+  
+  .logo h1 {
+    font-weight: 100;
+  }
+  
+  .logo p {
+    font-family: 'Space Mono', monospace;
+  }
+  
+  .settings {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+  }
+  
+  .settings .file {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  
+  .settings input[type="file"] {
+    border: 1px solid #ffffff;
+    border-radius: 0px;
+    color: transparent;
+    width: 130px;
+    cursor: pointer;
+    padding: 12px 0px;
+  }
+  
+  .settings input[type="file"]::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+  
+  .settings input[type="file"]::before {
+    font-family: 'Space Mono', monospace;
+    content: 'Choose file';
+    color: #ffffff;
+    font-size: 14px;
+    position: absolute;
+    left: 131px;
+  }
+  
+  .submit {
+    font-family: 'Space Mono', monospace;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 0px;
+    color: #ffffff;
+    width: 130px;
+    padding: 12px 0px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  textarea {
+    font-family: 'Space Mono', monospace;
+    resize: none;
+    width: 60%;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 0px;
+    color: #ffffff;
+    font-size: 11px;
+    padding: 20px 30px;
+  }
+  
+  textarea:focus {
+    outline: none;
+  }
+  
+  @media (max-width: 1120px) {
+    .logo {
+      flex-direction: column;
+      align-items: baseline;
+      gap: 0px;
+    }
+  }
+  
+  @media (max-width: 770px) {
+    .container {
+      flex-direction: column;
+      gap: 50px;
+      height: auto;
+      padding: 50px;
+    }
+  
+    .main {
+      gap: 80px;
+      justify-content: start;
+    }
+  
+    textarea {
+      width: auto;
+      height: 600px;
+      font-size: 12px;
+    }
+  
+    .settings input[type="file"]::before {
+      left: 82px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .container {
+      padding: 20px;
+    }
+  
+    .settings input[type="file"]::before {
+      left: 52px;
+    }
+}
