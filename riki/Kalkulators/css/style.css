@@ -46,6 +46,15 @@ button {
     color: #fff;
     cursor: pointer;
 }
+.text{
+    color: white;
+    font-size: 18px;
+}
+.text a{
+    color: rgb(174, 239, 255);
+    text-decoration: none;
+    font-size: 18px;
+}
 
 button:hover {
     background-color: #7777777a;
