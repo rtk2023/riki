@@ -1,50 +1,106 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #f0f0f0, #c0c0c0);
+.left-section 
+{
+    background-color: #223344; 
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.right-section 
+{
+    background-color: #2f4860; 
 }
 
-header {
+.toolBody
+{
+    background-color: #0D1B2A;
+}
+
+
+.custom-class-1 {
+    padding-top: 3%;
+    padding-left: 20%;
+    padding-right: 20%;
+    color:#E0E1DD;
+     /* Задать ширину текстовой области */
+}
+.custom-class-2{
+  padding-left: 20%;
+  padding-right: 20%;
+  color: #E0E1DD;
+}
+.gap-2{
+  padding-left: 20%;
+  padding-right: 20%;
+
+}
+
+
+._jsonform-array-ul{
+    padding-left: 20%;
+    padding-right: 20%;
+    margin-bottom: 0;
+    color: #E0E1DD;
+  }
+  ._jsonform-array-addmore{
+    width: 5%;
+  }
+  ._jsonform-array-deletelast{
+    width: 5%;
+  }
+  ._jsonform-array-buttons{
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+  .controls{
+    padding-bottom: 1%;
+  }
+  
+  .jsonform-readonly{
+    padding-left: 18%;
+    padding-right: 18%;
+    color: #E0E1DD;
+  }
+
+
+  .toolResults{
+    color: #E0E1DD;
+    padding-left: 20%;
+    padding-right: 20%;
     text-align: center;
-    margin-bottom: 20px;
-}
-
-h1 {
-    font-size: 36px;
-    color: #333;
-}
-
-main {
+    padding-bottom: 3%;
+  }
+  #solutionName{
+    font-size: 200%;
+  }
+  
+  #simbolSD{
+    font-size: 200%;
+  }
+  
+  .AdvantegesList{
+    background-color: #D2E0BF;
     text-align: center;
-}
-
-p {
-    font-size: 18px;
-    color: #555;
-    margin-bottom: 30px;
-}
-
-.start-button {
-    display: inline-block;
-    padding: 15px 30px;
-    background: #0077b6;
-    color: #fff;
-    text-decoration: none;
-    font-size: 20px;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
-
-.start-button:hover {
-    background: #005b91;
-}
+    color: #1B263B;
+    border: 5px solid #87CF26;
+    border-radius: 15px;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    padding-bottom: 1%;
+    padding-top: 1%;
+  }
+  .DisadvantegesList{
+    background-color: #D1A7A0;
+    text-align: center;
+    color: #1B263B;
+    border: 5px solid #D4361C;
+    border-radius: 15px;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    padding-bottom: 1%;
+    padding-top: 1%;
+  }
+  
+  .AdvantegesList p {
+    margin-bottom: 0%;
+  }
+  .DisadvantegesList p {
+    margin-bottom: 0%;
+  }
