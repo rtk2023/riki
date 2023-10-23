@@ -33,6 +33,17 @@ function initializeForm(formTitle, formObject)
 
     toolForm.jsonForm(formObject);
 
+    if(toolStep > 1)
+    {
+        let problemName = "<div class='pt-3 display-5 text-center text-white' id='problem-name'>"+ toolData["problem"]["name"] +"</div>"; 
+
+        $("#problem-name").remove();
+
+        toolFormTitle.after(problemName);
+
+        toolFormTitle.hide();
+    }
+
 
     toolContinueButton.unbind();
 
@@ -49,6 +60,8 @@ function showToolResults()
     toolForm.empty();
 
     toolContinueButton.hide();
+
+    $("#problem-name").remove();
 
 
     let toolResultsHTML =
@@ -85,6 +98,7 @@ function showToolResults()
 
 
     toolResultsHTML += "</div>";
+    
     toolForm.append(toolResultsHTML);
 }
 
@@ -245,6 +259,7 @@ function getSecondToolStepFormObject()
             solutions:
             {
                 type: 'array',
+                minItems: 2,
                 items:
                 {
                     title: 'Problēmas risinājumi',
@@ -259,7 +274,7 @@ function getSecondToolStepFormObject()
                 items:
                 [{
                     key: "solutions[]",
-                    title: "Problēma risinajums - {{idx}}",
+                    title: "Iespējamais risinajums - {{idx}}",
                     htmlClass: 'solution-input'
                 }]
             }
@@ -291,6 +306,7 @@ function getThirdToolStepFormObject()
                 items:
                 {
                     title: 'Risinājuma priekšrocības',
+                    minItems: 2,
                     type: "string"
                 }
             }
@@ -303,7 +319,7 @@ function getThirdToolStepFormObject()
                 items:
                 [{
                     key: "advantages[]",
-                    title: "Priekšrocība - {{idx}}",
+                    title: "Risinājuma priekšrocība - {{idx}}",
                     htmlClass: 'advantage-input'
                 }]
             }
@@ -336,6 +352,7 @@ function getFourthToolStepFormObject()
             disadvantages:
             {
                 type: 'array',
+                minItems: 2,
                 items:
                 {
                     title: 'Risinājuma trūkumi',
@@ -351,7 +368,7 @@ function getFourthToolStepFormObject()
                 items:
                 [{
                     key: "disadvantages[]",
-                    title: "Trūkums - {{idx}}"
+                    title: "Risinājuma trūkums - {{idx}}"
                 }]
             }
         ],
