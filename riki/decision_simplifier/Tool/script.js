@@ -12,6 +12,9 @@ let currentSolution;
 
 let toolData = {};
 
+let submittedFormData;
+
+
 $(document).ready()
 {
     initializeTool();
@@ -106,6 +109,12 @@ function loadNextToolStep()
 {
     toolForm.submit();
 
+    if(!validateToolStepFormValues(toolStep, submittedFormData))
+    {
+        return;
+    }
+
+
     let currentStepForm;
 
     if(toolStep == 0)
@@ -116,12 +125,16 @@ function loadNextToolStep()
     }
     else if(toolStep == 1)
     {
+        createNewProblem(submittedFormData["name"], submittedFormData["description"]);
+
         currentStepForm = getSecondToolStepFormObject();
 
         toolStep++;
     }
     else if(toolStep == 2)
     {
+        addSolutionsToProblem(submittedFormData["solutions"]);
+
         toolStep++;
 
         currentSolution = 0;
@@ -130,6 +143,7 @@ function loadNextToolStep()
         for(var x in toolData["solutions"])
         {
             toolData["solutions"][x]["advantages"] = [];
+
             toolData["solutions"][x]["disadvantages"] = [];
         }
 
@@ -137,6 +151,8 @@ function loadNextToolStep()
     }
     else if(toolStep == 3)
     {
+        addAdvantagesToSolution(submittedFormData["advantages"]);
+
         if(currentSolution >= (toolData["solutions"].length - 1))
         {
             toolStep++;
@@ -154,6 +170,8 @@ function loadNextToolStep()
     }
     else if(toolStep == 4)
     {
+        addDisadvantagesToSolution(submittedFormData["disadvantages"]);
+
         if(currentSolution >= toolData["solutions"].length - 1)
         {
             showToolResults();
@@ -171,6 +189,40 @@ function loadNextToolStep()
     initializeForm("Decision Simplifier", currentStepForm);
 
     setJsonFormArrayIcons();
+}
+
+
+function validateToolStepFormValues(step, formValues)
+{
+    let validationPassed = true;
+
+    if(step == 1)
+    {
+        if(!formValues["name"] || !formValues["description"])
+        {
+            validationPassed = false;
+        }
+    }
+    else if(step == 2)
+    {
+        validationPassed = !formValues["solutions"].some((e) => e === "");
+    }
+    else if(step == 3)
+    {
+        if(!formValues["advantages"] || formValues["advantages"].some((e) => e === ""))
+        {
+            validationPassed = false;
+        }
+    }
+    else if(step == 4)
+    {
+        if(!formValues["disadvantages"] || formValues["disadvantages"].some((e) => e === ""))
+        {
+            validationPassed = false;
+        }
+    }
+
+    return validationPassed;
 }
 
 
@@ -222,11 +274,13 @@ function getFirstToolStepFormObject()
             {
                 type: 'string',
                 title: 'Ievadiet jūsu problēmu',
+                required: true
             },
             description:
             {
                 type: 'string',
                 title: 'Par ko ir problēma?',
+                required: true
             }
         },
         form: [
@@ -243,7 +297,7 @@ function getFirstToolStepFormObject()
         ],
         onSubmit: function (errors, values)
         {
-            createNewProblem(values["name"], values["description"]);
+            submittedFormData = values;
         }
     };
 
@@ -275,13 +329,14 @@ function getSecondToolStepFormObject()
                 [{
                     key: "solutions[]",
                     title: "Iespējamais risinajums - {{idx}}",
+                    allowEmpty: true,
                     htmlClass: 'solution-input'
                 }]
             }
         ],
         onSubmit: function (errors, values)
         {
-            addSolutionsToProblem(values["solutions"]);
+            submittedFormData = values;
         }
     };
 
@@ -320,6 +375,7 @@ function getThirdToolStepFormObject()
                 [{
                     key: "advantages[]",
                     title: "Risinājuma priekšrocība - {{idx}}",
+                    allowEmpty: true,
                     htmlClass: 'advantage-input'
                 }]
             }
@@ -330,7 +386,7 @@ function getThirdToolStepFormObject()
         },
         onSubmit: function (errors, values)
         {
-            addAdvantagesToSolution(values["advantages"]);
+            submittedFormData = values;
         }
     };
 
@@ -368,7 +424,8 @@ function getFourthToolStepFormObject()
                 items:
                 [{
                     key: "disadvantages[]",
-                    title: "Risinājuma trūkums - {{idx}}"
+                    title: "Risinājuma trūkums - {{idx}}",
+                    allowEmpty: true,
                 }]
             }
         ],
@@ -378,7 +435,7 @@ function getFourthToolStepFormObject()
         },
         onSubmit: function (errors, values)
         {
-            addDisadvantagesToSolution(values["disadvantages"]);
+            submittedFormData = values;
         }
     };
 
