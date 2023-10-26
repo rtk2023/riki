@@ -75,15 +75,10 @@
 .toolResults
 {
   color: #E0E1DD;
-  padding-left: 20%;
-  padding-right: 20%;
+  /* padding-left: 20%; */
+  /* padding-right: 20%; */
   text-align: center;
   padding-bottom: 3%;
-}
-
-#solutionName
-{
-  font-size: 200%;
 }
 
 #simbolSD
