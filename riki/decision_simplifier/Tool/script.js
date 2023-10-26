@@ -7,13 +7,13 @@ const toolForm = $("#tool-form");
 const toolFormTitle = $("#tool-form-title");
 const toolContinueButton = $("#tool-continue");
 
+let formArrayCount = 0;
 let toolStep;
 let currentSolution;
 
 let toolData = {};
 
 let submittedFormData;
-
 
 $(document).ready()
 {
@@ -198,6 +198,8 @@ function loadNextToolStep()
         }
 
         currentStepForm = getThirdToolStepFormObject();
+
+        createOneFormArrayItemByDefault();
     }
     else if(toolStep == 3)
     {
@@ -210,12 +212,16 @@ function loadNextToolStep()
             currentSolution = 0;
 
             currentStepForm = getFourthToolStepFormObject();
+
+            createOneFormArrayItemByDefault();
         }
         else
         {
             currentSolution++;
 
             currentStepForm = getThirdToolStepFormObject();
+
+            createOneFormArrayItemByDefault();
         }
     }
     else if(toolStep == 4)
@@ -233,10 +239,18 @@ function loadNextToolStep()
             currentSolution++;
 
             currentStepForm = getFourthToolStepFormObject();
+
+            createOneFormArrayItemByDefault();
         }
     }
 
     initializeForm("Decision Simplifier", currentStepForm);
+
+    formArrayCount = 0;
+    if(toolStep != 2)
+    {
+        countFormArrayItems();
+    }
 
     setJsonFormArrayIcons();
 }
@@ -316,6 +330,8 @@ function addDisadvantagesToSolution(disadvantages)
 
 function getFirstToolStepFormObject()
 {
+    console.log('getFirstToolStepFormObject');
+
     var firstStepFormObject =
     {
         schema:
@@ -356,6 +372,8 @@ function getFirstToolStepFormObject()
 
 function getSecondToolStepFormObject()
 {
+    console.log('getSecondToolStepFormObject');
+
     var secondStepFormObject =
     {
         schema:
@@ -395,6 +413,12 @@ function getSecondToolStepFormObject()
 
 function getThirdToolStepFormObject()
 {
+    console.log('getThirdToolStepFormObject');
+
+    formArrayCount = 0;
+
+    countFormArrayItems();
+
     var thirdStepFormObject =
     {
         schema:
@@ -411,7 +435,6 @@ function getThirdToolStepFormObject()
                 items:
                 {
                     title: 'Risinājuma priekšrocības',
-                    minItems: 2,
                     type: "string"
                 }
             }
@@ -445,6 +468,8 @@ function getThirdToolStepFormObject()
 
 function getFourthToolStepFormObject()
 {
+    console.log('getFourthToolStepFormObject');
+
     var fourthStepFormObject =
     {
         schema:
@@ -458,7 +483,6 @@ function getFourthToolStepFormObject()
             disadvantages:
             {
                 type: 'array',
-                minItems: 2,
                 items:
                 {
                     title: 'Risinājuma trūkumi',
@@ -501,4 +525,49 @@ function setJsonFormArrayIcons()
     
     $('.glyphicon-minus-sign').addClass('ri-indeterminate-circle-fill remixIcon');
     $('.glyphicon-minus-sign').removeClass('glyphicon-minus-sign');
+}
+
+function checkMinimalSolutionCount()
+{
+    if(formArrayCount <= 1)
+    {
+        $("._jsonform-array-deletelast").addClass('disabled');
+    }
+    else
+    {
+        $("._jsonform-array-deletelast").removeClass('disabled');
+    }
+}
+
+function countFormArrayItems()
+{
+    console.log('here');
+    $("._jsonform-array-addmore").on('click', function()
+    {
+        formArrayCount++;
+        checkMinimalSolutionCount();
+        console.log(formArrayCount);
+    });
+    
+    $("._jsonform-array-deletelast").on('click', function()
+    {
+        formArrayCount--;
+        checkMinimalSolutionCount();
+        console.log(formArrayCount);
+    });
+    
+    $("#tool-continue").on('click', function()
+    {
+        formArrayCount = 0;
+        checkMinimalSolutionCount();
+        console.log(formArrayCount);
+    });
+}
+
+function createOneFormArrayItemByDefault()
+{
+    $(document).ready(function () 
+    {
+        $("._jsonform-array-addmore").trigger('click');
+    });
 }

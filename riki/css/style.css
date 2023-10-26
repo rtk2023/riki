@@ -1,3 +1,9 @@
+
+body
+{
+  background-color: #223344!important;
+}
+
 .left-section 
 {
   background-color: #0D1B2A; 
@@ -13,6 +19,10 @@
   background-color: #0D1B2A;
 }
 
+.main-page-text
+{
+  font-weight: 600!important;
+}
 
 .custom-class-1 
 {
@@ -143,8 +153,56 @@
   background-color: rgb(255, 77, 77)!important;
   border: solid 3px rgb(248, 17, 1)!important;
 }
-/* .fading
+
+.fading
 {
   transition: 0.5s;
   opacity: 0;
-} */
+}
+
+.form-page-items 
+{
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.fill-color 
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #0D1B2A;
+  animation: fillAnimation 0.7s ease forwards;
+}
+
+.main-page-description
+{
+  font-size: 20px;
+}
+
+.left-section,
+.right-section
+{
+  padding-top: 38vh;
+}
+
+@keyframes fadeIn 
+{
+  0% 
+  {
+    opacity: 0;
+  }
+  100% 
+  {
+    opacity: 1;
+  }
+}
+
+@keyframes fillAnimation 
+{
+  100% 
+  {
+      width: 100%;
+  }
+}
