@@ -38,7 +38,7 @@ function initializeForm(formTitle, formObject)
 
     if(toolStep > 1)
     {
-        let problemName = "<div class='pt-3 display-5 text-center text-white' id='problem-name'>"+ toolData["problem"]["name"] +"</div>";
+        let problemName = "<div class='pt-3 display-5 text-center text-white' id='problem-name'>"+ toolData["problem"]["name"] +"</div>"; 
 
         $("#problem-name").remove();
 
@@ -72,9 +72,9 @@ function showToolResults()
     <div class="container-fluid toolBody">
         <div class="row min-vh-100">
             <div class="toolResults">
-                <div class="row p-3">
-                    <h1 class="text-center">`+ toolData["problem"]["name"] +`</h1>
-                    <p class="">`+ toolData["problem"]["description"] +`</p>
+                <div class="row bg-light p-3">
+                    <h3 class="text-center text-dark">`+ toolData["problem"]["name"] +`</h3>
+                    <p class="text-dark text-start">`+ toolData["problem"]["description"] +`</p>
                 </div>
                 <div class="">
     `;
@@ -100,19 +100,19 @@ function showToolResults()
     {
         toolResultsHTML +=
         `
-        <div class="row container-result">
+        <div class="row bg-dark"> 
             <h4 class="p-3">Risinajums: ${toolData["solutions"][x]["name"]}</h4>
             <div class="row m-0 p-0">
-                <div class="col-6 bg-success pb-3 border-start border-end border-dark border-4 plus-container">
+                <div class="col-6 bg-success pb-3 border-start border-end border-dark border-4">
                     <h4 class="p-2 border-bottom border-light border-3">Priekšrocības</h4>
         `;
 
 
         for(var y in toolData["solutions"][x]["advantages"])
         {
-            toolResultsHTML +=
+            toolResultsHTML += 
             `
-            <div class="">
+            <div class="border-bottom border-3 border-dark">
                 <p class="pt-3">${toolData["solutions"][x]["advantages"][y]}</p>
             </div>
             `;
@@ -123,22 +123,22 @@ function showToolResults()
 
         toolResultsHTML +=
         `
-            <div class="col-6 bg-danger pb-3 border-start border-end border-dark border-4 minus-container">
+            <div class="col-6 bg-danger pb-3 border-start border-end border-dark border-4">
                 <h4 class="p-2 border-bottom border-light border-3">Trukumi</h4>
         `;
 
 
         for(var y in toolData["solutions"][x]["disadvantages"])
         {
-            toolResultsHTML +=
+            toolResultsHTML += 
             `
-            <div class="">
+            <div class="border-bottom border-3 border-dark">
                 <p class="pt-3">${toolData["solutions"][x]["disadvantages"][y]}</p>
             </div>
             `;
         }
 
-        toolResultsHTML +=
+        toolResultsHTML += 
         `
         </div>
         </div>
@@ -151,9 +151,8 @@ function showToolResults()
     toolResultsHTML += "</div>";
     toolResultsHTML += "</div>";
     toolResultsHTML += "</div>";
-
+    
     toolForm.append(toolResultsHTML);
-
 }
 
 function loadNextToolStep()
@@ -523,7 +522,7 @@ function setJsonFormArrayIcons()
     $('.glyphicon').removeClass('glyphicon');
     $('.glyphicon-plus-sign').addClass('ri-add-circle-fill remixIcon');
     $('.glyphicon-plus-sign').removeClass('glyphicon-plus-sign');
-
+    
     $('.glyphicon-minus-sign').addClass('ri-indeterminate-circle-fill remixIcon');
     $('.glyphicon-minus-sign').removeClass('glyphicon-minus-sign');
 }
@@ -549,14 +548,14 @@ function countFormArrayItems()
         checkMinimalSolutionCount();
         console.log(formArrayCount);
     });
-
+    
     $("._jsonform-array-deletelast").on('click', function()
     {
         formArrayCount--;
         checkMinimalSolutionCount();
         console.log(formArrayCount);
     });
-
+    
     $("#tool-continue").on('click', function()
     {
         formArrayCount = 0;
@@ -567,7 +566,7 @@ function countFormArrayItems()
 
 function createOneFormArrayItemByDefault()
 {
-    $(document).ready(function ()
+    $(document).ready(function () 
     {
         $("._jsonform-array-addmore").trigger('click');
     });
