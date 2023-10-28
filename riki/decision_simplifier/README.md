@@ -1,4 +1,4 @@
-Lēmumu pieņemšanas palīdzības rīks
+**Lēmumu pieņemšanas palīdzības rīks**
 
 Atvieglojiet sev lēmumu pieņemšanu ar šī rīka palīdzību
 Zināmās kļūdas:
