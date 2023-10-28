@@ -1,47 +1,192 @@
 body {
-    background-color: #181f29;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    /* background: linear-gradient(to bottom, #f0f0f0, #c0c0c0); */
+    background-color: #0D1B2A;
 }
 
-.left-section, .right-section {
-    background-color: #293447; 
+.container-fluid h1, h2 {
+  color: #E0E1DD;
+  font-weight: 100;
+}
+
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
     padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+header {
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
-
-.btn-primary {
-    background-color: #007bff;
+    margin-bottom: 20px;
 }
 
 h1 {
-    color: #007bff;
+    font-size: 36px;
+    /* color: #333; */
+}
+
+main {
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
+    /* color: #555; */
+}
+
+.start-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #0077b6;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.start-button:hover {
+    background: #005b91;
 }
 
 
-.left-section {
-    background-color: #223344; 
+/*---------------------------------------______FORM_______1___---------------------------------------------------*/
+
+.custom-class-1 {
+    padding-top: 3%;
+    padding-left: 20%;
+    padding-right: 20%;
+    color:#E0E1DD;
+     /* Задать ширину текстовой области */
+}
+.custom-class-2{
+  padding-left: 20%;
+  padding-right: 20%;
+  color: #E0E1DD;
+}
+.gap-2{
+  padding-left: 20%;
+  padding-right: 20%;
+
 }
 
-
-.right-section {
-    background-color: #2f4860; 
+/* ---------------------------------------------_____FORM____2_____--------------------------------------------------------- */
+/* #jsonform-2-elt-counter-3{
+  color: #E0E1DD;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-bottom: 1%;
+} */
+._jsonform-array-ul{
+  padding-left: 20%;
+  padding-right: 20%;
+  margin-bottom: 0;
+  color: #E0E1DD;
 }
-/* Выравнивание текста h1 */
-h1 {
-    margin: 0;
+._jsonform-array-addmore{
+  width: 5%;
+}
+._jsonform-array-deletelast{
+  width: 5%;
+}
+._jsonform-array-buttons{
+  padding-left: 20%;
+  padding-right: 20%;
+}
+.controls{
+  padding-bottom: 1%;
 }
 
-/* Установка отступа между текстами h1 */
-.left-section h1 {
-    margin-bottom: 10px;
+.jsonform-readonly{
+  padding-left: 18%;
+  padding-right: 18%;
+  color: #E0E1DD;
+}
+
+/* ---------------------------------------------_____FORM____3_____----------------------ADVANTEGES---------------------------- */
+/* #jsonform-4-elt-counter-5{
+  color: #E0E1DD;
+  padding-left: 22%;
+  padding-right: 22%;
+  padding-bottom: 1%;
+}
+
+.jsonform-readonly{
+  padding-left: 20%;
+  padding-right: 20%;
+}
+#jsonform-6-elt-counter-7{
+  color: #E0E1DD;
+  padding-left: 22%;
+  padding-right: 22%;
+  padding-bottom: 1%;
+} */
+
+/* ---------------------------------------------_____FORM____4_____---------------------DISADVANTEGES---------------------------- */
+
+/* #jsonform-8-elt-counter-9{
+  color: #E0E1DD;
+  padding-left: 22%;
+  padding-right: 22%;
+  padding-bottom: 1%;
+}
+#jsonform-10-elt-counter-11{
+  color: #E0E1DD;
+  padding-left: 22%;
+  padding-right: 22%;
+  padding-bottom: 1%;
+} */
+
+
+/* ---------------------------------------------RESULT---------------------------- */
+
+.toolResults{
+  color: #E0E1DD;
+  padding-left: 20%;
+  padding-right: 20%;
+  text-align: center;
+  padding-bottom: 3%;
+}
+#solutionName{
+  font-size: 200%;
+}
+
+#simbolSD{
+  font-size: 200%;
+}
+
+.AdvantegesList{
+  background-color: #D2E0BF;
+  text-align: center;
+  color: #1B263B;
+  border: 5px solid #87CF26;
+  border-radius: 15px;
+  margin-bottom: 1%;
+  margin-top: 1%;
+  padding-bottom: 1%;
+  padding-top: 1%;
+}
+.DisadvantegesList{
+  background-color: #D1A7A0;
+  text-align: center;
+  color: #1B263B;
+  border: 5px solid #D4361C;
+  border-radius: 15px;
+  margin-bottom: 1%;
+  margin-top: 1%;
+  padding-bottom: 1%;
+  padding-top: 1%;
+}
+
+.AdvantegesList p {
+  margin-bottom: 0%;
+}
+.DisadvantegesList p {
+  margin-bottom: 0%;
 }

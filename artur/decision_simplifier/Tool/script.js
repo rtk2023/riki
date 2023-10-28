@@ -45,7 +45,7 @@ function initializeForm(formTitle, formObject)
 function showToolResults()
 {
     toolFormTitle.hide();
-    
+
     toolForm.empty();
 
     toolContinueButton.hide();
@@ -54,25 +54,35 @@ function showToolResults()
     let toolResultsHTML =
     `
     <div class="toolResults">
-        <h3 class="text-center">Name: `+ toolData["problem"]["name"] +`</h4>
+        <h3 class="text-center">`+ toolData["problem"]["name"] +`</h4>
         <p>Description: `+ toolData["problem"]["description"] +`</p>
     `;
 
 
     for(var x in toolData["solutions"])
     {
-        toolResultsHTML += "<p>Solution: " + toolData["solutions"][x]["name"] + "</p>";
+        toolResultsHTML += '<div id="SolutionRow"> <p id="solutionName"> ' + toolData["solutions"][x]["name"] + "</p>";
 
-        for(var y in toolData["solutions"][x]["advantages"])
-        {
-            toolResultsHTML += "<p>Advantage - "+ y + ": " + toolData["solutions"][x]["advantages"][y] + "</p>";
-        }
+          toolResultsHTML += '<div class="AdvantegesList">';
 
-        for(var y in toolData["solutions"][x]["disadvantages"])
-        {
-            toolResultsHTML += "<p>Disadvantage - " + y + ": " + toolData["solutions"][x]["disadvantages"][y] + "</p>";
-        }
+            for(var y in toolData["solutions"][x]["advantages"])
+            {
+                toolResultsHTML += '<p> <i class="bi bi-plus-circle-fill"></i>   ' + toolData["solutions"][x]["advantages"][y] + "</p>";
+            }
+
+          toolResultsHTML += "</div>";
+          toolResultsHTML += '<div class="DisadvantegesList">';
+
+            for(var y in toolData["solutions"][x]["disadvantages"])
+            {
+                toolResultsHTML += '<p> <i class="bi bi-dash-circle-fill"></i>   ' + toolData["solutions"][x]["disadvantages"][y] + '</p>';
+            }
+
+          toolResultsHTML += "</div>";
+
+        toolResultsHTML += "</div>";
     }
+
 
     toolResultsHTML += "</div>";
     toolForm.append(toolResultsHTML);
@@ -93,7 +103,7 @@ function loadNextToolStep()
     else if(toolStep == 1)
     {
         currentStepForm = getSecondToolStepFormObject();
-    
+
         toolStep++;
     }
     else if(toolStep == 2)
@@ -108,7 +118,7 @@ function loadNextToolStep()
             toolData["solutions"][x]["advantages"] = [];
             toolData["solutions"][x]["disadvantages"] = [];
         }
-        
+
         currentStepForm = getThirdToolStepFormObject();
     }
     else if(toolStep == 3)
@@ -118,7 +128,7 @@ function loadNextToolStep()
             toolStep++;
 
             currentSolution = 0;
-            
+
             currentStepForm = getFourthToolStepFormObject();
         }
         else
@@ -141,7 +151,7 @@ function loadNextToolStep()
             currentSolution++;
 
             currentStepForm = getFourthToolStepFormObject();
-        } 
+        }
     }
 
     initializeForm("The problem", currentStepForm);
@@ -163,7 +173,7 @@ function addSolutionsToProblem(solutions)
 {
     for(var x in solutions)
     {
-        toolData["solutions"][x] = 
+        toolData["solutions"][x] =
         {
             name: solutions[x]
         };
@@ -179,7 +189,7 @@ function addAdvantagesToSolution(advantages)
 }
 
 function addDisadvantagesToSolution(disadvantages)
-{    
+{
     for(var x in disadvantages)
     {
         toolData["solutions"][currentSolution]["disadvantages"].push(disadvantages[x]);
@@ -190,28 +200,32 @@ function getFirstToolStepFormObject()
 {
     var firstStepFormObject =
     {
-        schema: 
+        schema:
         {
-            name: 
+            name:
             {
                 type: 'string',
                 title: 'Name for the problem',
             },
-            description: 
+            description:
             {
                 type: 'string',
-                title: 'What is the problem about?'
+                title: 'What is the problem about?',
             }
         },
-        form:
-        [
-            "name",
-            {
-                key: "description",
-                type: "textarea"
-            }
+        form: [
+        {
+            key: "name",
+            type: "text",
+            htmlClass: 'custom-class-1' // Добавление класса 'custom-class-1' к полю "name"
+        },
+        {
+            key: "description",
+            type: "textarea",
+            htmlClass: 'custom-class-2' // Добавление класса 'custom-class-2' к полю "description"
+        }
         ],
-        onSubmit: function (errors, values) 
+        onSubmit: function (errors, values)
         {
             createNewProblem(values["name"], values["description"]);
         }
@@ -224,9 +238,9 @@ function getSecondToolStepFormObject()
 {
     var secondStepFormObject =
     {
-        schema: 
+        schema:
         {
-            solutions: 
+            solutions:
             {
                 type: 'array',
                 items:
@@ -243,11 +257,12 @@ function getSecondToolStepFormObject()
                 items:
                 [{
                     key: "solutions[]",
-                    title: "Solution - {{idx}}"
+                    title: "Solution - {{idx}}",
+                    htmlClass: 'solution-input'
                 }]
             }
         ],
-        onSubmit: function (errors, values) 
+        onSubmit: function (errors, values)
         {
             addSolutionsToProblem(values["solutions"]);
         }
@@ -260,7 +275,7 @@ function getThirdToolStepFormObject()
 {
     var thirdStepFormObject =
     {
-        schema: 
+        schema:
         {
             solution:
             {
@@ -268,7 +283,7 @@ function getThirdToolStepFormObject()
                 title: "The solution",
                 readonly: true
             },
-            advantages: 
+            advantages:
             {
                 type: 'array',
                 items:
@@ -286,7 +301,8 @@ function getThirdToolStepFormObject()
                 items:
                 [{
                     key: "advantages[]",
-                    title: "Advantage - {{idx}}"
+                    title: "Advantage - {{idx}}",
+                    htmlClass: 'advantage-input'
                 }]
             }
         ],
@@ -294,7 +310,7 @@ function getThirdToolStepFormObject()
         {
             "solution": toolData["solutions"][currentSolution]["name"]
         },
-        onSubmit: function (errors, values) 
+        onSubmit: function (errors, values)
         {
             addAdvantagesToSolution(values["advantages"]);
         }
@@ -307,7 +323,7 @@ function getFourthToolStepFormObject()
 {
     var fourthStepFormObject =
     {
-        schema: 
+        schema:
         {
             solution:
             {
@@ -315,7 +331,7 @@ function getFourthToolStepFormObject()
                 title: "The solution",
                 readonly: true
             },
-            disadvantages: 
+            disadvantages:
             {
                 type: 'array',
                 items:
@@ -341,7 +357,7 @@ function getFourthToolStepFormObject()
         {
             "solution": toolData["solutions"][currentSolution]["name"]
         },
-        onSubmit: function (errors, values) 
+        onSubmit: function (errors, values)
         {
             addDisadvantagesToSolution(values["disadvantages"]);
         }
