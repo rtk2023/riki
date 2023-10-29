@@ -245,7 +245,7 @@ function loadNextToolStep()
         }
     }
 
-    initializeForm("Decision Simplifier", currentStepForm);
+    initializeForm("Lēmumu pieņemšanas palīgs", currentStepForm);
 
     formArrayCount = 0;
     if(toolStep != 2)
