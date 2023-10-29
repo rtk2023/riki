@@ -1,11 +1,10 @@
-**Lēmumu pieņemšanas palīdzības rīks**
-
+# Lēmumu pieņemšanas palīdzības rīks
 Atvieglojiet sev lēmumu pieņemšanu ar šī rīka palīdzību
-Zināmās kļūdas:
 
--
-Iespējamie uzlabojumi:
+## Zināmās kļūdas:
+- Nav
 
-Labāka formu validācija,
-Padziļinātāki jautājumi, vieglākai lēmumu pieņemšanai
-Labāks rezultātu ekrāns
+## Iespējamie uzlabojumi:
+- Labāka formu validācija,
+- Padziļinātāki jautājumi, vieglākai lēmumu pieņemšanai
+- Labāks rezultātu ekrāns
