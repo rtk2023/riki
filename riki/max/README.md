@@ -24,9 +24,3 @@ Ikmēneša maksājumu kalkulators ir vienkārša tīmekļa lietojumprogramma, ka
 - Nodrošina iespēju veikt neobligātu pirmo maksājumu.
 - Nodrošina, ka ikmēneša maksājumi nevar kļūt negatīvi.
 - Parāda ziņojumu, ja kāda ievades vērtība ir negatīva.
-
-## Piedalās
-
-Jūtieties brīvi piedalīties šajā projektā, atverot problēmas vai izvelkot pieprasījumus GitHub repozitorijā.
-
-## Licence
