@@ -1,8 +1,8 @@
 # Members
-* Aleksandrs Grigorjevs
-* Kirils Obodnikovs
-* Anastasija Litvinova
-* Arturs Mezaks
+* Aleksandrs Grigorjevs P1-3
+* Kirils Obodnikovs P1-3
+* Anastasija Litvinova P1-3
+* Arturs Mezaks P1-3
 
 # Short description
 A simple and dependency-free app for organising your working day :)
