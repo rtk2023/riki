@@ -14,7 +14,7 @@ const state = {
 };
 
 // Display warning message
-function displayWarning(message) {
+const displayWarning = (message) => {
     const warningWindow = document.createElement("div");
     warningWindow.classList.add("warning-window");
     warningWindow.innerHTML = message;
