@@ -77,9 +77,3 @@
     display: flex;
     flex-direction: column;
 }
-
-.block .body .separator {
-    width: 2px;
-    height: 100%;
-    align-self: center;
-}
