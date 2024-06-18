@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <title>Lauris Cvetkovs</title>
+</head>
+
+<body>
+
+    <div class="form-container">
+      
+        <div class="form-box">
+          <h1>Uzziniet Jūsu horoskopu uz 2024. gadu!!!</h1>
+            <form id="userForm">
+                <div class="mb-3">
+                    <label for="gender" class="form-label">Izvēlaties savu dzimumu</label>
+                    <select class="form-select" id="gender" aria-label="Default select example">
+                     
+                        <option value="1">Vīrietis</option>
+                        <option value="2">Sieviete</option>
+                        <option value="3">Cits</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="year" class="form-label">Ievadiet dzimšanas gadu</label>
+                    <input type="text" class="form-control" id="year">
+                </div>
+                <div class="mb-3">
+                    <label for="month" class="form-label">Ievadiet dzimšanas mēnesi</label>
+                    <input type="text" class="form-control" id="month">
+                </div>
+                <div class="mb-3">
+                    <label for="day" class="form-label">Ievadiet dzimšanas dienu</label>
+                    <input type="text" class="form-control" id="day">
+                </div>
+                <div class="mb-3">
+                    <label for="time" class="form-label">Ievadiet laiku</label>
+                    <input type="text" class="form-control" id="time">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <div id="monthOutput" class="mt-3"></div>
+        </div>
+    </div>
+</body>
+
+</html>
