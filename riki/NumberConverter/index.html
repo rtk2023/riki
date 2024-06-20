@@ -65,6 +65,35 @@
             } catch (error) {
                 alert("Please enter a valid number.");
                 return;
-            }  // Ig Richard uztaisi like ciparu converter or whatever tas skaitaas
-    <body> 
+            }
+              
+              let convertedNumber;
+                switch (targetBase) {
+                    case '2':
+                        convertedNumber = convertToBase(decimalNumber, 2);
+                        break;
+                    case '10':
+                        convertedNumber = decimalNumber.toString(10);
+                        break;
+                    case '16':
+                        convertedNumber = convertToBase(decimalNumber, 16).toUpperCase();
+                        break;
+                    case '8':
+                        convertedNumber = convertToBase(decimalNumber, 8);
+                        break;
+                    default:
+                        convertedNumber = decimalNumber.toString();
+                }
+    
+                const results = document.getElementById('results');
+                results.innerHTML = `
+                    <div class="dj-khaled">Another one!</div>
+                    <div class="result">
+                        <strong>Converted (${targetBase === '2' ? 'Binary' : targetBase === '10' ? 'Decimal' : targetBase === '16' ? 'Hexadecimal' : 'Octal'}):</strong> ${convertedNumber}
+                    </div> 
+                `;/// ig js daļa gatava
+            }
+    
+    </script>
+    </body> 
         </html>
