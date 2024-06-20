@@ -10,7 +10,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
             options: ["New York", "London", "Paris", "Dubai"],
             answer: "Paris"
         },
-        // More questions...
+
+        {
+            question: "Largest island in the world",
+            options: ["Iceland", "Great Britain", "Greenland", "USA"],
+            answer: "Greenland"
+        },
+        
     ];
   
     function loadQuestion(questionIndex) {
