@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <!-- Meta informācija, kas nosaka simbolu kodējumu un ekrāna lielumu pielāgošanai -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Virsraksts lapai -->
+    <title>Temperatūras pārvēršanas rīks</title>
+    
+    <!-- Saite uz ārējo CSS failu stilizēšanai -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Galvenais konteineris saturam -->
+    <div class="container">
+        <!-- Virsraksts lapas galvai -->
+        <h1>Temperatūras pārvēršanas rīks</h1>
+        
+        <!-- Sadaļa temperatūras pārvēršanai -->
+        <div class="converter">
+            <!-- Ievades lauks un teksts temperatūras ievadei -->
+            <label for="temperature">Ievadiet temperatūru:</label>
+            <input type="number" id="temperature">
+            
+            <!-- Nolaižamais izvēles lauks vienības izvēlei, no kurienes konvertēt -->
+            <select id="fromUnit">
+                <option value="kelvin">Kelvini (K)</option>
+                <option value="celsius">Celsijs (°C)</option>
+                <option value="fahrenheit">Fārenheiti (°F)</option>
+            </select>
+            
+            <!-- Statiskais teksts, kas norāda konvertācijas virzienu -->
+            <span>uz</span>
+            
+            <!-- Nolaižamais izvēles lauks vienības izvēlei, uz kurieni konvertēt -->
+            <select id="toUnit">
+                <option value="kelvin">Kelvini (K)</option>
+                <option value="celsius">Celsijs (°C)</option>
+                <option value="fahrenheit">Fārenheiti (°F)</option>
+            </select>
+            
+            <!-- Poga, lai aktivizētu temperatūras konvertāciju -->
+            <button onclick="convertTemperature()">Pārvērst</button>
+        </div>
+        
+        <!-- Viettura konvertācijas rezultāta attēlošanai -->
+        <div id="result" class="result"></div>
+    </div>
+    
+    <!-- Mājaslapas kājene ar saites -->
+    <footer>
+        <a href="https://github.com/rtk2023/riki" target="_blank">Repozitorijs</a> |
+        <a href="https://rtk2023.github.io/riki/" target="_blank">Rīku saraksts</a>
+    </footer>
+    
+    <!-- Saite uz ārējo JavaScript failu skriptēšanai -->
+    <script src="script.js"></script>
+</body>
+</html>
