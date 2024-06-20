@@ -1,4 +1,4 @@
-# Saskaitītājs
+# Jautājumu spēle
 
 Spēle, kurā var pārbaudīt savas zināšanas par visdažādakajām lietām pasaulē.
 
