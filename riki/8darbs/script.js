@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         },
 
         {
-            question: "Largest island in the world",
+            question: "Largest island in the world?",
             options: ["Iceland", "Great Britain", "Greenland", "USA"],
             answer: "Greenland"
         },
