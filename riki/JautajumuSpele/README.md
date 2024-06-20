@@ -1,7 +1,12 @@
-Jautājumu spēle
-
-Autors: Mārtiņš Hertmanis
+# Saskaitītājs
 
 Spēle, kurā var pārbaudīt savas zināšanas par visdažādakajām lietām pasaulē.
 
-Licence
+
+### Problēmas
+
+* Nav pietiekami daudz jautājumu
+
+## Autori
+
+* Autors: Mārtiņš Hertmanis
