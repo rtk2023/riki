@@ -124,8 +124,6 @@ document.querySelectorAll('.btn').forEach(button => {
     });
 });
 
-// Инициализация отображения при загрузке страницы
 window.onload = function () {
-    // Вызов функции рисования с начальными значениями
     drawLines(parseFloat(lenkis_value.value), parseFloat(koeficientsSlider.value), parseFloat(downKoeficientsSlider.value));
 };
