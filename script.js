@@ -6,6 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             const currencyKeys = Object.keys(data.rates);
             populateCurrencyOptions(currencyKeys);
+
+            document.getElementById('fromCurrency').value = 'EUR';
+            document.getElementById('toCurrency').value = 'USD';
+            convertCurrency(); 
         });
 
     document.getElementById('convert').addEventListener('click', convertCurrency);
