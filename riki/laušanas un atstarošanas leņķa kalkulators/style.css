@@ -75,6 +75,10 @@ body {
     right: 0;
     top: 0;
 }
+.kajene{
+    position: absolute;
+    bottom: 0;
+}
 
 #lauzts_lenkis {
     position: absolute;
