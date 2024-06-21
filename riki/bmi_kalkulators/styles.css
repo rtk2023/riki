@@ -1,0 +1,89 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+@font-face {
+    font-family: SocialScience;
+    src: url(fonts/SocialScienceSans_PERSONAL_USE_ONLY.otf);
+}
+.container{
+    margin-top:400px;
+    -webkit-box-shadow:0px 0px 11px 7px #FFD93D;
+    -moz-box-shadow: 0px 0px 11px 7px #FFD93D;
+    box-shadow: 0px 0px 11px 7px #FFD93D;
+    background-color: #F6F1E9;
+}
+.img-fluid{
+    height: 400px;
+    width: 400px;
+}
+h1{
+    text-align: center;
+    padding-top: 20px;
+    font-family: SocialScience;
+    font-size: 60px;
+    
+}
+p{
+    font-weight: bold;
+    padding-top: 20px;
+    text-align: center;
+}
+.weightInput, .heightInput{
+    width: 400px;
+    
+}
+.form-control:focus{
+    border-color: #FFD93D;
+    box-shadow: 0 0 0 0.2rem #FFD93D;
+}
+input::placeholder{
+    text-align: center;
+}
+.center-text-input{
+    text-align: center;
+}
+.result-btn {
+    background-color: transparent;
+    border: 1px solid #FFD93D;
+    color: #FFD93D;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.result-btn:hover {
+    background-color: #FFD93D;
+    border-color: #FFD93D;
+    color: white;
+}
+
+.result-btn:focus, .result-btn:active {
+    background-color: #FFD93D;
+    border-color: #FFD93D;
+    color: white;
+    box-shadow: none;
+}
+
+.results{
+    text-align: center;
+    font-weight: bold;
+}
+.back-btn {
+    background-color: transparent;
+    border: 1px solid #FFD93D;
+    color: #FFD93D;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.back-btn:hover {
+    background-color: #FFD93D;
+    border-color: #FFD93D;
+    color: white;
+}
+
+.back-btn:focus, .back-btn:active {
+    background-color: #FFD93D;
+    border-color: #FFD93D;
+    color: white;
+    box-shadow: none;
+}
+
