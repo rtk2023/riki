@@ -1,0 +1,10 @@
+# Ignore images and other binaries
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.ico
+*.tiff
+*.bmp
+*.webp
