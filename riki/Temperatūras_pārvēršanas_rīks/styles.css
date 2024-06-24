@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box; /* Visiem elementiem izmanto border-box box modeli */
+    margin: 0; /* Noņem ārējos atkāpes */
+    padding: 0; /* Noņem iekšējos atkāpes */
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif; /* Iestata fontu visai lapai */
+    background-color: #f8f9fa; /* Fona krāsa */
+    display: flex; /* Izmanto Flexbox layout */
+    justify-content: center; /* Horizontāli centē saturu */
+    align-items: center; /* Vertikāli centē saturu */
+    flex-direction: column; /* Vertikāli izlīdzina saturu */
+    height: 100vh; /* Augstums vienā viewport augstuma */
+  }
+  
+  .container {
+    display: inline-block; /* Lai elements būtu vienā rindā */
+    background-color: #fff; /* Fona krāsa */
+    padding: 30px; /* Atstarpe no iekšpuses */
+    border-radius: 8px; /* Noapaļots malu stūris */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Ēna efekts */
+    text-align: center; /* Centrē tekstu horizontāli */
+  }
+  
+  h1 {
+    font-size: 24px; /* Fonta izmērs */
+    color: #020000; /* Teksta krāsa */
+    margin-bottom: 20px; /* Atstarpe apakšā */
+  }
+  
+  .converter {
+    display: flex; /* Izmanto Flexbox layout */
+    flex-direction: column; /* Vertikāla kolonnu izvietošana */
+    align-items: center; /* Centrē elementus */
+    margin-bottom: 20px; /* Atstarpe apakšā */
+  }
+  
+  .converter label {
+    margin-bottom: 10px; /* Atstarpe apakšā */
+    font-weight: bold; /* Treknraksts */
+  }
+  
+  .converter input,
+  .converter select {
+    width: 100%; /* Pilna platuma ievades laukiem un izvēlnēm */
+    padding: 10px; /* Atstarpe no iekšpuses */
+    margin-bottom: 10px; /* Atstarpe apakšā */
+    border: 1px solid #ccc; /* Ievades lauku un izvēlnes apmales */
+    border-radius: 4px; /* Noapaļots malu stūris */
+  }
+  
+  .converter button {
+    width: 100%; /* Pilna platuma pogai */
+    padding: 10px; /* Atstarpe no iekšpuses */
+    background-color: #007bff; /* Fona krāsa */
+    color: #fff; /* Teksta krāsa */
+    border: none; /* Bez apmales */
+    border-radius: 4px; /* Noapaļots malu stūris */
+    cursor: pointer; /* Rāda, ka elements ir klikšķināms */
+    transition: background-color 0.3s ease; /* Pārejas efekts */
+  }
+  
+  .converter button:hover {
+    background-color: #0056b3; /* Pogas fona krāsa, kad virs tās ir peles kursors */
+  }
+  
+  .result {
+    margin-top: 20px; /* Atstarpe virsā */
+    padding: 15px; /* Atstarpe no iekšpuses */
+    background-color: #f1f1f1; /* Fona krāsa */
+    border-radius: 4px; /* Noapaļots malu stūris */
+    text-align: center; /* Centrē tekstu horizontāli */
+    font-weight: bold; /* Treknraksts */
+  }
+  
+  footer {
+    margin-top: 20px; /* Atstarpe virsā */
+    text-align: center; /* Centrē tekstu horizontāli */
+  }
+  
+  footer a {
+    color: #007bff; /* Saites teksta krāsa */
+    text-decoration: none; /* Bez pasvītrojuma */
+    margin: 0 5px; /* Atstarpe starp saitēm */
+  }
+  
+  footer a:hover {
+    text-decoration: underline; /* Pasvītro saiti, kad virs tās ir peles kursors */
+  }
+  
