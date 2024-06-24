@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="lv">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Aleksandrs Sloka, Daniil Shmagrin P1-3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="canvas">
+        <canvas id="draw"></canvas>
+    </div>
+    <div class="navig">
+        <button class="btn active" id="atstarojums">
+            atstarojums
+        </button>
+        <button class="btn" id="luzums">
+            lūzums
+        </button>
+    </div>
+
+    <div class="up">
+        <div class="menu_background" id="lenkis">
+            leņķis (1° - 89°)
+            <input type="range" min="1" max="89" step="1" value="1" id="lenkis_value">
+            <div class="output" id="selected_lenkis">1</div>°
+        </div>
+        <div class="menu_background" id="atstarots">
+            atstarots leņķis:
+            <div class="output" id="selected_atstarots_lenkis">1</div>°
+        </div>
+        <div class="menu_background" id="koeficients" style="display: none;">
+            lūzuma koeficients
+            <input type="range" min="1" max="4" step="0.05" value="1" id="koeficients_value">
+            <div id="selected_koeficients">1</div>
+        </div>
+    </div>
+
+    
+    <div class="down">
+        <div class="menu_background" id="down_koeficients" style="display: none;">
+            lūzuma koeficients
+            <input type="range" min="1" max="4" step="0.05" value="1" id="down_koeficients_value">
+            <div id="selected_down_koeficients">1</div>
+        </div>
+        <div class="menu_background" id="lauzts_lenkis">
+            lūzuma leņķis: <span id="selected_lauzts_lenkis">0.00</span>
+        </div>
+<div class="menu_background kajene">
+https://github.com/ASanjok/riki/tree/main/riki/laušanas%20un%20atstarošanas%20leņķa%20kalkulators
+       </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
