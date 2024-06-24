@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaloriju kalkulators</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Kaloriju kalkulators</h1>
+        <form id="calorieForm">
+            <div class="form-group">
+                <label for="weight">Svars (kg):</label>
+                <input type="number" id="weight" required>
+            </div>
+            <div class="form-group">
+                <label for="height">Augums (cm):</label>
+                <input type="number" id="height" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Vecums:</label>
+                <input type="number" id="age" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Dzimums:</label>
+                <select id="gender" required>
+                    <option value="male">Vīriešu</option>
+                    <option value="female">Sieviešu</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="activity">Aktivitātes līmenis:</label>
+                <select id="activity" required>
+                    <option value="1.2">Minimāla aktivitāte</option>
+                    <option value="1.375">Viegla aktivitāte</option>
+                    <option value="1.55">Vidējā aktivitāte</option>
+                    <option value="1.725">Augsta aktivitāte</option>
+                    <option value="1.9">Ļoti augsta aktivitāte</option>
+                </select>
+            </div>
+            <button type="submit">Aprēķināt</button>
+        </form>
+        <div class="results" id="results">
+            <h2>Rezultāti:</h2>
+            <p>Svara uzturēšana: <span id="maintainCalories"></span> kalorijas dienā</p>
+            <p>Svara zaudēšana: <span id="loseCalories"></span> kalorijas dienā</p>
+            <p>Svara pieaugums: <span id="gainCalories"></span> kalorijas dienā</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
