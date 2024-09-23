@@ -5,27 +5,30 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!--meta name="keywords" content=""-->
 		<!--meta name="description" content=""-->
-		<title>Saskaitītājs</title>
+		<title>CTF karogu ģenerators</title>
 		<link rel="stylesheet" href="../css/style.css">
 		<script type="text/javascript" src="./main.js"></script>
 	</head>
 	<body>
 		<header>
 			<div id="header-name">
-				<h1>Saskaitītājs</h1>
-				<p>Saskaita 2 naturālus skaitļus</p>
+				<h1>CTF karogu ģenerators</h1>
+				<p>Ģenerē CTF karogus, kas noder sacensību organizēšanai.</p>
 			</div>
 		</header>
 		<main>
-			<!-- Saskaitītājs -->
-			<form onsubmit="aprekinat(); return false;">
-				<label for="quantity">Naturāls skaitlis A:</label>
-				<input type="number" id="num-a" min="1"><br>
-				<label for="quantity">Naturāls skaitlis B:</label>
-				<input type="number" id="num-b" min="1"><br>
-				<input type="submit" value="Aprēķināt">
+			<!-- CTF karogu ģenerators -->
+			<form onsubmit="generet(); return false;">
+				<label for="prefix" >Prefikss:</label>
+				<input type="text" id="prefix" value="RTKCTF"><br>
+				<label for="quantity">Skaits:</label>
+				<input type="number" id="quantity" min="1" value="10"><br>
+				<label for="length">Garums:</label>
+				<input type="number" id="length" min="1" value="20"><br>
+				<input type="submit" value="Ģenerēt">
 			</form>
-			<p>Rezultāts: <span id ="rezultats"></span></p>
+			<ul id="list">
+			</ul>
 		</main>
 		<footer>
 			<nav>
