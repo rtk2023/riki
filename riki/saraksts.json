@@ -1,0 +1,68 @@
+[
+	{
+		"path": "algu_kalkulators",
+		"entry": "pamats.html",
+		"name": "Algu kalkulators"
+	},
+	{
+		"path": "budžeta_rīks",
+		"name": "Budžeta rīks"
+	},
+	{
+		"path": "ctf_karogu_ģenerators",
+		"name": "CTF karogu ģenerators"
+	},
+	{
+		"path": "darbu_saraksts",
+		"name": "Darbu saraksts"
+	},
+	{
+		"path": "datumu_starpības_kalkulators"
+	},
+	{
+		"path": "decision_simplifier"
+	},
+	{
+		"path": "grupu_sadalītajs"
+	},
+	{
+		"path": "helpahoopa",
+		"name": "HelpAHoopa"
+	},
+	{
+		"path": "horoskops"
+	},
+	{
+		"path": "ikmēneša_maksājumu_kalkulators"
+	},
+	{
+		"path": "kalkulators"
+	},
+	{
+		"path": "kaloriju_kalkulators"
+	},
+	{
+		"path": "laukuma_kalkulators"
+	},
+	{
+		"path": "laušanas_un_atstarošanas_leņķa_kalkulators"
+	},
+	{
+		"path": "mērvienību_pārveidotājs"
+	},
+	{
+		"path": "paroļu_ģenerators"
+	},
+	{
+		"path": "skaitīšanas_sistēmu_pārveidotājs"
+	},
+	{
+		"path": "temperatūras_pārveidotājs"
+	},
+	{
+		"path": "valūtas_kursa_kalkulators"
+	},
+	{
+		"path": "vienādojumu_kalkulators"
+	}
+]
