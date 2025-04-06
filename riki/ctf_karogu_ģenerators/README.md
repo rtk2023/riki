@@ -7,6 +7,7 @@
 
 Projekts sadalīts pa failiem pēc to funkcionalitātes:
 
+<!-- Direktoriju struktūra ģenerēta ar `tree .` komandu -->
 ```
 ctf_karogu_ģenerators
 ├── index.html (lapas saturs)
@@ -25,7 +26,7 @@ ctf_karogu_ģenerators
 * Nav zināmu defektu
 
 ### Resursi
-<!-- Saites uz deokumentāciju, pamācībām vai jebko citu, kas varētu noderēt nākamajiem rīka izstrādātājiem -->
+<!-- Saites uz dokumentāciju, pamācībām vai jebko citu, kas varētu noderēt nākamajiem rīka izstrādātājiem -->
 
 * https://en.wikipedia.org/wiki/Capture_the_flag_(cybersecurity)
 

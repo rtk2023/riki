@@ -6,10 +6,13 @@ Veidot savu projektu šeit
 riki
 ├── css (globālie stili)
 │   └── style.css
+├── ctf_karogu_ģenerators (piemērs)
+│   ├── index.html
+│   ├── main.js
+│   └── README.md
 ├── index.html (rīku saraksts)
+├── js (globālie skripti)
+│   └── loadTools.js
 ├── README.md (šis fails)
-└── saskaititajs (piemērs)
-	├── main.js
-	├── README.md
-	└── saskaititajs.html
+└── saraksts.json
 ```

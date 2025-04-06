@@ -7,4 +7,5 @@
 
 ## Windows
 
-*
+* Instalēt git ar [Powershell](https://learn.microsoft.com/en-us/powershell/) komandu `winget install --id Git.Git -e --source winget`
+

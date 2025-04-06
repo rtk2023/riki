@@ -2,15 +2,21 @@
 	{
 		"path": "algu_kalkulators",
 		"entry": "pamats.html",
-		"name": "Algu kalkulators"
+		"name": "Algu kalkulators",
+		"description": "Kalkulators, kas palīdz uzzināt neto algu norādot bruto algu Latvijā.",
+		"added_date": "2023-10-30"
 	},
 	{
 		"path": "budžeta_rīks",
-		"name": "Budžeta rīks"
+		"name": "Budžeta rīks",
+		"description": "Rīks saskaita ieņēmumus un izdevumus laika posmā un attēlo prognozēto rezultātu posma beigās",
+		"added_date": "2023-11-02"
 	},
 	{
 		"path": "ctf_karogu_ģenerators",
-		"name": "CTF karogu ģenerators"
+		"name": "CTF karogu ģenerators",
+		"description": "Ģenerē CTF karogus, kas noder sacensību organizēšanai",
+		"added_date": "2024-09-23"
 	},
 	{
 		"path": "darbu_saraksts",
@@ -20,23 +26,37 @@
 		"path": "datumu_starpības_kalkulators"
 	},
 	{
-		"path": "decision_simplifier"
+		"path": "decision_simplifier",
+		"name": "Lēmumu pieņemšanas palīdzības rīks",
+		"description": "Atvieglojiet sev lēmumu pieņemšanu ar šī rīka palīdzību",
+		"added_date": "2023-10-30"
 	},
 	{
-		"path": "grupu_sadalītajs"
+		"path": "grupu_sadalītājs",
+		"entry": "grupu_sadalitajs.html"
 	},
 	{
 		"path": "helpahoopa",
-		"name": "HelpAHoopa"
+		"entry": "HelpAHoopa.html",
+		"name": "HelpAHoopa",
+		"description": "Padomi basketbolistiem, balstoties uz augumu un aizsniedzamo augstumu (standing reach)",
+		"added_date": "2023-10-30"
 	},
 	{
 		"path": "horoskops"
 	},
 	{
-		"path": "ikmēneša_maksājumu_kalkulators"
+		"path": "max",
+		"entry": "max.html",
+		"name": "Ikmēneša maksājumu kalkulators",
+		"description": "Aprēķina ikmēneša aizdevuma maksājumu",
+		"added_date": "2023-10-23"
 	},
 	{
-		"path": "kalkulators"
+		"path": "kalkulators",
+		"name": "Kalkulators",
+		"description": "Aprēķina skaitliskas vērtības",
+		"added_date": "2023-10-23"
 	},
 	{
 		"path": "kaloriju_kalkulators"
@@ -48,10 +68,14 @@
 		"path": "laušanas_un_atstarošanas_leņķa_kalkulators"
 	},
 	{
-		"path": "mērvienību_pārveidotājs"
+		"path": "mērvienību_pārveidotājs",
+		"entry": "Metriskas_sistemas_konvertetajs.html"
 	},
 	{
-		"path": "paroļu_ģenerators"
+		"path": "paroļu_ģenerators",
+		"name": "Paroļu ģenerators",
+		"description": "Ģenerē paroles pēc lietotāja vajadzībām",
+		"added_date": "2023-10-16"
 	},
 	{
 		"path": "skaitīšanas_sistēmu_pārveidotājs"
@@ -60,9 +84,13 @@
 		"path": "temperatūras_pārveidotājs"
 	},
 	{
-		"path": "valūtas_kursa_kalkulators"
+		"path": "valūtas_kursu_kalkulators"
 	},
 	{
-		"path": "vienādojumu_kalkulators"
+		"path": "vienādojumu_kalkulators",
+		"entry": "math_operacijas.html",
+		"name": "Vienādojumu kalkulators",
+		"description": "Rīks, kas apstrāda matematiskas formulas",
+		"added_date": "2023-10-30"
 	}
 ]
