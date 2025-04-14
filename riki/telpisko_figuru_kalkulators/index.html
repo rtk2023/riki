@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figūru kalkulātors</title>
+</head>
+<body>
+    <div>
+	<h1>Konusa tilpuma un laukuma kalkulātors</h1>
+    	<form id="form">
+    		<label for="number1">Rādiuss (R):</label>
+    		<input type="number" id="number1" step="any"/>
+		<br>
+
+    		<label for="number2">Augstums (H vai L):</label>
+    		<input type="number" id="number2" step="any"/>
+		<br>
+
+    		<label for="calculationType">Ko vēlies aprēķināt?</label>
+    		<select id="calculationType">
+        		<option value="volume">Tilpums</option>
+        		<option value="surface">Virsmas laukums</option>
+    		</select>
+		<br>
+
+    		<button type="submit">Aprēķināt</button>
+	</form>
+
+	<div id="result"></div>
+        <p id="result"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
