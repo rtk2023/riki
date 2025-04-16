@@ -12,7 +12,7 @@ Failu struktūra ir kā sekojošā:
     - `[Tools]` Direktorija ar JS moduļiem, kurus var vienkārši izveidot, lai pievienotu papildus rīku, kreisajā joslā (piem. pildspalva, dzēšgumija)
     - `Canvas.js` Galvenais fails priekš kanvasas un tās funkcionalitātēm, apstrādā funkcijas kā `undo`, pašu zīmēšanas funkciju, u.t.l
     - `IO.js` Paplašinājums priekš Canvas.js, IO pievieno funkcijas failu importēšanai/eksportēšanai
-    `ToolHandler.js` Apstrādā visus rīkus no [Tools] direktorijas un dinamiski pievieno tos malas joslai.
+    - `ToolHandler.js` Apstrādā visus rīkus no [Tools] direktorijas un dinamiski pievieno tos malas joslai.
 
 ## Iespējamie uzlabojumi
 Būtu iespejams pievienot slāņu (layers) funkciju, lai rediģēšana būtu vieglāka.
