@@ -149,7 +149,7 @@ nextBtn.addEventListener("click", () => {
 
     currentQuestion++; // Pāriet uz nākamo jautājumu
     if (currentQuestion < questions.length) {
-        showQuestion(currentQuestion); // Ja ir vēl jautājumi, attēlo nākamo
+        animateQuestion(currentQuestion); // Ja ir vēl jautājumi, attēlo nākamo
     } else {
         // Ja jautājumi beigušies, aprēķina MBTI un saglabā datus
         const mbti = getMBTI();
@@ -169,3 +169,18 @@ function getMBTI() {
 
 // Sākotnēji attēlo pirmo jautājumu
 showQuestion(currentQuestion);
+
+function animateQuestion(index) {
+    const container = document.getElementById("question-container");
+
+    //Noņemiet veco jautājumu, izmantojot fadeOut
+    container.classList.remove("fade-in");
+    container.classList.add("fade-out");
+
+    //Pagaidīsim, līdz animācija beigsies (300 ms), pēc tam parādīsim jaunu jautājumu
+    setTimeout(() => {
+        showQuestion(index);
+        container.classList.remove("fade-out");
+        container.classList.add("fade-in");
+    }, 300);
+}
