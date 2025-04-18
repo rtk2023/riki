@@ -40,6 +40,15 @@
             font-size: 1.2rem;
             border-radius: 50px;
         }
+
+        .fade-out-page {
+            animation: fadeOutPage 0.5s forwards;
+        }
+
+        @keyframes fadeOutPage {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
     </style>
     </head>
     <body class="text-center"> <!--Centē tekstu lapā-->
@@ -47,7 +56,16 @@
             <h1>Persoīnbas tests</h1> <!--Testa virsraksts-->
             <p>Nosaki savu personības tipu!</p> <!--Testa apraksts-->
             <!--Poga, lai pārietu uz testēšanas-->
-            <a href="tests.html" class="btn btn-primary">Sāciet testu</a>
+            <button id="start-btn" class="btn btn-primary">Sāciet testu</button>
         </div>
+        <script>
+            const startBtn = document.getElementById("start-btn");
+            startBtn.addEventListener("click", () => {
+                document.body.classList.add("fade-out-page");
+                setTimeout(() => {
+                    window.location.href = "tests.html";
+                }, 500);
+            });
+        </script>
     </body>
 </html>

@@ -155,7 +155,12 @@ nextBtn.addEventListener("click", () => {
         const mbti = getMBTI();
         localStorage.setItem("mbti", mbti);
         localStorage.setItem("answer", JSON.stringify(selectedAnswer));
-        window.location.href = "result.html"; // Pāriet uz rezultātu lapu
+        // animējam pāreju uz rezultātu
+        document.body.classList.add("fade-out-page");
+
+        setTimeout(() => {
+            window.location.href = "result.html";
+        }, 500); // jāatbilst animācijas ilgumam
     }
 });
 
