@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valhalla Routing with Fuel Calculation</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Route Finder with Fuel Estimate</h2>
+    <input type="text" id="from" placeholder="From address">
+    <input type="text" id="to" placeholder="To address">
+    <input type="number" id="cityFuel" placeholder="Fuel consumption in city (L/100km)" step="0.1">
+    <input type="number" id="highwayFuel" placeholder="Fuel consumption on highway (L/100km)" step="0.1">
+    <label><input type="checkbox" id="customTimeToggle"> Use custom date & time</label>
+    <input type="datetime-local" id="customDateTime" style="display:none;">
+    <button onclick="calculateRoute()">Calculate Route</button>
+    <div id="info"></div>
+    <div id="map"></div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
