@@ -21,17 +21,17 @@ Personības tests
 ## Iespējamie uzlabojumi
 <!-- Funkcionalitāte, kuru varētu pievienot nākotnē -->
 
-* Uzlabot dizainu
+* Uzlabot dizainu (piemēram, pievienot responsīvo izkārtojumu vai uzlabot krāsu saskaņojumu)
 
 ### Defekti
 <!-- Visi zināmie defekti (ang. bugs), kas būtu jāizlabo -->
 
-* Nav zināmu defektu
+* Pašlaik nav zināmu defektu
 
 ### Resursi
 <!-- Saites uz dokumentāciju, pamācībām vai jebko citu, kas varētu noderēt nākamajiem rīka izstrādātājiem -->
 
-* https://getbootstrap.com/
+* https://getbootstrap.com/ 
 * https://www.w3schools.com/
 * https://www.16personalities.com/lv
 
