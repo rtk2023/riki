@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Powerlifting Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="norms.js"></script>
+    <style>
+        .norm-card {
+            transition: transform 0.2s;
+        }
+        .norm-card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Powerlifting Calculator</h1>
+        
+        <ul class="nav nav-tabs mb-4">
+            <li class="nav-item">
+                <a class="nav-link active" id="calculator-tab" data-bs-toggle="tab" href="#calculator">Calculator</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="tables-tab" data-bs-toggle="tab" href="#tables">Full Tables</a>
+            </li>
+        </ul>
+        
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="calculator">
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="m-0">Enter Your Information</h4>
+                    </div>
+                    <div class="card-body">
+                        <form id="liftingForm">
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <label for="bodyWeight" class="form-label">Body Weight (kg)</label>
+                                    <input type="number" class="form-control auto-calculate" id="bodyWeight" step="0.1" min="30" max="200" required>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="exerciseType" class="form-label">Exercise</label>
+                                    <select class="form-select auto-calculate" id="exerciseType" required>
+                                        <option value="" selected disabled>Select Exercise</option>
+                                        <option value="benchPress">Bench Press</option>
+                                        <option value="squat">Squat</option>
+                                        <option value="deadlift">Deadlift</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="form-check form-switch mb-2">
+                                        <input class="form-check-input auto-calculate" type="checkbox" id="drugTested" checked>
+                                        <label class="form-check-label" for="drugTested">Drug Tested Federations</label>
+                                    </div>
+                                    <select class="form-select auto-calculate" id="federation">
+                                        <option value="">All Federations</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="row mt-3">
+                                <div class="col-12">
+                                    <h5>1RM Calculator (Optional)</h5>
+                                    <p class="text-muted small">Enter your working weight and repetitions to calculate your estimated 1RM</p>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="workingWeight" class="form-label">Working Weight (kg)</label>
+                                    <input type="number" class="form-control auto-calculate" id="workingWeight" step="0.5" min="0">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="repetitions" class="form-label">Repetitions</label>
+                                    <input type="number" class="form-control auto-calculate" id="repetitions" min="1" max="50">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6 mb-4" id="oneRMSection" style="display: none;">
+                        <div class="card h-100">
+                            <div class="card-header bg-success text-white">
+                                <h4 class="m-0">Your 1RM Results</h4>
+                            </div>
+                            <div class="card-body">
+                                <div id="oneRMResult"></div>
+                                <div id="normAchieved" class="mt-3 p-3 border rounded"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mb-4" id="categoryResultsSection" style="display: none;">
+                        <div class="card h-100">
+                            <div class="card-header bg-dark text-white">
+                                <h4 class="m-0">Your Weight Category Norms</h4>
+                            </div>
+                            <div class="card-body">
+                                <div id="categoryResults" class="overflow-auto"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="allFederationsSection" style="display: none;">
+                    <div class="card mb-4">
+                        <div class="card-header bg-info text-white">
+                            <h4 class="m-0">All Federation Norms for Your Weight Category</h4>
+                        </div>
+                        <div class="card-body">
+                            <div id="allFederationsResults"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-pane fade" id="tables">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h4 class="m-0">Complete Norm Tables</h4>
+                            </div>
+                            <div class="col-auto">
+                                <div class="d-flex flex-wrap">
+                                    <div class="form-check form-switch me-3 mt-1">
+                                        <input class="form-check-input" type="checkbox" id="tableDrugTested" checked>
+                                        <label class="form-check-label" for="tableDrugTested">Drug Tested</label>
+                                    </div>
+                                    <select class="form-select me-2 mb-1" id="tableExercise">
+                                        <option value="benchPress">Bench Press</option>
+                                        <option value="squat">Squat</option>
+                                        <option value="deadlift">Deadlift</option>
+                                    </select>
+                                    <select class="form-select mb-1" id="tableFederation">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div id="fullNormTable" class="table-responsive"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global
+        let normData = NORMS;
+        let currentExercise = '';
+        let currentBodyWeight = 0;
+        let availableFederations = [];
+        let isDrugTested = true;
+
+        function csvToTable(csvString, targetElement, highlightRow = null, achievedNorm = null) {
+            if (!csvString || csvString.trim() === '') {
+                $(targetElement).html('<div class="alert alert-warning">No data available</div>');
+                return null;
+            }
+
+            try {
+                const rows = csvString.trim().split('\n');
+                const headers = rows[0].split(',').map(h => h.trim());
+                const data = [];
+                
+                const table = $('<table class="table table-striped table-hover table-bordered">');
+                const thead = $('<thead class="table-dark">');
+                const tbody = $('<tbody>');
+                
+                const headerRow = $('<tr>');
+                headers.forEach(header => {
+                    headerRow.append($('<th>').text(header));
+                });
+                thead.append(headerRow);
+                
+                for (let i = 1; i < rows.length; i++) {
+                    const rowData = rows[i].split(',').map(d => d.trim());
+                    const row = $('<tr>');
+                    
+                    const rowObj = {};
+                    
+                    rowData.forEach((cell, index) => {
+                        const cellElement = $('<td>').text(cell);
+                        if (achievedNorm && headers[index] === achievedNorm) {
+                            cellElement.addClass('table-success');
+                        }
+                        row.append(cellElement);
+                        rowObj[headers[index]] = cell;
+                    });
+                    
+                    if (highlightRow !== null && highlightRow === rowObj['Weight category']) {
+                        row.addClass('table-primary');
+                    }
+                    
+                    tbody.append(row);
+                    data.push(rowObj);
+                }
+                
+                table.append(thead).append(tbody);
+                $(targetElement).html(table);
+                
+                return data;
+            } catch (error) {
+                console.error('Error parsing CSV:', error);
+                $(targetElement).html('<div class="alert alert-danger">Error parsing data: ' + error.message + '</div>');
+                return null;
+            }
+        }
+
+        function displayCategoryRow(csvString, targetElement, weightCategory, federation = null, achievedNorm = null) {
+            if (!csvString || csvString.trim() === '') {
+                $(targetElement).html('<div class="alert alert-warning">No data available</div>');
+                return null;
+            }
+
+            try {
+                const rows = csvString.trim().split('\n');
+                const headers = rows[0].split(',').map(h => h.trim());
+                
+                let matchedRow = null;
+                let rowData = null;
+                
+                for (let i = 1; i < rows.length; i++) {
+                    const currentRowData = rows[i].split(',').map(d => d.trim());
+                    const rowObj = {};
+                    
+                    headers.forEach((header, index) => {
+                        rowObj[header] = currentRowData[index];
+                    });
+                    
+                    if (rowObj['Weight category'] === weightCategory) {
+                        matchedRow = rowObj;
+                        rowData = currentRowData;
+                        break;
+                    }
+                }
+                
+                if (matchedRow) {
+                    const resultDiv = $('<div>');
+
+                    if (federation) {
+                        resultDiv.append($('<h5>').text(`Federation: ${federation}`));
+                    }
+                    
+                    resultDiv.append($('<h5>').text(`Your Weight Category: ${weightCategory}`));
+                
+                    const normsDiv = $('<div class="d-flex justify-content-between flex-wrap mt-3">');
+                    
+                    for (let i = 1; i < headers.length; i++) {
+                        const isAchievedNorm = achievedNorm && headers[i] === achievedNorm;
+                        
+                        const cardClass = isAchievedNorm ? 'bg-success text-white' : 'bg-secondary text-white';
+                        const bodyClass = isAchievedNorm ? 'bg-light-success' : '';
+                        
+                        const normCard = $(`
+                            <div class="card mb-2 norm-card" style="min-width: 120px;">
+                                <div class="card-header py-1 px-2 text-center ${cardClass}">
+                                    <strong>${headers[i]}</strong>
+                                </div>
+                                <div class="card-body py-2 px-3 text-center ${bodyClass}" ${isAchievedNorm ? 'style="background-color: rgba(25, 135, 84, 0.15);"' : ''}>
+                                    <h5>${rowData[i]} kg</h5>
+                                </div>
+                            </div>
+                        `);
+                        normsDiv.append(normCard);
+                    }
+                    
+                    resultDiv.append(normsDiv);
+                    $(targetElement).html(resultDiv);
+                    return matchedRow;
+                } else {
+                    $(targetElement).html(`<div class="alert alert-warning">No data found for weight category: ${weightCategory}</div>`);
+                    return null;
+                }
+            } catch (error) {
+                console.error('Error parsing CSV:', error);
+                $(targetElement).html('<div class="alert alert-danger">Error parsing data: ' + error.message + '</div>');
+                return null;
+            }
+        }
+
+        function calculate1RM(weight, reps) {
+            const brzycki = weight * (36 / (37 - reps));
+            const epley = weight * (1 + (reps / 30));
+            const lombardi = weight * Math.pow(reps, 0.10);
+            const mayhew = weight * 100 / (52.2 + 41.9 * Math.exp(-0.055 * reps));
+            const oconner = weight * (1 + (reps / 40));
+            const wathan = weight * 100 / (48.8 + 53.8 * Math.exp(-0.075 * reps));
+            const lander = weight * 100 / (101.3 - 2.67123 * reps);
+            const wendler = weight + (weight * 0.0333 * reps);
+
+            if (reps <= 1) {
+                return weight; 
+            } else {
+                const average1RM = (brzycki + epley + lombardi + mayhew + oconner + wathan + lander + wendler) / 8;
+                return average1RM;
+            }
+        }
+
+        function findWeightCategory(bodyWeight, csvString) {
+            if (!csvString) return null;
+            
+            try {
+                const rows = csvString.trim().split('\n');
+                const headers = rows[0].split(',').map(h => h.trim());
+                const weightCategoryIndex = headers.findIndex(h => h.toLowerCase().includes('weight'));
+                
+                if (weightCategoryIndex === -1) return null;
+                
+                const categories = [];
+                for (let i = 1; i < rows.length; i++) {
+                    const rowData = rows[i].split(',').map(d => d.trim());
+                    const category = rowData[weightCategoryIndex];
+                    categories.push(category);
+                }
+                
+                const categoryValues = categories.map(cat => {
+                    const match = cat.match(/^(\d+(\.\d+)?)/);
+                    return match ? parseFloat(match[1]) : 999;
+                });
+                
+                for (let i = 0; i < categoryValues.length; i++) {
+                    if (bodyWeight <= categoryValues[i]) {
+                        return categories[i];
+                    }
+                }
+                
+                const maxIndex = categoryValues.indexOf(Math.max(...categoryValues));
+                return categories[maxIndex];
+            } catch (error) {
+                console.error('Error finding weight category:', error);
+                return null;
+            }
+        }
+
+        function determineNormLevel(oneRM, csvString, weightCategory) {
+            if (!csvString || !weightCategory) return null;
+            
+            try {
+                const rows = csvString.trim().split('\n');
+                const headers = rows[0].split(',').map(h => h.trim());
+                
+                let categoryRow = null;
+                for (let i = 1; i < rows.length; i++) {
+                    const rowData = rows[i].split(',').map(d => d.trim());
+                    if (rowData[0].trim() === weightCategory) {
+                        categoryRow = rowData;
+                        break;
+                    }
+                }
+                
+                if (!categoryRow) return null;
+                
+                let achievedNorm = null;
+                let achievedValue = null;
+                
+                for (let i = 1; i < headers.length; i++) {
+                    const normValue = parseFloat(categoryRow[i]);
+                    if (oneRM >= normValue) {
+                        achievedNorm = headers[i];
+                        achievedValue = normValue;
+                        break;
+                    }
+                }
+                
+                if (!achievedNorm) {
+                    return { 
+                        norm: "Below " + headers[headers.length - 1], 
+                        value: parseFloat(categoryRow[headers.length - 1]),
+                        nextNorm: headers[headers.length - 1],
+                        nextValue: parseFloat(categoryRow[headers.length - 1]),
+                        weightCategory: weightCategory
+                    };
+                }
+                
+                let nextNorm = null;
+                let nextValue = null;
+                
+                const achievedIndex = headers.indexOf(achievedNorm);
+                
+                if (achievedIndex > 1) {
+                    nextNorm = headers[achievedIndex - 1];
+                    nextValue = parseFloat(categoryRow[achievedIndex - 1]);
+                }
+                
+                return {
+                    norm: achievedNorm,
+                    value: achievedValue,
+                    nextNorm: nextNorm,
+                    nextValue: nextValue,
+                    weightCategory: weightCategory
+                };
+            } catch (error) {
+                console.error('Error determining norm level:', error);
+                return null;
+            }
+        }
+
+        function updateResults(oneRM, bodyWeight, exercise, federation, csvString) {
+            $('#oneRMResult').html(`
+                <h5>Estimated 1RM: <span class="badge bg-primary">${oneRM.toFixed(2)} kg</span></h5>
+            `);
+            
+            const weightCategory = findWeightCategory(bodyWeight, csvString);
+            if (!weightCategory) {
+                $('#normAchieved').html('<div class="alert alert-warning">Could not determine weight category with available data.</div>');
+                return;
+            }
+            
+            const normResult = determineNormLevel(oneRM, csvString, weightCategory);
+            
+            if (normResult) {
+                let nextLevelInfo = '';
+                if (normResult.nextNorm) {
+                    const kgToNext = normResult.nextValue - oneRM;
+                    nextLevelInfo = `
+                        <p>Next level: <span class="badge bg-info">${normResult.nextNorm}</span> 
+                        (need ${kgToNext.toFixed(2)} kg more)</p>
+                    `;
+                }
+                
+                const normResultHTML = `
+                    <h5 class="mb-3">Based on your 1RM:</h5>
+                    <p class="lead">You have achieved: <span class="badge bg-success">${normResult.norm}</span>
+                    with ${oneRM.toFixed(2)} kg (${normResult.value} kg required)</p>
+                    <p>In weight category: <span class="badge bg-secondary">${weightCategory}</span></p>
+                    ${nextLevelInfo}
+                `;
+                
+                $('#normAchieved').html(normResultHTML);
+                
+                if (federation) {
+                    displayCategoryRow(csvString, '#categoryResults', weightCategory, federation, normResult.norm);
+                    $('#categoryResultsSection').show();
+                }
+                
+                return normResult.norm;
+            } else {
+                $('#normAchieved').html('<div class="alert alert-warning">Could not determine norm level with available data.</div>');
+                return null;
+            }
+        }
+
+        function updateFederationSelectors() {
+            const exercise = $('#exerciseType').val() || $('#tableExercise').val();
+            const isCalcTab = $('#calculator-tab').hasClass('active');
+            const isDrugTestedCalc = $('#drugTested').prop('checked');
+            const isDrugTestedTable = $('#tableDrugTested').prop('checked');
+            
+            const drugTestStatus = isCalcTab ? 
+                (isDrugTestedCalc ? 'drugTest' : 'noDrugTest') :
+                (isDrugTestedTable ? 'drugTest' : 'noDrugTest');
+            
+            let federations = [];
+            if (exercise && normData[drugTestStatus] && normData[drugTestStatus][exercise]) {
+                federations = Object.keys(normData[drugTestStatus][exercise]);
+            }
+
+            availableFederations = federations;
+            
+            const selector = isCalcTab ? $('#federation') : $('#tableFederation');
+            
+            const currentValue = selector.val();
+            
+            selector.find('option:not(:first)').remove();
+            
+            federations.forEach(fed => {
+                selector.append($('<option>').val(fed).text(fed));
+            });
+            
+            if (currentValue && federations.includes(currentValue)) {
+                selector.val(currentValue);
+            }
+        }
+
+        function getCurrentCSVData() {
+            const exercise = $('#exerciseType').val();
+            const federation = $('#federation').val();
+            const drugTestStatus = $('#drugTested').prop('checked') ? 'drugTest' : 'noDrugTest';
+            
+            if (!exercise) return null;
+            
+            if (federation) {
+                if (normData[drugTestStatus] && 
+                    normData[drugTestStatus][exercise] && 
+                    normData[drugTestStatus][exercise][federation]) {
+                    return normData[drugTestStatus][exercise][federation];
+                }
+                return null;
+            }
+            
+            if (availableFederations.length > 0) {
+                const firstFed = availableFederations[0];
+                if (normData[drugTestStatus] && 
+                    normData[drugTestStatus][exercise] && 
+                    normData[drugTestStatus][exercise][firstFed]) {
+                    return normData[drugTestStatus][exercise][firstFed];
+                }
+            }
+            
+            return null;
+        }
+
+        function getTableCSVData() {
+            const exercise = $('#tableExercise').val();
+            const federation = $('#tableFederation').val();
+            const drugTestStatus = $('#tableDrugTested').prop('checked') ? 'drugTest' : 'noDrugTest';
+            
+            if (!exercise) return null;
+            
+            if (federation) {
+                if (normData[drugTestStatus] && 
+                    normData[drugTestStatus][exercise] && 
+                    normData[drugTestStatus][exercise][federation]) {
+                    return normData[drugTestStatus][exercise][federation];
+                }
+                return null;
+            }
+            
+            if (availableFederations.length > 0) {
+                const firstFed = availableFederations[0];
+                if (normData[drugTestStatus] && 
+                    normData[drugTestStatus][exercise] && 
+                    normData[drugTestStatus][exercise][firstFed]) {
+                    return normData[drugTestStatus][exercise][firstFed];
+                }
+            }
+            
+            return null;
+        }
+
+        function displayAllFederations(bodyWeight, exercise, oneRM = null) {
+            const drugTestStatus = $('#drugTested').prop('checked') ? 'drugTest' : 'noDrugTest';
+            
+            if (!exercise || !bodyWeight) {
+                $('#allFederationsSection').hide();
+                return;
+            }
+            
+            const allFederationsDiv = $('#allFederationsResults');
+            allFederationsDiv.empty();
+            
+            let hasAnyResults = false;
+            
+            for (const federation in normData[drugTestStatus][exercise]) {
+                const csvData = normData[drugTestStatus][exercise][federation];
+                const weightCategory = findWeightCategory(bodyWeight, csvData);
+                
+                if (weightCategory) {
+                    hasAnyResults = true;
+                    
+                    const fedCard = $('<div class="card mb-3">');
+                    const fedHeader = $(`<div class="card-header bg-secondary text-white"><h5>${federation}</h5></div>`);
+                    const fedBody = $('<div class="card-body">');
+                    
+                    let achievedNorm = null;
+                    if (oneRM) {
+                        const normResult = determineNormLevel(oneRM, csvData, weightCategory);
+                        if (normResult) {
+                            achievedNorm = normResult.norm;
+                        }
+                    }
+                    
+                    displayCategoryRow(csvData, fedBody, weightCategory, null, achievedNorm);
+                    
+                    fedCard.append(fedHeader).append(fedBody);
+                    allFederationsDiv.append(fedCard);
+                }
+            }
+            
+            if (hasAnyResults) {
+                $('#allFederationsSection').show();
+            } else {
+                $('#allFederationsSection').hide();
+            }
+        }
+
+        function performCalculations() {
+            const bodyWeight = parseFloat($('#bodyWeight').val());
+            const exercise = $('#exerciseType').val();
+            const federation = $('#federation').val();
+            const workingWeight = parseFloat($('#workingWeight').val()) || 0;
+            const repetitions = parseInt($('#repetitions').val()) || 0;
+            
+            if (isNaN(bodyWeight) || !exercise) {
+                $('#categoryResultsSection').hide();
+                $('#oneRMSection').hide();
+                $('#allFederationsSection').hide();
+                return;
+            }
+            
+            currentBodyWeight = bodyWeight;
+            currentExercise = exercise;
+            
+            const csvData = getCurrentCSVData();
+            if (!csvData) {
+                $('#categoryResultsSection').hide();
+                $('#oneRMSection').hide();
+                return;
+            }
+            
+            const userCategory = findWeightCategory(bodyWeight, csvData);
+            
+            let achievedNorm = null;
+            
+            if (workingWeight > 0 && repetitions > 0) {
+                const oneRM = calculate1RM(workingWeight, repetitions);
+                
+                achievedNorm = updateResults(oneRM, bodyWeight, exercise, federation, csvData);
+                $('#oneRMSection').show();
+                
+                if (!federation) {
+                    displayAllFederations(bodyWeight, exercise, oneRM);
+                } else {
+                    $('#allFederationsSection').hide();
+                }
+            } else {
+                $('#oneRMSection').hide();
+                
+                if (!federation) {
+                    displayAllFederations(bodyWeight, exercise);
+                } else {
+                    $('#allFederationsSection').hide();
+                }
+            }
+            
+            if (userCategory && federation) {
+                displayCategoryRow(csvData, '#categoryResults', userCategory, federation, achievedNorm);
+                $('#categoryResultsSection').show();
+            } else if (federation) {
+                $('#categoryResultsSection').hide();
+            }
+        }
+
+        $('#drugTested').on('change', function() {
+            updateFederationSelectors();
+            performCalculations();
+        });
+
+        $('#tableDrugTested').on('change', function() {
+            updateFederationSelectors();
+            updateFullTable();
+        });
+
+        $('.auto-calculate').on('change', function() {
+            performCalculations();
+        });
+
+        $('#tableExercise, #tableFederation').on('change', function() {
+            updateFederationSelectors();
+            updateFullTable();
+        });
+
+        function updateFullTable() {
+            const csvData = getTableCSVData();
+            
+            let oneRM = null;
+            const workingWeight = parseFloat($('#workingWeight').val()) || 0;
+            const repetitions = parseInt($('#repetitions').val()) || 0;
+            
+            if (workingWeight > 0 && repetitions > 0) {
+                oneRM = calculate1RM(workingWeight, repetitions);
+            }
+            
+            const userCategory = currentBodyWeight ? findWeightCategory(currentBodyWeight, csvData) : null;
+            
+            let achievedNorm = null;
+            if (oneRM && userCategory) {
+                const normResult = determineNormLevel(oneRM, csvData, userCategory);
+                if (normResult) {
+                    achievedNorm = normResult.norm;
+                }
+            }
+            
+            if (csvData) {
+                csvToTable(csvData, '#fullNormTable', userCategory, achievedNorm);
+            } else {
+                $('#fullNormTable').html('<div class="alert alert-warning">No data available for the selected options</div>');
+            }
+        }
+
+        $('a[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
+            if ($(e.target).attr('id') === 'tables-tab') {
+                updateFederationSelectors();
+                updateFullTable();
+            }
+        });
+
+        $(document).ready(function() {
+            $('#tableExercise').trigger('change');
+            
+            const script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js';
+            document.body.appendChild(script);
+        });
+    </script>
+</body>
+</html>
