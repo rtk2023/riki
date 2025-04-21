@@ -12,7 +12,7 @@ Projekts sadalīts pa failiem pēc to funkcionalitātes:
 Personības tests
 ├── mbti_tests.html (lapas saturs)
 ├── tests.html (lapas kods)
-├── script.js (jautājumi, function)
+├── script.js (jautājumi, funkcijas)
 ├── result.html (resultata kods)
 ├── result.js (aprāksts par MBTI un rādīt izvēlētās atbildes)
 └── README.md (šis fails, projekta dokumentācija)
@@ -21,7 +21,7 @@ Personības tests
 ## Iespējamie uzlabojumi
 <!-- Funkcionalitāte, kuru varētu pievienot nākotnē -->
 
-* Uzlabot skats rādītaja izvēlētās atbildes
+* Uzlabot dizainu
 
 ### Defekti
 <!-- Visi zināmie defekti (ang. bugs), kas būtu jāizlabo -->

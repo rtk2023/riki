@@ -2,7 +2,7 @@
 const questions = [
     {
         text: "Tu jūties enerģiskāks, kad esi...", // Jautājuma teksts
-        answer: [
+        answer: [ // Atbilžu varianti ar attiecīgo MBTI vērtību
             {text: "Starp cilvēkiem", value: "E"},
             {text: "Mazā kompānijā", value: "E"},
             {text: "Vienatnē", value: "I"},

@@ -6,6 +6,7 @@
         <title>Persoīnbas tests</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <style>
+        /* Pamata body stils ar fonu un animāciju */
         body {
             background: linear-gradient(135deg, #c3dafe, #e0f2fe);
             min-height: 100vh;
@@ -18,6 +19,7 @@
             animation: fadeInPage 0.5s ease-in-out forwards;
         }
     
+        /* Testa konteiners */
         .test-box {
             background-color: #fff;
             padding: 40px 30px;
@@ -28,6 +30,7 @@
             animation: fadeIn 0.8s ease-in-out;
         }
 
+        /* Izzušanas animācijas */
         .fade-out {
             animation: fadeOut 0.3s forwards;
         }
@@ -46,6 +49,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Progresijas josla */
         .progress {
             height: 20px;
         }
@@ -56,21 +60,25 @@
             transition: width 0.4s ease;
         }
 
+        /* Jautājuma teksts */
         #question-text {
             font-size: 1.25rem;
             font-weight: 500;
             margin-top: 1rem;
         }
 
+        /* Atbilžu stils */
         label {
             font-size: 1rem;
             margin-left: 0.5rem;
         }
 
+        /* Papildus lapas izzušanas efekts */
         .fade-out-page {
             animation: fadeOutPage 0.5s forwards;
         }
 
+        /* Ielādes animācija visai lapai */
         @keyframes fadeOutPage {
             from { opacity: 1; }
             to { opacity: 0; }
@@ -87,15 +95,18 @@
             }
         }
 
+        /* Virsraksts */
         h1 {
             font-weight: 700;
             margin-bottom: 1rem;
         }
 
+        /* Radio pogas */
         input[type="radio"] {
             margin-right: 0.5rem;
         }
 
+        /* Galvenā poga */
         .btn-primary {
             padding: 10px 30px;
             font-size: 1.1rem;
@@ -136,6 +147,7 @@
                     <button id="next-btn" class="btn btn-primary">Turpināt</button>
                 </div>
             </div>       
+            <!-- JavaScript fails, kurš apstrādās jautājumus un atbildes -->
         <script src="script.js"></script> <!--Pievieno ārējo JavaScript failu-->
     </body>
 </html>
