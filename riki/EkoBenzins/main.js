@@ -9,6 +9,8 @@ document.getElementById('customTimeToggle').addEventListener('change', function 
     document.getElementById('customDateTime').style.display = this.checked ? 'block' : 'none';
 });
 
+// Convert address to coordinates using Nominatim API
+// This function fetches the latitude and longitude of an address using the Nominatim API
 async function geocode(address) {
     const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(address)}&format=json&limit=1`;
     const res = await fetch(url);
@@ -24,6 +26,8 @@ async function geocode(address) {
     }
 }
 
+// Simulated traffic multiplier function
+// This function simulates traffic conditions based on the time of day and day of the week
 function getSimulatedTrafficMultiplier(date) {
     const hour = date.getHours();
     const day = date.getDay();
@@ -37,7 +41,6 @@ function getSimulatedTrafficMultiplier(date) {
     multiplier = 1.0; // Low traffic
     }
 
-    // Optional: lower traffic on weekends
     if (day === 0 || day === 6) {
     multiplier -= 0.1;
     }
@@ -45,6 +48,7 @@ function getSimulatedTrafficMultiplier(date) {
     return Math.max(multiplier, 1.0);
 }
 
+// Route distance, fule consumption and time calculation
 async function calculateRoute() {
     const from = document.getElementById('from').value;
     const to = document.getElementById('to').value;
@@ -90,76 +94,59 @@ async function calculateRoute() {
         });
 
         const routeData = await valhallaRes.json();
+
+        const distance = routeData.trip.summary.length;
         const shape = routeData.trip.legs[0].shape;
         const time = routeData.trip.summary.time;
-        const distance = routeData.trip.summary.length;
-
         const latlngs = decodePolyline(shape);
 
         if (routeLayer) {
             map.removeLayer(routeLayer);
         }
 
-        // Create a new LayerGroup for the route
+        const highwayRegex = /\b([AEM])\s?\d+\b/i;
         routeLayer = L.layerGroup().addTo(map);
-
-        let cityDistance = 0;
         let highwayDistance = 0;
-
-        let shapeIndex = 0; // Start index in shape
-
-        // Classify each maneuver
+        let cityDistance = 0;
+        let shapeIndex = 0;
+        
         routeData.trip.legs[0].maneuvers.forEach(m => {
+            const street_names = m.street_names || [];
             const dist = m.length;
-            const street_name = m.street_name;
-            let highway = false;
 
-            // Estimate how many shape points this maneuver has
             const proportion = dist / distance;
             const pointCount = Math.max(2, Math.round(proportion * latlngs.length));
-
             const segmentLatLngs = latlngs.slice(shapeIndex, shapeIndex + pointCount);
-            shapeIndex += pointCount - 1; // Overlap last point with next maneuver
+            shapeIndex += pointCount - 1;
 
-            for (let i = 0; i < street_name; i++) {
-                if (/^[Aa]\s?\d+$/.test(street_name[i])) {
-                    highway = true;
-                    break;
-                }
-            }
+            const highway = street_names.some(name => highwayRegex.test(name));
+            const color = highway ? 'red' : 'blue';
 
-            let color = 'blue';
-
-            if (highway){
-                color = 'red';
-            }
-            
             L.polyline(segmentLatLngs, { color, weight: 5 }).addTo(routeLayer);
 
-            if (highway){
+            if (highway) {
                 highwayDistance += dist;
-            }else {
+            } else {
                 cityDistance += dist;
             }
-            
         });
 
-        // Fallback if nothing was classified
+        // Fallback to 50/50 split if both distances are zero
         if (cityDistance + highwayDistance === 0) {
             cityDistance = distance / 2;
             highwayDistance = distance / 2;
         }
 
         const adjustedCityFuel = cityFuel * trafficMultiplier;
-        const cityFuelUsed = (cityDistance * adjustedCityFuel) / 100;
         const highwayFuelUsed = (highwayDistance * highwayFuel) / 100;
+        const cityFuelUsed = (cityDistance * adjustedCityFuel) / 100;
         const totalFuelUsed = cityFuelUsed + highwayFuelUsed;
 
         infoDiv.innerHTML = `
             <p><strong>Distance:</strong> ${distance.toFixed(2)} km</p>
             <p><strong>Estimated Time:</strong> ${(time / 60).toFixed(1)} minutes</p>
             <p><strong>Estimated Fuel:</strong> ${totalFuelUsed.toFixed(2)} L</p>
-            <p><em>(City: ${cityFuelUsed.toFixed(2)} L @ ×${trafficMultiplier.toFixed(2)} traffic multiplier, Highway: ${highwayFuelUsed.toFixed(2)} L)</em></p>
+            <p><em>City: ${cityFuelUsed.toFixed(2)} L @ × ${trafficMultiplier.toFixed(2)} traffic multiplier, Highway: ${highwayFuelUsed.toFixed(2)} L</em></p>
         `;
     } catch (err) {
         console.error(err);
@@ -167,6 +154,7 @@ async function calculateRoute() {
     }
 }
 
+// Decode polyline function
 function decodePolyline(encoded) {
     let coords = [], index = 0, lat = 0, lng = 0;
     while (index < encoded.length) {
