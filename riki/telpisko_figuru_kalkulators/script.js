@@ -1,6 +1,7 @@
 //Vērtību iegūšana
-const number1 = document.getElementById("number1");
-const number2 = document.getElementById("number2");
+const variable1 = document.getElementById("variable1");
+const variable2 = document.getElementById("variable2");
+const label2 = document.getElementById("label2");
 const result = document.getElementById("result");
 const form = document.getElementById("form");
 const calculationType = document.getElementById("calculationType");
@@ -12,6 +13,18 @@ function volumeCone(R, H) {
 function surfaceCone(R, L) {
     return Math.PI * R * R + Math.PI * R * L;
 }
+// Otrā mainīgā ievades lauka nosaukuma maiņa
+function updateLabel() {
+    if (calculationType.value === "volume") {
+        label2.textContent = "Augstums (H):";
+    }
+    else {
+        label2.textContent = "Veidule (L):";
+    }
+}
+// Otrā mainīgā ievades lauka nosaukuma maiņas izsaukšana
+calculationType.addEventListener("change", updateLabel);
+updateLabel();
 // Nospiežot pogu ar id 'submit', notiks sekojošais:
 form.addEventListener('submit', (event) => {
     event.preventDefault();
