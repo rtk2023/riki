@@ -1,28 +1,29 @@
-const map = L.map('map').setView([56.95, 24.1], 12);
+const map = L.map('map', {
+    center: [56.95, 24.1],
+    zoom: 12,
+    attributionControl: false
+});
+
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
+    maxZoom: 19
 }).addTo(map);
 
 let routeLayer;
-
-document.getElementById('customTimeToggle').addEventListener('change', function () {
-    document.getElementById('customDateTime').style.display = this.checked ? 'block' : 'none';
-});
+document.getElementById("year").textContent = new Date().getFullYear();
 
 // Convert address to coordinates using Nominatim API
-// This function fetches the latitude and longitude of an address using the Nominatim API
 async function geocode(address) {
     const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(address)}&format=json&limit=1`;
     const res = await fetch(url);
     const data = await res.json();
     if (data.length > 0) {
-    return {
-        lat: parseFloat(data[0].lat),
-        lon: parseFloat(data[0].lon),
-        display_name: data[0].display_name
-    };
+        return {
+            lat: parseFloat(data[0].lat),
+            lon: parseFloat(data[0].lon),
+            display_name: data[0].display_name
+        };
     } else {
-    throw new Error(`Address not found: ${address}`);
+        throw new Error(`Adrese nav atrasta: ${address}`);
     }
 }
 
@@ -34,36 +35,39 @@ function getSimulatedTrafficMultiplier(date) {
     let multiplier = 1.0;
 
     if ((hour >= 7 && hour <= 9) || (hour >= 16 && hour <= 18)) {
-    multiplier = 1.2; // Rush hour
+        multiplier = 1.2; // Rush hour
     } else if (hour >= 10 && hour <= 15) {
-    multiplier = 1.1; // Moderate traffic
+        multiplier = 1.1; // Moderate traffic
     } else {
-    multiplier = 1.0; // Low traffic
+        multiplier = 1.0; // Low traffic
     }
 
     if (day === 0 || day === 6) {
-    multiplier -= 0.1;
+        multiplier -= 0.1;
     }
 
     return Math.max(multiplier, 1.0);
 }
 
-// Route distance, fule consumption and time calculation
+// This function converts seconds to a formatted time string (hh:mm:ss or mm:ss or ss)
+
+
+// Route distance, fuel consumption, and time calculation
 async function calculateRoute() {
     const from = document.getElementById('from').value;
     const to = document.getElementById('to').value;
     const cityFuel = parseFloat(document.getElementById('cityFuel').value);
     const highwayFuel = parseFloat(document.getElementById('highwayFuel').value);
-    const customTimeToggle = document.getElementById('customTimeToggle').checked;
-    const customDateTimeInput = document.getElementById('customDateTime').value;
     const infoDiv = document.getElementById('info');
 
     if (!from || !to || isNaN(cityFuel) || isNaN(highwayFuel)) {
-        alert('Please fill all fields correctly.');
+        alert('Lūdzu, aizpildiet visus ievades laukus!');
         return;
     }
 
-    const selectedDate = customTimeToggle && customDateTimeInput ? new Date(customDateTimeInput) : new Date();
+    // show loading spinner
+
+    const selectedDate = new Date();
     const trafficMultiplier = getSimulatedTrafficMultiplier(selectedDate);
 
     try {
@@ -87,13 +91,32 @@ async function calculateRoute() {
             }
         };
 
-        const valhallaRes = await fetch("https://valhalla1.openstreetmap.de/route", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(body)
-        });
+        let routeData;
 
-        const routeData = await valhallaRes.json();
+        try {
+            const valhallaRes = await fetch("https://valhalla1.openstreetmap.de/route", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(body)
+            });
+        
+            if (!valhallaRes.ok) {
+                const errorData = await valhallaRes.json();
+        
+                if (errorData.error_code === 154) {
+                    alert("Maršruts ir pārāk garš! Maksimālais pieļaujamais attālums ir 1500 km.");
+                } else {
+                    alert(`Kļūda no maršruta servera: ${errorData.error || "Nezināma kļūda"}`);
+                }
+                return;
+            }
+        
+            routeData = await valhallaRes.json();
+        
+        } catch (err) {
+            alert("Neizdevās izveidot savienojumu ar maršruta serveri.");
+            console.error("Fetch error:", err);
+        }
 
         const distance = routeData.trip.summary.length;
         const shape = routeData.trip.legs[0].shape;
@@ -120,7 +143,7 @@ async function calculateRoute() {
             shapeIndex += pointCount - 1;
 
             const highway = street_names.some(name => highwayRegex.test(name));
-            const color = highway ? 'red' : 'blue';
+            const color = highway ? 'crimson' : 'blueviolet';
 
             L.polyline(segmentLatLngs, { color, weight: 5 }).addTo(routeLayer);
 
@@ -143,38 +166,51 @@ async function calculateRoute() {
         const totalFuelUsed = cityFuelUsed + highwayFuelUsed;
 
         infoDiv.innerHTML = `
-            <p><strong>Distance:</strong> ${distance.toFixed(2)} km</p>
-            <p><strong>Estimated Time:</strong> ${(time / 60).toFixed(1)} minutes</p>
-            <p><strong>Estimated Fuel:</strong> ${totalFuelUsed.toFixed(2)} L</p>
-            <p><em>City: ${cityFuelUsed.toFixed(2)} L @ × ${trafficMultiplier.toFixed(2)} traffic multiplier, Highway: ${highwayFuelUsed.toFixed(2)} L</em></p>
+            <p class="res"><strong class="resLbl">Distance:</strong> ${distance.toFixed(2)} km</p>
+            <p class="res"><strong class="resLbl">Aptuvenais laiks:</strong> ${time / 60}</p>
+            <p class="res"><strong class="resLbl">Aptuvenais patēriņš:</strong> ${totalFuelUsed.toFixed(2)} L</p>
+            <p class="city"><em><strong>Pilsēta:</strong> ${cityFuelUsed.toFixed(2)} L × ${trafficMultiplier.toFixed(2)} satiksmes ietekme</em></p>
+            <p class="highway"><em><strong>Uz šosejas:</strong> ${highwayFuelUsed.toFixed(2)} L</em></p>
         `;
+        infoDiv.classList.add("show");
+
+        const bounds = L.latLngBounds(latlngs);
+        map.fitBounds(bounds, { padding: [50, 50] });
+        document.getElementById('centerOnRoute').style.display = 'block';
+        window.lastRouteBounds = bounds;
     } catch (err) {
         console.error(err);
         alert(err.message);
+    } finally {
+        // hide loading spinner
+        
     }
 }
+
+// Center on route
+
 
 // Decode polyline function
 function decodePolyline(encoded) {
     let coords = [], index = 0, lat = 0, lng = 0;
     while (index < encoded.length) {
-    let b, shift = 0, result = 0;
-    do {
-        b = encoded.charCodeAt(index++) - 63;
-        result |= (b & 0x1f) << shift;
-        shift += 5;
-    } while (b >= 0x20);
-    let deltaLat = ((result & 1) ? ~(result >> 1) : (result >> 1));
-    lat += deltaLat;
-    shift = 0; result = 0;
-    do {
-        b = encoded.charCodeAt(index++) - 63;
-        result |= (b & 0x1f) << shift;
-        shift += 5;
-    } while (b >= 0x20);
-    let deltaLng = ((result & 1) ? ~(result >> 1) : (result >> 1));
-    lng += deltaLng;
-    coords.push([lat / 1e6, lng / 1e6]);
+        let b, shift = 0, result = 0;
+        do {
+            b = encoded.charCodeAt(index++) - 63;
+            result |= (b & 0x1f) << shift;
+            shift += 5;
+        } while (b >= 0x20);
+        let deltaLat = ((result & 1) ? ~(result >> 1) : (result >> 1));
+        lat += deltaLat;
+        shift = 0; result = 0;
+        do {
+            b = encoded.charCodeAt(index++) - 63;
+            result |= (b & 0x1f) << shift;
+            shift += 5;
+        } while (b >= 0x20);
+        let deltaLng = ((result & 1) ? ~(result >> 1) : (result >> 1));
+        lng += deltaLng;
+        coords.push([lat / 1e6, lng / 1e6]);
     }
     return coords;
 }

@@ -1,25 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lv">
 <head>
   <meta charset="UTF-8">
-  <title>Eko-Bezīns</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Eko-Benzīns ir maršrutu plānošanas rīks, kas izmanto OpenStreetMap un Valhalla, lai aprēķinātu degvielas patēriņu, attālumu un laiku ceļā.">
+  <title>Eko-Benzīns</title>
+  <link rel="icon" href="/Logo.webp" type="image/x-webp">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h2>Eko-Bezīns</h2>
-    <input type="text" id="from" placeholder="From address">
-    <input type="text" id="to" placeholder="To address">
-    <input type="number" id="cityFuel" placeholder="Fuel consumption in city (L/100km)" step="0.1">
-    <input type="number" id="highwayFuel" placeholder="Fuel consumption on highway (L/100km)" step="0.1">
-    <label><input type="checkbox" id="customTimeToggle"> Use custom date & time</label>
-    <input type="datetime-local" id="customDateTime" style="display:none;">
-    <button onclick="calculateRoute()">Calculate Route</button>
-    <div id="info"></div>
+    <div class="sidebar">
+      <header>
+        <h2>Eko-Benzīns</h2>
+        <button id="centerOnRoute" type="button" style="display: none;" onclick="centerOnRoute()">Centrēt</button>
+      </header>
+      <input type="text" id="from" placeholder="No adreses">
+      <input type="text" id="to" placeholder="Uz adresi">
+      <input type="number" id="cityFuel" placeholder="Degvielas patēriņš pilsētā (L/100km)" step="0.1">
+      <input type="number" id="highwayFuel" placeholder="Degvielas patēriņš uz šosejas (L/100km)" step="0.1">
+      <button type="button" id="calculate" onclick="calculateRoute()">Aprēķināt ceļu</button>
+      <div id="loading" class="spinner" style="display: none;"></div>
+      <footer class="sidebar-footer">
+        <small>&copy; <span id="year"></span> Raimonds Ozoliņš, Rihards Osis, Markuss Dviļs</small>
+        <small>
+          <a href="https://www.openstreetmap.org" target="_blank" rel="noopener">&copy; OpenStreetMap contributors</a>, 
+          <a href="https://valhalla.github.io/valhalla/" target="_blank" rel="noopener">Valhalla</a>,
+          <a href="https://leafletjs.com/" target="_blank" rel="noopener">Leaflet</a>
+        </small>
+        <small>
+          <a href="https://rtk2023.github.io/riki/" rel="noopener">Rīku Saraksts</a>,
+          <a href="https://github.com/rtk2023/riki/tree/main" rel="noopener">Rīku Github</a>
+        </small>
+      </footer>
+    </div>
     <div id="map"></div>
-  </div>
-
+  </div>  
+  <div id="info"></div>
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script src="main.js"></script>
 </body>
