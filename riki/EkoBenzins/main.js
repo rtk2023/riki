@@ -50,7 +50,22 @@ function getSimulatedTrafficMultiplier(date) {
 }
 
 // This function converts seconds to a formatted time string (hh:mm:ss or mm:ss or ss)
+function convertSecondstoTime(sec) {
+    dateObj = new Date(sec * 1000);
+    hours = dateObj.getUTCHours();
+    minutes = dateObj.getUTCMinutes();
+    seconds = dateObj.getSeconds();
 
+    if (hours === 0 && minutes !== 0) {
+        timeString = minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0') + ' min';
+    } else if (hours === 0 && minutes === 0 && seconds !== 0) {
+        timeString = seconds.toString().padStart(2, '0') + ' sec';
+    }else {
+        timeString = hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0') + ' h';
+    }
+    
+    return timeString;
+}
 
 // Route distance, fuel consumption, and time calculation
 async function calculateRoute() {
@@ -66,6 +81,9 @@ async function calculateRoute() {
     }
 
     // show loading spinner
+    const loadingSpinner = document.getElementById('loading');
+    loadingSpinner.style.display = 'block';
+    infoDiv.classList.remove("show");
 
     const selectedDate = new Date();
     const trafficMultiplier = getSimulatedTrafficMultiplier(selectedDate);
@@ -167,7 +185,7 @@ async function calculateRoute() {
 
         infoDiv.innerHTML = `
             <p class="res"><strong class="resLbl">Distance:</strong> ${distance.toFixed(2)} km</p>
-            <p class="res"><strong class="resLbl">Aptuvenais laiks:</strong> ${time / 60}</p>
+            <p class="res"><strong class="resLbl">Aptuvenais laiks:</strong> ${convertSecondstoTime(time)}</p>
             <p class="res"><strong class="resLbl">Aptuvenais patēriņš:</strong> ${totalFuelUsed.toFixed(2)} L</p>
             <p class="city"><em><strong>Pilsēta:</strong> ${cityFuelUsed.toFixed(2)} L × ${trafficMultiplier.toFixed(2)} satiksmes ietekme</em></p>
             <p class="highway"><em><strong>Uz šosejas:</strong> ${highwayFuelUsed.toFixed(2)} L</em></p>
@@ -183,12 +201,16 @@ async function calculateRoute() {
         alert(err.message);
     } finally {
         // hide loading spinner
-        
+        loadingSpinner.style.display = 'none';
     }
 }
 
 // Center on route
-
+function centerOnRoute() {
+    if (window.lastRouteBounds) {
+        map.fitBounds(window.lastRouteBounds, { padding: [50, 50] });
+    }
+}
 
 // Decode polyline function
 function decodePolyline(encoded) {
