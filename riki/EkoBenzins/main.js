@@ -110,7 +110,7 @@ async function calculateRoute() {
         };
 
         let routeData;
-
+        // Calculate route with error check 
         try {
             const valhallaRes = await fetch("https://valhalla1.openstreetmap.de/route", {
                 method: "POST",
