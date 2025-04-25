@@ -36,5 +36,5 @@ Nav zināmu defektu.
 © 2025 Raimonds Ozoliņš, Rihards Osis, Markuss Dviļs      
 Github: Raimonds Ozoliņš - https://github.com/xYFreezyYx       
 Github: Markuss Dviļs - https://github.com/Osak1i
-Github: Rihards Ozoliņš - 
+Github: Rihards Ozoliņš - https://github.com/Knublaks
 
