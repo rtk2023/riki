@@ -17,6 +17,8 @@ header {
     grid-template-columns: 1fr 1fr;
 }
 
+
+
 .container {
     display: flex;
     flex-direction: row;
