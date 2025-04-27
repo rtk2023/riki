@@ -15,5 +15,5 @@
 ## RESURSI
 ...
 
-**Autori** 
+**Autori**  
 2025: Laila Bicāla, Kristers Patriks Feldbergs, Ralfs Jefimovs
