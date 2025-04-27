@@ -1,0 +1,1 @@
+// Saulesp paneļu aprēķinu veiksānai
