@@ -1,0 +1,2314 @@
+{
+    "holidays": [
+        {
+            "date": "1-1",
+            "name": "Jaunais Gads",
+            "info": "Tiek svinēta Jaunā gada atnākšana..",
+            "link": ""
+        },
+        {
+            "date": "1-2",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "1-3",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "1-4",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "1-5",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "1-6",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "1-7",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "1-8",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "1-9",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "1-10",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "1-11",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "1-12",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "1-13",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "1-14",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "1-15",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "1-16",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "1-17",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "1-18",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "1-19",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "1-20",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "1-21",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "1-22",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "1-23",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "1-24",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "1-25",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "1-26",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "1-27",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "1-28",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "1-29",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "1-30",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "1-31",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "2-1",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "2-2",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "2-3",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "2-4",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "2-5",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "2-6",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "2-7",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "2-8",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "2-9",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "2-10",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "2-11",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "2-12",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "2-13",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "2-14",
+            "name": "Valentīndiena",
+            "info": "Visu mīlētāju diena.",
+            "link": ""
+        },
+        {
+            "date": "2-15",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "2-16",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "2-17",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "2-18",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "2-19",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "2-20",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "2-21",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "2-22",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "2-23",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "2-24",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "2-25",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "2-26",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "2-27",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "2-28",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "2-29",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "3-1",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "3-2",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "3-3",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "3-4",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "3-5",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "3-6",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "3-7",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "3-8",
+            "name": "Sieviešu diena",
+            "info": "Starptautiskā sieviešu diena.",
+            "link": "https://lv.wikipedia.org/wiki/Starptautisk%C4%81_sievie%C5%A1u_diena"
+        },
+        {
+            "date": "3-9",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "3-10",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "3-11",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "3-12",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "3-13",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "3-14",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "3-15",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "3-16",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "3-17",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "3-18",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "3-19",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "3-20",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "3-21",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "3-22",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "3-23",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "3-24",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "3-25",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "3-26",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "3-27",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "3-28",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "3-29",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "3-30",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "3-31",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "4-1",
+            "name": "Joku diena",
+            "info": "«Joku diena» - vispasaules svētki, kuru laikā ir pieņemts izjokot draugus un paziņas. <br>Tieši 1. aprīlī to svinēja mūsdienu īru senči, un visi joki un palaidnības bija veltītas smieklu dievam.",
+            "link": ""
+        },
+        {
+            "date": "4-1",
+            "name": "Putnu diena",
+            "info": "«Starptautiskā putnu diena» - globāli vides svētki, kuru mērķis ir saglabāt putnu daudzveidību un skaitu.",
+            "link": ""
+        },
+        {
+            "date": "4-2",
+            "name": "Bērnu grāmatu diena",
+            "info": "«Bērnu grāmatu diena» 2. aprīlī svinējas, Hansa Kristiana Andersena dzimšana diena",
+            "link": ""
+        },
+        {
+            "date": "4-3",
+            "name": "Ballīšu diena",
+            "info": "«Starptautiskā Ballīšu diena» - jautri neoficiāli svētki",
+            "link": ""
+        },
+        {
+            "date": "4-4",
+            "name": "Interneta diena",
+            "info": "«Starptautiskā Interneta diena» — svētki, kas veltīti globālajam datu uzglabāšanas tīklam un tā lomai cilvēka dzīvē.",
+            "link": ""
+        },
+        {
+            "date": "4-4",
+            "name": "Žurkas diena",
+            "info": "«Vispasaules Žurkas diena» Tā tiek svinēta kopš 2002. gada pēc dekoratīvo žurku cienītāju iniciatīvas ar mērķi pievērst tām uzmanību, uzlabot to tēlu un izskaust daudzus cilvēku aizspriedumus pret šiem neparastajiem dzīvniekiem.",
+            "link": ""
+        },
+        {
+            "date": "4-5",
+            "name": "Sirdsapziņas diena",
+            "info": "Svētki radīti pēc ANO iniciatīvas, lai atgādinātu cilvēkiem, ka morāles normas nav abstraktas formulas, bet gan cieņpilnas līdzāspastāvēšanas pamats.",
+            "link": ""
+        },
+        {
+            "date": "4-6",
+            "name": "Multfilmu diena",
+            "info": "«Vispasaules Multfilmu diena» — Tie ir ikgadēji svētki, ko 6. aprīlī svin daudzās pasaules valstīs. Šī diena veltīta animācijai un multfilmām, kas ir daudzu valstu kultūras neatņemama sastāvdaļa.",
+            "link": ""
+        },
+        {
+            "date": "4-7",
+            "name": "Veselības diena",
+            "info": "«Vispasaules Veselības diena» - tika dibināta par godu Pasaules Veselības organizācijas izveidošanai 1948. gadā.",
+            "link": ""
+        },
+        {
+            "date": "4-7",
+            "name": "Bebru diena",
+            "info": "«Starptautiskā bebru diena» — Tie ir īpaši svētki, kas veltīti dzīvniekiem, kuru aktivitātes veido ainavu vairāk nekā daudzi cilvēki. Ar saviem aizsprostiem bebri regulē ūdens cirkulāciju, atbalsta bioloģisko daudzveidību un spēlē nozīmīgu lomu klimata pārmaiņu mazināšanā.",
+            "link": ""
+        },
+        {
+            "date": "4-8",
+            "name": "Čigānu diena",
+            "info": "«Starptautiskā Čigānu diena» — starptautiski svētki, ko čigāni visā pasaulē katru gadu svin 8.aprīlī.",
+            "link": ""
+        },
+        {
+            "date": "4-9",
+            "name": "Smieklu gāzes diena",
+            "info": "Smieklu gāzes dzimšanas diena - slāpekļa oksīds ir savienojums ar ķīmisko formulu N2O.",
+            "link": ""
+        },
+        {
+            "date": "4-10",
+            "name": "Griķu diena",
+            "info": "Starptautiskā Griķu diena» - Griķu biezputru gatavo no griķu graudiem, kas pirmo reizi tika kultivēti 6. tūkstošgadē pirms mūsu ēras reģionā, kas tagad ir Juņnaņas provincē Ķīnas dienvidrietumos.",
+            "link": ""
+        },
+        {
+            "date": "4-11",
+            "name": "Anime fanu diena",
+            "info": "«Vispasaules Anime fanu diena» 11. aprīlī katru gadu atzīmē visi japāņu animācijas cienītāji.",
+            "link": ""
+        },
+        {
+            "date": "4-12",
+            "name": "Kosmonautikas diena",
+            "info": "«Vispasaules aviācijas un kosmonautikas diena» - 12. aprīlis, datums, kas noteikts, lai pieminētu pirmo cilvēka lidojumu kosmosā.",
+            "link": "https://www.youtube.com/channel/UCxfH2IY8Y1EsETo2K8m4QZA/community?lb=UgkxC6McTEK3rcTNlol888YGa-TvdkqpVUj8"
+        },
+        {
+            "date": "4-13",
+            "name": "Rokenrola diena",
+            "info": "«Vispasaules Rokenrola diena». Taču vēsturiskais notikums, kas kļuva par svētku pamatu, notika 1954. gada 12. aprīlī.",
+            "link": ""
+        },
+        {
+            "date": "4-14",
+            "name": "Kvantu diena",
+            "info": "«Vispasaules Kvantu diena». <br>Datums, 14. aprīlis, tika izvēlēts saistībā ar Planka konstanti (4,14×10⁻¹⁵ eV⋅Hz⁻¹), kas ir kvantu fizikas pamatkonstante.",
+            "link": "https://www.youtube.com/channel/UCxfH2IY8Y1EsETo2K8m4QZA/community?lb=Ugkx_QUINAWuQCHaY2a8UMm3uzufRZvYeSdG"
+        },
+        {
+            "date": "4-15",
+            "name": "Mākslas diena",
+            "info": "«Vispasaules Mākslas diena» - Svētki palīdz stiprināt saikni starp mākslas darbiem un sabiedrību, veicina izpratni par māksliniecisko izpausmju daudzveidību un izceļ mākslinieku ieguldījumu ilgtspējīgā attīstībā.",
+            "link": ""
+        },
+        {
+            "date": "4-16",
+            "name": "Balss diena",
+            "info": "«Starptautiskā Balss diena» - Ikgadējs vispasaules pasākums, kas notiek 16. aprīlī, lai atzīmētu balss fenomenu. <br>Mērķis ir demonstrēt balss milzīgo nozīmi visu cilvēku ikdienas dzīvē.",
+            "link": ""
+        },
+        {
+            "date": "4-17",
+            "name": "Naudas diena",
+            "info": "«Starptautiskā Naudas diena» - Mūsdienu pasaulē nauda ir neatņemama dzīves sastāvdaļa.",
+            "link": ""
+        },
+        {
+            "date": "4-17",
+            "name": "Bla bla bla diena",
+            "info": "Šajā dienā runāšanas vietā tiek ieteikts darīt to, kas nemitīgi tiek atlikts. <br>Bla-bla-bla tiek saprasta kā bezjēdzīga pļāpāšana vai tukša pļāpāšana.",
+            "link": ""
+        },
+        {
+            "date": "4-18",
+            "name": "Radioamatieru diena",
+            "info": "«Vispasaules Radioamatieru diena» — Šie ir svētki, kas vieno visus, kam interesē radiosakari un radioelektronika.",
+            "link": ""
+        },
+        {
+            "date": "4-19",
+            "name": "Sniegpulkstenīšu diena",
+            "info": "«Starptautiskā Sniegpulkstenīšu diena» - Daži no svarīgākajiem Sniegpulkstenīšu dienas svinēšanas rituāliem šajā kultūrā ir dziesmu dziedāšana par pavasara atnākšanu un ciemošanos.<br>Sniegpulkstenītes ir pirmie ziedi, kas parādās pēc ziemas aukstuma un tāpēc simbolizē pavasara sākumu.",
+            "link": ""
+        },
+        {
+            "date": "4-20",
+            "name": "Marihuānas diena",
+            "info": "«Starptautiskā Marihuānas diena/ kaņepes» - Diena ir kļuvusi par pretkultūru svētkiem, lai kopā savāktos un lietotu kaņepes. <br>Daudzi Ziemeļamerikas kaņepju smēķētāji turpina tikties pulksten 16:20, lai kopīgi smēķētu kaņepes. Pieaugot termina 420 lietojumam, tajā tika iekļauts arī datums 20. aprīlis (ASV saīsinājumā '4/20'). <br>Izteiciens kļuva par daļu no apsveikuma jauniešu grupai, kas izmantoja koda frāzi “420”, lai veicinātu relaksāciju.",
+            "link": ""
+        },
+        {
+            "date": "4-21",
+            "name": "Sieviešu draudzības diena",
+            "info": "«Starptautiskā Sieviešu draudzības diena» - Šī diena ir kļuvusi par sava veida kustību, kas stiprina sieviešu solidaritāti un savstarpējo atbalstu.",
+            "link": ""
+        },
+        {
+            "date": "4-22",
+            "name": "Zemes diena",
+            "info": "«Starptautiskā Mātes-Zemes diena» - svētki, kas aicina saudzēt dabu un dzīvot videi draudzīgu dzīvi. Katrs no mums ir parādā savu eksistenci mūsu planētai un tās ekosistēmām. <br>Svētki Amerikas Savienotajās Valstīs tiek rīkoti katru gadu kopš pagājušā gadsimta 70. gadiem. Starptautiski svētki kļuva tikai 2009. gadā pēc Apvienoto Nāciju Organizācijas iniciatīvas.",
+            "link": ""
+        },
+        {
+            "date": "4-23",
+            "name": "Grāmatu un autortiesību diena",
+            "info": "«Vispasaules Grāmatu un autortiesību diena» — Šie ir svētki, kas paredzēti, lai stiprinātu mīlestību pret grāmatām un lasīšanu.",
+            "link": ""
+        },
+        {
+            "date": "4-24",
+            "name": "Laboratorijas dzīvnieku diena",
+            "info": "«Vispasaules Laboratorijas dzīvnieku diena» - Sākotnēji to “svinēja” dzīvnieku tiesību organizācijas vairākās valstīs, un mūsdienās visā pasaulē aktīvi attīstās kustība pret vivisekciju (eksperimenti un testi ar laboratorijas dzīvniekiem), ko atbalsta dažādu sabiedrisko un dzīvnieku tiesību organizāciju aktīvisti. <br>Vairāk nekā 150 miljoni dzīvnieku gadā tiek izmantoti laboratorijās visā pasaulē, lai pārbaudītu zāles un kosmētiku.",
+            "link": ""
+        },
+        {
+            "date": "4-24",
+            "name": "Jauniešu solidaritātes diena",
+            "info": "«Starptautiskā Jauniešu solidaritātes diena» - Dienas galvenais mērķis ir saliedēt jauniešus un stiprināt viņu vienotību.",
+            "link": ""
+        },
+        {
+            "date": "4-25",
+            "name": "Pasaules malārijas diena",
+            "info": "«Vispasaules Pasaules malārijas diena» - iemesls atgādināt par nepieciešamību pastāvīgi mobilizēt resursus un politisko atbalstu malārijas profilaksei un kontrolei.",
+            "link": ""
+        },
+        {
+            "date": "4-25",
+            "name": "Papīra lidmašīnu diena",
+            "info": "«Starptautiskā Papīra lidmašīnu diena» - salīdzinoši jauni un ļoti sirsnīgi svētki, kas veltīti vienkāršām rotaļlietām, kas locītas no papīra origami veidā. Papīra lidmašīnu dienas svinības parasti ietver kopienas sapulces, kurās dalībnieki veido un lido ar papīra lidmašīnām.",
+            "link": ""
+        },
+        {
+            "date": "4-25",
+            "name": "DNS diena",
+            "info": "«Starptautiskā DNS diena» - izveidota par godu dienai 1953. gadā, kad žurnālā Nature tika publicēti trīs raksti, kas veltīti DNS molekulārās struktūras atklāšanai <br>DNS makromolekula ir dezoksiribonukleīnskābe, kas satur visu cilvēka ģenētisko informāciju. Tam ir dubultspirāles forma, kas atgādina lielas spirālveida kāpnes, un katrs pakāpiens sastāv no diviem nukleotīdiem. Pateicoties DNS molekulai, kļuva iespējams noteikt cilvēka ģenētisko kodu jau pirms viņa dzimšanas.<br>(DNS - Dezoksiribonukleīnskābe)",
+            "link": ""
+        },
+        {
+            "date": "4-26",
+            "name": "Diena «Apskauj draugu»",
+            "info": "Apskāvieni nes daudz labumu ķermenim un palīdz viegli pacelt garastāvokli pat visbēdīgākajam cilvēkam.",
+            "link": ""
+        },
+        {
+            "date": "4-27",
+            "name": "Morzes ābeces diena",
+            "info": "«Vispasaules Morzes ābeces diena» - Nosaukts amerikāņu izgudrotāja un mākslinieka Semjuela Morza vārdā. <br>Morzes kods ir leģendāra kodēšanas metode, kurā burti, cipari un simboli tiek pārraidīti, izmantojot īsu (·) un garu (—) signālu kombinācijas. To 1830. gados izveidoja Semjuels Morze un Alfrēds Vails telegrāfam, un tas bija izrāviens sakaru jomā. <br>Vienkāršākais kods ir burtam 'E' (·), jo tas ir visizplatītākais burts angļu valodā. 1851. gadā parādījās Starptautiskais Morzes kods, kas pielāgots dažādām valodām. Pasaulē slavenais SOS signāls (· · · — — — · · ·), kas pieņemts 1906. gadā, joprojām ir universāls palīdzības aicinājums. Neskatoties uz tehnoloģiju attīstību, Morzes ābece joprojām tiek izmantota aviācijā, radio sakaros un ārkārtas situācijās.",
+            "link": ""
+        },
+        {
+            "date": "[4-28]",
+            "name": "",
+            "info": "",
+            "link": ""
+        },
+        {
+            "date": "4-29",
+            "name": "Vēlmju diena",
+            "info": "«Vispasaules bērnu vēlmju piepildījuma diena» - Svētki tiek svinēti piecdesmit valstīs visā pasaulē. <br>Svētku mērķis ir pievērst sabiedrības uzmanību ar smagām vai neārstējamām slimībām slimojošu bērnu likteņiem.",
+            "link": ""
+        },
+        {
+            "date": "4-30",
+            "name": "Džeza diena",
+            "info": "«Starptautiskā džeza diena ir ikgadējs pasākums, ko organizē UNESCO, lai atzīmētu 'starptautiskās sabiedrības pieaugošo izpratni par džezu'",
+            "link": ""
+        },
+        {
+            "date": "5-1",
+            "name": "Darba svētki",
+            "info": "«Starptautiskā darba diena/Pavasara svētki - sākotnēji tika saukts par Starptautisko strādnieku dienu.",
+            "link": ""
+        },
+        {
+            "date": "5-2",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "5-3",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "5-4",
+            "name": "Neatkarības atjaunošana",
+            "info": "Latvijas Neatkarības atjaunošanas diena.",
+            "link": "https://lv.wikipedia.org/wiki/Latvijas_neatkarība"
+        },
+        {
+            "date": "5-4",
+            "name": "Neatkarības atjaunošana",
+            "info": "Latvijas Neatkarības atjaunošanas diena.",
+            "link": ""
+        },
+        {
+            "date": "5-4",
+            "name": "Neatkarības atjaunošana",
+            "info": "Latvijas Neatkarības atjaunošanas diena.",
+            "link": "https://lv.wikipedia.org/wiki/Latvijas_neatkarība"
+        },
+        {
+            "date": "5-4",
+            "name": "Neatkarības atjaunošana",
+            "info": "Latvijas Neatkarības atjaunošanas diena.",
+            "link": "https://lv.wikipedia.org/wiki/Latvijas_neatkarība"
+        },
+        {
+            "date": "5-4",
+            "name": "Neatkarības atjaunošana",
+            "info": "Latvijas Neatkarības atjaunošanas diena.",
+            "link": "https://lv.wikipedia.org/wiki/Latvijas_neatkarība"
+        },
+        {
+            "date": "5-4",
+            "name": "Neatkarības atjaunošana",
+            "info": "Latvijas Neatkarības atjaunošanas diena.",
+            "link": "https://lv.wikipedia.org/wiki/Latvijas_neatkarība"
+        },
+        {
+            "date": "5-4",
+            "name": "Neatkarības atjaunošana",
+            "info": "Latvijas Neatkarības atjaunošanas diena.",
+            "link": "https://lv.wikipedia.org/wiki/Latvijas_neatkarība"
+        },
+        {
+            "date": "5-4",
+            "name": "Neatkarības atjaunošana",
+            "info": "Latvijas Neatkarības atjaunošanas diena.",
+            "link": "https://lv.wikipedia.org/wiki/Latvijas_neatkarība"
+        },
+        {
+            "date": "5-4",
+            "name": "Neatkarības atjaunošana",
+            "info": "Latvijas Neatkarības atjaunošanas diena.",
+            "link": "https://lv.wikipedia.org/wiki/Latvijas_neatkarība"
+        },
+        {
+            "date": "5-4",
+            "name": "Neatkarības atjaunošana",
+            "info": "Latvijas Neatkarības atjaunošanas diena.",
+            "link": "https://lv.wikipedia.org/wiki/Latvijas_neatkarība"
+        },
+        {
+            "date": "5-4",
+            "name": "Neatkarības atjaunošana",
+            "info": "Latvijas Neatkarības atjaunošanas diena.",
+            "link": "https://lv.wikipedia.org/wiki/Latvijas_neatkarība"
+        },
+        {
+            "date": "5-5",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "5-6",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "5-7",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "5-8",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "5-9",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "5-10",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "5-11",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "5-12",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "5-13",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "5-14",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "5-15",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "5-16",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "5-17",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "5-18",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "5-19",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "5-20",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "5-21",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "5-22",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "5-23",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "5-24",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "5-25",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "5-26",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "5-27",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "5-28",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "5-29",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "5-30",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "5-31",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "6-1",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "6-2",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "6-3",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "6-4",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "6-5",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "6-6",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "6-7",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "6-8",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "6-9",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "6-10",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "6-11",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "6-12",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "6-13",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "6-14",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "6-15",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "6-16",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "6-17",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "6-18",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "6-19",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "6-20",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "6-21",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "6-22",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "6-23",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "6-23",
+            "name": "Līgo",
+            "info": "Ivana Kupalas godināšana.",
+            "link": ""
+        },
+        {
+            "date": "6-24",
+            "name": "Jāņi",
+            "info": "Latvijas vasaras saulgriežu svētki.",
+            "link": ""
+        },
+        {
+            "date": "6-24",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "6-25",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "6-26",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "6-27",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "6-28",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "6-29",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "6-30",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "7-1",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "7-2",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "7-3",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "7-4",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "7-5",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "7-6",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "7-7",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "7-8",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "7-9",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "7-10",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "7-11",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "7-12",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "7-13",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "7-14",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "7-15",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "7-16",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "7-17",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "7-18",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "7-19",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "7-20",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "7-21",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "7-22",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "7-23",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "7-24",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "7-25",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "7-26",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "7-27",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "7-28",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "7-29",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "7-30",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "7-31",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "8-1",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "8-2",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "8-3",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "8-4",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "8-5",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "8-6",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "8-7",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "8-8",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "8-9",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "8-10",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "8-11",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "8-12",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "8-13",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "8-14",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "8-15",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "8-16",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "8-17",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "8-18",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "8-19",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "8-20",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "8-21",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "8-22",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "8-23",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "8-24",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "8-25",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "8-26",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "8-27",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "8-28",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "8-29",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "8-30",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "8-31",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "9-1",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "9-2",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "9-3",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "9-4",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "9-5",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "9-6",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "9-7",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "9-8",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "9-9",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "9-10",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "9-11",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "9-12",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "9-13",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "9-14",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "9-15",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "9-16",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "9-17",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "9-18",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "9-19",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "9-20",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "9-21",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "9-22",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "9-23",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "9-24",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "9-25",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "9-26",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "9-27",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "9-28",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "9-29",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "9-30",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "10-1",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "10-2",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "10-3",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "10-4",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "10-5",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "10-6",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "10-7",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "10-8",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "10-9",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "10-10",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "10-11",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "10-12",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "10-13",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "10-14",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "10-15",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "10-16",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "10-17",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "10-18",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "10-19",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "10-20",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "10-21",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "10-22",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "10-23",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "10-24",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "10-25",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "10-26",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "10-27",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "10-28",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "10-29",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "10-30",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "10-31",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "11-1",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "11-2",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "11-3",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "11-4",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "11-5",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "11-6",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "11-7",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "11-8",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "11-9",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "11-10",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "11-11",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "11-12",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "11-13",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "11-14",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "11-15",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "11-16",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "11-17",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "11-18",
+            "name": "Proklamēšanas diena",
+            "info": "Latvijas Neatkarības proklamēšanas diena.",
+            "link": ""
+        },
+        {
+            "date": "11-19",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "11-20",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "11-21",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "11-22",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "11-23",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "11-24",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "11-25",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "11-26",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "11-27",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "11-28",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "11-29",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "11-30",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "12-1",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "12-2",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "12-3",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "12-4",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "12-5",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "12-6",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "12-7",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "12-8",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "12-9",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "12-10",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "12-11",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "12-12",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "12-13",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "12-14",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "12-15",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "12-16",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "12-17",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "12-18",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "12-19",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "12-20",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "12-21",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "12-22",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "12-23",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "12-24",
+            "name": "Z-svētku vakars",
+            "info": "Ziemassvētku vakars.",
+            "link": ""
+        },
+        {
+            "date": "12-25",
+            "name": "1. Z-svētki",
+            "info": "Pirmie Ziemassvētki",
+            "link": ""
+        },
+        {
+            "date": "12-26",
+            "name": "2. Z-svētki",
+            "info": "Otrie Ziemassvētki",
+            "link": ""
+        },
+        {
+            "date": "12-27",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "12-28",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "12-29",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "12-30",
+            "name": "...",
+            "info": "...",
+            "link": ""
+        },
+        {
+            "date": "12-31",
+            "name": "Vecgada vakars",
+            "info": "Vecgada vakars.",
+            "link": ""
+        }
+    ]
+}

@@ -1,1 +1,50 @@
+<!DOCTYPE html>
+<html lang="lv">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Svētku Kalendārs</title>
+  <link rel="stylesheet" href="kalendar.css" type="text/css">
+</head>
+
+<body>
+  <h1>Svētku Kalendārs</h1>
+  <div id="today-control">
+    <button id="todayBtn" onclick="goToday()">Šodien</button>
+  </div>
+  <div id="controls">
+    <button id="prevBtn" onclick="ieprmen()">Iepriekšējais</button>
+    <span id="monthYear"></span>
+    <button id="nextBtn" onclick="nakmen()">Nākamais</button>
+  </div>
+  <div id="calendar-container">
+    <div id="calendar"></div>
+    <div id="svetki"></div>
+  </div>
+  <div class="footer">
+    <a href="https://github.com/Kristiansbeisa/Kalend-rs">Github projekts</a>
+    <a href="https://github.com/rtk2023/riki/tree/main/riki">Rīki</a>
+  </div>
+  <script>
+    // Pirms kalendāra inicializēšanas ielādējam JSON ar svētkiem
+    fetch('visi_svetki.json')
+      .then(response => response.json())
+      .then(data => {
+        // aizpildām globālo mainīgo "svetki" no kalendar.js
+        svetki = data.holidays.reduce((acc, h) => {
+          if (!acc[h.date]) acc[h.date] = [];
+          acc[h.date].push(h);
+          return acc;
+        }, {});
+        renderCalendar();
+        // Lejupielādējot uzreiz rādām brīvdienas šodien
+        const todayKey = `${todayMonth + 1}-${todayDay}`;
+        showHoliday(todayKey, todayDay);
+      })
+      .catch(err => console.error('Kļūda, ielādējot brīvdienas:', err));
+  </script>
+  <script src="kalendar.js"></script>
+</body>
+
+</html>
