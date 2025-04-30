@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Powerliftinga Kalkulators</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/norms.js"></script>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Powerliftinga Kalkulators</h1>
+        
+        <ul class="nav nav-tabs mb-4">
+            <li class="nav-item">
+                <a class="nav-link active" id="norm-calculator-tab" data-bs-toggle="tab" href="#calculator">Normatīvu Kalkulators</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="calory-calculator-tab" data-bs-toggle="tab" href="#calory-calculator">Kaloriju Kalkulators</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="tables-tab" data-bs-toggle="tab" href="#tables">Pilnas Tabulas</a>
+            </li>
+        </ul>
+        
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="calculator">
+                <!-- Norm Calculator Tab Content -->
+                <div id="normCalculatorContent"></div>
+            </div>
+            
+            <div class="tab-pane fade" id="calory-calculator">
+                <!-- Calory Calculator Tab Content -->
+                <div id="caloryCalculatorContent"></div>
+            </div>
+            
+            <div class="tab-pane fade" id="tables">
+                <!-- Tables Tab Content -->
+                <div id="tablesContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer mt-5 py-3 bg-light">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-12">
+                    <a href="https://rtk2023.github.io/riki/" class="text-decoration-none me-3">RTK Riki</a>
+                    <span class="text-muted mx-2">|</span>
+                    <a href="https://github.com/rtk2023/riki" class="text-decoration-none ms-3">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Core utilities -->
+    <script src="js/utilities.js"></script>
+    
+    <!-- Tab-specific JavaScript -->
+    <script src="js/norm-calculator.js"></script>
+    <script src="js/calorie-calculator.js"></script>
+    <script src="js/tables.js"></script>
+    
+    <!-- Main application script -->
+    <script src="js/app.js"></script>
+</body>
+</html>
