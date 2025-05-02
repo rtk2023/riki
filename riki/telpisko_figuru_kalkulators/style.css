@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: lightblue;
+    background-color: rgba(218, 215, 215, 0.986);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,4 +15,34 @@ body {
     border: 1px solid black;
     width: 90%;
     max-width: 700px;
+    
+}
+
+Button {
+    color: white;
+    background-color: darkgrey;
+    padding: 10px;
+}
+
+ #shapeSelector {
+    padding: 5px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+
+#calculationType{
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#variable1{
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+
+#variable2{
+    padding: 5px;
+    margin-bottom: 10px;
 }
