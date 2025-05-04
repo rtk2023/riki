@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saules paneļu ietaupījuma kalkulators</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <div style="width: 100%; height: 100px; overflow: hidden;">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             background-color: #f0f775;
@@ -21,14 +20,13 @@
                 30% 100%, 35% 85%, 40% 100%, 45% 85%, 50% 100%, 55% 85%, 
                 60% 100%, 65% 85%, 70% 100%, 75% 85%, 80% 100%, 85% 85%, 
                 90% 100%, 95% 85%, 100% 100%
-            ); 
+            );
             z-index: -1;
         }
-
         .sun {
             position: fixed;
-            top: 20px; 
-            right: 20px; 
+            top: 20px;
+            right: 20px;
             width: 100px;
             height: 100px;
             background: radial-gradient(circle, #FFD700, #FFA500);
@@ -37,43 +35,93 @@
             z-index: 1;
         }
     </style>
-</div>
 </head>
 <body>
-    <div class="container mt-5">
-        <!-- Tituls -->
-        <div class="row">
-            <div class="col text-center">
-                <h1>Saules paneļu kalkulators</h1>
-            </div>
-        </div>
-
-        <!-- Ievadu lauki -->
-        <div class="row mt-4">
-            <div class="col-md-6 offset-md-3 bg-warning text-dark p-4 rounded">
-                <form id="calculator-form">
-                    <div class="mb-3">
-                        <label for="electricity-cost" class="form-label">Elektrības cena (EUR/kWh)</label>
-                        <input type="number" class="form-control" id="electricity-cost" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="solar-panel-output" class="form-label">Saules paneļa jauda (kW)</label>
-                        <input type="number" class="form-control" id="solar-panel-output" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="hours-sunlight" class="form-label">Saules stundu skaits dienā</label>
-                        <input type="number" class="form-control" id="hours-sunlight" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100">Aprēķināt ietaupījumu</button>
-                </form>
-            </div>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col text-center">
+            <h1>Saules paneļu kalkulators</h1>
         </div>
     </div>
 
-    <!-- Dekorativie elementi -->
+    <form class="row mt-4 bg-warning text-dark p-4 rounded" id="calculator-form">
+        <h4>Informācija par klientu</h4>
+
+        <!-- Atrašanās vieta -->
+        <div class="mb-3">
+            <label for="location" class="form-label">Atrašanās vieta (Adrese vai pasta indekss)</label>
+            <input type="text" class="form-control" id="location" required>
+        </div>
+
+        <!-- Jumta informācija -->
+        <div class="mb-3">
+            <label class="form-label">Montāžas platība (m²)</label>
+            <input type="number" class="form-control" id="mounting-area">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Jumta orientācija</label>
+            <select class="form-select" id="orientation">
+                <option>Ziemeļaustrumi</option>
+                <option>Austrumi</option>
+                <option>Dienvidaustrumi</option>
+                <option>Dienvidi</option>
+                <option>Dienvidrietumi</option>
+                <option>Rietumi</option>
+                <option>Dienvidrietumi</option>
+                <option>Ziemeļi</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Jumta slīpuma leņķis (grādos): <span id="angle-display">45</span>°</label>
+            <input type="range" class="form-range" id="roof-angle" min="0" max="90" step="1" value="45" oninput="document.getElementById('angle-display').textContent = this.value">
+
+        </div>
+
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="shading">
+            <label class="form-check-label" for="shading">Potenciāls ēnojums (Koki, ēkas utt.)</label>
+        </div>
+        
+
+        <!-- Enerģijas patēriņš -->
+        <h5>Enerģijas patēriņš</h5>
+        <div class="mb-3">
+            <label class="form-label">Vidējais mēneša elektrības rēķins &euro;</label>
+            <input type="number" class="form-control" id="monthly-cost">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Vidējais gada patēriņš (kWh)</label>
+            <input type="number" class="form-control" id="yearly-usage">
+        </div>
+
+        <!-- Paneļu preferences -->
+        <h5>Saules paneļu preferences</h5>
+        <div class="mb-3">
+            <label class="form-label">Vēlamais sistēmas izmērs (kW)</label>
+            <input type="number" class="form-control" id="preferred-size">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Paneļu modelis (ja zināms)</label>
+            <input type="text" class="form-control" id="panel-model">
+        </div>
+
+        <!-- Finanšu informācija -->
+        <h5>Finanšu informācija</h5>
+        <div class="mb-3">
+            <label class="form-label">Neto uzskaites politika vai tarifa informācija</label>
+            <textarea class="form-control" id="net-metering-policy" rows="2"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 mt-3">Aprēķināt ietaupījumu</button>
+    </form>
+
+    <!-- Dekoratīvie elementi -->
     <div class="grass"></div>
     <div class="sun"></div>
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
