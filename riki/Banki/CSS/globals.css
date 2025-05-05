@@ -1,0 +1,46 @@
+:root {
+    --primary-color: #212121;
+    --secondary-color: #555555;
+    --color: white;
+}
+
+@font-face {
+    font-family: JB-Mono;
+    src: url("../Assets/Fonts/JetBrainsMono-Medium.ttf");
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    color: var(--color);
+
+    font-family: JB-Mono, monospace;
+}
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: var(--primary-color);
+}
+
+button {
+    display: flex;
+
+    padding: 5px;
+    outline: none;
+
+    background-color: transparent;
+
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}

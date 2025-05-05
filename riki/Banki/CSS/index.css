@@ -1,0 +1,152 @@
+/* ------------------------ NavBar ------------------------ */
+
+.navBar {
+    display: flex;
+    flex-direction: row;
+    
+    width: 100%;
+    height: fit-content;
+
+    padding: 10px;
+
+    background-color: var(--primary-color);
+}
+
+.title {
+    font-size: 2em;
+}
+
+.navBarRight {
+    display: flex;
+    vertical-align: baseline;
+
+    width: fit-content;
+    height: fit-content;
+
+    margin: auto 0 auto auto;
+
+    gap: 10px;
+}
+
+.navButton {
+    width: fit-content;
+
+    padding: 5px 10px;
+
+    border: solid 2px var(--secondary-color);
+    border-radius: 20px 20px;
+
+    color: var(--secondary-color);
+} .navButton:hover {
+    color: white;
+}
+
+/* ------------------------ Page ------------------------ */
+
+.page {
+    flex: 1;
+    display: flex;
+
+    width: 100%;
+    height: 0;
+
+    background-color: var(--primary-color);
+}
+
+/* ------------------------ Deck list ------------------------ */
+
+.deckList {
+    display: flex;
+    flex-direction: column;
+
+    width: 20%;
+    max-width: 300px;
+    height: 100%;
+
+    margin: 0;
+    padding-top: 25px;
+
+    gap: 5px;
+
+    background-color: var(--primary-color);
+
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.deckHolder {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+
+    gap: 10px;
+
+    padding: 10px;
+
+    border-top: solid 2px var(--secondary-color);
+
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+} .deckList::-webkit-scrollbar {
+    display: none;
+}
+
+/* ---------- */
+
+.deckAddButton {
+    width: fit-content;
+
+    border: solid 2px var(--secondary-color);
+    border-left: none;
+    border-radius: 0 20px 20px 0;
+
+    margin-bottom: 20px;
+
+    color: var(--secondary-color);
+} .deckAddButton:hover {
+    color: white;
+}
+
+.deckListItem {
+    border-radius: 5px;
+    border: solid 1px grey;
+}
+
+.deckListItem:hover {
+    box-shadow: 5px 5px 10px rgb(25, 25, 25),
+        -5px -5px 10px rgb(60, 60, 60);
+}
+
+.deckListError {
+    display: flex;
+    justify-content: center;
+    
+    width: 100%;
+
+    margin: 0 auto;
+    padding: 5px 0;
+
+    border-top: solid 2px lightcoral;
+    border-bottom: solid 2px lightcoral;    
+
+    color:lightcoral;
+}
+
+/* -------------- Field -------------- */
+
+.field {
+    flex: 1;
+    display: flex;
+
+    width: 80%;
+    height: auto;
+
+    border-radius: 25px 0 0 0;
+
+    background-color: var(--secondary-color);
+}
