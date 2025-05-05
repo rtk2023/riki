@@ -36,25 +36,25 @@ function updateForm() {
     variable2.style.display = "inline";
 
     if (shape === "cone") {
-        label1.textContent = "Rādiuss (R):";
+        label1.textContent = "Rādiuss (R)";
         if (type === "volume") {
-            label2.textContent = "Augstums (H):";
+            label2.textContent = "Augstums (H)";
         }
         else {
-            label2.textContent = "Veidule (L):";
+            label2.textContent = "Veidule (L)";
         }
     }
     else if (shape === "cylinder") {
-        label1.textContent = "Rādiuss (R):";
-        label2.textContent = "Augstums (H):";
+        label1.textContent = "Rādiuss (R)";
+        label2.textContent = "Augstums (H)";
     }
     else if (shape === "sphere") {
-        label1.textContent = "Rādiuss (R):";
+        label1.textContent = "Rādiuss (R)";
         label2.style.display = "none";
         variable2.style.display = "none";
     }
     else if (shape === "cube") {
-        label1.textContent = "Mala (A):";
+        label1.textContent = "Mala (A)";
         label2.style.display = "none";
         variable2.style.display = "none";
     }

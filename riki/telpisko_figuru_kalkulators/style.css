@@ -55,13 +55,17 @@ Button {
 Button:hover {
     background-color:mediumblue;
 }
+
+input, select {
+  box-sizing: border-box;
+  font-size: 20px;
+  padding: 5px;
+  width: 100%;
+}
+
 #shapeSelector {
-    padding: 5px;
     margin: auto;
     cursor: pointer;
-    font-size: 20px;
-    width: 100%;
-    
 }
 
 .form-group {
@@ -77,18 +81,13 @@ Button:hover {
   }
 
 #calculationType{
-    padding: 5px;
     margin: auto;
     cursor: pointer;
-    font-size: 20px;
-    width: 100%;
 }
 #variable1{
-    padding: 5px;
     margin-bottom: 10px;
 }
 #variable2{
-    padding: 5px;
     margin-bottom: 10px;
 }
 
@@ -96,12 +95,9 @@ Button:hover {
     position: relative;
     font-size: 20px;
     margin: auto;
-    width: 100%;
   }
   
   .custom-field input {
-    width: 100%;
-    padding: 5px;
     font-size: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -117,7 +113,7 @@ Button:hover {
     left: 7px;
     top: 40%;
     transform: translateY(-50%);
-    color: #aaa;
+    color: black;
     background: white;
     padding: 0 4px;
     transition: 0.3s ease;
