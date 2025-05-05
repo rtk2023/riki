@@ -44,7 +44,7 @@ body {
 
 Button {
     color: white;
-    background-color: darkgray;
+    background-color: blue;
     padding: 10px;
     width: 100%;
     border: none;
@@ -52,7 +52,7 @@ Button {
     cursor: pointer;
 }
 Button:hover {
-    background-color: gray;
+    background-color:mediumblue;
 }
 #shapeSelector {
     padding: 5px;
