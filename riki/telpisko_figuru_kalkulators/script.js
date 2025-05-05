@@ -24,7 +24,7 @@ function surfaceCube(A) { return 6 * (A**2); } // Kubam ir 6 virsmas
 //Avots formulām: https://www.visc.gov.lv/lv/media/19301/download?attachment
 //Latviešu matemātikā ne īsti patīk pilnos skaitļos... pi nereizināšanas alternatīve?
 
-// Otrā mainīgā ievades lauka nosaukuma maiņa
+// Funkcija mainīgo lauku maiņai
 function updateForm() {
     const shape = shapeSelector.value;
     const type = calculationType.value;
