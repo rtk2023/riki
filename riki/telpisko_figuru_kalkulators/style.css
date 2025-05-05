@@ -47,24 +47,41 @@ Button {
     background-color: blue;
     padding: 10px;
     width: 100%;
-    border: none;
-    border-radius: 2px;
+    border: 1px solid black;
+    border-radius: 3px;
     cursor: pointer;
+    font-size: 20px;
 }
 Button:hover {
     background-color:mediumblue;
 }
 #shapeSelector {
     padding: 5px;
-    margin-left: 5px;
-    margin-bottom: 10px;
+    margin: auto;
     cursor: pointer;
+    font-size: 20px;
+    width: 100%;
+    
 }
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+  }
+  
+  .form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
 #calculationType{
     padding: 5px;
-    text-align: center;
-    margin-bottom: 10px;
+    margin: auto;
     cursor: pointer;
+    font-size: 20px;
+    width: 100%;
 }
 #variable1{
     padding: 5px;
@@ -73,4 +90,59 @@ Button:hover {
 #variable2{
     padding: 5px;
     margin-bottom: 10px;
+}
+
+.custom-field {
+    position: relative;
+    font-size: 20px;
+    margin: auto;
+    width: 100%;
+  }
+  
+  .custom-field input {
+    width: 100%;
+    padding: 5px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  .custom-field input:focus {
+    border-color: #666;
+  }
+  
+  .custom-field label {
+    position: absolute;
+    left: 7px;
+    top: 40%;
+    transform: translateY(-50%);
+    color: #aaa;
+    background: white;
+    padding: 0 4px;
+    transition: 0.3s ease;
+    pointer-events: none;
+  }
+  
+  .custom-field input:focus + label,
+  .custom-field input.has-value + label {
+    top: 0;
+    font-size: 12px;
+    color: #222;
+  }
+
+  .custom-field input.has-value + label {
+    top: 0;
+    font-size: 12px;
+    color: #222;
+  }
+
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+#output {
+    font-size: 20px;
+    font-weight: bold;
 }
