@@ -1,0 +1,260 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+/* Navigācija */
+#controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    gap: 10px;
+}
+
+/* navigācijas pogas */
+#controls button {
+    width: 140px;
+    height: 48px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    background-color: aliceblue;
+    cursor: pointer;
+}
+
+#controls button:hover {
+    background-color: rgb(225, 239, 250);
+}
+
+#controls #monthYear {
+    font-size: 1.2em;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+#controls #monthYear:after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    transition: width 0.5s;
+}
+
+#controls #monthYear:hover:after {
+    content: "";
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 2px;
+    background-color: red;
+    transition: width 0.5s;
+}
+
+/* Kalendāra un svētku paneļa konteineris */
+#calendar-container {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 10px;
+}
+
+/* kalendārs */
+#calendar {
+    flex: 0 0 70%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+    width: auto;
+}
+
+/* nedēļas dienu nosaukumi */
+.weekday {
+    font-size: 1.1em;
+    text-align: center;
+    padding: 6px 0;
+    font-weight: bold;
+    margin-top: -18px;
+}
+
+/* dienu lauki */
+.day,
+.day0 {
+    border: 1px solid #ccc;
+    position: relative;
+    height: 90px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.day0 {
+    border-color: transparent;
+}
+
+.day span {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.day:hover {
+    background-color: #f0f0f0;
+}
+
+/* Svētki dienu laukos */
+.holiday {
+    position: absolute;
+    top: 30px;
+    bottom: 6px;
+    left: 6px;
+    right: 6px;
+    max-height: calc((100% / 1.2) - 24px);
+    overflow-y: auto;
+    font-size: 0.85em;
+}
+
+.day span,
+.holiday,
+.month-cell,
+.year-cell {
+    cursor: default;
+}
+
+/* Svētku panelis */
+#svetki {
+    flex: 0 0 40%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 1em;
+    overflow-y: auto;
+    max-height: 500px;
+    scrollbar-width: thin;
+    scrollbar-color: #8ac78a #f0f0f0;
+}
+
+#svetki::-webkit-scrollbar {
+    width: 8px;
+}
+
+#svetki::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 3px;
+}
+
+#svetki::-webkit-scrollbar-thumb {
+    background-color: #8ac78a;
+    border-radius: 3px;
+    box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+#svetki::-webkit-scrollbar-thumb:hover {
+    background-color: #74b874;
+}
+
+
+/* Gadu un mēnešu lauki (taisnstūri) izvēles paneļos */
+.month-cell,
+.year-cell {
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    aspect-ratio: 1.6 / 1;
+}
+
+.year-cell {
+    max-width: 200px;
+    max-height: 125px;
+}
+
+.month-cell:hover,
+.year-cell:hover {
+    background-color: #f0f0f0;
+}
+
+/* Šodienas lauka krāsa */
+.today {
+    border: 2px solid red;
+}
+
+#calendar.viewMonths,
+#calendar.viewYears {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+#svetki h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.horizont_line {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.selected {
+    outline: 2px solid blue;
+}
+
+#today-control {
+    display: flex;
+    margin: -53px auto 0 10px;
+    width: 40%;
+    text-align: center;
+    padding-bottom: 10px;
+    z-index: 100;
+}
+
+#todayBtn {
+    width: 140px;
+    height: 48px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: 1px solid #8ac78a;
+    background-color: #c4ffda;
+    color: #A23838;
+    cursor: pointer;
+}
+
+#todayBtn:hover {
+    background-color: #aef39f;
+    color: rgb(0, 0, 0);
+}
+
+strong {
+    font-size: 20px;
+}
+
+a {
+    color:black;
+    text-decoration: none;
+}
