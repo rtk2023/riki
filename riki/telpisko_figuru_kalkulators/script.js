@@ -126,22 +126,24 @@ form.addEventListener('submit', (event) => {
     }
 });
 
-// Floating label effect for number inputs
+// Ievades lauku nosaukumu uzpeldēšanas efekta funkcija
 function toggleLabelClass() {
     if (variable1.value.trim() !== "") {
-      variable1.classList.add('has-value');
-    } else {
-      variable1.classList.remove('has-value');
+        variable1.classList.add('has-value');
+    } 
+    else {
+        variable1.classList.remove('has-value');
     }
 
     if (variable2.value.trim() !== "") {
         variable2.classList.add('has-value');
-      } else {
+    } 
+    else {
         variable2.classList.remove('has-value');
-      }
-  }
+    }
+}
   
-  variable1.addEventListener('input', toggleLabelClass);
-  variable2.addEventListener('input', toggleLabelClass);
-  window.addEventListener('DOMContentLoaded', toggleLabelClass);
+variable1.addEventListener('input', toggleLabelClass);
+variable2.addEventListener('input', toggleLabelClass);
+window.addEventListener('DOMContentLoaded', toggleLabelClass);
   
