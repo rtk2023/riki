@@ -1,0 +1,321 @@
+.deckEditor {
+    display: none;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: auto auto 1fr;
+
+    height: 100%;
+    width: 100%;
+
+    /* ------------------------ --------------------- ------------------------ */
+    /* ------------------------ Deck property segment ------------------------ */
+    /* ------------------------ --------------------- ------------------------ */
+
+    .deckEditorForm {
+        display: grid;
+        grid-template-columns: auto 1fr;
+
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+
+        padding: 20px;
+        gap: 10px;
+    }
+
+    /* -------------- Deck property labels -------------- */
+
+    .formDeckLabel {
+        text-align: right;
+        margin: auto 0;
+    }
+
+    /* -------------- Deck property inputs -------------- */
+
+    .formDeckTextInput {
+        padding: 5px 10px;
+
+        border-radius: 4px;
+        border: solid 2px transparent;
+
+        background-color: var(--primary-color);
+        
+        transition: all 0.15s ease;
+    }
+
+    .deckNameInput {
+        border-radius: 20px 20px 4px 4px;
+    }
+
+    .deckDescriptionInput {
+        border-radius: 4px 4px 20px 20px;
+
+        resize: none;
+    }
+
+    .formDeckTextInput:focus {
+        outline: none;
+
+        border-bottom: solid 2px var(--color);
+        border-right: solid 2px var(--color);
+
+        box-shadow: 2px 2px 10px 0px var(--color);
+    }
+
+    /* ------------------------ ---------------------- ------------------------ */
+    /* ------------------------ Card property segement ------------------------ */
+    /* ------------------------ ---------------------- ------------------------ */
+
+    .cardEditorForm {
+        display: none;
+        flex-flow: column nowrap;
+
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 1;
+
+        width: 80%;
+        max-width: 600px;
+        min-width: 0;
+
+        margin: 20px 0 20px auto;
+        padding-bottom: 10px;
+
+        background-color: var(--primary-color);
+        border-radius: 20px 0 0 20px;
+    }
+
+    .cardEditorEntries {
+        display: grid;
+        grid-template-columns: auto 1fr;
+
+        padding: 20px 5px 10px 20px;
+        gap: 10px;
+    }
+
+    /* -------------- Card property labels -------------- */
+
+    .cardEditorNameLabel {
+        width: fit-content;
+
+        margin: 0 20px 0 auto;
+        padding: 5px 10px;
+
+        border-radius: 0 0 10px 10px;
+
+        background-color: var(--secondary-color);
+
+        font-size: small;
+        color: rgb(128, 200, 240);
+    }
+
+    .cardEditorLabel {
+        text-align: right;
+        margin: auto 0;
+    }
+
+    /* -------------- Card property inputs -------------- */
+
+    .cardEditorTextInput {
+        padding: 5px 10px;
+
+        border-radius: 20px 5px 5px 20px;
+        border: solid 1px transparent;
+
+        background-color: var(--secondary-color);
+        
+        transition: all 0.15s ease;
+        resize: none;
+    }
+
+    .cardEditorTextInput:focus {
+        outline: none;
+
+        border-bottom: solid 1px var(--color);
+        border-right: solid 1px var(--color);
+
+        box-shadow: 1px 1px 5px 0px var(--color);
+    }
+
+    .cardEditorButtonHolder {
+        display: flex;
+        width: 100%;
+
+        padding: 0px 2%;
+
+        background-color: none;
+    }
+
+    .saveButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: fit-content;
+        height: fit-content;
+
+        padding: 10px;
+
+        border-radius: 5px;
+        border: none;
+
+        background-color: rgba(100, 149, 237, 0.5);
+
+        span {
+            width: 100%;
+
+            font-size: medium;
+            text-decoration: none;
+            text-align: center;
+        }
+    } .saveButton:hover {
+        background-color: rgba(100, 149, 237, 0.8);
+    }
+
+    .deleteButton {
+        margin-right: auto;
+
+        background-color: rgba(255, 0, 0, .3);
+    } .deleteButton:hover {
+        background-color: rgba(255, 0, 0, .5);
+    }
+
+    /* ------------------------- --------- ------------------------- */
+    /* ------------------------- Card list ------------------------- */
+    /* ------------------------- --------- ------------------------- */
+
+    /* --------------- Card holder --------------- */
+
+    .cardList {
+        display: flex;
+        flex-direction: column;
+
+        height: 100%;
+
+        grid-column: 2 / 2;
+        grid-row: 1 / 4;
+
+        padding: 20px;
+
+        background-color: var(--primary-color);
+    }
+
+    .cardHolder {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        
+        width: 100%;
+        height: 100%;
+        gap: 10px;
+
+        padding: 10px;
+
+        border-radius: 0 0 5px 5px;
+        border: solid 2px var(--secondary-color);
+
+        overflow-y: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .cardList::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* --------------- Cards --------------- */
+
+    .addCardButton {
+        display: flex;
+
+        height: fit-content;
+
+        padding: 10px 0;
+
+        border-radius: 20px 20px 0 0 ;
+        border: solid 2px var(--secondary-color);
+        border-bottom: none;
+
+        span {
+            width: 100%;
+
+            color: var(--secondary-color);
+
+            font-size: medium;
+            text-decoration: none;
+            text-align: center;
+        }
+    } .addCardButton:hover {
+        span {
+            color: white;
+        }
+    }
+
+    .cardListItem {
+        display: flex;
+
+        width: 100%;
+        height: fit-content;
+
+        margin: 0 auto 0 auto;
+        padding: 1% 1%;
+        gap: 4%;
+
+        border-radius: 5px;
+        border: none;
+
+        background-color: var(--secondary-color);
+
+        transition: all .2s ease-in-out;
+    }
+
+    .cardListItem:hover {
+        transform: translateX(-8px);
+    }
+
+    .cardListItemNum {
+        display: flex;
+
+        width: 2em;
+        aspect-ratio: 1/ 1;
+
+        border-radius: 5px;
+
+        background-color: var(--primary-color);
+
+        p {
+            width: fit-content;
+            height: fit-content;
+
+            font-size: large;
+            margin: auto;
+        }
+    }
+
+    .cardListItemQuestion {
+        flex: 1;
+        height: 100%;
+        width: 100%;
+
+        margin: auto 2% auto 0;
+
+        overflow-x: hidden;
+
+        text-align: left;
+        white-space: nowrap;
+        text-overflow: ellipsis
+    }
+
+    .cardListEmpty {
+        display: flex;
+        justify-content: center;
+        
+        width: 100%;
+
+        margin: 0 auto;
+        padding: 5px 0;
+
+        border-top: solid 2px lightcoral;
+        border-bottom: solid 2px lightcoral;    
+
+        color:lightcoral;
+    }
+
+}
