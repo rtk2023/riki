@@ -344,7 +344,7 @@ button:active {
 #optionContainer {
   max-width: 600px;
   width: 95%;
-  height: 400px;
+  min-height: 400px;
   display: none;
 
   .window_content {
