@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Darba stundu kalkulators</title>
+
+  <!-- FullCalendar CSS & JS -->
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.0/main.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.0/main.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.0/locales-all.min.js"></script>
+
+  <style>
+    :root {
+      --primary-color: #3498db;
+      --primary-dark: #2980b9;
+      --accent-color: #e74c3c;
+      --accent-light: #ffeceb;
+      --weekend-color: #e8f4f8;
+      --today-color: rgba(52, 152, 219, 0.1);
+      --border-radius: 8px;
+      --shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.5;
+    }
+    
+    h1 {
+      color: var(--primary-color);
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    .panel {
+      background-color: white;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .panel-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: var(--primary-dark);
+      border-bottom: 1px solid #eee;
+      padding-bottom: 0.5rem;
+    }
+    
+    #controls {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: flex-end;
+    }
+    
+    label {
+      display: flex;
+      flex-direction: column;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #555;
+    }
+    
+    input, button, select {
+      margin-top: 0.5rem;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    
+    input:focus, select:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+    }
+    
+    button {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.2s;
+    }
+    
+    button:hover {
+      background-color: var(--primary-dark);
+    }
+    
+    button.secondary {
+      background-color: #95a5a6;
+    }
+    
+    button.secondary:hover {
+      background-color: #7f8c8d;
+    }
+    
+    #result {
+      padding: 0.5rem 1rem;
+      background-color: var(--weekend-color);
+      border-radius: 4px;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+    
+    .workdays-config {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+    
+    .day-toggle {
+      background: #eee;
+      border: 1px solid #ddd;
+      padding: 0.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      user-select: none;
+      min-width: 2.5rem;
+      text-align: center;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    
+    .day-toggle.active {
+      background-color: var(--primary-color);
+      color: white;
+      border-color: var(--primary-dark);
+    }
+    
+    #calendar {
+      height: auto;
+    }
+    
+    .legend {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+    }
+    
+    .legend-color {
+      width: 16px;
+      height: 16px;
+      border-radius: 3px;
+    }
+    
+  
+    .fc-day-sat, .fc-day-sun {
+      background-color: var(--weekend-color) !important;
+    }
+    
+    .holiday-date {
+      background-color: var(--accent-light) !important;
+      position: relative;
+    }
+    
+    .fc-event {
+      border: none;
+      background-color: transparent;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .fc-event-title {
+      font-size: 0.8rem;
+      padding: 2px 4px;
+      white-space: normal;
+      overflow: visible;
+      color: var(--accent-color);
+      font-weight: 600;
+    }
+    
+    .fc-daygrid-event {
+      white-space: normal !important;
+    }
+    
+    .fc-today {
+      background-color: var(--today-color) !important;
+    }
+    
+  
+    .holiday-badge {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 12px 12px 0;
+      border-color: transparent var(--accent-color) transparent transparent;
+    }
+    
+   
+    .custom-workday {
+      background-color: rgba(46, 204, 113, 0.1) !important;
+    }
+    
+    .custom-nonworkday {
+      background-color: rgba(192, 57, 43, 0.1) !important;
+      text-decoration: line-through;
+    }
+    
+    .fc-day-number {
+      position: relative;
+    }
+    
+    .calendar-actions {
+      display: flex;
+      gap: 1rem;
+      margin: 1rem 0;
+      flex-wrap: wrap;
+    }
+    
+    .calendar-actions button {
+      flex: 1;
+      min-width: 200px;
+    }
+    
+    @media (max-width: 768px) {
+      #controls {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      .calendar-actions button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Darba stundu kalkulators</h1>
+  
+  <div class="panel">
+    <h2 class="panel-title">Datumu izvēle</h2>
+    <div id="controls">
+      <label>
+        Sākuma datums:
+        <input type="date" id="startDate" value="2025-05-01"/>
+      </label>
+      <label>
+        Beigu datums:
+        <input type="date" id="endDate" value="2025-05-31"/>
+      </label>
+      <label>
+        Stundas dienā:
+        <input type="number" id="dailyHours" value="8" min="1" step="0.5"/>
+      </label>
+      <button id="calcBtn">Aprēķināt stundas</button>
+    </div>
+    <div id="result"></div>
+  </div>
+  
+  <div class="panel">
+    <h2 class="panel-title">Darba dienu iestatījumi</h2>
+    <p>Izvēlieties, kuras nedēļas dienas ir darba dienas:</p>
+    <div class="workdays-config" id="workDaysToggle">
+      <div class="day-toggle" data-day="1">Pr</div>
+      <div class="day-toggle" data-day="2">Ot</div>
+      <div class="day-toggle" data-day="3">Tr</div>
+      <div class="day-toggle" data-day="4">Ce</div>
+      <div class="day-toggle" data-day="5">Pk</div>
+      <div class="day-toggle" data-day="6">Se</div>
+      <div class="day-toggle" data-day="0">Sv</div>
+    </div>
+    
+    <p>Kalendārā varat arī:</p>
+    <div class="calendar-actions">
+      <button id="addWorkdayBtn" class="secondary">Pievienot īpašu darba dienu</button>
+      <button id="addNonworkdayBtn" class="secondary">Pievienot īpašu brīvdienu</button>
+      <button id="resetCustomDaysBtn" class="secondary">Atiestatīt visas īpašās dienas</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div id="calendar"></div>
+    
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-color" style="background-color: var(--weekend-color);"></div>
+        <span>Brīvdienas</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color" style="background-color: var(--accent-light);"></div>
+        <span>Svētku dienas</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color" style="background-color: rgba(46, 204, 113, 0.1);"></div>
+        <span>Īpašas darba dienas</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color" style="background-color: rgba(192, 57, 43, 0.1);"></div>
+        <span>Īpašas brīvdienas</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      
+      const latvianHolidays = [
+        { date: '2025-01-01', name: 'Jaunais Gads' },
+        { date: '2025-04-18', name: 'Lielā Piektdiena' },
+        { date: '2025-04-20', name: 'Lieldienas' },
+        { date: '2025-04-21', name: 'Otrās Lieldienas' },
+        { date: '2025-05-01', name: 'Darba svētki' },
+        { date: '2025-05-04', name: 'Latvijas Republikas Neatkarības atjaunošanas diena' },
+        { date: '2025-06-23', name: 'Līgo diena' },
+        { date: '2025-06-24', name: 'Jāņi' },
+        { date: '2025-11-18', name: 'Latvijas Republikas proklamēšanas diena' },
+        { date: '2025-12-24', name: 'Ziemassvētku vakars' },
+        { date: '2025-12-25', name: 'Ziemassvētki' },
+        { date: '2025-12-26', name: 'Otrie Ziemassvētki' },
+        { date: '2025-12-31', name: 'Vecgada vakars' },
+    
+        { date: '2024-12-24', name: 'Ziemassvētku vakars' },
+        { date: '2024-12-25', name: 'Ziemassvētki' },
+        { date: '2024-12-26', name: 'Otrie Ziemassvētki' },
+        { date: '2024-12-31', name: 'Vecgada vakars' },
+        { date: '2026-01-01', name: 'Jaunais Gads' }
+      ];
+      
+   
+      const holidaySet = new Set(latvianHolidays.map(h => h.date));
+      
+     
+      let workingDays = new Set([1, 2, 3, 4, 5]);
+      
+      
+      const customWorkdays = new Set();  
+      const customNonworkdays = new Set(); 
+      
+    
+      const dayToggles = document.querySelectorAll('.day-toggle');
+      dayToggles.forEach(toggle => {
+        const day = parseInt(toggle.dataset.day);
+        if (workingDays.has(day)) {
+          toggle.classList.add('active');
+        }
+        
+        toggle.addEventListener('click', () => {
+          toggle.classList.toggle('active');
+          const day = parseInt(toggle.dataset.day);
+          
+          if (workingDays.has(day)) {
+            workingDays.delete(day);
+          } else {
+            workingDays.add(day);
+          }
+          
+          console.log(`Updated working days: ${Array.from(workingDays)}`);
+          
+         
+          refreshCalendar();
+          calculateWorkingHours(); 
+        });
+      });
+      
+      
+      const calendarEl = document.getElementById('calendar');
+      let calendar;
+      
+      function createCalendar() {
+        try {
+          calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            locale: 'lv',
+            firstDay: 1, 
+            height: 'auto',
+            headerToolbar: {
+              left: 'prev,next today',
+              center: 'title',
+              right: 'dayGridMonth'
+            },
+            events: latvianHolidays.map(holiday => ({
+              title: holiday.name,
+              start: holiday.date,
+              allDay: true,
+              classNames: ['holiday-event']
+            })),
+            eventDidMount: function(info) {
+              const date = info.event.start;
+              const dateStr = date.getFullYear() + '-' + 
+                              String(date.getMonth() + 1).padStart(2, '0') + '-' + 
+                              String(date.getDate()).padStart(2, '0');
+              
+              const dayEl = document.querySelector(`.fc-day[data-date="${dateStr}"]`);
+              if (dayEl) {
+                dayEl.classList.add('holiday-date');
+                const badge = document.createElement('div');
+                badge.className = 'holiday-badge';
+                dayEl.appendChild(badge);
+              }
+            },
+            dayCellDidMount: function(info) {
+              const date = info.date;
+              const dateStr = date.getFullYear() + '-' + 
+                              String(date.getMonth() + 1).padStart(2, '0') + '-' + 
+                              String(date.getDate()).padStart(2, '0');
+              
+              const dayOfWeek = date.getDay();
+              
+              if (customWorkdays.has(dateStr)) {
+                info.el.classList.add('custom-workday');
+              } 
+              else if (customNonworkdays.has(dateStr)) {
+                info.el.classList.add('custom-nonworkday');
+              }
+              
+              info.el.style.cursor = 'pointer';
+              info.el.addEventListener('click', function() {
+                handleDayClick(dateStr);
+              });
+            }
+          });
+          
+          calendar.render();
+        } catch (e) {
+          console.error('Error initializing calendar:', e);
+          calendarEl.innerHTML = '<p>Error loading calendar. Please check console for details.</p>';
+        }
+      }
+      
+      function refreshCalendar() {
+        if (calendar) {
+          calendar.destroy();
+        }
+        createCalendar();
+      }
+      
+      createCalendar();
+      
+      function handleDayClick(dateStr) {
+        const currentMode = document.getElementById('addWorkdayBtn').classList.contains('active') ? 'workday' :
+                           document.getElementById('addNonworkdayBtn').classList.contains('active') ? 'nonworkday' : null;
+        
+        if (!currentMode) return;
+        
+        if (currentMode === 'workday') {
+          if (customWorkdays.has(dateStr)) {
+            customWorkdays.delete(dateStr);
+          } else {
+            customWorkdays.add(dateStr);
+            customNonworkdays.delete(dateStr);
+          }
+        } else if (currentMode === 'nonworkday') {
+          if (customNonworkdays.has(dateStr)) {
+            customNonworkdays.delete(dateStr);
+          } else {
+            customNonworkdays.add(dateStr);
+            customWorkdays.delete(dateStr);
+          }
+        }
+        
+        refreshCalendar();
+        console.log(`Custom workdays: ${Array.from(customWorkdays)}`);
+        console.log(`Custom non-workdays: ${Array.from(customNonworkdays)}`);
+        calculateWorkingHours(); 
+      }
+      
+      document.getElementById('addWorkdayBtn').addEventListener('click', function() {
+        toggleActiveButton(this);
+        calendar.setOption('selectable', this.classList.contains('active'));
+      });
+      
+      document.getElementById('addNonworkdayBtn').addEventListener('click', function() {
+        toggleActiveButton(this);
+        calendar.setOption('selectable', this.classList.contains('active'));
+      });
+      
+      document.getElementById('resetCustomDaysBtn').addEventListener('click', function() {
+        customWorkdays.clear();
+        customNonworkdays.clear();
+        document.getElementById('addWorkdayBtn').classList.remove('active');
+        document.getElementById('addNonworkdayBtn').classList.remove('active');
+        refreshCalendar();
+        calculateWorkingHours(); 
+      });
+      
+      function toggleActiveButton(button) {
+     
+        document.querySelectorAll('.calendar-actions button').forEach(btn => {
+          btn.classList.remove('active');
+        });
+     
+        button.classList.toggle('active');
+      }
+      
+     
+      function calculateWorkingHours() {
+        try {
+          const startInput = document.getElementById('startDate').value;
+          const endInput = document.getElementById('endDate').value;
+          const hoursPerDay = parseFloat(document.getElementById('dailyHours').value) || 8;
+          
+      
+          if (!startInput || !endInput) {
+            alert('Lūdzu, ievadiet gan sākuma, gan beigu datumu');
+            return;
+          }
+          
+          const start = new Date(startInput);
+          const end = new Date(endInput);
+          end.setHours(23, 59, 59); 
+          
+          if (isNaN(start.getTime()) || isNaN(end.getTime())) {
+            alert('Lūdzu, ievadiet derīgus datumus');
+            return;
+          }
+          
+          if (end < start) {
+            alert('Beigu datums nevar būt pirms sākuma datuma');
+            return;
+          }
+          
+          let workDays = 0;
+          const workingDates = [];
+          const nonWorkingDates = [];
+          const debugInfo = [];
+          
+          const currentDate = new Date(start);
+          while (currentDate <= end) {
+            const dayOfWeek = currentDate.getDay();
+            const dateStr = currentDate.getFullYear() + '-' + 
+                            String(currentDate.getMonth() + 1).padStart(2, '0') + '-' + 
+                            String(currentDate.getDate()).padStart(2, '0');
+            
+            let isWorkDay = workingDays.has(dayOfWeek);
+            let status = isWorkDay ? "Default workday" : "Default non-workday";
+            
+            const isHoliday = holidaySet.has(dateStr);
+            if (isHoliday) {
+              isWorkDay = false;
+              status = "Holiday";
+            }
+            
+            if (customWorkdays.has(dateStr)) {
+              isWorkDay = true;
+              status = "Custom workday";
+            } 
+            
+            if (customNonworkdays.has(dateStr)) {
+              isWorkDay = false;
+              status = "Custom non-workday";
+            }
+            
+            debugInfo.push(`${dateStr} (${['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][dayOfWeek]}): ${status} => ${isWorkDay ? 'Working' : 'Not working'}`);
+            
+            if (isWorkDay) {
+              workDays++;
+              workingDates.push(new Date(currentDate));
+            } else {
+              nonWorkingDates.push(new Date(currentDate));
+            }
+            
+            currentDate.setDate(currentDate.getDate() + 1);
+          }
+          
+          const totalHours = workDays * hoursPerDay;
+          
+          const resultElement = document.getElementById('result');
+          resultElement.innerHTML = `
+            <div>Periods: ${formatDate(start)} - ${formatDate(end)}</div>
+            <div>Darba dienas: <strong>${workDays}</strong></div>
+            <div>Kopā: <strong>${totalHours.toFixed(1)} stundas</strong></div>
+          `;
+          
+          if (calendar) {
+            calendar.gotoDate(start);
+          }
+          
+          console.log("Working days calculation:");
+          debugInfo.forEach(info => console.log(info));
+          console.log(`Total working days: ${workDays}`);
+          console.log(`Custom workdays: ${Array.from(customWorkdays)}`);
+          console.log(`Custom non-workdays: ${Array.from(customNonworkdays)}`);
+        } catch (e) {
+          console.error('Error in calculation:', e);
+          alert('Kļūda aprēķinos. Lūdzu, pārbaudiet ievadītos datus.');
+        }
+      }
+      
+      function formatDate(date) {
+        const day = String(date.getDate()).padStart(2, '0');
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const year = date.getFullYear();
+        return `${day}.${month}.${year}`;
+      }
+      
+      document.getElementById('startDate').addEventListener('change', calculateWorkingHours);
+      document.getElementById('endDate').addEventListener('change', calculateWorkingHours);
+      document.getElementById('dailyHours').addEventListener('change', calculateWorkingHours);
+      
+      const calcBtn = document.getElementById('calcBtn');
+      calcBtn.addEventListener('click', calculateWorkingHours);
+      
+      setTimeout(calculateWorkingHours, 500);
+    });
+  </script>
+</body>
+</html>
