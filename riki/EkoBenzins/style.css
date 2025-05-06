@@ -33,6 +33,27 @@ header {
     flex-direction: column;
     gap: 0.8em;
     border: 0;
+    overflow: hidden;
+}
+
+.route-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+    padding: 0;
+    overflow-y: auto;
+    max-height: 100%;
+}
+
+.destination-info{
+    display: flex;
+    flex-direction: row;
+    gap: 0.8em;
+    padding: 0;
+}
+
+#removeDestination {
+    background-color: crimson;
 }
 
 .sidebar h2 {
@@ -128,10 +149,18 @@ button:hover {
 }
 
 .city {
+    color: #bc91ea;
+}
+
+.city strong {
     color: blueviolet;
 }
 
 .highway {
+    color: #FF5349;
+}
+
+.highway strong {
     color: crimson;
 }
 
@@ -159,6 +188,7 @@ button:hover {
         max-width: none;
         border-right: none;
         border-bottom: 1px solid #30363d;
+        max-height: 430px;
     }
 
     #map {

@@ -1,26 +1,25 @@
 
-# Eko-Benzins
+# Eko-Benzīns
 
-Viegli lietojama majaslapa, kas ļauj ērti aprēķināt degvielas patēriņu un nepieciešamo laiku, lai nokļūtu līdz izvēlētajai galamērķa vietai.
+Viegli lietojama majaslapa, kas ļauj ērti aprēķināt degvielas patēriņu un nepieciešamo laiku, lai nokļūtu līdz izvēlētajam galamēķim vai vai galamēķiem.
 
 ## Pārskats
-- Izveido optimālo ceļu no sākum punkta uz galapunktu.
+- Izveido optimālo ceļu no sākum punkta uz galapunktu  vai galapunktiem.
 - Aprēķina brauciena laiku.
 - Aprēķina degvielas patēriņu.
-- Atdala ceļa tipus maršruta līnijā kā pilsētas ceļš vai šoseja.
+- Atdala ceļa veidu maršuta aprēķinā: pilsētas ceļš vai šoseja.
 
 ```
 EkoBenzins/
-├── index.html		# Main HTML file
-├── style.css		# Main CSS file
-├── main.js			# Main JS file
-└── README.md		# Preject information
+├── index.html		# HTML fails
+├── style.css		# CSS fails
+├── main.js			# JS fails
+└── README.md		# Projekta informācija
 ```
 
 ## Iespējamie uzlabojumi
 - Ceļu vēsture.
-- Pievienot pieturu vietas funcionalitāti.
-- Realā laika satikmes ietekme uz laika periodu.
+- Realā laika satikmes ietekme uz brauciena laiku.
 - Garāks atļautais ceļš virs 1500 km.
 
 Nav zināmu defektu.
@@ -33,8 +32,8 @@ Nav zināmu defektu.
 - Leaflet API: https://leafletjs.com/
 
 ## Autori
-© 2025 Raimonds Ozoliņš, Rihards Osis, Markuss Dviļs      
 Github: Raimonds Ozoliņš - https://github.com/xYFreezyYx       
 Github: Markuss Dviļs - https://github.com/Osak1i
 Github: Rihards Ozoliņš - https://github.com/Knublaks
 
+© 2025 Raimonds Ozoliņš, Rihards Osis, Markuss Dviļs

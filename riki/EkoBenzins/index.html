@@ -16,8 +16,14 @@
         <h2>Eko-Benzīns</h2>
         <button id="centerOnRoute" type="button" style="display: none;" onclick="centerOnRoute()">Centrēt</button>
       </header>
-      <input type="text" id="from" placeholder="No adreses">
-      <input type="text" id="to" placeholder="Uz adresi">
+      <div id="routeInfo" class="route-info">
+        <input type="text" id="from" placeholder="Sākuma adreses">
+        <input type="text" id="to1" placeholder="Galapunkta adrese">
+      </div>
+      <div class="destination-info">
+        <button type="button" id="addDestination" onclick="destinationAddRemove(1)">+</button>
+        <button type="button" id="removeDestination" onclick="destinationAddRemove(0)">-</button>
+      </div>
       <input type="number" id="cityFuel" placeholder="Degvielas patēriņš pilsētā (L/100km)" step="0.1">
       <input type="number" id="highwayFuel" placeholder="Degvielas patēriņš uz šosejas (L/100km)" step="0.1">
       <button type="button" id="calculate" onclick="calculateRoute()">Aprēķināt ceļu</button>
