@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cipher Decoder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #74ebd5, #acb6e5);
+            color: #333;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #4a90e2;
+            color: #fff;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-section {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        textarea, input, select, button {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        button {
+            background-color: #4a90e2;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #357ab8;
+        }
+        .result-section {
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1>Cipher Decoder</h1>
+    </header>
+    <main>
+        <section class="form-section">
+            <label for="cipherType">Choose a cipher:</label>
+            <select id="cipherType">
+                <option value="atbash">Atbash Cipher</option>
+                <option value="caesar">Caesar Cipher</option>
+                <option value="vigenere">Vigenère Cipher</option>
+                <option value="base64">Base64</option>
+                <option value="morse">Morse Code</option>
+            </select>
+
+            <label for="inputText">Input text:</label>
+            <textarea id="inputText" rows="4" placeholder="Enter your text here..."></textarea>
+
+            <label for="key" id="keyLabel" style="display: none;">Key/Shift (if needed):</label>
+            <input type="text" id="key" placeholder="Optional key or shift value" style="display: none;">
+
+            <button id="decodeButton">Decode</button>
+        </section>
+        <section class="result-section">
+            <h2>Result:</h2>
+            <p id="result"></p>
+        </section>
+    </main>
+    <script src="AtbashCipher.js"></script>
+    <script src="CeaserCipher.js"></script>
+    <script src="VigenereCipher.js"></script>
+    <script src="base64.js"></script>
+    <script src="morse.js"></script>
+    <script>
+        const cipherTypeElement = document.getElementById("cipherType");
+        const keyLabel = document.getElementById("keyLabel");
+        const keyInput = document.getElementById("key");
+        const headerElement = document.getElementById("header");
+
+        cipherTypeElement.addEventListener("change", function() {
+            const selectedCipher = cipherTypeElement.value;
+            headerElement.innerHTML = `<h1>${selectedCipher.charAt(0).toUpperCase() + selectedCipher.slice(1)} Cipher Decoder</h1>`;
+            
+             if (selectedCipher === "caesar" || selectedCipher === "vigenere") {
+                keyLabel.style.display = "block";
+                keyInput.style.display = "block";
+            } else {
+                keyLabel.style.display = "none";
+                keyInput.style.display = "none";
+            }
+        });
+
+        document.getElementById("decodeButton").addEventListener("click", function() {
+            const cipherType = cipherTypeElement.value;
+            const inputText = document.getElementById("inputText").value;
+            const key = keyInput.value;
+            let output = "";
+
+            switch (cipherType) {
+                case "atbash":
+                    output = atbashDecode(inputText);
+                    break;
+                case "caesar":
+                    output = cipherDecode(inputText, parseInt(key) || 0);
+                    break;
+                case "vigenere":
+                    output = vigenereDecode(inputText, key || "key");
+                    break;
+                case "base64":
+                    output = decodeBase64(inputText);
+                    break;
+                case "morse":
+                    output = decodeMorse(inputText);
+                    break;
+                default:
+                    output = "Invalid cipher type!";
+            }
+
+            document.getElementById("result").textContent = output;
+        });
+    </script>
+</body>
+</html>
