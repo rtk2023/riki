@@ -37,12 +37,15 @@ taskElementArray.forEach((val) => {
 	const tagContainer = document.getElementById(globalID + "_T");
 	const tags = taskData["tags"];
 	tagContainer.innerHTML = "";
+	// Removes deleted tag id from data
 	tags.forEach(async (j) => {
-		j = parseID(j)["fID"];
-		// if (!Object.keys(tagData)[j]) {
-		// 	taskData.splice(taskData.indexOf(j), 1);
-		// 	return;
-		// }
+		if (!Object.keys(tagData)[j]) {
+			tags.splice(tags.indexOf(j), 1);
+			taskData["tags"] = tags;
+			console.log(taskData["tags"]);
+			setTaskData(taskData, globalID);
+			return;
+		}
 		await insertTemplate(tagContainer, "./lib/templates/tag.html", `${j}`, {
 			color: tagData[Object.keys(tagData)[j]],
 			name: Object.keys(tagData)[j],
