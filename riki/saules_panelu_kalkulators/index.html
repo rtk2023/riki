@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Formas lapa, kurā lietotājs norāda dažādus nepieciešamos parametrus paneļu ietaupījuma aprēķināšanai.">
   <title>Saules paneļu ietaupījuma kalkulators</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <style>
@@ -63,28 +64,61 @@
 </head>
 <body>
   <div class="container py-5">
-    <div class="text-center mb-4">
+    <div class="text-center mb-4"> <!-- VIRSRAKSTS -->
       <h1 class="fw-bold">Saules paneļu kalkulators</h1>
       <p class="lead">Aprēķini savu iespējamo ietaupījumu, izmantojot saules enerģiju!</p>
     </div>
 
     <form id="calculator-form">
-      <div class="form-section">
-        <h4 class="mb-3">Informācija par klientu</h4>
+      <div class="form-section"> <!-- KLIENTU INFORMĀCIJA -->
+        <h4 class="mb-3">Paneļu atrašanās vieta</h4>
 
         <div class="mb-3">
-          <label for="location" class="form-label">Atrašanās vieta (Adrese vai pasta indekss)</label>
-          <input type="text" class="form-control" id="location" required />
+          <label for="zip" class="form-label">Pasta indekss</label>
+          <input type="text" class="form-control" id="zip" required />
         </div>
 
         <div class="mb-3">
-          <label class="form-label">Montāžas platība (m²)</label>
-          <input type="number" class="form-control" id="mounting-area" />
+          <label for="countryCodes" class="form-label">Valsts kods</label>
+          <select class="form-select" id="countryCodes" required></select>
+        </div>
+      </div>
+
+      <div class="form-section"> <!-- ENERĢIJAS PATĒRIŅŠ -->
+        <h5 class="mb-3">Enerģijas patēriņš</h5>
+        <div class="mb-3">
+          <label for="monthly-cost" class="form-label">Vidējais mēneša elektrības rēķins</label>
+          <div class="input-group">
+            <input type="number" class="form-control" id="monthly-cost" required />
+            <span class="input-group-text">€</span>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="yearly-usage" class="form-label">Vidējais gada patēriņš (kWh)</label>
+          <input type="number" class="form-control" id="yearly-usage" required />
+        </div>
+      </div>
+
+      <div class="form-section"> <!-- SAULES PANEĻU INFORMĀCIJA -->
+        <h5 class="mb-3">Saules paneļu preferences</h5>
+        <div class="mb-3">
+          <label for="preferred-size" class="form-label">Vēlamais sistēmas izmērs (kW)</label> 
+          <input type="number" class="form-control" id="preferred-size" required />
         </div>
 
         <div class="mb-3">
-          <label class="form-label">Jumta orientācija</label>
-          <select class="form-select" id="orientation">
+          <label for="panel-model" class="form-label">Paneļu modelis (ja zināms)</label>
+          <input type="text" class="form-control" id="panel-model" />
+        </div>
+
+        <div class="mb-3">
+          <label for="mounting-area" class="form-label">Paneļu platība (m²)</label>
+          <input type="number" class="form-control" id="mounting-area" required />
+        </div>
+
+        <div class="mb-3">
+          <label for="orientation" class="form-label">Jumta orientācija</label>
+          <select class="form-select" id="orientation" required >
             <option>Ziemeļaustrumi</option>
             <option>Austrumi</option>
             <option>Dienvidaustrumi</option>
@@ -97,53 +131,27 @@
         </div>
 
         <div class="mb-3">
-          <label class="form-label">Jumta slīpuma leņķis: <span id="angle-display">45</span>°</label>
+          <label for="roof-angle" class="form-label">Jumta slīpuma leņķis: <span id="angle-display">45</span>°</label>
           <input type="range" class="form-range" id="roof-angle" min="0" max="90" step="1" value="45"
-            oninput="document.getElementById('angle-display').textContent = this.value" />
+            oninput="document.getElementById('angle-display').textContent = this.value" required/>
         </div>
 
         <div class="form-check mb-3">
+          <label class="form-check-label" for="shading" >Potenciāls ēnojums (Koki, ēkas utt.)</label>
           <input type="checkbox" class="form-check-input" id="shading" />
-          <label class="form-check-label" for="shading">Potenciāls ēnojums (Koki, ēkas utt.)</label>
         </div>
       </div>
 
-      <div class="form-section">
-        <h5 class="mb-3">Enerģijas patēriņš</h5>
-        <div class="mb-3">
-          <label class="form-label">Vidējais mēneša elektrības rēķins</label>
-          <div class="input-group">
-            <input type="number" class="form-control" id="monthly-cost" />
-            <span class="input-group-text">€</span>
-          </div>
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Vidējais gada patēriņš (kWh)</label>
-          <input type="number" class="form-control" id="yearly-usage" />
-        </div>
-      </div>
-
-      <div class="form-section">
-        <h5 class="mb-3">Saules paneļu preferences</h5>
-        <div class="mb-3">
-          <label class="form-label">Vēlamais sistēmas izmērs (kW)</label>
-          <input type="number" class="form-control" id="preferred-size" />
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Paneļu modelis (ja zināms)</label>
-          <input type="text" class="form-control" id="panel-model" />
-        </div>
-      </div>
-
-      <div class="form-section">
+      <div class="form-section"> <!-- FINANŠU INFORMĀCIJA -->
         <h5 class="mb-3">Finanšu informācija</h5>
         <div class="mb-3">
-          <label class="form-label">Neto uzskaites politika vai tarifa informācija</label>
+          <label for="net-metering-policy" class="form-label">Neto uzskaites politika vai tarifa informācija</label>
           <textarea class="form-control" id="net-metering-policy" rows="2"></textarea>
         </div>
       </div>
 
-      <button type="submit" class="btn btn-primary w-100">Aprēķināt ietaupījumu</button>
+      <!-- IESNIEGŠANAS POGA -->
+      <button type="submit" class="btn btn-primary w-100 text-dark" id="calculate">Aprēķināt ietaupījumu</button>
     </form>
   </div>
 
@@ -151,5 +159,6 @@
   <div class="sun"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
