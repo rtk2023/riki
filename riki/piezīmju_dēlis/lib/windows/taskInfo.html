@@ -1,0 +1,29 @@
+<header class="navbar">
+  <div>Piezīmju rediģēšana</div>
+  <div class="nav_X" id="task_popup_X" style="line-height: 2rem">[X]</div>
+</header>
+<div id="" class="window_content taskWindowContainer">
+  <span>Piezīmju nosaukums:</span>
+  <input
+    type="text"
+    placeholder="Piezīmju nosaukums"
+    id="inputTaskName"
+    maxlength="100"
+  />
+  <span>Piezīmju apraksts:</span>
+  <textarea
+    name="task description"
+    id="inputTaskDesc"
+    placeholder="Ievadiet aprakstu..."
+  ></textarea>
+  <span>Piezīmju krāsa:</span>
+  <input type="color" id="inputTaskColor" class="color_select" />
+  <button id="selectTagButton">Izvēlēt tagus</button>
+</div>
+<footer>
+  <div id="taskPositionButtons">
+    <button id="moveTaskUp">↑</button><button id="moveTaskDown">↓</button>
+  </div>
+  <button id="removeTask">Dzēst</button
+  ><button id="saveTaskData">Saglābāt</button>
+</footer>
