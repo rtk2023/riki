@@ -5,3 +5,34 @@ body {
   background: #f0f2f5;
   transition: background 0.3s, color 0.3s;
 }
+
+#controls-container {
+  position: sticky;
+  top: 0;
+  background: inherit;
+  z-index: 10;
+  padding: 1rem 0;
+}
+
+#controls {
+  margin-bottom: 1.5rem;
+}
+
+button, select {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 16px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover, select:hover {
+  background-color: #0056b3;
+}
+
+#count-container {
+  margin-top: 1rem;
+}
