@@ -1,5 +1,40 @@
-# RTK_converter_website
-This is a task for group P2-3 in RTK. The select theme is a file converter. Until 29.04.25 I need to create a website that has the ability to convert files for one format into other.
+# Piezimju dēlis
+
+## Ievads
+
+Rīka galvenā nozīme ir nodrošināt vienkāršu un pielāgojamu veidu, kā saglabāt un kategorizēt piezīmes. 
+
+## Pārskats
+
+Projektā tiek izmantota moduļu sistēma, kurā visi elementi ir sadalīti komponentēs (līdzīgi kā React). 
+Visi lapas dati tiek glabāti mapē “lib”. “Data” mapē ir ietverti skripti, kas pārvalda komponentus, piemēram, uzdevumu mapi, uzdevumu un tagu. Mapēs “windows” un “templates” ir html faili ar attiecīgajiem logiem/elementiem. 
+Ielādējot tiek izpildīti vairāki skripti: vispirms tiek izpildīts window_loader.js, kas ielādē visus logus uz ainas un beigās nosūta notikumu “loaded”, kas signalizē citiem skriptiem, ka var ielādēt citus datus. 
+
+Pēc tam tiek izpildīts “data_manager.js”, kas satur kuģa datus un palīgfunkcijas, piemēram, uzdevumu un mapju datu pārvaldību, kā arī skripta un komponenta ievietošanu lapā. 
+
+Pēc tam tiek izpildīts “folder_loader.js”, kas ģenerē datus uz dēļa. Tas nolasa tāfeles datus un iterē katru mapi un uzdevumu un pievieno tiem komponentus. 
+
+Pārējie “manager” skripti atbild par datu pārvaldību attiecīgajās komponentēs (logos).
+
+Lai pievienotu komponentu lapai, vispirms ielādējiet HTML komponenta failu, pēc tam atsevišķi pievienojiet skriptu izveidotajam komponentam ar citu funkciju. Tas ir saistīts ar to, ka nav iespējams dinamiski pievienot skripta tagus ar HTML.
+
+## Iespējamie uzlabojumi
+
+Nākotnē varētu ieviest konta sistēmu, kas ļautu sinhronizēt datus starp visām ierīcēm. 
+
+Vēl ko varētu uzlabot, ir vairāk uzdevumu tipu, piemēram, varētu pievienot konkrētam datumam/laikam atbilstošus uzdevumus vai atzīmēšanas rūtiņu piezīmjus, kā arī uzlabot pielāgošanu.
+
+## Resursi 
+
+Galvenais avots, ko izmantoju stila veidošanai, bija Mozilla Developer dokumentācija: 
+https://developer.mozilla.org/en-US/docs/Web
+
+Kodam galvenais resurss bija StackOverflow un Reddit: 
+https://stackoverflow.com/questions
+https://www.reddit.com/
+
+## Autori 
+
+2025 gads: Andrejs Pisočņikovs
 
 
-!! I need to change this description
