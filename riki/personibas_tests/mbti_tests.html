@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="lv"> <!--Norāda, ka lapa it latviešu valodā-->
+    <head>
+        <!--Meta tagi par rakstzīmju kodējumu un skatījuma lielumu-->
+        <meta charset="UTF-8"> <!--Iestata lapas rakstzīmju kodējumu-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Nodrošina pareizu attēlojumu mobilajās ierīcēs-->
+        <title>Persoīnbas tests</title> <!--Lapas virsraksts, kas tiek parādīts pārlūkā-->
+        <!--Pievieno Bootstrap stilu lapu-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        /* Fona noformējums ar gradient */
+        body {
+            background: linear-gradient(135deg, #c3dafe, #e0f2fe);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Galvenais konteiners */
+        .container {
+            background-color: white;
+            padding: 50px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Animācija, lai konteiners parādās ar izplūdušu efektu */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+
+         /* Virsraksts */
+        h1 {
+            font-weight: 700;
+        }
+
+        /* Galvenā poga: noapaļota un ar lielāku burtu izmēru */
+        .btn-primary {
+            padding: 10px 30px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+        }
+
+        /* Klase, kas tiek pievienota pirms lapas aizvēršanas */
+        .fade-out-page {
+            animation: fadeOutPage 0.5s forwards;
+        }
+
+        @keyframes fadeOutPage {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+
+        /* teksts par github */
+       footer {
+       position: absolute;
+       bottom: 20px;
+       left: 50%;
+       transform: translateX(-50%);
+       text-align: center;
+       font-size: 15px;
+       color: #555;
+
+       opacity: 0;
+       animation: fadeInUp 1s ease forwards;
+       animation-delay: 0.6s;
+       }
+
+       footer a {
+        color: #0d6efd;
+        text-decoration: none;
+       }
+
+       @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translate(-50%, 20px);
+        }
+        to {
+            opacity: 1;
+            transform: translate(-50%, 0);
+        }
+       }
+    </style>
+    </head>
+    <body class="text-center"> <!--Centē tekstu lapā-->
+        <div class="container mt-5"> <!--Konteiners ar augšējo atstarpi-->
+            <h1>Persoīnbas tests</h1> <!--Testa virsraksts-->
+            <p>Nosaki savu personības tipu!</p> <!--Testa apraksts-->
+            <!--Poga, lai pārietu uz testēšanas-->
+            <button id="start-btn" class="btn btn-primary">Sāciet testu</button>
+        </div>
+
+        <!--teksts par github-->
+        <footer>
+            <p><strong>Izmantotie rīki:</strong> HTML, CSS, Bootstrap, JavaScript</p>
+            <p>
+                Projekta kods pieejams vietnē:
+                <a href="https://github.com/bamish0/personibas-tests/tree/main/riki/personibas_tests" target="_blank">
+                    Github
+                </a>
+            </p>
+        </footer>
+        <script>
+            // JavaScript: Kad lietotājs nospiež pogu
+            const startBtn = document.getElementById("start-btn");
+
+            startBtn.addEventListener("click", () => {
+                document.body.classList.add("fade-out-page"); // pievieno animācijas klasi
+                setTimeout(() => {
+                    window.location.href = "tests.html"; // pāriet uz testu lapu pēc pussekundes
+                }, 500);
+            });
+        </script>
+    </body>
+</html>

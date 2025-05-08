@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap");
+
+body {
+  font-weight: 530;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: "Syncopate", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-y: auto;
+  margin: 1rem;
+  background: linear-gradient(270deg, #00004d, #4b004b, #00004d);
+  background-size: 600% 600%;
+  animation: gradientMove 10s linear infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.meal {
+  font-weight: 530;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: "Syncopate", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 95%;
+  max-height: auto;
+  background: rgba(129, 31, 238, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 2rem;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+}
+
+img {
+  border-radius: 15px;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  margin: 1.5rem;
+}
+
+h3 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+p {
+  text-align: justify;
+  margin-bottom: 1.5rem;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}

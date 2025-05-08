@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="Assets/favicon.png">
+
+        <title> Banki </title>
+
+        <link rel="stylesheet" href="./CSS/globals.css">
+        <link rel="stylesheet" href="./CSS/index.css">
+        <link rel="stylesheet" href="./CSS/deck-page.css">
+        <link rel="stylesheet" href="./CSS/quizz-area.css">
+        <link rel="stylesheet" href="./CSS/deck-editor.css">
+    </head>
+    <body onload="sessionInit(), loadDeckList()">
+        <input id="deck-import" name="fileInput" type="file" accept=".json" onchange="importDecks(event)" style="display: none;">
+        <header class="navBar">
+            <p class="title"> Banki </p>
+
+            <div class="navBarRight">
+                <button class="navButton" onclick="exportDecks()"> Eksportēt kavas </button>
+                <button class="navButton" onclick="invokeImport()"> Importēt kavas </button>
+            </div>
+        </header>
+
+        <div class="page">
+            <div class="deckList">
+                <button class="deckAddButton" onclick="addDeck()">
+                    + Jauna kava
+                </button>  
+                <div id="deck_list" class="deckHolder"> </div>
+            </div>
+
+            <div id="field" class="field"> 
+                <div id="deck-page" class="deckPage">
+                    <div class="options">
+                        <p id="deck-name-page" class="optionName"></p>
+                        <p id="deck-description-page" class="optionDescription"></p>
+                        
+                        <button class="optionEditButton" onclick="loadDeckEditWindow()">
+                            Rediģēt
+                        </button>
+                        <button class="optionDeleteButton" onclick="deleteDeck()">
+                            Dzēst
+                        </button>
+                    </div>
+
+                    <div id="area" class="area">
+                        <button class="quizzStartButton" onclick="startQuizz()">
+                            <span> Sākt </span>
+                        </button>
+                    </div>
+
+                    <div id="card-list-page" class="cardList">
+                    </div>
+                </div>
+
+                <div id="quizz-area" class="quizzArea">
+                    <button class="quizzCloseButton" onclick="closeQuizz()"> <span> X </span> </button>
+
+                    <button class="quizzCard" onclick="flipCard()">
+                        <span id="flashcard-inner" class="flashcardInner">
+                            <span class="flashcardFront">
+                                <span id="flashcard-front">Front</span>
+                            </span>
+                            <span class="flashcardBack">
+                                <span id="flashcard-back">Back</span>
+                            </span>
+                        </span>
+                    </button>
+
+                    <button id="quizz-next-button" class="nextCardButton" onclick="nextCard()"> 
+                        <span> >-> </span> 
+                    </button>
+                </div>
+
+                <div id="deck-editor" class="deckEditor">
+                    <div class="deckEditorForm">
+                        <label class="formDeckLabel"> Nosaukums </label> 
+                        <input 
+                            id="deck-name-editor"
+                            class="formDeckTextInput deckNameInput" 
+                            type="text" 
+                            maxlength="20"
+                            placeholder="max 20"
+                        >
+                        <label class="formDeckLabel"> Apraksts </label> 
+                        <input 
+                            id="deck-description-editor"
+                            class="formDeckTextInput deckDescriptionInput"
+                            type="text"
+                            maxlength="100"
+                            placeholder="max 100"
+                        >
+
+                        <button class="saveButton" onclick="saveDeckDetails()"> <span> Saglabāt </span> </button>
+                    </div>
+
+                    <div id="card-editor-form" class="cardEditorForm">
+                        <label id="card_prop_label" class="cardEditorNameLabel"> Null </label>
+                        <div id="card_prop_entries" class="cardEditorEntries">
+                            <label class="cardEditorLabel"> Jautājums </label> 
+                            <textarea 
+                                id="card_question"
+                                class="cardEditorTextInput"  
+                                maxlength="200"
+                                placeholder="max 200"
+                                rows="3"
+                            ></textarea>
+
+                            <label class="cardEditorLabel"> Atbilde </label> 
+                            <textarea 
+                                id="card_answer"
+                                class="cardEditorTextInput" 
+                                maxlength="25"
+                                placeholder="max 25"
+                                rows="1"
+                            ></textarea>
+                        </div>
+                        <div class="cardEditorButtonHolder">
+                            <button class="saveButton deleteButton" onclick="deleteCard()"> <span> Dzēst </span> </button>
+                            <button class="saveButton" onclick="saveCardDetails()"> <span> Saglabāt </span> </button>
+                        </div>
+                    </div>
+
+                    <div class="cardList">
+                        <button class="addCardButton" onclick="addCard()"><span> + Jauna kartiņa </span></button>
+                        <div id="card-list-editor" class="cardHolder"> </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <script src="./general.js"></script>
+    </body>
+</html>

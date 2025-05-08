@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap");
+
+body {
+  font-weight: 600;
+  font-family: "Syncopate", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 1rem;
+  background: linear-gradient(270deg, #00004d, #4b004b, #00004d);
+  background-size: 600% 600%;
+  animation: gradientMove 10s linear infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.container {
+  font-weight: 600;
+  a {
+    color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: rgba(129, 31, 238, 0.2);
+    padding: 0.75rem 1.5rem;
+    margin: 0.7rem;
+    border-radius: 8px;
+    text-decoration: none;
+  }
+  h1 {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  background: rgba(129, 31, 238, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 90%;
+  width: 40rem;
+  padding: 2rem 1.5rem;
+  box-sizing: border-box;
+  margin: 1rem;
+}
+
+button {
+  font-family: "Syncopate", sans-serif;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: rgba(129, 31, 238, 0.2);
+  padding: 0.75rem 1.5rem;
+  margin: 0.7rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+input {
+  font-family: "Syncopate", sans-serif;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: rgba(129, 31, 238, 0.2);
+  padding: 0.75rem 1.5rem;
+  margin: 0.7rem;
+  border-radius: 8px;
+}
