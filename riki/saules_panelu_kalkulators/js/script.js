@@ -9,21 +9,38 @@ fetch('https://restcountries.com/v3.1/all?fields=name,cca2')// country code sara
         data.forEach(country => {
             const option = document.createElement('option');
             option.value = country.cca2;
-            option.textContent = `${country.cca2} (${country.name.common})`; // izvada valsts 
+            option.textContent = `${country.name.common} (${country.cca2})`; // izvada valsts 
             comboBoxCountryCode.appendChild(option);
         });
     }).catch(error => console.error('Error fetching country codes:', error));
 
 
+
 // Funkcija, kas pārbauda datus pirms aprēķina veikšanas
-export function formasParbaude() { 
+export async function formasParbaude() { 
+    console.log("button clicked");
     // geo dati
     let pastaIndeks = document.getElementById('zip').value;
-    let valstsIndeks = document.getElementById('countryCodes').value.substring(0, 2); // tikai 2 burtu kodu
-    if (!pastaInxParbaude(pastaIndeks, valstsIndeks)) { // Pasta koda saderības pārbaudīšana
-        alert('Kļūme pasta indeks neatbilst/nesakrīt ar valsts kodu.'); 
+    let valstsKodaVertiba = document.getElementById('countryCodes').value;
+    let valstsKods = valstsKodaVertiba.substring(valstsKodaVertiba.length-3, valstsKodaVertiba.length); // tikai 2 burtu kodu
+    //const indxParbaude = await pastaInxParbaude(pastaIndeks, valstsKods);
+    // Pasta koda saderības pārbaudīšana
+    //if (!indxParbaude) { 
+    //    alert('Kļūme! Pasta indeks neatbilst/nesakrīt ar valsts kodu.'); 
+    //    return;
+    //}
+    
+    const {lat, lon} = await geoDati(pastaIndeks, valstsKods);
+    // geo API dat parbaude
+    if (!lat ) {
+        alert('Kļūme atlasot datus (platums = 0)'); 
         return;
-    } 
+    }
+    else if (!lon) {
+        alert('Kļūme atlasot datus (augstums = 0)'); 
+        return;
+    }
+    let puslode = zemesPuslode(lat);
 
     // finanšu dati
     let menesaRekins = document.getElementById('monthly-cost').value; 
@@ -31,21 +48,11 @@ export function formasParbaude() {
 
     // paneļu dati
     let paneluLaukums = document.getElementById('mounting-area').value;
-    //let saulesPaneluVidejaEfektiv = document.getElementById('...').value; 
+    let saulesPanelaJauda = document.getElementById('power').value; 
     //let inventoraEfekt = document.getElementById('...').value; // Pēc inventora?
 
-    // API datu parbaude
-    //const{lat, lon} = geoDati(pastaIndeks, valstsIndeks);
-    //if (!lat ) {
-    //    alert('Kļūme atlasot datus (lat = 0)'); 
-    //    return;
-    //}
-    //else if (!lon) {
-    //    alert('Kļūme atlasot datus (lon = 0)'); 
-    //    return;
-    //}
     //else {
-        //let puslode = zemesPuslode(lat);
+        
         //laikapstakluDati(puslode); // geo datu iegūšana
     //}
     
@@ -58,24 +65,23 @@ export function formasParbaude() {
     // document.getElementById('...').value
 }
 
+window.formasParbaude = formasParbaude; // padara funkciju globāli pieejamu
+
 // Funkcija, kas pārbauda pasta koda saderību ar valsts kodu.
 async function pastaInxParbaude(pastaIndeks, valstsIndeks) {
     try {
-        const response = await fetch(`https://api.zipcodestack.com/v1/search?codes=${pastaIndeks.toString()}&country=${valstsIndeks}&appid=${zK}`)
+        console.log("checking zip");
+        const response = await fetch(`https://api.zipcodestack.com/v1/search?codes=${pastaIndeks.toString()}&country=${valstsIndeks}&apikey=${zK}`)
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const parbaudesDati = await response.json();
 
-        if (data.error && data.error.code === 'invalid_postal_code_format') {
-            return 0;
-        }
-        else {
-            return 1;
-        }
+        return (parbaudesDati.results && Object.keys(parbaudesDati.results).length > 0) ? parbaudesDati.results : null;
     }
     catch (error) {
         console.error('Error fetching post index and country code data:', error);
+        return 0;
     }
 }
 
@@ -91,7 +97,7 @@ async function geoDati(pastaIndeks, valstsIndeks) {
         if (geoData && geoData.lat && geoData.lon) {
             const lat = geoData.lat;
             const lon = geoData.lon;
-            console.log('fetched lat: ', lat, ' lon: ', lon); // test only
+            console.log('fetched lat: ', lat, ' lon: ', lon); // console.log
             return { lat, lon };
         }
         else {
@@ -100,14 +106,15 @@ async function geoDati(pastaIndeks, valstsIndeks) {
     }
     catch (error) {
         console.error('Error fetching geo data:', error);
+        return 0
     }
 } 
 
 // funkcija, kas nosaga zemes puslodi pēc platuma
 function zemesPuslode(lat) {
-    if (latitude > 0) { // Ziemeļu puslode
+    if (lat > 0) { // Ziemeļu puslode
         return "Z";
-    } else if (latitude < 0) { // Dienvidu puslode
+    } else if (lat < 0) { // Dienvidu puslode
         return "D";
     } else {
         return "E"; // platums = 0 ---> Ekvators
@@ -142,10 +149,10 @@ async function laikapstakluDati() {
 
 // SAULES PANEĻU APRĒĶINU VEIKŠANA
 class theDay {
-    constructor(date, cloudPrecent) {
-      this.date = date;
-      this.cloudPrecent = cloudPrecent;
-      // ...
+    constructor(date, cloudPrecent) { // aust, riet => vai varbūt saulesH
+        this.date = date;
+        this.cloudPrecent = cloudPrecent;
+        // ...
     }
 }
 
@@ -163,17 +170,15 @@ function aprekins(zemesPuslode) { //dayData
     let razotaEnergija; // Uztverta energija * saules paneļu vidējā efektivitāte
     let energijasIzvade; // Jaudas izvade (DC) * inventora efektivitate
     
-    if (aaa) {
-        //
-    }
-
+    //if () {}
     // for
 
     let kopejaisTeikums = document.getElementById('kopejaisRezultats');
     kopejaisTeikums.innerHTML = '';
 
-    kopejaisTeikums.innerHTML += `Kopējā paneļu saražotā enerģija ir `;
-    
+    kopejaisTeikums.innerHTML += `Kopējā paneļu saražotā enerģija nākamajās 7 dienās būs aptuveni <em>$ {} kW</em> un aptuvenais ietaupījums <em>$ {} €</em>`;
+    // for
+
     window.location.href = 'result.html';
 } 
 
