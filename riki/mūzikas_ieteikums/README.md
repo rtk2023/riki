@@ -41,6 +41,10 @@ mūzikas_ieteikums/
 - 💬 Pievienot iespēju komentēt vai saglabāt ieteiktās dziesmas.
 - 🔍 Uzlabota filtrēšana pēc žanriem vai valodas.
 
+## Kvalitāte
+
+Gan HTML, gan CSS kods tika pārbaudīts, izmantojot [W3C Validator](https://validator.w3.org/) un [W3C CSS Validator](https://jigsaw.w3.org/css-validator/), lai nodrošinātu atbilstību tīmekļa standartiem un izvairītos no sintakses kļūdām.
+
 ## Zināmie defekti
 
 - 🔄 Jauna playlistes izvēle katru reizi var dublēties — nav iespējas pārskatīt vēsturi.
