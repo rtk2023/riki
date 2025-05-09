@@ -18,11 +18,11 @@ saules_panelu_kalkulators/
 ├── README.md
 └── result.html
 ```
-`data/config.js` satur API atslēgas, bet netiek ievietots šajā repozitorijā, jo tas norādīts `.gitignore`.
-`js/script.js` satur JavaScript kodu, kas veic ievadīto datu no `index.html` pārbaudi, aprēķina rezultātu un noformē to `result.html`.
-`.gitignore` norāda failus un mapes, kurus nav vēlams pievienot repozitorijam.
-`index.html` ievāc lietotāja ievadīto informāciju (forma).
-`result.html` izvada lietotājam aprēķinātos rezultāus.
+`data/config.js` satur API atslēgas, bet netiek ievietots šajā repozitorijā, jo tas norādīts `.gitignore`.  
+`js/script.js` satur JavaScript kodu, kas veic ievadīto datu no `index.html` pārbaudi, aprēķina rezultātu un noformē to `result.html`.  
+`.gitignore` norāda failus un mapes, kurus nav vēlams pievienot repozitorijam.  
+`index.html` ievāc lietotāja ievadīto informāciju (forma).  
+`result.html` izvada lietotājam aprēķinātos rezultāus.  
 
 ## IESPĒJAMIE UZLABOJUMI
 Rīkam ir vairāki iespējamie uzlabojumi, ņemot vērā to, ka saules paneļu saražoto enerģiju ietekmē vairāki un dažādi faktori (paneļu, apkārtējās vides, laikapstākļu, u. c.), kuri nav tikt detalizētāk aprēķināti. Tas nodrošinātu precīzāku rīka aprēķinātā rezultāta sniegšanu. 
