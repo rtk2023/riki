@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="lv">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Formas lapa, kurā lietotājs norāda dažādus nepieciešamos parametrus paneļu ietaupījuma aprēķināšanai.">
   <title>Saules paneļu ietaupījuma kalkulators</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
-      background: linear-gradient(to bottom, #f0f775, #e6f7c1);
+      background: linear-gradient(to bottom, #b9f8ff, #ebf9fa);
       min-height: 100vh;
       position: relative;
       padding-bottom: 300px;
@@ -64,59 +64,70 @@
 </head>
 <body>
   <div class="container py-5">
-    <div class="text-center mb-4"> <!-- VIRSRAKSTS -->
+    <!-- VIRSRAKSTS -->
+    <div class="text-center mb-4"> 
       <h1 class="fw-bold">Saules paneļu kalkulators</h1>
       <p class="lead">Aprēķini savu iespējamo ietaupījumu, izmantojot saules enerģiju!</p>
     </div>
 
     <form id="calculator-form">
-      <div class="form-section"> <!-- ATRAŠANĀS VIETAS INFORMĀCIJA -->
+      <!-- ATRAŠANĀS VIETAS INFORMĀCIJA -->
+      <div class="form-section"> 
         <h4 class="mb-3">Paneļu atrašanās vieta</h4>
 
+        <!-- Pasta indeks -->
         <div class="mb-3">
           <label for="zip" class="form-label">Pasta indekss</label>
-          <input type="text" class="form-control" id="zip" required /> <!-- Pasta indeks -->
+          <input type="text" class="form-control" id="zip" required> 
         </div>
 
+        <!-- Valsts kods -->
         <div class="mb-3">
           <label for="countryCodes" class="form-label">Valsts kods</label>
-          <select class="form-select" id="countryCodes" required></select> <!-- Valsts kods -->
+          <select class="form-select" id="countryCodes"></select> 
         </div>
       </div>
 
-      <div class="form-section"> <!-- ENERĢIJAS PATĒRIŅŠ -->
-        <h4 class="mb-3">Enerģijas patēriņš</h4>
+      <!-- ENERĢIJAS PATĒRIŅŠ FINANŠU INFORMĀCIJA-->
+      <div class="form-section"> 
+        <h4 class="mb-3">Enerģijas patēriņš un finanšu informācija</h4>
 
+        <!-- Mēneša elektrības rēķins -->
         <div class="mb-3">
           <label for="monthly-cost" class="form-label">Vidējais mēneša elektrības rēķins</label>
           <div class="input-group">
-            <input type="number" class="form-control" id="monthly-cost" required />
-            <span class="input-group-text">€</span> <!--  -->
+            <input type="number" class="form-control" id="monthly-cost" required>
+            <span class="input-group-text">€</span> 
           </div>
         </div>
-
+        
+        <!-- Mēneša elektrības patēriņš -->
         <div class="mb-3">
-          <label for="yearly-usage" class="form-label">Vidējais gada patēriņš (kWh)</label>
-          <input type="number" class="form-control" id="yearly-usage" required /> <!--  -->
+          <label for="monthly-usage" class="form-label">Vidējais mēneša elektrības patēriņš (kWh)</label>
+          <input type="number" class="form-control" id="monthly-usage" required> 
         </div>
       </div>
 
-      <div class="form-section"> <!-- SAULES PANEĻU INFORMĀCIJA -->
-        <h4 class="mb-3">Saules paneļu preferences</h4>
+      <!-- SAULES PANEĻU INFORMĀCIJA -->
+      <div class="form-section"> 
+        <h4 class="mb-3">Saules paneļu parametri</h4>
 
+        <!-- Paneļa ražošanas jauda -->
         <div class="mb-3">
-          <label for="preferred-size" class="form-label">Vēlamais sistēmas izmērs (kW)</label> 
-          <input type="number" class="form-control" id="preferred-size" required /> <!--  -->
+          <label for="power" class="form-label">Viena saules paneļu ražošanas jauda (kW)</label> 
+          <input type="number" class="form-control" id="power" required> 
         </div>
 
+        <!-- Paneļu platība -->
         <div class="mb-3">
-          <label for="mounting-area" class="form-label">Paneļu platība (m²)</label>
-          <input type="number" class="form-control" id="mounting-area" required /> <!--  -->
+          <label for="mounting-area" class="form-label">Paneļu kopējā platība (m²)</label>
+          <input type="number" class="form-control" id="mounting-area" required> 
         </div>
 
+        <!-- Paneļu orientācija -->
         <div class="mb-3">
           <label for="orientation" class="form-label">Jumta orientācija</label>
-          <select class="form-select" id="orientation" required > <!-- Paneļu orientācija -->
+          <select class="form-select" id="orientation"> 
             <option>Ziemeļaustrumi</option>
             <option>Austrumi</option>
             <option>Dienvidaustrumi</option>
@@ -128,36 +139,29 @@
           </select>
         </div>
 
+        <!-- Paneļu leņķis -->
         <div class="mb-3">
           <label for="roof-angle" class="form-label">Jumta slīpuma leņķis: <span id="angle-display">45</span>°</label>
           <input type="range" class="form-range" id="roof-angle" min="0" max="90" step="1" value="45"
-            oninput="document.getElementById('angle-display').textContent = this.value" required/> <!-- Paneļu leņķis -->
+            oninput="document.getElementById('angle-display').textContent = this.value"> 
         </div>
 
+        <!-- Ēnojums -->
         <div class="form-check mb-3">
           <label class="form-check-label" for="shading" >Potenciāls ēnojums (Koki, ēkas utt.)</label>
-          <input type="checkbox" class="form-check-input" id="shading" /> <!-- Ēnojums -->
-        </div>
-      </div>
-
-      <div class="form-section"> <!-- FINANŠU INFORMĀCIJA -->
-        <h4 class="mb-3">Finanšu informācija</h4>
-
-        <div class="mb-3">
-          <label for="net-metering-policy" class="form-label">Neto uzskaites politika vai tarifa informācija</label>
-          <textarea class="form-control" id="net-metering-policy" rows="2"></textarea> <!--  -->
+          <input type="checkbox" class="form-check-input" id="shading"> 
         </div>
       </div>
 
       <!-- IESNIEGŠANAS POGA -->
-      <button type="submit" class="btn btn-primary w-100 text-dark" id="calculate" onclick="aprekinatButton()">Aprēķināt ietaupījumu</button>
+      <button type="submit" class="btn btn-primary w-100 text-dark" id="calculate" onclick="formasParbaude()">Aprēķināt ietaupījumu</button>
     </form>
   </div>
 
   <div class="grass"></div>
   <div class="sun"></div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/js/script.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

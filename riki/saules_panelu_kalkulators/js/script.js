@@ -14,37 +14,69 @@ fetch('https://restcountries.com/v3.1/all?fields=name,cca2')// country code sara
         });
     }).catch(error => console.error('Error fetching country codes:', error));
 
-function aprekinatButton() { // Funkcija, kas pārbauda datus pirms aprēķina veikšanas
+
+// Funkcija, kas pārbauda datus pirms aprēķina veikšanas
+export function formasParbaude() { 
     // geo dati
     let pastaIndeks = document.getElementById('zip').value;
     let valstsIndeks = document.getElementById('countryCodes').value.substring(0, 2); // tikai 2 burtu kodu
-    // --- parbaudit vai zip atbilst valstij.
-    
-    let paneluLaukums = document.getElementById('mounting-area').value; // document.getElementById('author1').value
-    
-    let saulesPaneluVidejaEfektiv = document.getElementById('...').value; 
-    let inventoraEfekt = document.getElementById('...').value; // Pēc inventora
+    if (!pastaInxParbaude(pastaIndeks, valstsIndeks)) { // Pasta koda saderības pārbaudīšana
+        alert('Kļūme pasta indeks neatbilst/nesakrīt ar valsts kodu.'); 
+        return;
+    } 
 
+    // finanšu dati
+    let menesaRekins = document.getElementById('monthly-cost').value; 
+    let menesaPaterins = document.getElementById('monthly-usage').value; 
+
+    // paneļu dati
+    let paneluLaukums = document.getElementById('mounting-area').value;
+    //let saulesPaneluVidejaEfektiv = document.getElementById('...').value; 
+    //let inventoraEfekt = document.getElementById('...').value; // Pēc inventora?
 
     // API datu parbaude
-    const{lat, lon} = geoDati(pastaIndeks, valstsIndeks);
-    if (!lat) {
-        alert('Kļūme atlasot datus (lat = 0)'); 
-        return;
-    }
-    else if (!lon) {
-        alert('Kļūme atlasot datus (lon = 0)'); 
-        return;
-    }
-    else {
-        laikapstakluDati();
-    }
+    //const{lat, lon} = geoDati(pastaIndeks, valstsIndeks);
+    //if (!lat ) {
+    //    alert('Kļūme atlasot datus (lat = 0)'); 
+    //    return;
+    //}
+    //else if (!lon) {
+    //    alert('Kļūme atlasot datus (lon = 0)'); 
+    //    return;
+    //}
+    //else {
+        //let puslode = zemesPuslode(lat);
+        //laikapstakluDati(puslode); // geo datu iegūšana
+    //}
+    
+    //aprekins(zemesPuslode);
     
     // laikapstakluDati()
 
     // if () ... else ---> Ja visi dati ir pareizi ievadīti, tad un tikai tad veic datu aprēķināšanu
     //if (...) { alert('...'); return;}
     // document.getElementById('...').value
+}
+
+// Funkcija, kas pārbauda pasta koda saderību ar valsts kodu.
+async function pastaInxParbaude(pastaIndeks, valstsIndeks) {
+    try {
+        const response = await fetch(`https://api.zipcodestack.com/v1/search?codes=${pastaIndeks.toString()}&country=${valstsIndeks}&appid=${zK}`)
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const parbaudesDati = await response.json();
+
+        if (data.error && data.error.code === 'invalid_postal_code_format') {
+            return 0;
+        }
+        else {
+            return 1;
+        }
+    }
+    catch (error) {
+        console.error('Error fetching post index and country code data:', error);
+    }
 }
 
 // funkcija, kas iegūst datus no ģeolokācijas API
@@ -70,6 +102,17 @@ async function geoDati(pastaIndeks, valstsIndeks) {
         console.error('Error fetching geo data:', error);
     }
 } 
+
+// funkcija, kas nosaga zemes puslodi pēc platuma
+function zemesPuslode(lat) {
+    if (latitude > 0) { // Ziemeļu puslode
+        return "Z";
+    } else if (latitude < 0) { // Dienvidu puslode
+        return "D";
+    } else {
+        return "E"; // platums = 0 ---> Ekvators
+    }
+}
 
 // funkcija, kas iegūst datus no laikapstaklu API
 async function laikapstakluDati() {
@@ -107,21 +150,30 @@ class theDay {
 }
 
 // funkcija, kas veic saules paneļu 
-function aprekins(dayData) { 
+function aprekins(zemesPuslode) { //dayData
     // mainīgie
     let paneluOrientacija = document.getElementById('orientation').value; 
     let novietojumaLenkis = document.getElementById('angle-display').value; 
+    let enojums = document.getElementById('shading').value;// ēnojums (true/false ---> true - % no max saražotās, false - neietekmē max saražoto)
 
+    // par datumiem 
 
     // Aprekini
     let uztvertaEnergija; // Paneļu laukums * saņemtais saules starojums (?)
     let razotaEnergija; // Uztverta energija * saules paneļu vidējā efektivitāte
     let energijasIzvade; // Jaudas izvade (DC) * inventora efektivitate
     
-    // ēnojums (pa tiešo dabūt - true/false ---> true - % no max saražotās, false - neietekmē max saražoto)
-    let enojums = document.getElementById('shading').value;
+    if (aaa) {
+        //
+    }
 
-    //window.location.href = 'result.html';
+    // for
+
+    let kopejaisTeikums = document.getElementById('kopejaisRezultats');
+    kopejaisTeikums.innerHTML = '';
+
+    kopejaisTeikums.innerHTML += `Kopējā paneļu saražotā enerģija ir `;
+    
+    window.location.href = 'result.html';
 } 
 
-// function rezultaataAttelosana() { window.location.href = 'result.html';} // ???
