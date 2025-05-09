@@ -30,7 +30,6 @@ Laikapstākļu_lietotne/
 `index.html` ievāc lietotāja ievadīto informāciju (pilsētas meklēšana).
 `style.css` satur dizainu un izskatu, ieskaitot tumšo/gaišo režīmu.
 `script.js` apstrādā ievades, veic API pieprasījumus, attēlo rezultātus un karti.
-`README.md` apraksta projekta mērķi, struktūru, uzlabojumus un autorus.
 
 
 ## IESPĒJAMIE UZLABOJUMI
