@@ -1,26 +1,28 @@
 :root {
-  --color-bg: #f0f2f5;
-  --color-bg-dark: #222222;
-  --color-bg-dark-secondary: #1e1e1e;
-  --color-bg-dark-tertiary: #1f1f1f;
-  --color-track-dark: #2c2c2c;
+  /* Цветовые переменные / Krāsu mainīgie */
+  --color-bg: #f0f2f5;                           /* Светлый фон / Gaišais fons */
+  --color-bg-dark: #222222;                     /* Тёмный фон / Tumšais fons */
+  --color-bg-dark-secondary: #1e1e1e;           /* Вторичный тёмный фон / Otrs tumšais fons */
+  --color-bg-dark-tertiary: #1f1f1f;            /* Третичный фон / Trešais tumšais fons */
+  --color-track-dark: #2c2c2c;                  /* Трек в тёмной теме / Celiņš tumšajā režīmā */
 
-  --color-text-dark: #e0e0e0;
-  --color-link-dark: #90caf9;
-  --color-icon-light: #333;
-  --color-icon-dark: #90caf9;
+  --color-text-dark: #e0e0e0;                   /* Цвет текста в тёмной теме / Teksta krāsa tumšajā režīmā */
+  --color-link-dark: #90caf9;                   /* Цвет ссылок в тёмной теме / Saites krāsa tumšajā režīmā */
+  --color-icon-light: #333;                     /* Цвет иконок в светлой теме / Ikonu krāsa gaišajā režīmā */
+  --color-icon-dark: #90caf9;                   /* Цвет иконок в тёмной теме / Ikonu krāsa tumšajā režīmā */
 
-  --color-btn-bg: #007bff;
-  --color-btn-hover: #0056b3;
+  --color-btn-bg: #007bff;                      /* Цвет кнопки / Pogas fons */
+  --color-btn-hover: #0056b3;                   /* Цвет при наведении / Virzot peli */
 
-  --color-progress-bg: #ccc;
-  --color-progress-bar: #007bff;
+  --color-progress-bg: #ccc;                    /* Фон полосы прогресса / Progresa joslas fons */
+  --color-progress-bar: #007bff;                /* Заполненная часть прогресса / Aizpildītais progress */
 
-  --transition-speed: 0.3s;
+  --transition-speed: 0.3s;                     /* Скорость анимаций / Pārejas ilgums */
 }
 
 html,
 body {
+  /* Базовая настройка страницы / Pamatuzstādījumi */
   height: 100vh;
   margin: 0;
   padding: 0;
@@ -30,6 +32,7 @@ body {
 }
 
 body.dark {
+  /* Темная тема / Tumšais režīms */
   background-color: var(--color-bg-dark);
   color: var(--color-text-dark);
 }
@@ -61,7 +64,7 @@ body.dark button {
 }
 
 body.dark input[type="range"] {
-  accent-color: var(--color-link-dark);
+  accent-color: var(--color-link-dark); /* Цвет ползунка в тёмной теме / Slīdņa krāsa tumšajā režīmā */
 }
 
 .icon-links i {
@@ -72,6 +75,7 @@ body.dark .icon-links i {
   color: var(--color-icon-dark);
 }
 
+/* Шапка / Galvene */
 header {
   background-color: var(--color-bg);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -79,15 +83,18 @@ header {
   position: relative;
 }
 
+/* Основная часть / Galvenā sadaļa */
 main {
   overflow-y: auto;
 }
 
+/* Подвал / Kājene */
 footer {
   background-color: var(--color-bg);
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
 }
 
+/* Контейнер управления / Vadības konteiners */
 #controls-container {
   position: sticky;
   top: 0;
@@ -106,6 +113,7 @@ footer {
   margin-top: 1rem;
 }
 
+/* Блок с треками / Dziesmu saraksts */
 #tracks {
   display: flex;
   flex-direction: column;
@@ -154,6 +162,7 @@ body.dark .track {
   text-decoration: underline;
 }
 
+/* ▶Мини-плеер / Atskaņotājs */
 .custom-player {
   display: flex;
   align-items: center;
@@ -199,6 +208,7 @@ body.dark .track {
   width: 80px;
 }
 
+/* Кнопки и выпадающие списки / Pogas un izvēles */
 button,
 select {
   margin-top: 0.5rem;
@@ -216,6 +226,7 @@ select:hover {
   background-color: var(--color-btn-hover);
 }
 
+/* Переключатели тем / Režīma pārslēgšanas pogas */
 #theme-toggle {
   position: absolute;
   top: 10px;
@@ -232,6 +243,7 @@ select:hover {
   margin-top: 1rem;
 }
 
+/* Плавные переходы / Gludas pārejas */
 body,
 header,
 footer,
