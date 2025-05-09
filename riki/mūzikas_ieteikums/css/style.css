@@ -1,0 +1,250 @@
+:root {
+  /* Цветовые переменные / Krāsu mainīgie */
+  --color-bg: #f0f2f5;                           /* Светлый фон / Gaišais fons */
+  --color-bg-dark: #222222;                     /* Тёмный фон / Tumšais fons */
+  --color-bg-dark-secondary: #1e1e1e;           /* Вторичный тёмный фон / Otrs tumšais fons */
+  --color-bg-dark-tertiary: #1f1f1f;            /* Третичный фон / Trešais tumšais fons */
+  --color-track-dark: #2c2c2c;                  /* Трек в тёмной теме / Celiņš tumšajā režīmā */
+
+  --color-text-dark: #e0e0e0;                   /* Цвет текста в тёмной теме / Teksta krāsa tumšajā režīmā */
+  --color-link-dark: #90caf9;                   /* Цвет ссылок в тёмной теме / Saites krāsa tumšajā režīmā */
+  --color-icon-light: #333;                     /* Цвет иконок в светлой теме / Ikonu krāsa gaišajā režīmā */
+  --color-icon-dark: #90caf9;                   /* Цвет иконок в тёмной теме / Ikonu krāsa tumšajā režīmā */
+
+  --color-btn-bg: #007bff;                      /* Цвет кнопки / Pogas fons */
+  --color-btn-hover: #0056b3;                   /* Цвет при наведении / Virzot peli */
+
+  --color-progress-bg: #ccc;                    /* Фон полосы прогресса / Progresa joslas fons */
+  --color-progress-bar: #007bff;                /* Заполненная часть прогресса / Aizpildītais progress */
+
+  --transition-speed: 0.3s;                     /* Скорость анимаций / Pārejas ilgums */
+}
+
+/* Tīmekļa lapas elementu stils / Стиль элементов веб-страницы */
+html, body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: var(--color-bg);
+}
+
+/* Tumšais režīms / Темная тема */
+body.dark {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-dark);
+}
+
+body.dark a {
+  color: var(--color-link-dark);
+}
+
+body.dark header, body.dark footer {
+  background-color: var(--color-bg-dark-secondary);
+}
+
+body.dark .track {
+  background-color: var(--color-track-dark);
+  border-color: #444;
+}
+
+body.dark .custom-player, body.dark #controls-container {
+  background-color: var(--color-bg-dark-tertiary);
+}
+
+body.dark select, body.dark button {
+  background-color: #333;
+  color: #fff;
+  border-color: #555;
+}
+
+body.dark input[type="range"] {
+  accent-color: var(--color-link-dark);
+}
+
+body.dark .icon-links i {
+  color: var(--color-icon-dark);
+}
+
+header {
+  background-color: var(--color-bg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  z-index: 20;
+  position: relative;
+}
+
+main {
+  overflow-y: auto;
+}
+
+footer {
+  background-color: var(--color-bg);
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Кнопки и выпадающие списки / Pogas un izvēles */
+button, select {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 16px;
+  border: none;
+  background-color: var(--color-btn-bg);
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover, select:hover {
+  background-color: var(--color-btn-hover);
+}
+
+/*Tīmekļa lapu ID elementiem, precīzām stila izmaiņām /идентификаторы для элементов с точными изменениями стиля*/
+#controls-container {
+  position: sticky;
+  top: 0;
+  background-color: var(--color-bg);
+  z-index: 30;
+  padding: 0.5rem 0 0 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#controls {
+  margin-bottom: 1.5rem;
+}
+
+#loading {
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+#tracks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+
+#theme-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+#peep-toggle {
+  position: absolute;
+  top: 10px;
+  right: 100px;
+}
+
+#count-container {
+  margin-top: 1rem;
+}
+
+/*CSS klases vispārīgām stila izmaiņām / Общие CSS классы для изменения стиля*/
+.track {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  width: 90%;
+  max-width: 600px;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background var(--transition-speed);
+}
+
+.track img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 1rem;
+}
+
+.track-info {
+  text-align: left;
+  flex-grow: 1;
+}
+
+.track-info p strong,
+.track-info p a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.track-info p a:hover {
+  text-decoration: underline;
+}
+
+.custom-player {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.custom-player button {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: inherit;
+}
+
+.custom-player button.prev,
+.custom-player button.next {
+  display: none;
+}
+
+.custom-player .progress {
+  flex: 1;
+  height: 16px;
+  background: var(--color-progress-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.custom-player .bar {
+  background: var(--color-progress-bar);
+  width: 0%;
+  height: 100%;
+  transition: width 0.1s;
+}
+
+.custom-player .time {
+  font-size: 12px;
+  min-width: 40px;
+}
+
+.custom-player input.volume {
+  width: 80px;
+}
+
+.icon-links i {
+  color: var(--color-icon-light);
+}
+
+.peep-mode {
+  color: #ffb6c1 !important;
+  font-family: 'Courier New', monospace !important;
+}
+
+/* Плавные переходы / Gludas pārejas */
+body,
+header,
+footer,
+main,
+#controls-container,
+.track,
+.custom-player,
+button,
+select {
+  transition:
+    background-color var(--transition-speed),
+    color var(--transition-speed),
+    border-color var(--transition-speed);
+}
