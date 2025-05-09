@@ -1,4 +1,3 @@
-// script.js
 $(function() {
   $(document).on('play', 'audio', function() {
     $('audio').not(this).each(function() {

@@ -13,8 +13,41 @@ html, body {
 }
 
 body.dark {
-  background: #121212;
-  color: #eee;
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark a {
+  color: #90caf9;
+}
+
+body.dark header,
+body.dark footer {
+  background-color: #1e1e1e;
+}
+
+body.dark .track {
+  background-color: #2c2c2c;
+  border-color: #444;
+}
+
+body.dark .custom-player {
+  background-color: #1f1f1f;
+}
+
+body.dark #controls-container{
+  background-color: #1f1f1f;
+}
+
+body.dark select,
+body.dark button {
+  background-color: #333;
+  color: #fff;
+  border-color: #555;
+}
+
+body.dark input[type="range"] {
+  accent-color: #90caf9;
 }
 
 header {
@@ -26,6 +59,11 @@ header {
 
 main {
   overflow-y: auto;
+}
+
+footer {
+  background-color: var(--color-bg);
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05); /* top shadow */
 }
 
 #controls-container {
