@@ -19,13 +19,13 @@ Lietotne izmanto OpenWeatherMap API, lai iegūtu aktuālus laikapstākļu datus 
 - Pilsētu saraksts ar dzēšanas iespēju
 
 ## FAILU STRUKTŪRA
-
-/*Laikapstākļu_lietotne/  
+```
+Laikapstākļu_lietotne/  
 ├── index.html – galvenais HTML fails, saskarne lietotājam  
 ├── style.css – stili, tostarp tumšais/gaišais režīms  
 ├── script.js – JavaScript funkcionalitāte: API pieprasījumi, karte, validācija  
-├── README.md – šī dokumentācija */
-
+├── README.md – šī dokumentācija
+```
 
 ## IESPĒJAMIE UZLABOJUMI
 
