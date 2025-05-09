@@ -7,12 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let cities = JSON.parse(localStorage.getItem("cities")) || [];
 
-  // Set current theme from localStorage
+  // Iestata pašreizējo tēmu no localStorage
   const currentTheme = localStorage.getItem("theme") || "light";
   if (currentTheme === "dark") document.body.classList.add("dark");
   themeToggle.textContent = currentTheme === "dark" ? "☀️" : "🌙";
 
-  // Toggle between dark and light themes
+  // Tēmas pārslēgšana (gaišā / tumšā)
   themeToggle.onclick = () => {
     document.body.classList.toggle("dark");
     const newTheme = document.body.classList.contains("dark")
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     themeToggle.textContent = newTheme === "dark" ? "☀️" : "🌙";
   };
 
-  // Convert UNIX timestamp to time
+  // UNIX laikspiedola pārveidošana uz cilvēkiem saprotamu formātu
   function unixToTime(timestamp) {
     const date = new Date(timestamp * 1000);
     const hours = date.getHours();
@@ -30,27 +30,27 @@ document.addEventListener("DOMContentLoaded", () => {
     return `${hours}:${minutes < 10 ? "0" + minutes : minutes}`;
   }
 
-  // Display list of previously searched cities
+  // Attēlo saglabāto pilsētu sarakstu
   function renderCities() {
     cityList.innerHTML = "";
     cities.forEach((city) => {
       const tag = document.createElement("div");
       tag.className = "city-tag";
       tag.innerHTML = `${city} <span>&times;</span>`;
-      // Remove city from list on X click
+      // Noņem pilsētu, ja uzklikšķina uz "X"
       tag.querySelector("span").onclick = (e) => {
         e.stopPropagation();
         cities = cities.filter((c) => c !== city);
         localStorage.setItem("cities", JSON.stringify(cities));
         renderCities();
       };
-      // Fetch weather when city tag is clicked
+      // Uzklikšķinot uz pilsētas, iegūst laika datus
       tag.onclick = () => fetchWeather(city);
       cityList.appendChild(tag);
     });
   }
 
-  // Fetch weather data from OpenWeatherMap API
+  // Iegūst laika apstākļu datus no OpenWeatherMap API
   function fetchWeather(city) {
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}&units=metric`
@@ -66,62 +66,40 @@ document.addEventListener("DOMContentLoaded", () => {
           renderCities();
         }
 
-        // Show weather data blocks
+        // Parāda laika apstākļu blokus
         document.querySelector(".city").style.display = "flex";
         document.querySelector(".temperatures").style.display = "flex";
         document.querySelector(".weather-box").style.display = "block";
-        document.querySelector(".temperature-feels-like").style.display =
-          "flex";
+        document.querySelector(".temperature-feels-like").style.display = "flex";
         document.querySelector(".weather-details").style.display = "flex";
-        document.querySelector(".sunset-sunrise-timezone").style.display =
-          "flex";
-          document.querySelector(".forecast-container").style.display =
-          "flex";
+        document.querySelector(".sunset-sunrise-timezone").style.display = "flex";
+        document.querySelector(".forecast-container").style.display = "flex";
         document.getElementById("rain-map").style.display = "block";
 
-        // Fill in weather data
+        // Aizpilda laika apstākļu informāciju
         document.querySelector(".city span").innerHTML = city;
-        document.querySelector(
-          ".min-temperature span"
-        ).innerHTML = `${data.main.temp_min.toFixed(0)}°C`;
-        document.querySelector(
-          ".max-temperature span"
-        ).innerHTML = `${data.main.temp_max.toFixed(0)}°C`;
-        document.querySelector(
-          ".weather-box img"
-        ).src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-        document.querySelector(".temperature").innerHTML = `${Math.round(
-          data.main.temp
-        )}°C`;
-        document.querySelector(".description").innerHTML =
-          data.weather[0].description;
-        document.querySelector(
-          ".feels-like span"
-        ).innerHTML = `${data.main.feels_like.toFixed(0)}°C`;
-        document.querySelector(
-          ".humidity span"
-        ).innerHTML = `${data.main.humidity}%`;
-        document.querySelector(
-          ".wind span"
-        ).innerHTML = `${data.wind.speed} km/h`;
-        document.querySelector(".sunrise span").innerHTML = `${unixToTime(
-          data.sys.sunrise
-        )}`;
+        document.querySelector(".min-temperature span").innerHTML = `${data.main.temp_min.toFixed(0)}°C`;
+        document.querySelector(".max-temperature span").innerHTML = `${data.main.temp_max.toFixed(0)}°C`;
+        document.querySelector(".weather-box img").src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+        document.querySelector(".temperature").innerHTML = `${Math.round(data.main.temp)}°C`;
+        document.querySelector(".description").innerHTML = data.weather[0].description;
+        document.querySelector(".feels-like span").innerHTML = `${data.main.feels_like.toFixed(0)}°C`;
+        document.querySelector(".humidity span").innerHTML = `${data.main.humidity}%`;
+        document.querySelector(".wind span").innerHTML = `${data.wind.speed} km/h`;
+        document.querySelector(".sunrise span").innerHTML = `${unixToTime(data.sys.sunrise)}`;
         document.querySelector(".timezone-hours span").innerHTML =
           data.timezone / 3600 > -1
             ? `${data.timezone / 3600}+`
             : `${data.timezone / 3600}`;
-        document.querySelector(".sunset span").innerHTML = `${unixToTime(
-          data.sys.sunset
-        )}`;
+        document.querySelector(".sunset span").innerHTML = `${unixToTime(data.sys.sunset)}`;
 
-        // Fetch forecast and update map
+        // Saņem prognozi un atjauno karti
         fetchForecast(data.coord.lat, data.coord.lon);
         updateMap(data.coord.lat, data.coord.lon);
       });
   }
 
-  // Fetch 5-time-slot forecast
+  // Iegūst tuvāko stundu prognozi (5 ieraksti)
   function fetchForecast(lat, lon) {
     fetch(
       `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIKey}&units=metric`
@@ -136,9 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
           card.className = "forecast-card";
           card.innerHTML = `
             <div>${time}:00</div>
-            <img src="https://openweathermap.org/img/wn/${
-              entry.weather[0].icon
-            }.png">
+            <img src="https://openweathermap.org/img/wn/${entry.weather[0].icon}.png">
             <div>${Math.round(entry.main.temp)}°C</div>
             <div>${entry.weather[0].description}</div>
           `;
@@ -149,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let leafletMap;
 
-  // Initialize map with Leaflet
+  // Inicializē karti ar Leaflet bibliotēku
   function initMap(lat = 56.9496, lon = 24.1052) {
     leafletMap = L.map("map").setView([lat, lon], 7);
 
@@ -167,14 +143,14 @@ document.addEventListener("DOMContentLoaded", () => {
     rainLayer.addTo(leafletMap);
   }
 
-  // Update map view when user selects a city
+  // Atjauno kartes skatu pēc pilsētas izvēles
   function updateMap(lat, lon) {
     if (leafletMap) {
       leafletMap.setView([lat, lon], 8);
     }
   }
 
-  // Search button
+  // Pogas notikums — meklēšanas apstrāde
   searchBtn.onclick = () => {
     const city = input.value.trim();
     if (!city) return;
