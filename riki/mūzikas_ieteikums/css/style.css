@@ -20,9 +20,8 @@
   --transition-speed: 0.3s;                     /* Скорость анимаций / Pārejas ilgums */
 }
 
-html,
-body {
-  /* Базовая настройка страницы / Pamatuzstādījumi */
+/* Tīmekļa lapas elementu stils / Стиль элементов веб-страницы */
+html, body {
   height: 100vh;
   margin: 0;
   padding: 0;
@@ -31,8 +30,8 @@ body {
   background: var(--color-bg);
 }
 
+/* Tumšais režīms / Темная тема */
 body.dark {
-  /* Темная тема / Tumšais režīms */
   background-color: var(--color-bg-dark);
   color: var(--color-text-dark);
 }
@@ -51,31 +50,24 @@ body.dark .track {
   border-color: #444;
 }
 
-body.dark .custom-player,
-body.dark #controls-container {
+body.dark .custom-player, body.dark #controls-container {
   background-color: var(--color-bg-dark-tertiary);
 }
 
-body.dark select,
-body.dark button {
+body.dark select, body.dark button {
   background-color: #333;
   color: #fff;
   border-color: #555;
 }
 
 body.dark input[type="range"] {
-  accent-color: var(--color-link-dark); /* Цвет ползунка в тёмной теме / Slīdņa krāsa tumšajā režīmā */
-}
-
-.icon-links i {
-  color: var(--color-icon-light);
+  accent-color: var(--color-link-dark);
 }
 
 body.dark .icon-links i {
   color: var(--color-icon-dark);
 }
 
-/* Шапка / Galvene */
 header {
   background-color: var(--color-bg);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -83,18 +75,32 @@ header {
   position: relative;
 }
 
-/* Основная часть / Galvenā sadaļa */
 main {
   overflow-y: auto;
 }
 
-/* Подвал / Kājene */
 footer {
   background-color: var(--color-bg);
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
 }
 
-/* Контейнер управления / Vadības konteiners */
+/* Кнопки и выпадающие списки / Pogas un izvēles */
+button, select {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 16px;
+  border: none;
+  background-color: var(--color-btn-bg);
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover, select:hover {
+  background-color: var(--color-btn-hover);
+}
+
+/*Tīmekļa lapu ID elementiem, precīzām stila izmaiņām /идентификаторы для элементов с точными изменениями стиля*/
 #controls-container {
   position: sticky;
   top: 0;
@@ -113,7 +119,6 @@ footer {
   margin-top: 1rem;
 }
 
-/* Блок с треками / Dziesmu saraksts */
 #tracks {
   display: flex;
   flex-direction: column;
@@ -121,6 +126,23 @@ footer {
   padding-bottom: 2rem;
 }
 
+#theme-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+#peep-toggle {
+  position: absolute;
+  top: 10px;
+  right: 100px;
+}
+
+#count-container {
+  margin-top: 1rem;
+}
+
+/*CSS klases vispārīgām stila izmaiņām / Общие CSS классы для изменения стиля*/
 .track {
   display: flex;
   align-items: center;
@@ -132,10 +154,6 @@ footer {
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: background var(--transition-speed);
-}
-
-body.dark .track {
-  background: var(--color-bg-dark-secondary);
 }
 
 .track img {
@@ -162,7 +180,6 @@ body.dark .track {
   text-decoration: underline;
 }
 
-/* ▶Мини-плеер / Atskaņotājs */
 .custom-player {
   display: flex;
   align-items: center;
@@ -208,39 +225,8 @@ body.dark .track {
   width: 80px;
 }
 
-/* Кнопки и выпадающие списки / Pogas un izvēles */
-button,
-select {
-  margin-top: 0.5rem;
-  padding: 0.5rem 1rem;
-  font-size: 16px;
-  border: none;
-  background-color: var(--color-btn-bg);
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover,
-select:hover {
-  background-color: var(--color-btn-hover);
-}
-
-/* Переключатели тем / Režīma pārslēgšanas pogas */
-#theme-toggle {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-
-#peep-toggle {
-  position: absolute;
-  top: 10px;
-  right: 100px;
-}
-
-#count-container {
-  margin-top: 1rem;
+.icon-links i {
+  color: var(--color-icon-light);
 }
 
 /* Плавные переходы / Gludas pārejas */
