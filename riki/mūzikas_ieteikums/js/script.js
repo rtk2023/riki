@@ -25,7 +25,7 @@ $(function () {
     $('#tracks').empty();
     hideSpinner();
     $('#controls').toggle(state.mode === 'normal');
-    $('#find-button').prop('disabled', false).text('Find');
+    $('#find-button').prop('disabled', false).text('Atrast mūziku');
   }
 
   // --- Parādīt nākamo daļu vai pārlādēt / Показать следующий блок или перезагрузить ---
@@ -53,9 +53,9 @@ $(function () {
 
     // Pogas teksta atjauninājums / Обновление текста кнопки
     if (state.indices[key] < list.length && state.indices[key] < MAX_TRACKS) {
-      $('#find-button').text('More');
+      $('#find-button').text('Iegūt vairāk');
     } else {
-      $('#find-button').text(state.mode === 'normal' ? 'Refresh' : 'No more');
+      $('#find-button').text(state.mode === 'normal' ? 'Notīrīt' : 'No more');
     }
   }
 
