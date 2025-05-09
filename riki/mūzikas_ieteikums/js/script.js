@@ -1,12 +1,3 @@
-/* moodify_refactored_dynamic_complete.js
- * Moodify skripts pilnībā refaktorēts / Скрипт Moodify полностью переработан:
- * - Stabilas JSONP Deezer API pieprasījumi / Надёжные JSONP вызовы Deezer API
- * - Apvienota displayTracks lapošanai un autoatsvaidzināšanai / Объединённый displayTracks для пагинации и авто‑обновления
- * - Viena poga "Find" apstrādā ielādi, nākamo daļu, jaunu albumu / Одна кнопка "Find" обрабатывает загрузку, следующий блок, новый альбом
- * - Atbalsta dinamiskas noskaņojuma izmaiņas / Поддерживает динамическую смену настроения
- * - Spinneris indikators / Индикатор загрузки (спиннер)
- */
-
 $(function () {
   // --- Konstantes / Константы ---
   const PEEP_ID = 11420468;
