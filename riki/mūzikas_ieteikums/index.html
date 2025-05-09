@@ -22,37 +22,32 @@
           <h1 class="mt-3">🎧 Moodify</h1>
         </div>
       </header>
-      <main class="flex-grow-1 overflow-auto">
-        <div class="container py-3">
-          <div id="controls-container">
-            <div id="controls">
-              <p>Izvēlies noskaņojumu:</p>
-              <select id="mood-select">
-                <option value="happy">Jautrs</option>
-                <option value="sad">Skumjš</option>
-                <option value="chill">Mierīgs</option>
-                <option value="energetic">Enerģisks</option>
-              </select>
-              <button id="find-button">Atrast mūziku</button>
-            </div>
-            <div id="count-container">
-              <label for="count-select">Cik dziesmu vienā reizē:</label>
-              <select id="count-select">
-                <option value="10">10</option>
-                <option value="25">25</option>
-                <option value="50">50</option>
-              </select>
-              <button id="more-button" style="display: none">
-                Ielādēt vēl
-              </button>
-            </div>
+
+      <main class="flex-grow-1 d-flex flex-column overflow-hidden">
+        <!-- Sticky controls (non-scrolling) -->
+        <div id="controls-container">
+          <div id="controls">
+            <p>Izvēlies noskaņojumu:</p>
+            <select id="mood-select">
+              <option value="happy">Jautrs</option>
+              <option value="sad">Skumjš</option>
+              <option value="chill">Mierīgs</option>
+              <option value="energetic">Enerģisks</option>
+            </select>
+            <button id="find-button">Atrast mūziku</button>
           </div>
         </div>
+
+        <!-- Scrollable track area -->
+        <div id="tracks-wrapper" class="flex-grow-1 overflow-auto">
+          <div id="loading"></div>
+          <div id="tracks"></div>
+        </div>
       </main>
+
       <footer class="flex-shrink-0 text-center text-lg-start py-2">
         <div class="container pt-4">
           <section class="text-center">
-            <!-- Home icon -->
             <a
               class="btn btn-link btn-floating btn-lg text-body m-1"
               href="https://rtk2023.github.io/riki/"
@@ -60,7 +55,6 @@
             >
               <i class="fas fa-home"></i>
             </a>
-            <!-- GitHub icon -->
             <a
               class="btn btn-link btn-floating btn-lg text-body m-1"
               href="https://github.com/D4rkN00dl3s/riki/tree/main/riki/mūzikas_ieteikums"
@@ -73,6 +67,7 @@
         <div class="text-center p-3">© 2025 Copyright: Martin & Nikita</div>
       </footer>
     </div>
-    <script src="script/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
