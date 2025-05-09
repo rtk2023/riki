@@ -53,11 +53,6 @@ Izmantotie ārējie rīki un API:
 - [Font Awesome](https://fontawesome.com/) – ikonas
 - [Ionicons](https://ionic.io/ionicons) – ikonas
 
-## SAITES
-
-- [Rīku saraksts (RTK GitHub Pages)](https://rtk2023.github.io/riki/)
-- [Mans GitHub projekts](https://github.com/TAVS-LIETOTAJVARDS/riki/tree/main/laika-aplikacija)
-
 ## AUTORI
 
 2025: Vladimirs Jankovičs
