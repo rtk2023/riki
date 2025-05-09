@@ -20,10 +20,10 @@ Lietotne izmanto OpenWeatherMap API, lai iegūtu aktuālus laikapstākļu datus 
 
 ## FAILU STRUKTŪRA
 `
-Laikapstākļu_lietotne/  </br>
-├── index.html – galvenais HTML fails, saskarne lietotājam  </br>
-├── style.css – stili, tostarp tumšais/gaišais režīms  </br>
-├── script.js – JavaScript funkcionalitāte: API pieprasījumi, karte, validācija  </br>
+Laikapstākļu_lietotne/
+├── index.html – galvenais HTML fails, saskarne lietotājam
+├── style.css – stili, tostarp tumšais/gaišais režīms
+├── script.js – JavaScript funkcionalitāte: API pieprasījumi, karte, validācija
 ├── README.md – šī dokumentācija
 `
 
