@@ -1,23 +1,49 @@
-/* style.css */
-#controls-container {
-  position: sticky;
-  top: 0;
-  background: inherit;
-  z-index: 10;
-  padding: 1rem 0;
+:root {
+  --color-bg: #f0f2f5;
+}
+
+/* Reset and base styles */
+html, body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: var(--color-bg);
+  transition: background 0.3s, color 0.3s;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
   padding: 2rem;
-  background: #f0f2f5;
-  transition: background 0.3s, color 0.3s;
 }
 
 body.dark {
   background: #121212;
   color: #eee;
+}
+
+/* Header */
+header {
+  background-color: var(--color-bg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  z-index: 20;
+  position: relative;
+}
+
+/* Main content */
+main {
+  overflow-y: auto;
+  padding-bottom: 2rem;
+}
+
+/* Sticky controls container */
+#controls-container {
+  position: sticky;
+  top: 0;
+  background-color: var(--color-bg);
+  z-index: 30;
+  padding: 0.5rem 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 #controls {
@@ -29,12 +55,15 @@ body.dark {
   margin-top: 1rem;
 }
 
+/* Track list */
 #tracks {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 2rem;
 }
 
+/* Track item */
 .track {
   display: flex;
   align-items: center;
@@ -44,7 +73,7 @@ body.dark {
   padding: 0.75rem;
   margin: 0.5rem 0;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: background 0.3s;
 }
 
@@ -76,33 +105,7 @@ body.dark .track {
   text-decoration: underline;
 }
 
-button {
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  font-size: 16px;
-  border: none;
-  background-color: #007bff;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-#theme-toggle {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-
-#peep-toggle {
-  position: absolute;
-  top: 10px;
-  right: 100px;
-}
-
+/* Custom audio player */
 .custom-player {
   display: flex;
   align-items: center;
@@ -148,3 +151,37 @@ button:hover {
   width: 80px;
 }
 
+/* Buttons */
+button,
+select {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 16px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover,
+select:hover {
+  background-color: #0056b3;
+}
+
+/* Misc UI */
+#theme-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+#peep-toggle {
+  position: absolute;
+  top: 10px;
+  right: 100px;
+}
+
+#count-container {
+  margin-top: 1rem;
+}
