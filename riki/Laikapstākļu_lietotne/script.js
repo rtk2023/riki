@@ -1,5 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
   const APIKey = "369dc84bc5ad66ddec133018a36e29a1";
+  const weatherDescriptionsLV = {
+    "clear sky": "Skaidras debesis",
+    "few clouds": "Nedaudz mākoņu",
+    "scattered clouds": "Izkliedēti mākoņi",
+    "broken clouds": "Daļēji mākoņains",
+    "shower rain": "Stiprs lietus",
+    rain: "Lietus",
+    thunderstorm: "Pērkona negaiss",
+    snow: "Sniegs",
+    mist: "Migla",
+    "overcast clouds": "Apmācies",
+    "light rain": "Neliels lietus",
+    "moderate rain": "Mērens lietus",
+    "heavy intensity rain": "Stiprs lietus",
+    fog: "Migla",
+    "light snow": "Neliels sniegs",
+    "heavy snow": "Stiprs sniegs",
+    "few showers": "Daži nokrišņi",
+  };
+
   const input = document.querySelector(".search input");
   const searchBtn = document.querySelector(".search-btn");
   const cityList = document.querySelector(".city-list");
@@ -70,28 +90,51 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector(".city").style.display = "flex";
         document.querySelector(".temperatures").style.display = "flex";
         document.querySelector(".weather-box").style.display = "block";
-        document.querySelector(".temperature-feels-like").style.display = "flex";
+        document.querySelector(".temperature-feels-like").style.display =
+          "flex";
         document.querySelector(".weather-details").style.display = "flex";
-        document.querySelector(".sunset-sunrise-timezone").style.display = "flex";
+        document.querySelector(".sunset-sunrise-timezone").style.display =
+          "flex";
         document.querySelector(".forecast-container").style.display = "flex";
         document.getElementById("rain-map").style.display = "block";
 
         // Aizpilda laika apstākļu informāciju
         document.querySelector(".city span").innerHTML = city;
-        document.querySelector(".min-temperature span").innerHTML = `${data.main.temp_min.toFixed(0)}°C`;
-        document.querySelector(".max-temperature span").innerHTML = `${data.main.temp_max.toFixed(0)}°C`;
-        document.querySelector(".weather-box img").src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-        document.querySelector(".temperature").innerHTML = `${Math.round(data.main.temp)}°C`;
-        document.querySelector(".description").innerHTML = data.weather[0].description;
-        document.querySelector(".feels-like span").innerHTML = `${data.main.feels_like.toFixed(0)}°C`;
-        document.querySelector(".humidity span").innerHTML = `${data.main.humidity}%`;
-        document.querySelector(".wind span").innerHTML = `${data.wind.speed} km/h`;
-        document.querySelector(".sunrise span").innerHTML = `${unixToTime(data.sys.sunrise)}`;
+        document.querySelector(
+          ".min-temperature span"
+        ).innerHTML = `${data.main.temp_min.toFixed(0)}°C`;
+        document.querySelector(
+          ".max-temperature span"
+        ).innerHTML = `${data.main.temp_max.toFixed(0)}°C`;
+        document.querySelector(
+          ".weather-box img"
+        ).src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+        document.querySelector(".temperature").innerHTML = `${Math.round(
+          data.main.temp
+        )}°C`;
+        const descriptionEn = data.weather[0].description;
+        document.querySelector(".description").innerHTML =
+          weatherDescriptionsLV[descriptionEn] || descriptionEn;
+
+        document.querySelector(
+          ".feels-like span"
+        ).innerHTML = `${data.main.feels_like.toFixed(0)}°C`;
+        document.querySelector(
+          ".humidity span"
+        ).innerHTML = `${data.main.humidity}%`;
+        document.querySelector(
+          ".wind span"
+        ).innerHTML = `${data.wind.speed} km/h`;
+        document.querySelector(".sunrise span").innerHTML = `${unixToTime(
+          data.sys.sunrise
+        )}`;
         document.querySelector(".timezone-hours span").innerHTML =
           data.timezone / 3600 > -1
             ? `${data.timezone / 3600}+`
             : `${data.timezone / 3600}`;
-        document.querySelector(".sunset span").innerHTML = `${unixToTime(data.sys.sunset)}`;
+        document.querySelector(".sunset span").innerHTML = `${unixToTime(
+          data.sys.sunset
+        )}`;
 
         // Saņem prognozi un atjauno karti
         fetchForecast(data.coord.lat, data.coord.lon);
@@ -108,16 +151,30 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((data) => {
         const container = document.querySelector(".forecast-container");
         container.innerHTML = "";
+
         data.list.slice(0, 5).forEach((entry) => {
-          const time = new Date(entry.dt_txt).getHours();
+          const time = new Date(entry.dt_txt).getHours(); // Izņem prognozes laiku
+
+          // Saņem angļu valodas laika apstākļu aprakstu
+          const descriptionEn = entry.weather[0].description;
+
+          // Pārveido aprakstu uz latviešu valodu, ja iespējams, ja nav, atstāj angliski
+          const descriptionLV =
+            weatherDescriptionsLV[descriptionEn] || descriptionEn;
+
+          // Izveido prognozes kartiņu
           const card = document.createElement("div");
           card.className = "forecast-card";
           card.innerHTML = `
             <div>${time}:00</div>
-            <img src="https://openweathermap.org/img/wn/${entry.weather[0].icon}.png">
+            <img src="https://openweathermap.org/img/wn/${
+              entry.weather[0].icon
+            }.png">
             <div>${Math.round(entry.main.temp)}°C</div>
-            <div>${entry.weather[0].description}</div>
+            <div>${descriptionLV}</div>  <!-- Parāda latviešu tulkojumu -->
           `;
+
+          // Pievieno kartiņu prognožu konteineram
           container.appendChild(card);
         });
       });
