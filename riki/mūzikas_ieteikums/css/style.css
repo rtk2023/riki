@@ -2,14 +2,14 @@
   --color-bg: #f0f2f5;
 }
 
-html, body {
+html,
+body {
   height: 100vh;
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
   text-align: center;
   background: var(--color-bg);
-  transition: background 0.3s, color 0.3s;
 }
 
 body.dark {
@@ -35,7 +35,7 @@ body.dark .custom-player {
   background-color: #1f1f1f;
 }
 
-body.dark #controls-container{
+body.dark #controls-container {
   background-color: #1f1f1f;
 }
 
@@ -51,11 +51,11 @@ body.dark input[type="range"] {
 }
 
 .icon-links i {
-  color: #333; /* dark gray in light mode */
+  color: #333;
 }
 
 body.dark .icon-links i {
-  color: #90caf9; /* soft blue in dark mode */
+  color: #90caf9;
 }
 
 header {
@@ -71,7 +71,7 @@ main {
 
 footer {
   background-color: var(--color-bg);
-  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05); /* top shadow */
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
 }
 
 #controls-container {
@@ -185,7 +185,8 @@ body.dark .track {
   width: 80px;
 }
 
-button, select {
+button,
+select {
   margin-top: 0.5rem;
   padding: 0.5rem 1rem;
   font-size: 16px;
@@ -196,7 +197,8 @@ button, select {
   cursor: pointer;
 }
 
-button:hover, select:hover {
+button:hover,
+select:hover {
   background-color: #0056b3;
 }
 
@@ -214,4 +216,16 @@ button:hover, select:hover {
 
 #count-container {
   margin-top: 1rem;
+}
+
+body,
+header,
+footer,
+main,
+#controls-container,
+.track,
+.custom-player,
+button,
+select {
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
