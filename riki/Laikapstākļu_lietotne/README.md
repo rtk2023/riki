@@ -28,8 +28,6 @@ Laikapstākļu_lietotne/
 
 ## IESPĒJAMIE UZLABOJUMI
 
-- Laika apstākļu aprakstu tulkojumi uz latviešu valodu
-- Detalizētāka pieejamības (a11y) optimizācija
 - Papildu valodas izvēle saskarnē
 - Vairāku dienu prognoze (ne tikai tuvākās stundas)
 - Laika apstākļu vizualizācijas grafikos
@@ -39,7 +37,7 @@ Laikapstākļu_lietotne/
 
 - OpenWeatherMap API bezmaksas piekļuvei ir pieprasījumu limits
 - API dati nav vienmēr pieejami ļoti mazām vai kļūdaini ievadītām pilsētām
-- Prognozes apraksti nav lokalizēti uz latviešu valodu (angliski)
+- Prognozes apraksti nav lokalizēti uz latviešu valodu
 
 ## RESURSI
 
