@@ -134,17 +134,17 @@ $(function () {
 
 	// --- Stila pārslēgšana / Переключение стиля ---
 	function applyPeepStyle() {
-		$('#controls').hide(); $('h1').text('🎵 Peep Mode'); $('#peep-toggle').text('Exit Peep');
-		$('body').addClass('dark').css({ color: '#ffb6c1', fontFamily: 'Courier New, monospace' });
+		$('#controls').hide();
+		$('h1').text('🎵 Peep Mode');
+		$('#peep-toggle').text('Exit Peep');
+		$('body').addClass('dark peep-mode');
 	}
 
 	function removePeepStyle() {
 		$('#controls').show();
 		$('h1').text('🎧 Moodify');
 		$('#peep-toggle').text('Peep Mode');
-
-		// Remove only Peep styles, not the user's theme preference
-		$('body').css({ color: '', fontFamily: '' });
+		$('body').removeClass('dark peep-mode');
 	}
 
 	// --- Deezer JSONP pieprasījumi / Deezer JSONP запросы ---
