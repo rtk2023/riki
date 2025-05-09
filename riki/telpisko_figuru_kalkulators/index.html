@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Figūru kalkulātors</title>
+    <title>Ģeometrisko figūru kalkulātors</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="Webpage for calculating volume and surface of different shapes. 
 	Authors: Markuss Adrickis, Matīss Ronis, Rodrigo Valters Rukutis.">
@@ -12,28 +12,31 @@
 <body>
     <div class="container">
 		<div class="item1">
-			<h1>Konusa tilpuma un laukuma kalkulātors</h1>
+			<h1>Telpisko figūru tilpuma un laukuma kalkulātors</h1>
 		</div>
+		<!-- Formas nodalījums -->
 		<div class="item2">
 			<form id="form">
 				<div class="form-group">
-				<label for="shapeSelector">Izvēlies figūru</label>
-				<select id="shapeSelector">
-					<option value="cone">Konuss</option>
-					<option value="cylinder">Cilindrs</option>
-					<option value="sphere">Lode</option>
-					<option value="cube">Kubs</option>
-				</select>
-				
-				<br>
-				<label for="calculationType">Izvēlies aprēķināmo lielumu</label>
-				<select id="calculationType">
-					<option value="volume">Tilpums</option>
-					<option value="surface">Virsmas laukums</option>
-				</select>
-				<br>
-				<label>Ievadi lielumus</label>
+					<!-- Figūru izvēlne -->
+					<label for="shapeSelector">Izvēlies figūru</label>
+					<select id="shapeSelector">
+						<option value="cone">Konuss</option>
+						<option value="cylinder">Cilindrs</option>
+						<option value="sphere">Lode</option>
+						<option value="cube">Kubs</option>
+					</select>
+					<br>
+					<!-- Tipa izvēlne -->
+					<label for="calculationType">Izvēlies aprēķināmo lielumu</label>
+					<select id="calculationType">
+						<option value="volume">Tilpums</option>
+						<option value="surface">Virsmas laukums</option>
+					</select>
+					<br>
 				</div>
+				
+				<label class="ievades-lielumi">Ievadi lielumus</label>
 				<!-- Formas pirmais vērtību laukums -->
 				<div class="custom-field">
 					<input type="number" id="variable1" step="any">
@@ -45,16 +48,19 @@
 					<input type="number" id="variable2" step="any">
 					<label for="variable2" id="label2">Augstums(H)</label>
 				  </div>
-				
 				<br>
+
+				<!-- Neņemt pogu ārā no formas, nestrādās. -->
 				<div class="item3">
 					<button type="submit">Aprēķināt</button>
 				</div>
 			</form>
 		</div>
+		<!-- Izvadei paredzētais lauks-->
 		<div class="item4">
 			<p id="output"></p>
 		</div>
+		<!-- Priekš rīku sadaļas-->
 		<div>
 			<span>
 			<a href="https://github.com/rtk2023/riki">GitHub projekts</a> |

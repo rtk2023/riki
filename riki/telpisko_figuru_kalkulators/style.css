@@ -18,8 +18,8 @@ body {
     border: 1px solid black;
     width: 90%;
     max-width: 700px;
-    
 }
+
 .grid-container > div {
     background-color: white;
     padding: 10px;
@@ -29,18 +29,10 @@ body {
     grid-column-end: 3;
     text-align: center;
 }
-.item2 {
+.item2, .item3, .item4 { /* Ja vajadzēs nākotnē mainīt, izņems, šādi būtu labāk. */
     grid-column-start: 1;
     grid-column-end: 3;
-}
-.item3 {
-    grid-column-start: 1;
-    grid-column-end: 3;
-}
-.item4 {
-    grid-column-start: 1;
-    grid-column-end: 3;
-}
+} 
 
 Button {
     color: white;
@@ -52,7 +44,7 @@ Button {
     cursor: pointer;
     font-size: 20px;
 }
-Button:hover {
+Button:hover { /* Ja uz pogu uzliek kursoru. */
     background-color:mediumblue;
 }
 
@@ -68,17 +60,23 @@ input, select {
     cursor: pointer;
 }
 
+/* Ar formu saistītais*/
 .form-group {
     display: flex;
     flex-direction: column;
     margin-bottom: 5px;
   }
   
-  .form-group label {
+.form-group label {
     margin-bottom: 5px;
     font-weight: bold;
     font-size: 20px;
-  }
+}
+.ievades-lielumi {   
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 20px;
+}
 
 #calculationType{
     margin: auto;
@@ -91,24 +89,25 @@ input, select {
     margin-bottom: 10px;
 }
 
+/* Skaisto animāciju formatējums */
 .custom-field {
     position: relative;
     font-size: 20px;
     margin: auto;
   }
   
-  .custom-field input {
+.custom-field input {
     font-size: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
     outline: none;
-  }
+}
   
-  .custom-field input:focus {
+.custom-field input:focus {
     border-color: #666;
-  }
+}
   
-  .custom-field label {
+.custom-field label {
     position: absolute;
     left: 7px;
     top: 40%;
@@ -118,22 +117,22 @@ input, select {
     padding: 0 4px;
     transition: 0.3s ease;
     pointer-events: none;
-  }
+}
   
-  .custom-field input:focus + label,
-  .custom-field input.has-value + label {
+.custom-field input:focus + label,
+.custom-field input.has-value + label {
     top: 0;
     font-size: 12px;
     color: #222;
-  }
+}
 
-  .custom-field input.has-value + label {
+.custom-field input.has-value + label {
     top: 0;
     font-size: 12px;
     color: #222;
-  }
+}
 
-a {
+a { /* Priekš hipersaišu nospiešanas */
     text-decoration: none;
     color: blue;
 }

@@ -9,12 +9,17 @@ const shapeSelector = document.getElementById("shapeSelector");
 const calculationType = document.getElementById("calculationType");
 const pi = Math.PI; // PI vērtības piešķiršana
 
+// R - figūras rādiuss
+// H - Figūras augstums
+// L - Veidules garums
+// A - figūras mala
+
 // Konuss
 function volumeCone(R, H) { return (1 / 3) * pi * (R**2) * H; }
-function surfaceCone(R, L) { return pi * (R**2) + pi * R * L; } // konusa pamats + Konusu šani
+function surfaceCone(R, L) { return pi * (R**2) + pi * R * L; } // konusa pamats + Konusu sāni
 // Cilindrs
 function volumeCylinder(R, H) { return pi * (R**2) * H; }
-function surfaceCylinder(R, H) { return 2 * pi * (R**2) + 2 * pi * R * H; }
+function surfaceCylinder(R, H) { return 2 * pi * (R**2) + 2 * pi * R * H; } // Cilindra 2 pamati + sānu malas formula
 // Lode
 function volumeSphere(R) { return (4 / 3) * pi * (R**3); }
 function surfaceSphere(R) { return 4 * pi * (R**2); }
@@ -22,7 +27,6 @@ function surfaceSphere(R) { return 4 * pi * (R**2); }
 function volumeCube(A) { return A**3 ; } 
 function surfaceCube(A) { return 6 * (A**2); } // Kubam ir 6 virsmas
 //Avots formulām: https://www.visc.gov.lv/lv/media/19301/download?attachment
-//Latviešu matemātikā ne īsti patīk pilnos skaitļos... pi nereizināšanas alternatīve?
 
 // Funkcija mainīgo lauku maiņai
 function updateForm() {
@@ -34,6 +38,11 @@ function updateForm() {
     variable1.style.display = "inline";
     label2.style.display = "inline";
     variable2.style.display = "inline";
+
+    // Figūra {
+    //      label.textContent = "" => nosaukuma maiņa
+    //      variable.style.display = "none" => noņem elementu, lai netraucētu ar tukšo daļu
+    // }
 
     if (shape === "cone") {
         label1.textContent = "Rādiuss (R)";
@@ -73,11 +82,14 @@ form.addEventListener('submit', (event) => {
     const type = calculationType.value;
     const var1 = parseFloat(variable1.value);
     const var2 = parseFloat(variable2.value);
+    
     // Izvadvērtība
     let output;
+    
     // Pārbaude vai 1. ir aizpildītus un lielāks par 0 
     // un 2. mainīgais var būt ievadīts, ja ir, tad pārbauda vai ir aizpildīts un ir lielāks par nulli
     if (!var1 || var1 <=0 || (variable2.style.display !== "none" && (!var2 || var2 <=0))) {
+        //Atsevišķi paziņojumi priekš konkretizēta trūkuma.
         if (!var1) {
             alert('Primajam laukam trūkst skaitliskas vērtības!');
         }
@@ -96,7 +108,7 @@ form.addEventListener('submit', (event) => {
         return;
     }
 
-    // Aprēķināšanas funkciju izsaukšana
+    // Aprēķināšanas funkciju izsaukšana pēc figūras
     switch (shape) {
         case "cone":
             if (type === "volume") { output = volumeCone(var1, var2); }
