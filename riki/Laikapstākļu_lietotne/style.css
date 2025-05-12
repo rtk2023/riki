@@ -271,3 +271,66 @@ body {
   border-radius: 1rem;
   display: block;
 }
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .search input {
+    font-size: 1.6rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .search button {
+    padding: 0.8rem;
+  }
+
+  .theme-toggle {
+    font-size: 2rem;
+  }
+
+  .city span,
+  .min-temperature span,
+  .max-temperature span,
+  .temperature,
+  .temperature-feels-like span,
+  .humidity span,
+  .wind span,
+  .sunrise span,
+  .sunset span,
+  .timezone-hours span {
+    font-size: 1.8rem;
+  }
+
+  .description,
+  .temperature-feels-like p,
+  .temperatures p,
+  .weather-details p,
+  .sunset-sunrise-timezone p {
+    font-size: 1.2rem;
+  }
+
+  .weather-box img {
+    width: 50px;
+  }
+
+  .forecast-card {
+    padding: 0.8rem;
+    font-size: 1.2rem;
+  }
+
+  .forecast-container {
+    gap: 0.5rem;
+  }
+
+  .map {
+    height: 20rem;
+  }
+
+  .rain-map p {
+    font-size: 2rem;
+  }
+}
+
