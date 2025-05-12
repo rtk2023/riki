@@ -7,7 +7,7 @@
 ### RĪKA DARBĪBAS APRAKSTS
 Programmas galvenās lapas `index.html` formā klientss norāda informāciju par atrašanās vietu, finanšu datiem un paneļu parametriem priekš aprēķinu veikšanas. Pēc rezultātu aprēķināsānas `js/script.js` tiek atvērta `result.html` un demonstrēti aprēķinātie dati.
 
-`js/script.js` mainīgie un funkcijas (to nozīme/darbības):
+`js/script.js` mainīgie un funkcijas:
 - validācija/ datu aizpildīšana
     - `window.onload = function()` - funkcija, kas aizpilda kas pievieno `<option>` ar valsts kodiem iekš elementa `<select>` ar id='countryCodes' , kad tiek atvērta `index.html` lapa. Šo datu iegūšanai izmanto [RESTful API](https://restcountries.com/#endpoints-code).
     - `formasParbaude()` - funkcija, kas veic formas datu iegūšanu, pārbaudīšanu un nodošanu uz API datu iegūšanas funkcijām. Funkcija arī veic iegūto datu pārbaudi no API funkcijām. Ja pārbaudes laikā nenotiek neviens error, funkcijas beigās tiek izsaukta galvenā aprēķinu veikšanas funkcija `aprekins()`.
@@ -24,41 +24,41 @@ Programmas galvenās lapas `index.html` formā klientss norāda informāciju par
     - `dayData[]` - globāls masīvs, kurā tiek saglabāti iegūtie dati par šo un nākamo 6 dienu laikamstākļu datiem [Zipcodestack API](https://zipcodestack.com/) `pastaInxParbaude()` funkcijā.  
 
 ### APRĒĶINA DARBĪBAS
-> dayPaterins = menesaRekins/Ec/30
+> dayPaterins = menesaRekins/Ec/30  
 **dayPaterins** - apuvenais 1 dienas elektrības patērīņš    
 **menesaRekins** - vidējais mēneša rēķins  
 **Ec** - Elektroenerģijas cena  
 **30** - dienas mēnesī (vidēji)  
   
-> maxP = (sunsetNumberValue - sunriseNumberValue) * paneluOrientacija * panelaJauda
+> maxP = (sunsetNumberValue - sunriseNumberValue) * paneluOrientacija * panelaJauda  
 **maxP** - maksimālais saražotās elektroenerģijas daudzums  
 **sunsetNumberValue, sunriseNumberValue** - saullēkta un saulrieta stundu skaitliskās vērtības   
 **paneluOrientacija** - paneļu orientācijas pret D ietekmes %  
 **panelaJauda** - uzstādītā paneļu jauda  
 
-> cloudP = maxP * cloudiness * 0.2
+> cloudP = maxP * cloudiness * 0.2  
 **cloudP** - mākoņainā laikā saražotā enektroenerģija  
 **maxP** - maksimālais saražotās elektroenerģijas daudzums  
 **cloudiness** - dienas mākoņainās daļas %  
 **0.2** - mākoņainības ietekmes %  
 
-> shadeP = maxP * (1 - cloudiness) * E
+> shadeP = maxP * (1 - cloudiness) * E  
 **shadeP** - saulainā laikā saražotā enektroenerģija ar ēnojuma ietekmi    
 **maxP** - maksimālais saražotās elektroenerģijas daudzums  
 **(1 - cloudiness)** - dienas saulainās daļas %    
 **E** - ēnojuma ieteekmes % (ja ir ēnojums E=0.75, ja nav E=1)  
 
-> dayP = cloudP + shadeP
+> dayP = cloudP + shadeP  
 **dayP** - dienā kopējā saraažotā enerģija  
 **cloudP** - mākoņainā laikā saražotā enektroenerģija  
 **shadeP** - saulainā laikā saražotā enektroenerģija ar ēnojuma ietekmi  
 
-> dayIetaup = dayP * Ec
+> dayIetaup = dayP * Ec  
 **dayIetaup** - dienā saražotās enerģijas cena jeb dienā ietaupītā summa no saražotās elektroenerģijas  
 **dayP** - dienā kopējā saraažotā enerģija  
 **Ec** - elektroenerģijas cena  
 
-> SEP = dayP - dayPaterins < 0 ? 0 : dayP - dayPaterins
+> SEP = dayP - dayPaterins < 0 ? _0 : dayP - dayPaterins_  
 **SEP** - Saražotās enerģijas pārpalikums  
 _vērtība_ - ja (dayP - dayPaterins) starpība ir negatīva vai 0, tad pārpalikums nav (jeb tā vērtība ir 0), bet ja starpība ir lielāka par 0, tad saglabā starpības rezultātu.  
 
