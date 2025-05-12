@@ -23,43 +23,52 @@ Programmas galvenās lapas `index.html` formā klientss norāda informāciju par
 - Globālie mainīgie
     - `dayData[]` - globāls masīvs, kurā tiek saglabāti iegūtie dati par šo un nākamo 6 dienu laikamstākļu datiem [Zipcodestack API](https://zipcodestack.com/) `pastaInxParbaude()` funkcijā.  
 
+`result.html` iekļautais skripts nodrošina šī HTML faila elementu aizpildīšanu ar aprēķinātajiem datiem.
+
 ### APRĒĶINA DARBĪBAS
-> dayPaterins = menesaRekins/Ec/30  
-**dayPaterins** - apuvenais 1 dienas elektrības patērīņš    
+dayPaterins = menesaRekins/Ec/30  
+
+> **dayPaterins** - apuvenais 1 dienas elektrības patērīņš    
 **menesaRekins** - vidējais mēneša rēķins  
 **Ec** - Elektroenerģijas cena  
 **30** - dienas mēnesī (vidēji)  
   
-> maxP = (sunsetNumberValue - sunriseNumberValue) * paneluOrientacija * panelaJauda  
-**maxP** - maksimālais saražotās elektroenerģijas daudzums  
+maxP = (sunsetNumberValue - sunriseNumberValue) * paneluOrientacija * panelaJauda  
+
+> **maxP** - maksimālais saražotās elektroenerģijas daudzums  
 **sunsetNumberValue, sunriseNumberValue** - saullēkta un saulrieta stundu skaitliskās vērtības   
 **paneluOrientacija** - paneļu orientācijas pret D ietekmes %  
 **panelaJauda** - uzstādītā paneļu jauda  
 
-> cloudP = maxP * cloudiness * 0.2  
-**cloudP** - mākoņainā laikā saražotā enektroenerģija  
+cloudP = maxP * cloudiness * 0.2  
+
+> **cloudP** - mākoņainā laikā saražotā enektroenerģija  
 **maxP** - maksimālais saražotās elektroenerģijas daudzums  
 **cloudiness** - dienas mākoņainās daļas %  
 **0.2** - mākoņainības ietekmes %  
 
-> shadeP = maxP * (1 - cloudiness) * E  
-**shadeP** - saulainā laikā saražotā enektroenerģija ar ēnojuma ietekmi    
+shadeP = maxP * (1 - cloudiness) * E  
+
+> **shadeP** - saulainā laikā saražotā enektroenerģija ar ēnojuma ietekmi    
 **maxP** - maksimālais saražotās elektroenerģijas daudzums  
 **(1 - cloudiness)** - dienas saulainās daļas %    
 **E** - ēnojuma ieteekmes % (ja ir ēnojums E=0.75, ja nav E=1)  
 
-> dayP = cloudP + shadeP  
-**dayP** - dienā kopējā saraažotā enerģija  
+dayP = cloudP + shadeP  
+
+> **dayP** - dienā kopējā saraažotā enerģija  
 **cloudP** - mākoņainā laikā saražotā enektroenerģija  
 **shadeP** - saulainā laikā saražotā enektroenerģija ar ēnojuma ietekmi  
 
-> dayIetaup = dayP * Ec  
-**dayIetaup** - dienā saražotās enerģijas cena jeb dienā ietaupītā summa no saražotās elektroenerģijas  
+dayIetaup = dayP * Ec  
+
+> **dayIetaup** - dienā saražotās enerģijas cena jeb dienā ietaupītā summa no saražotās elektroenerģijas  
 **dayP** - dienā kopējā saraažotā enerģija  
 **Ec** - elektroenerģijas cena  
 
-> SEP = dayP - dayPaterins < 0 ? _0 : dayP - dayPaterins_  
-**SEP** - Saražotās enerģijas pārpalikums  
+SEP = dayP - dayPaterins < 0 ? _0 : dayP - dayPaterins_  
+
+> **SEP** - Saražotās enerģijas pārpalikums  
 _vērtība_ - ja (dayP - dayPaterins) starpība ir negatīva vai 0, tad pārpalikums nav (jeb tā vērtība ir 0), bet ja starpība ir lielāka par 0, tad saglabā starpības rezultātu.  
 
 ### FAILU STRUKTŪRA
@@ -81,23 +90,21 @@ saules_panelu_kalkulators/
 `result.html` izvada lietotājam aprēķinātos rezultāus.  
 
 ## IESPĒJAMIE UZLABOJUMI
-Rīkam ir vairāki iespējamie uzlabojumi, ņemot vērā to, ka saules paneļu saražoto enerģiju ietekmē vairāki un dažādi faktori (paneļu, apkārtējās vides, laikapstākļu, u. c.), kuri nav tikt detalizētāk aprēķināti. Tas nodrošinātu precīzāku rīka aprēķinātā rezultāta sniegšanu. 
+Rīkam ir vairāki iespējamie uzlabojumi, ņemot vērā to, ka saules paneļu saražoto enerģiju ietekmē vairāki un dažādi nelineāri faktori (paneļu, apkārtējās vides, laikapstākļu, u. c.), kuri nav aprēķināti/iegūti tikt detalizēti. Tas nodrošinātu precīzāku rīka aprēķinātās potenciālās saražotās ektroenerģijas paredzēšanu. 
 
 Šie potenciālie rīka uzlabošanas veidi ir:
 - laikapstākļi (precīzāku mākoņu veidu ietekmi);
 - saules paneļu modeļi (materiāla ietekme, veidi - parastie, rotējoši, divpusējie);
-- saules gaismas stundas (rītausmas stundās, pusdienu stundās, saulrieta stundās)
 - gadalaiku ietekme (saules leņķis virs horizonta);
 - paneļu kopšana (regulāra putekļu tīrīšana, sniega tīrīšana - ziemā);
 - paneļu savstarpējais savienojums (paralēli, virknē);
-- grafiski attēloti rezultāti.
-- mēneša ietaupījuma aprēķināsāna.
-- precīzāki ēnojuma procenti (attiecība starp paneļu platību un ēnojuma platību)
-- saules augstuma virs horizonta ietekme dienā (paneļu jauda nav lineāra - rīts, dienvidus, vakars)
-- vietas, saules novietojums max orbītā un paneļa leņķa savstarpējā ietekme.
-- Saražotā enerģija dienā (precīzāk ar datiem pa stundām)
-- temperatūrs ietekme uz paneļu saražoto enerģiju
-- saldo princips (ja tāds klientam noslēgts)
+- grafiski attēloti rezultāti;
+- mēneša ietaupījuma aprēķināsāna;
+- precīzāki ēnojuma procenti (attiecība starp paneļu platību un ēnojuma platību);
+- vietas, paneļa leņķa un saules novietojums max orbītā savstarpējā ietekme;
+- saražotā enerģija dienā (precīzāk ar datiem pa stundām no API datiem);
+- temperatūrs ietekme uz paneļu saražoto enerģiju;
+- saldo princips (ja tāds klientam noslēgts).  
 
 ### ZINĀMIE DEFEKTI
 - Kalkulatora aprēķinātie rezultāti nav precīzi, bet gan aptuveni, jo vairāki parametri ir uzskatīti lineāri. Patiesībā lielākā daļa ir nelineāri (saules novietojums virs horizonta, laikapstākļi, elektrības tariga cena, uc.). Saistībā ar to - paneļu leņķa daļa ievades formā ir lieka.
