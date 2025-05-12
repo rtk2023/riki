@@ -32,13 +32,13 @@ export async function formasParbaude() {
             alert('Jābūt aizpildītiem gan pasta indeksam, gan valsts kodam .'); 
             return;
         }
-        /* 
+         
         // Pasta koda saderības pārbaudīšana
         const indxParbaude = await pastaInxParbaude(pastaIndeks, valstsKods); // taupīgi ar atslēgu (tikai 300 calls mēnesī)
         if (!indxParbaude) { 
             alert('Pasta indeks neatbilst/nesakrīt ar valsts kodu.'); 
             return;
-        }*/
+        }
         
         // geo API datu parbaude
         const {lat, lon} = await geoDati(pastaIndeks, valstsKods);
@@ -130,8 +130,8 @@ async function geoDati(pastaIndeks, valstsIndeks) {
         const geoData = await response.json();
 
         if (geoData && geoData.length > 0 ) {
-            let lat = geoData[0].lat;
-            let lon = geoData[0].lon;
+            let lat = geoData[0].lat; // platums
+            let lon = geoData[0].lon; // garums
             return { lat, lon };
         }
         else {
@@ -157,10 +157,10 @@ async function laikapstakluDati(lat, lon, today, future) {
         if (weatherData && Array.isArray(weatherData.days)) {
             dayData = weatherData.days.map(item => {
                 return [
-                    item.datetime,             // Date (YYYY-MM-DD)
-                    item.sunrise,             // Sunrise (HH:MM:SS)
-                    item.sunset,               // Sunset (HH:MM:SS)
-                    item.cloudcover / 100    // Cloudiness (convert to fraction)
+                    item.datetime, // (YYYY-MM-DD)
+                    item.sunrise, // (HH:MM:SS)
+                    item.sunset, // (HH:MM:SS)
+                    item.cloudcover / 100 // (x.xx)
                 ];
             });
             return 1;
@@ -187,12 +187,11 @@ function aprekins(panelaJauda, Ec, paneluOrientacija, enojums, menesaRekins) {
     let weekIetaup = 0; // Nedēļas kopējais ietaupījums
     let weekSEP = 0; // Nedēļas kopējais patēriņš
     let dienuDati = [];
-    for (var i = 0; i < 7; i++) {
+    for (var i = 0; i < 7; i++) { // katras dienas vērtību aprēķināšana
         // Dienai
         let maxP = (timeToValue(dayData[i][2]) - timeToValue(dayData[i][1])) * paneluOrientacija * panelaJauda; 
         let cloudP = maxP * dayData[i][3] * 0.2;
         let shadeP = maxP * (1 - dayData[i][3]) * E; 
-        //if (dayP>=panelaJauda) {}
         let dayP = cloudP + shadeP;
         let dayIetaup = dayP * Ec;
         let SEP = dayP - dayPaterins < 0 ? 0 : dayP - dayPaterins; // SEP - Saražotās enerģijas pārpalikums
@@ -223,10 +222,10 @@ function aprekins(panelaJauda, Ec, paneluOrientacija, enojums, menesaRekins) {
 // Funkcija datuma noformēšanai
 function dateFormat(date) {
     let parts = date.split('-');
-    return `${parts[2]}.${parts[1]}.${parts[0]}`;
+    return `${parts[2]}.${parts[1]}.${parts[0]}.`;
 }
 
-// Funkcija stundu noformēšanai
+// Funkcija stundu pārveidošanai
 function timeToValue(time) {
     let timeValue = time.split(':');
     let h = parseInt(timeValue[0], 10);

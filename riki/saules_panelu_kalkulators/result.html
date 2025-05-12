@@ -80,9 +80,9 @@
             <thead>
               <tr>
                 <th scope="col">Dienas datums</th>
-                <th scope="col">Saražotā enerģija (kW)</th>
+                <th scope="col">Saražotā enerģija (kW/h)</th>
                 <th scope="col">Ietaupiums (€)</th>
-                <th scope="col">Saražotās enerģijas pārpalikums (kW)</th>
+                <th scope="col">Saražotās enerģijas pārpalikums (kW/h)</th>
               </tr>
             </thead>
             <tbody id="katrasDienas"></tbody> 
@@ -105,8 +105,8 @@
 
     let kopejaisTeikums = document.getElementById('kopejaisRezultats');
     kopejaisTeikums.innerHTML = '';
-    kopejaisTeikums.innerHTML += `<p>Kopējā paneļu saražotā enerģija nākamajās 7 dienās būs aptuveni <strong>${weekP} kW</strong>, aptuvenais ietaupījums būs <strong>${weekIetaup} €</strong></p>`;
-    kopejaisTeikums.innerHTML += (weekSEP == 0 ? `<p>Nedēļā nebūs saražotās enerģijas pārpalikums.</p>`: `<p>Saražotās enerģijas pārpalikums būtu <strong>${weekSEP} kW</strong>.</p>`);
+    kopejaisTeikums.innerHTML += `<p>Kopējā paneļu saražotā enerģija nākamajās 7 dienās būs aptuveni <strong>${weekP} kW/h</strong>, aptuvenais ietaupījums būs <strong>${weekIetaup} €</strong></p>`;
+    kopejaisTeikums.innerHTML += (weekSEP == 0 ? `<p>Nedēļā nebūs saražotās enerģijas pārpalikums.</p>`: `<p>Saražotās enerģijas pārpalikums būtu <strong>${weekSEP} kW/h</strong>.</p>`);
 
     let dienuTabula = document.getElementById('katrasDienas');
     dienuTabula.innerHTML = '';
