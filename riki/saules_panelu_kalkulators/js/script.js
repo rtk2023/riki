@@ -34,8 +34,7 @@ export async function formasParbaude() {
         }
         /* 
         // Pasta koda saderības pārbaudīšana
-        const indxParbaude = await pastaInxParbaude(pastaIndeks, valstsKods);
-        nullValueCheck(indxParbaude, 'Pasta indeks neatbilst/nesakrīt ar valsts kodu.')
+        const indxParbaude = await pastaInxParbaude(pastaIndeks, valstsKods); // taupīgi ar atslēgu (tikai 300 calls mēnesī)
         if (!indxParbaude) { 
             alert('Pasta indeks neatbilst/nesakrīt ar valsts kodu.'); 
             return;
@@ -52,7 +51,7 @@ export async function formasParbaude() {
         const {todayDate, day7Date} = datumi();
         const weatherAPI = await laikapstakluDati(lat, lon, todayDate, day7Date);
         if (!weatherAPI) {
-            console.log('lat or lon is 0'); 
+            console.log('no weather data fetched'); 
             return;
         }
 
@@ -108,7 +107,6 @@ function datumi() {
 // Funkcija, kas pārbauda pasta koda saderību ar valsts kodu.
 async function pastaInxParbaude(pastaIndeks, valstsIndeks) {
     try {
-        console.log("checking zip");
         const response = await fetch(`https://api.zipcodestack.com/v1/search?codes=${pastaIndeks.toString()}&country=${valstsIndeks}&apikey=${zK}`);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -130,16 +128,15 @@ async function geoDati(pastaIndeks, valstsIndeks) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const geoData = await response.json();
-        console.log(geoData);
 
         if (geoData && geoData.length > 0 ) {
-            const lat = geoData[0].lat;
-            const lon = geoData[0].lon;
-            console.log('fetched lat: ', lat, ' lon: ', lon); // console.log
+            let lat = geoData[0].lat;
+            let lon = geoData[0].lon;
             return { lat, lon };
         }
         else {
-            return null;
+            let lat  = 0, lon = 0;
+            return { lat, lon };
         }
     }
     catch (error) {
@@ -150,14 +147,12 @@ async function geoDati(pastaIndeks, valstsIndeks) {
 
 // funkcija, kas iegūst datus no laikapstaklu API
 async function laikapstakluDati(lat, lon, today, future) {
-    console.log('STRĀDĀ??');
     try { 
         const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat},${lon}/${today}/${future}?key=${wK}`); // nav api url
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const weatherData = await response.json();
-        console.log(weatherData);
 
         if (weatherData && Array.isArray(weatherData.days)) {
             dayData = weatherData.days.map(item => {
@@ -168,8 +163,6 @@ async function laikapstakluDati(lat, lon, today, future) {
                     item.cloudcover / 100    // Cloudiness (convert to fraction)
                 ];
             });
-            console.log('weather data gathered', dayData);
-            console.log(dayData[0][0] +", "+ dayData[0][1] +", "+dayData[0][2] +", "+dayData[0][3]);
             return 1;
             
         }
@@ -202,7 +195,7 @@ function aprekins(panelaJauda, Ec, paneluOrientacija, enojums, menesaRekins) {
         //if (dayP>=panelaJauda) {}
         let dayP = cloudP + shadeP;
         let dayIetaup = dayP * Ec;
-        let SEP = (dayP - dayPaterins < 0 ? 0.00 : dayP - dayPaterins); // SEP - Saražotās enerģijas pārpalikums
+        let SEP = dayP - dayPaterins < 0 ? 0 : dayP - dayPaterins; // SEP - Saražotās enerģijas pārpalikums
         
         // Nedēļai
         weekP += dayP;
@@ -212,13 +205,13 @@ function aprekins(panelaJauda, Ec, paneluOrientacija, enojums, menesaRekins) {
         // Dienas datu apkopošana  (datums, saraž, ietaup, SEP)
         dayP = dayP.toFixed(2);
         dayIetaup = dayIetaup.toFixed(2);
-        SEP = SEP.toFixed(2);
+        SEP = SEP === 0 ? ' - ' : SEP.toFixed(2);
         dienuDati[i] = `<tr><th scope="row">${dateFormat(dayData[i][0])}</th><td>${dayP}</td><td>${dayIetaup}</td><td>${SEP}</td></tr>`;
     }
 
     weekP = weekP.toFixed(2);
     weekIetaup = weekIetaup.toFixed(2);
-    weekSEP = weekSEP.toFixed(2);
+    weekSEP = weekSEP === 0 ? 0 : weekSEP.toFixed(2);
 
     sessionStorage.setItem('weekP', weekP);
     sessionStorage.setItem('weekIetaup', weekIetaup);

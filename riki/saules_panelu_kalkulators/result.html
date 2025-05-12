@@ -106,7 +106,7 @@
     let kopejaisTeikums = document.getElementById('kopejaisRezultats');
     kopejaisTeikums.innerHTML = '';
     kopejaisTeikums.innerHTML += `<p>Kopējā paneļu saražotā enerģija nākamajās 7 dienās būs aptuveni <strong>${weekP} kW</strong>, aptuvenais ietaupījums būs <strong>${weekIetaup} €</strong></p>`;
-    kopejaisTeikums.innerHTML += (!weekSEP ? `<p>Nedēļā nebūs saražotās enerģijas pārpalikums.</p>`: `<p>Saražotās enerģijas pārpalikums būtu <strong>${weekSEP} kW</strong>.</p>`);
+    kopejaisTeikums.innerHTML += (weekSEP == 0 ? `<p>Nedēļā nebūs saražotās enerģijas pārpalikums.</p>`: `<p>Saražotās enerģijas pārpalikums būtu <strong>${weekSEP} kW</strong>.</p>`);
 
     let dienuTabula = document.getElementById('katrasDienas');
     dienuTabula.innerHTML = '';
