@@ -36,15 +36,25 @@ Rīkam ir vairāki iespējamie uzlabojumi, ņemot vērā to, ka saules paneļu s
 - paneļu savstarpējais savienojums (paralēli, virknē);
 - grafiski attēloti rezultāti.
 - mēneša ietaupījuma aprēķināsāna.
+- precīzāki ēnojuma procenti (attiecība starp paneļu platību un ēnojuma platību)
+- saules augstuma virs horizonta ietekme dienā (paneļu jauda nav lineāra - rīts, dienvidus, vakars)
+- vietas, saules novietojums max orbītā un paneļa leņķa savstarpējā ietekme.
+- Saražotā enerģija dienā (precīzāk ar datiem pa stundām)
+- temperatūrs ietekme uz paneļu saražoto enerģiju
+- saldo princips (ja tāds klientam noslēgts)
 
 ### ZINĀMIE DEFEKTI
 ...
+nav precīzs, jo vairāki parametri ir uzskatīti lineāri, bet ralitātē, lielākā daļa ir nelineāri.
+saistībā ar to - paneļu leņķi lieki
+
+nav pārbaudits, kā citu pasaulē
+
 
 ## RESURSI
-Izmantotie API:
-- OpenWeather (nepieciešama API atsēga)
-    - [Weather API](https://openweathermap.org/api/one-call-3) - laikapstākļu datu iegūšanai
-    - [Geocoding API](https://openweathermap.org/api/geocoding-api) - ģeogrāfisko datu iegūšanai
+Izmantotie API: 
+- [Timeline Weather API](https://www.visualcrossing.com/resources/documentation/weather-api/timeline-weather-api/#introduction-section) (nepieciešama API atsēga) - laikapstākļu datu iegūšanai
+- [Nominatim API](https://nominatim.org/release-docs/develop/api/Overview/) (nav nepieciešama API atsēga) - ģeogrāfisko datu iegūšanai
 - [Zipcodestack](https://zipcodestack.com/) (nepieciešama API atsēga) - pasta indeksu datu validācijai
 - [RESTful API](https://restcountries.com/#endpoints-code) (nav nepieciešama API atsēga) - valstu kodu datu iegūšanai
 

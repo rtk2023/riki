@@ -72,16 +72,21 @@
 
     <form id="calculator-form">
       <div class="form-section">
-        <h4 class="mb-3" id="kopejaisRezultats">rezultāts</h4><hr><br>
-
-        <div class="row mb-3" id="katrasDienasContainer">
-          <div class="col-12 mb-3 mx-1 bg-white rounded" id="day1rez"></div>
-          <div class="col-12 mb-3 mx-1 bg-white rounded" id="day2rez"></div>
-          <div class="col-12 mb-3 mx-1 bg-white rounded" id="day3rez"></div>
-          <div class="col-12 mb-3 mx-1 bg-white rounded" id="day4rez"></div>
-          <div class="col-12 mb-3 mx-1 bg-white rounded" id="day5rez"></div>
-          <div class="col-12 mb-3 mx-1 bg-white rounded" id="day6rez"></div>
-          <div class="col-12 mb-3 mx-1 bg-white rounded" id="day7rez"></div>
+        <!-- Nākamās nedēļas dati. -->
+        <div class="mb-3" id="kopejaisRezultats"></div><hr><br>
+         <!-- Nākamās nedēļas katras dienas dati. -->
+        <div class="mb-3" id="katrasDienasContainer">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Dienas datums</th>
+                <th scope="col">Saražotā enerģija (kW)</th>
+                <th scope="col">Ietaupiums (€)</th>
+                <th scope="col">Saražotās enerģijas pārpalikums (kW)</th>
+              </tr>
+            </thead>
+            <tbody id="katrasDienas"></tbody> 
+          </table>
         </div>
       </div>
 
@@ -91,6 +96,29 @@
   
   <div class="grass"></div>
   <div class="sun"></div>
+  <script>
+    const weekP = sessionStorage.getItem('weekP');
+    const weekIetaup = sessionStorage.getItem('weekIetaup');
+    let weekSEP = sessionStorage.getItem('weekSEP');
+    const dienuDatiString = sessionStorage.getItem('dienuDati');
+    const dienuDati = JSON.parse(dienuDatiString);
+
+    let kopejaisTeikums = document.getElementById('kopejaisRezultats');
+    kopejaisTeikums.innerHTML = '';
+    kopejaisTeikums.innerHTML += `<p>Kopējā paneļu saražotā enerģija nākamajās 7 dienās būs aptuveni <strong>${weekP} kW</strong>, aptuvenais ietaupījums būs <strong>${weekIetaup} €</strong></p>`;
+    kopejaisTeikums.innerHTML += (!weekSEP ? `<p>Nedēļā nebūs saražotās enerģijas pārpalikums.</p>`: `<p>Saražotās enerģijas pārpalikums būtu <strong>${weekSEP} kW</strong>.</p>`);
+
+    let dienuTabula = document.getElementById('katrasDienas');
+    dienuTabula.innerHTML = '';
+    for (let i = 0; i < 7 ; i++) {
+      dienuTabula.innerHTML += dienuDati[i];
+    }
+    // Optionally, remove the data after using it:
+    sessionStorage.removeItem('weekP');
+    sessionStorage.removeItem('weekIetaup');
+    sessionStorage.removeItem('SEP');
+    sessionStorage.removeItem('dienuDati');
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 </body>
 </html>
