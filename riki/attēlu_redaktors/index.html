@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Attēlu Redaktors</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+        <script type="module" src="./Modules/Canvas.js"></script>
+        <script type="module" src="./Modules/IO.js"></script>
+        <script type="module" src="./Modules/ToolHandler.js"></script>
+    </head>
+    <body class="h-[96.5svh]"> <!-- magic number lai dabūtu visu smuki skaisti :melting_face:-->
+        <div class="w-full flex h-8 border border-gray-200">
+            <p id="undo" class="mx-2 my-auto cursor-pointer">[Undo]</p>
+            <p id="loadPhoto" class="mx-2 my-auto cursor-pointer">[Load Photo]</p>
+            <p id="savePhoto" class="mx-2 my-auto cursor-pointer">[Save Photo]</p>
+        </div>
+        <div class="flex h-full">
+            <div id="toolList" class="h-full z-10 w-16 border border-gray-200">
+                <!--Dinamiski pievienots ar JS-->
+            </div>
+            <div class="h-full w-64 border border-gray-200">
+                <div class="w-full h-32 p-4">
+                    <p>Krāsa</p>
+                    <input id="colorSelector" type="color" class="w-full h-full">
+                </div>
+
+                <div class="w-full p-4 ">
+                    <p>Biezums</p>
+                    <input type="number" id="lineWidth" min="1" max="100" value="10">
+                </div>
+
+                <div class="w-full p-4">
+                    <p>Kanvasa Izmērs</p>
+                    <input type="number" id="canvasWidth" min="1" max="2000" value="960" placeholder="Canvas Width">
+                    <input type="number" id="canvasHeight" min="1" max="2000" value="540" placeholder="Canvas Height">
+                </div>
+
+            </div>
+            <div class="border border-gray-200 w-full flex">
+                <canvas id="canvas" class="drop-shadow-lg w-[960px] h-[540px] m-auto bg-gray-100 border border-gray-200"></canvas>
+            </div>
+            <div class="ml-auto w-64 border border-gray-200">
+                <!--Godīgi sakot nezinu ko te pat ielikt, jo sākumā domāju layerus bet tas ir pārāk sarežģīti.-->
+            </div>
+        </div>
+
+        <div id="internals" class="hidden"> <!--Priekš dažiem noteiktiem objektiem kā custom file loading, jo html/js ir icky-->
+            <input type="file" id="fileInput" accept="image/*">
+        </div>
+    </body>
+</html>
+

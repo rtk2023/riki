@@ -1,0 +1,136 @@
+.quizzArea {
+    display: none;
+
+    height: 100vh;
+    width: 100vw;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.quizzCloseButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 5vh;
+    aspect-ratio: 1 / 1;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    margin: 20px;
+
+    border: solid 2px var(--secondary-color);
+    border-radius: 5px;
+
+    border: solid 1px rgb(255, 0, 0);
+    background-color: rgba(255, 0, 0, .3);
+
+    font-size: 1.5em;
+
+
+} .quizzCloseButton:hover {
+    background-color: rgba(255, 0, 0, .5);
+}
+
+.nextCardButton {
+    display: flex;
+
+    height: 20vh;
+    aspect-ratio: 1 / 1;
+
+    position: absolute;
+    right: 0;
+    top: 40vh;
+
+    margin: auto 20px;
+    padding: 10px 20px;
+
+    border: solid 2px grey;
+    border-radius: 100%;
+
+    background-color: transparent;
+
+    span {
+        margin: auto;
+        font-size: 1.5vw;
+        font-weight: 900;
+    }
+}
+
+/* ------------------------- Card ------------------------- */
+
+.quizzCard {
+    width: 30vw;
+    aspect-ratio: 89 / 64;
+
+    position: relative;
+
+    margin: auto;
+
+    border-radius: 25px;
+    border: none;
+
+    background: transparent;
+
+    perspective: 1000px;
+} .quizzCard:hover {
+    background: transparent;
+}
+  
+.flashcardInner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+  
+.quizzCard:hover .flashcardInner {
+    transform: rotateY(20deg);
+}
+  
+.flashcardFront, .flashcardBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+  
+.flashcardFront {
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    justify-content: center;
+    font-size: 24px;
+    transform: rotateY(0deg);
+
+    span {
+        color: black;
+        font-size: larger;
+        font-weight: 700;
+    }
+}
+  
+.flashcardBack {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    border: solid 2px rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    justify-content: center;
+    font-size: 24px;
+    transform: rotateY(180deg);
+
+    span {
+        color: white;
+        font-size: larger;
+        font-weight: 700;
+    }
+}
