@@ -109,7 +109,7 @@ Rīkam ir vairāki iespējamie uzlabojumi, ņemot vērā to, ka saules paneļu s
 ### ZINĀMIE DEFEKTI
 - Kalkulatora aprēķinātie rezultāti nav precīzi, bet gan aptuveni, jo vairāki parametri ir uzskatīti lineāri. Patiesībā lielākā daļa ir nelineāri (saules novietojums virs horizonta, laikapstākļi, elektrības tariga cena, uc.). Saistībā ar to - paneļu leņķa daļa ievades formā ir lieka.
 - Sakarā ar to, ka kalkulatora datus varējām salīdzināt ar maz datiem (tikai vieniem saules paneļu datiem no Latvijas), tapēc nav pārbaudīts cik precīzi aprēķina saules paneļu saražoto elektrību nav pārbaudits, kā citu pasaulē
-- Savigācija izmantojot '<-' un '->' internetpārlūkprogrammas pogas, dati tiek saglabāti un dažreiz izraisa error.
+- Navigācija izmantojot '<-' un '->' internetpārlūkprogrammas pogas, dati tiek saglabāti un dažreiz izraisa error.
 
 
 ## RESURSI
