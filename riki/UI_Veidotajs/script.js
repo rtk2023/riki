@@ -79,7 +79,7 @@ function deleteSelected() {
     elements.splice(index, 1);
     selectedElement.remove();
     selectedElement = null;
-    editor.innerHTML = `<p>Select an element</p>`;
+    editor.innerHTML = `<p>Izvēlies elementu</p>`;
     saveHistory();
   }
 }
@@ -112,10 +112,10 @@ function addComponent(type) {
 }
 
 function getDefaultText(type) {
-  if (type === 'button') return 'Click Me';
-  if (type === 'input') return 'Enter text';
-  if (type === 'textarea') return 'Enter more text...';
-  if (type === 'checkbox') return 'Check me';
+  if (type === 'button') return 'Nospied mani';
+  if (type === 'input') return 'Ievadi tekstu';
+  if (type === 'textarea') return 'Ievadi tekstu...';
+  if (type === 'checkbox') return 'atzīmē mani';
   return '';
 }
 
@@ -235,17 +235,17 @@ function showEditor(el) {
   }
 
   editor.innerHTML = `
-    <label>${type === 'image' ? 'Image URL' : 'Text/Placeholder'}:</label>
+    <label>${type === 'image' ? 'Attēla URL' : 'Teksts'}:</label>
     <input type="text" id="propText" value="${type === 'image' ? currentSrc : currentText}" />
-    <label>Font Size (px):</label>
+    <label>Fona izmērs (px):</label>
     <input type="number" id="propFontSize" value="${fontSize}" />
-    <label>Text Color:</label>
+    <label>Teksta krāsa:</label>
     <input type="color" id="propColor" value="${textColor}" />
-    <label>Background Color:</label>
+    <label>Fona krāsa:</label>
     <input type="color" id="propBgColor" value="${backgroundColor}" />
-    <label>Width (px):</label>
+    <label>Platums (px):</label>
     <input type="number" id="propWidth" value="${width}" />
-    <label>Height (px):</label>
+    <label>Garums (px):</label>
     <input type="number" id="propHeight" value="${height}" />
   `;
 
@@ -335,7 +335,7 @@ function showExportModal(code) {
 copyBtn.addEventListener('click', () => {
   exportedCode.select();
   document.execCommand('copy');
-  alert('Copied to clipboard!');
+  alert('Kopēts uz starpliktuvi!');
 });
 
 closeModalBtn.addEventListener('click', () => {
@@ -345,15 +345,15 @@ closeModalBtn.addEventListener('click', () => {
 // Save/Load
 saveBtn.addEventListener('click', () => {
   localStorage.setItem('ui-builder', JSON.stringify(elements));
-  alert('Project saved!');
+  alert('Projekts saglabāts!');
 });
 
 loadBtn.addEventListener('click', () => {
   const saved = localStorage.getItem('ui-builder');
-  if (!saved) return alert('Nothing to load!');
+  if (!saved) return alert('Nav ko ielādēt!');
   elements = JSON.parse(saved);
   renderFromElements();
-  alert('Project loaded!');
+  alert('Projekts ielādēts!');
   saveHistory();
 });
 
