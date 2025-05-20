@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <title>UI Builder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>UI Veidotājs</h1>
+  </header>
+  
+  <div class="container">
+    <div class="sidebar">
+      <h2>Komponenti</h2>
+      <button class="component" data-type="button">Poga</button>
+      <button class="component" data-type="input">Teksta lauks</button>
+      <button class="component" data-type="textarea">Teksta laukums</button>
+      <button class="component" data-type="checkbox">Atzīmēšanas rūtiņa</button>
+      <button class="component" data-type="image">Attēls</button>
+  
+      <h2>Eksports</h2>
+      <button id="exportBtn">Eksportēt JSON</button>
+      <button id="exportHtmlBtn">Eksportēt HTML</button>
+  
+      <h2>Projekts</h2>
+      <button id="saveBtn">💾 Saglabāt</button>
+      <button id="loadBtn">📂 Ielādēt</button>
+      <button id="undoBtn">↩️ Atcelt</button>
+      <button id="redoBtn">↪️ Atgriezt</button>
+      <button id="deleteBtn">🗑️ Dzēst</button>
+  
+      <div class="editor">
+        <h3>Rediģēt īpašības</h3>
+        <div id="editorContent">
+          <p>Izvēlies elementu</p>
+        </div>
+      </div>
+    </div>
+  
+    <div id="canvas" class="canvas"></div>
+  
+    <!-- Eksporta logs -->
+    <div id="exportModal" class="modal hidden">
+      <div class="modal-content">
+        <h2>Eksportētais kods</h2>
+        <textarea id="exportedCode" readonly></textarea>
+        <button id="copyBtn">📋 Kopēt</button>
+        <button id="closeModalBtn">❌ Aizvērt</button>
+      </div>
+    </div>
+  </div>  
+
+  <script src="script.js"></script>
+</body>
+</html>
