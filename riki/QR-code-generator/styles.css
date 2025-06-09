@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 40px;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    max-width: 600px;
+    width: 100%;
+}
+
+/* animacija */
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    background: linear-gradient(45deg, #4a148c, #ca0505, #4a148c, #ca0505);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400% 400%;
+    animation: waveAnimation 20s ease infinite;
+}
+
+@keyframes waveAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+/* animacija */
+
+.input-section {
+    margin-bottom: 2rem;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+    outline: none;
+}
+
+button {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #4a148c;
+}
+
+/* nepieejamas pogas stils  */
+button:disabled {
+    background-color: #9e9e9e;
+    cursor: not-allowed;
+}
+
+.qr-container {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+    min-height: 200px;
+}
+
+.download-section {
+    margin-top: 2rem;
+}
+
+.settings {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    max-width: 250px;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.settings h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.settings label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.settings input,
+.settings select {
+    width: 100%;
+    margin-top: 0.3rem;
+    padding: 0.4rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* Pielāgojamība: izmaiņas mobilajās ierīcēs  */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .settings {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .input-section input {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+}
