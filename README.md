@@ -14,8 +14,3 @@ RTK audzēkņu veidoti rīki moduļa "Tīmekļa vietņu programmēšana" ietavor
 ### Licence
 
 Šis projekts licencēts ar MIT licenci (skat. [`LICENSE`](LICENSE)).
-
-
-
-
-
