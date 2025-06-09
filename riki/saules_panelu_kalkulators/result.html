@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lapa, kurā attēlo iegūtos rezultātus pēc veiktā aprēķina.">
+  <title>Aprēķina rezultāts</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <style>
+    body {
+      background: linear-gradient(to bottom, #b9f8ff, #ebf9fa);
+      min-height: 100vh;
+      position: relative;
+      padding-bottom: 300px;
+    }
+    
+    .form-section {
+      background-color: #fff9c4;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+    }
+    
+    h1, h4 {
+      color: #333;
+    }
+    
+    .grass {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      height: 300px;
+      background: linear-gradient(to top, #228B22, #32CD32);
+      clip-path: polygon(
+        0% 100%, 5% 85%, 10% 100%, 15% 85%, 20% 100%, 25% 85%, 
+        30% 100%, 35% 85%, 40% 100%, 45% 85%, 50% 100%, 55% 85%, 
+        60% 100%, 65% 85%, 70% 100%, 75% 85%, 80% 100%, 85% 85%, 
+        90% 100%, 95% 85%, 100% 100%
+      );
+      z-index: -1;
+    }
+    
+    .sun {
+      position: fixed;
+      top: 30px;
+      right: 30px;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, #FFD700, #FFA500);
+      border-radius: 50%;
+      box-shadow: 0 0 30px 10px rgba(255, 223, 0, 0.8);
+      z-index: -2;
+    }
+    
+    .btn-primary {
+      background-color: #f9a825;
+      border: none;
+    }
+    
+    .btn-primary:hover {
+      background-color: #f57f17;
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-5">
+    <div class="text-center mb-4">
+      <h1 class="fw-bold">Saules paneļu kalkulators</h1>
+      <p class="lead">Aprēķinātais rezultāts</p>
+    </div>
+
+    <form id="calculator-form">
+      <div class="form-section">
+        <!-- Nākamās nedēļas dati. -->
+        <div class="mb-3" id="kopejaisRezultats"></div><hr><br>
+         <!-- Nākamās nedēļas katras dienas dati. -->
+        <div class="mb-3" id="katrasDienasContainer">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Dienas datums</th>
+                <th scope="col">Saražotā enerģija (kW/h)</th>
+                <th scope="col">Ietaupiums (€)</th>
+                <th scope="col">Saražotās enerģijas pārpalikums (kW/h)</th>
+              </tr>
+            </thead>
+            <tbody id="katrasDienas"></tbody> 
+          </table>
+        </div>
+      </div>
+
+      <a href="index.html" class="btn btn-primary w-100 text-dark">Doties uz parametru lapu.</a>
+    </form>
+  </div>
+  
+  <div class="grass"></div>
+  <div class="sun"></div>
+  <script>
+    const weekP = sessionStorage.getItem('weekP');
+    const weekIetaup = sessionStorage.getItem('weekIetaup');
+    let weekSEP = sessionStorage.getItem('weekSEP');
+    const dienuDatiString = sessionStorage.getItem('dienuDati');
+    const dienuDati = JSON.parse(dienuDatiString);
+
+    let kopejaisTeikums = document.getElementById('kopejaisRezultats');
+    kopejaisTeikums.innerHTML = '';
+    kopejaisTeikums.innerHTML += `<p>Kopējā paneļu saražotā enerģija nākamajās 7 dienās būs aptuveni <strong>${weekP} kW/h</strong>, aptuvenais ietaupījums būs <strong>${weekIetaup} €</strong></p>`;
+    kopejaisTeikums.innerHTML += (weekSEP == 0 ? `<p>Nedēļā nebūs saražotās enerģijas pārpalikums.</p>`: `<p>Saražotās enerģijas pārpalikums būtu <strong>${weekSEP} kW/h</strong>.</p>`);
+
+    let dienuTabula = document.getElementById('katrasDienas');
+    dienuTabula.innerHTML = '';
+    for (let i = 0; i < 7 ; i++) {
+      dienuTabula.innerHTML += dienuDati[i];
+    }
+    // Optionally, remove the data after using it:
+    sessionStorage.removeItem('weekP');
+    sessionStorage.removeItem('weekIetaup');
+    sessionStorage.removeItem('SEP');
+    sessionStorage.removeItem('dienuDati');
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</body>
+</html>
