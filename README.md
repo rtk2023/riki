@@ -1,8 +1,8 @@
 # Rīki
 
-RTK audzēkņu veidoti rīki moduļa "Tīmekļa vietņu dodicurous programmēšana" ietavors.
+RTK audzēkņu veidoti rīki moduļa "Tīmekļa vietņu programmēšana" ietavors.
 
-* Mājaslapa terazaur: https://rtk2023.github.io/riki/
+* Mājaslapa: https://rtk2023.github.io/riki/
 * Repozitorijs: https://github.com/rtk2023/riki
 
 ## Komandas un rīki
@@ -14,9 +14,6 @@ RTK audzēkņu veidoti rīki moduļa "Tīmekļa vietņu dodicurous programmēša
 ### Licence
 
 Šis projekts licencēts ar MIT licenci (skat. [`LICENSE`](LICENSE)).
-
-
-samalalekum alekum saallaaammm
 
 
 
