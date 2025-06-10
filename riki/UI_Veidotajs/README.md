@@ -31,6 +31,7 @@
 - Lietotāja interfeisa pilnveidošana, lai uzlabotu piekļūstamību un responsivitāti.
 
 ## Links uz UI Veidotāju
+
 - https://ui-veidotajs.vercel.app
 
 ## Autori
