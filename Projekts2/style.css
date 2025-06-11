@@ -1,0 +1,367 @@
+/* ---------- mainigie ---------- */
+:root {
+  --color-bg: #f5f5f5;
+  --color-surface: #ffffff;
+  --color-primary: #0055aa;
+  --color-secondary: #2980b9;
+  --color-success: #28a745;
+  --color-danger: #d80000;
+  --color-border: #ccc;
+  --color-text: #222;
+  --color-text-light: #555;
+  --radius: 8px;
+  --spacing: 1rem;
+}
+
+/* ---------- Global Reset ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+/* -------------------- */
+
+#app {
+  padding: var(--spacing);
+}
+.section {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: calc(var(--spacing) * 1.5) var(--spacing);
+}
+
+/* ---------- tipografija ---------- */
+h1, h2, h3 {
+  font-family: 'Segoe UI', sans-serif;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+p, li, small {
+  line-height: 1.5;
+}
+small {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+}
+
+/* ---------- pogas  ---------- */
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease, opacity 0.2s;
+}
+.btn:hover {
+  opacity: 0.9;
+}
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+.btn-secondary {
+  background: var(--color-secondary);
+  color: #fff;
+}
+.btn-success {
+  background: var(--color-success);
+  color: #fff;
+}
+.btn-danger {
+  background: var(--color-danger);
+  color: #fff;
+}
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+/* ---------- w ---------- */
+.card {
+  background: var(--color-surface);
+  padding: calc(var(--spacing) * 1.25);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  margin-bottom: var(--spacing);
+}
+
+
+.form-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--spacing);
+}
+
+
+.form-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing);
+}
+.form-list-header > div {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.form-create-form,
+.profile-form,
+.expense-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+  max-width: 500px;
+}
+.form-control,
+.profile-list input,
+.input-section input,
+.input-section select,
+.input-section textarea {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  width: 100%;
+}
+.input-section select,
+.input-section input {
+  margin-bottom: 0.75rem;
+}
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: var(--spacing);
+}
+.input-group label {
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+}
+
+
+.profile-manager {
+  padding: calc(var(--spacing) * 1.5) var(--spacing);
+}
+.profile-list {
+  list-style: none;
+  padding: 0;
+}
+.profile-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+
+.form-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing);
+}
+.summary-section,
+.input-section {
+  background: var(--color-surface);
+  padding: var(--spacing);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+.form-detail ul {
+  list-style: none;
+  padding: 0;
+}
+.form-detail li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* Izdevumu subsections */
+.subsection {
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #fff;
+}
+.subsection h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+/* ---------- Izmaksu Cards ---------- */
+.expense-card {
+  background: var(--color-surface);
+  padding: var(--spacing);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  margin-bottom: 0.75rem;
+}
+.expense-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+.expense-details {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  margin-top: 0.5rem;
+  border-left: 3px solid var(--color-border);
+  padding-left: 0.75rem;
+  display: none;
+}
+
+/* detalas poga */
+.expense-toggle {
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: var(--radius);
+  background-color: var(--color-secondary);
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.expense-toggle:hover {
+  opacity: 0.9;
+}
+
+/* Settlement box */
+.settlement {
+  background-color: #f0f8ff;
+  border-left: 4px solid var(--color-secondary);
+  padding: var(--spacing);
+  border-radius: var(--radius);
+  margin-top: var(--spacing);
+}
+
+/* Input column sekcijas */
+.form-section {
+  border: 1px solid #e0e0e0;
+  border-radius: var(--radius);
+  padding: var(--spacing);
+  margin-bottom: calc(var(--spacing) * 1.5);
+  background: #fff;
+}
+.form-section h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* Checkbox grupa */
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.checkbox-item:hover {
+  background: #f0f0f0;
+}
+.checkbox-item input[type="checkbox"] {
+  margin-right: 0.75rem;
+  width: 1rem;
+  height: 1rem;
+}
+
+/* ---------- Dialogs ---------- */
+.dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.dialog-box {
+  background: var(--color-surface);
+  padding: calc(var(--spacing) * 1.25);
+  border-radius: var(--radius);
+  max-width: 320px;
+  text-align: center;
+}
+.dialog-buttons {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing);
+  margin-top: var(--spacing);
+}
+.confirm-button,
+.cancel-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--radius);
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.confirm-button {
+  background: var(--color-success);
+}
+.cancel-button {
+  background: var(--color-danger);
+}
+.confirm-button:hover,
+.cancel-button:hover {
+  opacity: 0.9;
+}
+
+/* card pogas */
+.card-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--spacing);
+  padding-top: 0.5rem;
+  border-top: 1px solid #e0e0e0;
+}
+.card-buttons .btn {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 800px) {
+  .form-detail,
+  .form-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .card,
+  .section {
+    padding: var(--spacing);
+  }
+  .card-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
