@@ -1,0 +1,7 @@
+Lai palaistu vietni lokāli.
+
+1) Komandrinda:
+python -m http.server
+
+2) Pēc tam pārlūkprogrammā:
+http://localhost:8000/index.html
