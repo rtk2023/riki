@@ -1,6 +1,6 @@
 # Rīki
 
-RTK audzēkņu veidoti rīki moduļa "Tīmekļa vietņu programmēšana" ietavors.
+RTK audzēkņu veidoti rīki moduļa "Tīmekļa vietņu programmēšana" ietvaros.
 
 - Mājaslapa: https://rtk2023.github.io/riki/
 - Repozitorijs: https://github.com/rtk2023/riki

@@ -1,0 +1,36 @@
+name: Tēmas pieteikums
+description: Pieteikt sava rīka tēmu
+labels: [pieteikums]
+body:
+  - type: textarea
+    id: title
+    attributes:
+      label: Rīka nosaukums
+      description: Rīka nosaukums (atbilst nosaukuma laukam rīku tabulā).
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Rīka apraksts
+      description: Neliels tēmas apraksts (atbilst apraksta laukam rīku tabulā).
+    validations:
+      required: true
+
+  - type: textarea
+    id: group
+    attributes:
+      label: Grupas dalībnieki
+      description: Grupas dalībniekus identificējoša informācija (grupa, vārds un uzvārds vai kods)
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Kontrolsaraksts
+      description: Pārliecinies, vai visi nosacījumi izpildās, pirms piesaki tēmu.
+      options:
+        - label: Tēma ir oriģināla (nesakrīt ar iepriekš veidotajām vai iesniegtajām)
+          required: true

@@ -2,6 +2,9 @@
 
 Veidojiet savu projektu šeit.
 
+Rīka nosaukums drīkst sastāvēt no mazajiem burtiem (t.s. ar garumzīmēm) un apakšsvītrām.
+Nosaukums nedrīkst sākties un beigties ar apakšsvītru.
+
 ```
 riki
 ├── css (globālie stili)

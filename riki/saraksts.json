@@ -7,16 +7,38 @@
 		"added_date": "2023-10-30"
 	},
 	{
+		"path": "attēlu_redaktors",
+		"name": "Attēlu redaktors",
+		"description": "Vienkāršs attēlu redaktors. Spēj rediģēt jau eksistējošus foto, kā arī izveidot jaunus, tos saglabāt.",
+		"added_date": "2025-04-16"
+	},
+	{
+		"path": "banki",
+		"name": "Banki",
+		"description": "Ļauj izveidot personalizētas kartiņas ar jautājumiem un atbildēm (flashcards).",
+		"added_date": "2025-04-16"
+	},
+	{
 		"path": "budžeta_rīks",
 		"name": "Budžeta rīks",
 		"description": "Rīks saskaita ieņēmumus un izdevumus laika posmā un attēlo prognozēto rezultātu posma beigās",
 		"added_date": "2023-11-02"
 	},
 	{
+		"path": "cipher_decoder",
+		"entry": "html .html"
+	},
+	{
+		"path": "crypto_converter"
+	},
+	{
 		"path": "ctf_karogu_ģenerators",
 		"name": "CTF karogu ģenerators",
 		"description": "Ģenerē CTF karogus, kas noder sacensību organizēšanai",
 		"added_date": "2024-09-23"
+	},
+	{
+		"path": "darba_stundu_kalkulators"
 	},
 	{
 		"path": "darbu_saraksts",
@@ -30,6 +52,12 @@
 		"name": "Lēmumu pieņemšanas palīdzības rīks",
 		"description": "Atvieglojiet sev lēmumu pieņemšanu ar šī rīka palīdzību",
 		"added_date": "2023-10-30"
+	},
+	{
+		"path": "ekobenzīns"
+	},
+	{
+		"path": "flstudio_plugins"
 	},
 	{
 		"path": "grupu_sadalītājs",
@@ -46,11 +74,22 @@
 		"path": "horoskops"
 	},
 	{
-		"path": "max",
+		"path": "ieradumu_sekotājs"
+	},
+	{
+		"path": "ikmēneša_maksājumu_kalkulators",
 		"entry": "max.html",
 		"name": "Ikmēneša maksājumu kalkulators",
 		"description": "Aprēķina ikmēneša aizdevuma maksājumu",
 		"added_date": "2023-10-23"
+	},
+	{
+		"path": "jautajumi",
+		"entry": "main.html"
+	},
+	{
+		"path": "jautajumu_spele",
+		"entry": "main.html"
 	},
 	{
 		"path": "kalkulators",
@@ -62,14 +101,23 @@
 		"path": "kaloriju_kalkulators"
 	},
 	{
+		"path": "laikapstākļu_lietotne"
+	},
+	{
 		"path": "laukuma_kalkulators"
 	},
 	{
 		"path": "laušanas_un_atstarošanas_leņķa_kalkulators"
 	},
 	{
+		"path": "lietotāja_saskarnes_veidotājs"
+	},
+	{
 		"path": "mērvienību_pārveidotājs",
 		"entry": "Metriskas_sistemas_konvertetajs.html"
+	},
+	{
+		"path": "mūzikas_ieteikums"
 	},
 	{
 		"path": "paroļu_ģenerators",
@@ -78,7 +126,35 @@
 		"added_date": "2023-10-16"
 	},
 	{
+		"path": "personibas_tests",
+		"entry": "mbti_tests.html"
+	},
+	{
+		"path": "piezīmju_dēlis"
+	},
+	{
+		"path": "powerliftinga_kalkulators"
+	},
+	{
+		"path": "qr_code_generator"
+	},
+	{
+		"path": "reakcijas_laika_trennētājs"
+	},
+	{
+		"path": "recepšu_meklētājs"
+	},
+	{
+		"path": "saules_panelu_kalkulators"
+	},
+	{
 		"path": "skaitīšanas_sistēmu_pārveidotājs"
+	},
+	{
+		"path": "svētku_kalendārs"
+	},
+	{
+		"path": "telpisko_figuru_kalkulators"
 	},
 	{
 		"path": "temperatūras_pārveidotājs"
