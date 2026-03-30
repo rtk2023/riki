@@ -2,15 +2,13 @@
 
 RTK audzēkņu veidoti rīki moduļa "Tīmekļa vietņu programmēšana" ietavors.
 
-* Mājaslapa: https://rtk2023.github.io/riki/
-* Repozitorijs: https://github.com/rtk2023/riki
-
-## Komandas un rīki
-
-* Palaist python web serveri: `python3 -m http.server`
+- Mājaslapa: https://rtk2023.github.io/riki/
+- Repozitorijs: https://github.com/rtk2023/riki
+- Materiāli: https://gitlab.com/tgrants/web
 
 ## Izmantošana
 
 ### Licence
 
-Šis projekts licencēts ar MIT licenci (skat. [`LICENSE`](LICENSE)).
+Šis projekts licencēts ar [MIT licenci](https://lv.wikipedia.org/wiki/MIT_licence).
+Plašāka informācija pieejama [LICENSE](LICENSE) datnē.

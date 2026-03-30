@@ -1,6 +1,6 @@
 Šī direktorija satur rīku apakšdirektorijas.
 
-Veidot savu projektu šeit
+Veidojiet savu projektu šeit.
 
 ```
 riki
