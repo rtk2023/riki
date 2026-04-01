@@ -1,15 +1,8 @@
 name: Tēmas pieteikums
 description: Pieteikt sava rīka tēmu
 labels: [pieteikums]
+title: "<rīka nosaukums>"
 body:
-  - type: textarea
-    id: title
-    attributes:
-      label: Rīka nosaukums
-      description: Rīka nosaukums (atbilst nosaukuma laukam rīku tabulā).
-    validations:
-      required: true
-
   - type: textarea
     id: description
     attributes:

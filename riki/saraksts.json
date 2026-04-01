@@ -26,10 +26,12 @@
 	},
 	{
 		"path": "cipher_decoder",
-		"entry": "html .html"
+		"entry": "html .html",
+		"added_date": "2025-05-11"
 	},
 	{
-		"path": "crypto_converter"
+		"path": "crypto_converter",
+		"added_date": "2025-05-17"
 	},
 	{
 		"path": "ctf_karogu_ģenerators",
@@ -38,14 +40,21 @@
 		"added_date": "2024-09-23"
 	},
 	{
-		"path": "darba_stundu_kalkulators"
+		"path": "darba_stundu_kalkulators",
+		"name": "Darba stundu kalkulators",
+		"description": "Ļauj lietotājiem ērti aprēķināt nostrādātās darba stundas izvēlētā periodā, ņemot vērā nedēļas nogales, svētku dienas, kā arī individuāli pielāgotas darba vai brīvdienas",
+		"added_date": "2025-05-17"
 	},
 	{
 		"path": "darbu_saraksts",
-		"name": "Darbu saraksts"
+		"name": "Darbu saraksts",
+		"description": "Lietojumprogramma darbu plānošanai",
+		"added_date": "2024-06-22"
 	},
 	{
-		"path": "datumu_starpības_kalkulators"
+		"path": "datumu_starpības_kalkulators",
+		"name": "Datumu starpības kalkulators",
+		"description": "Šis rīks Aprēķina dienas līdz/no izvēlētā datuma"
 	},
 	{
 		"path": "decision_simplifier",
@@ -54,7 +63,9 @@
 		"added_date": "2023-10-30"
 	},
 	{
-		"path": "ekobenzīns"
+		"path": "ekobenzīns",
+		"name": "Eko-Benzīns",
+		"description": "Ļauj ērti aprēķināt degvielas patēriņu un nepieciešamo laiku, lai nokļūtu līdz izvēlētajam galamēķim/iem"
 	},
 	{
 		"path": "flstudio_plugins"
