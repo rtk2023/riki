@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-
+		
 	// -
 
 	const filtered = destinations.filter(dest => {
@@ -58,12 +58,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     if (filtered.length === 0) {
-        suggestionEl.textContent = "Diemžel nav piemērotu galamērķu ar šiem kriterijiem";
+        suggestionEl.textContent = "Diemžēl nav piemērotu galamērķu ar šiem kritērijiem";
 		
-    return;
+    	return;
     }
 
 		
+	const scored = filtered.map(dest => {
+            const matchCount = dest.tips.filter(t => interests.includes(t)).length;
+
+            const budgetScore = budget - dest.budžets;
+		
+
+            const durationScore = duration - dest.ilgums
+
+            const totalScore = matchCount * 10 + budgetScore * 0.1 + durationScore * 0.2;
+
+
+            return { ...dest, score: totalScore };
+        });
 
 
 		
