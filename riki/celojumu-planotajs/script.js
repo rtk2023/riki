@@ -25,11 +25,12 @@ document.addEventListener("DOMContentLoaded", () => {
 	form.addEventListener("submit", event => {
         event.preventDefault();
 
+		const budget = parseFloat(document.getElementById("budget").value);
+		
+        const duration = parseInt(document.getElementById("duration").value);
+        const interestsEls = document.querySelectorAll('input[name = "interests"]:checked');
+        const interests = Array.from(interestsEls).map(el => el.value);
+
 
 	});
-
-
-
-
-	
 });
