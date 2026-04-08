@@ -33,51 +33,53 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-	if (isNaN(budget) || budget <= 0) {
-        suggestionEl.textContent = "Lūdzu ievadiet korektu budžetu >0 ";
-        return;
-    }
+		if (isNaN(budget) || budget <= 0) {
+	        suggestionEl.textContent = "Lūdzu ievadiet korektu budžetu >0 ";
+	        return;
+	    }
+	
+	    if (isNaN(duration) ||  duration <= 0) {
+	        suggestionEl.textContent = "Lūdzu ievadiet derīgu ceļojuma ilgumu >0 ";
+	        return;
+	    }
+	    if (interests.length === 0) {
+	        suggestionEl.textContent = "Lūdzu izvēlieties vismaz vienu interesi";
+	        return;
+	    }
+	
+			
+		// -
+	
+		const filtered = destinations.filter(dest => {
+			
+	            return dest.budžets <= budget &&
+	                   dest.ilgums <= duration   &&
+	                   dest.tips.some(t => interests.includes(t));
+	    });
+	
+	    if (filtered.length === 0) {
+	        suggestionEl.textContent = "Diemžēl nav piemērotu galamērķu ar šiem kritērijiem";
+			
+	    	return;
+	    }
+	
+			
+		const scored = filtered.map(dest => {
+	            const matchCount = dest.tips.filter(t => interests.includes(t)).length;
+	
+	            const budgetScore = budget - dest.budžets;
+			
+	
+	            const durationScore = duration - dest.ilgums;
+	
+	            const totalScore = matchCount * 10 + budgetScore * 0.1 + durationScore * 0.2;
+	
+	
+	            return { ...dest, score: totalScore };
+	     });
 
-    if (isNaN(duration) ||  duration <= 0) {
-        suggestionEl.textContent = "Lūdzu ievadiet derīgu ceļojuma ilgumu >0 ";
-        return;
-    }
-    if (interests.length === 0) {
-        suggestionEl.textContent = "Lūdzu izvēlieties vismaz vienu interesi";
-        return;
-    }
 
-		
-	// -
-
-	const filtered = destinations.filter(dest => {
-		
-            return dest.budžets <= budget &&
-                   dest.ilgums <= duration   &&
-                   dest.tips.some(t => interests.includes(t));
-    });
-
-    if (filtered.length === 0) {
-        suggestionEl.textContent = "Diemžēl nav piemērotu galamērķu ar šiem kritērijiem";
-		
-    	return;
-    }
-
-		
-	const scored = filtered.map(dest => {
-            const matchCount = dest.tips.filter(t => interests.includes(t)).length;
-
-            const budgetScore = budget - dest.budžets;
-		
-
-            const durationScore = duration - dest.ilgums
-
-            const totalScore = matchCount * 10 + budgetScore * 0.1 + durationScore * 0.2;
-
-
-            return { ...dest, score: totalScore };
-        });
-
+	
 
 		
 	});
