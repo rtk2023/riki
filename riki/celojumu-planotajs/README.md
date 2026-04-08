@@ -20,7 +20,7 @@ Sistēma ģenerē personalizētu ceļojuma piedāvājumu ar galamērķi, aktivit
 ---
 
 ## 🔗 GitHub repozitorijs
-
+https://github.com/Arthur-dev1/celojumu-planotajs/tree/main/riki/celojumu-planotajs
 ---
 
 ##  Autori
