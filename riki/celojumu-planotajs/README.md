@@ -1,0 +1,3 @@
+# Ceļojumu Plānotājs
+
+WEB projekts.
