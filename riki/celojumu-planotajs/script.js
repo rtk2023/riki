@@ -23,7 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
 	// --
 
 	form.addEventListener("submit", event => {
+		
         event.preventDefault();
+		
 
 		const budget = parseFloat(document.getElementById("budget").value);
 		
@@ -79,10 +81,16 @@ document.addEventListener("DOMContentLoaded", () => {
 	     });
 
 
-	
+		//  maksimums pec score
+        const maxScore = Math.max(...scored.map(d => d.score));
+        const topDestinations = scored.filter(d => d.score === maxScore);
+
+		
 
 		
 	});
 
 	
 });
+
+
