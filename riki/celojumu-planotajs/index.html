@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="lv">
 <head>
@@ -16,4 +15,57 @@
         <p>Ievadi savas preferences un mēs ieteiksim piemērotu ceļojuma galamērķi!</p>
     </header>
 
+    
+    <main>
+        
+        <section>
+            <h2>Datu ievade:</h2>
+
+            <form id="travel-form">
+                <label for="budget">Plānotais budžets (€):</label><br>
+                <input type="number" id="budget" name="budget" min="1" required><br><br>
+
+                <label for="duration">Plānotais ceļojuma ilgums (dienās):</label><br>
+                <input type="number" id="duration" name="duration" min="1" required><br><br>
+
+
+                <label>Jūsu intereses?</label><br>
+                <input type="checkbox" id="nature" name="interests" value = "daba">
+                <label for="nature">Daba</label><br>
+                <input type="checkbox" id="city" name="interests" value="pilsēta">
+                <label for="city">Pilsēta</label><br>
+                
+                <input type="checkbox" id="relax" name="interests" value="atpūta">
+                <label for="relax">Atpūta</label><br>
+                <input type= "checkbox" id="adventure" name="interests"  value = "piedzīvojumi">
+                <label for="adventure">Piedzīvojumi</label><br><br>
+
+                <button type="submit">Ģenerēt ieteikumu</button>
+            </form>
+            
+        </section>
+
+        <section id="results">
+            
+            <h2>Ceļojuma ieteikums:</h2>
+            <p id="suggestion">Šeit tiks parādīts ieteiktais galamērķis pēc datu ievades.</p>
+        </section>
+    </main>
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
     
