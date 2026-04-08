@@ -7,7 +7,7 @@
 # Saites
 - Rīku saraksts - https://github.com/rtk2023/riki
 - Github projekts - https://github.com/RainersN/riki/tree/main/riki/souls_quest
-#Autori
+# Autori
 Rainers Niņuks
 Dmitrijs Borodins
 Ralfs Pakalns
