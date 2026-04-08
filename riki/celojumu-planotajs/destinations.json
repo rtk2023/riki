@@ -1,0 +1,209 @@
+
+
+[
+  {
+    "valsts": "Itālija",
+    "tips": ["pilsēta", "atpūta"],
+    "budžets": 800,
+    "ilgums": 5,
+    "aktivitātes": ["Ekskursijas", "Ēdiens", "Muzeji"],
+    "apraksts": "Ideāli piemērots kultūras un ēdiena cienītājiem."
+  },
+
+  {
+    "valsts": "Norvēģija",
+    "tips": ["daba", "piedzīvojumi"],
+    "budžets": 1200,
+    "ilgums": 7,
+    "aktivitātes": ["Pārgājieni", "Fiordi"],
+    "apraksts": "Elpu aizraujoša daba un aktīvā atpūta."
+  },
+
+
+  {
+    "valsts": "Spānija",
+    "tips": ["pilsēta", "atpūta", "daba"],
+    "budžets": 700,
+    "ilgums": 6,
+    "aktivitātes": ["Pludmale", "Ekskursijas", "Vīna degustācija"],
+    "apraksts": "Kombinē pilsētas dzīvi ar atpūtu pie jūras."
+  },
+
+
+  {
+    "valsts": "Islandē",
+    "tips": ["daba", "piedzīvojumi"],
+    "budžets": 1500,
+    "ilgums": 7,
+    "aktivitātes": ["Ledāji", "Geizeri", "Pārgājieni"],
+    "apraksts": "Neaizmirstama daba ar aktīvu piedzīvojumu iespēju."
+  },
+
+  {
+
+    "valsts": "Francija",
+    "tips": ["pilsēta", "atpūta"],
+    "budžets": 1000,
+    "ilgums": 5,
+    "aktivitātes": ["Muzeji", "Ekskursijas", "Gastronomija"],
+    "apraksts": "Kultūras un ēdiena baudītājiem."
+  },
+  
+  {
+    "valsts": "Japāna",
+    "tips": ["pilsēta", "daba", "piedzīvojumi"],
+    "budžets": 1800,
+    "ilgums": 10,
+    "aktivitātes": ["Templi apmeklējums", "Dabas parki", "Piedzīvojumu sporti"],
+    "apraksts": "Kultūra, daba un aktīvā atpūta vienā ceļojumā."
+  },
+
+  {
+    "valsts": "Portugāle",
+    "tips": ["pilsēta", "atpūta"],
+    "budžets": 650,
+    "ilgums": 5,
+    "aktivitātes": ["Pludmale", "Ekskursijas", "Vīna degustācija"],
+    "apraksts": "Siltas dienas un skaistas pludmales."
+  },
+
+  {
+
+    "valsts": "Horvātija",
+    "tips": ["pilsēta", "atpūta", "daba"],
+    "budžets": 700,
+    "ilgums": 6,
+    "aktivitātes": ["Pludmale", "Ekskursijas", "Pārgājieni"],
+    "apraksts": "Kombinē pludmales, dabu un kultūru."
+  },
+
+  {
+    "valsts": "Taizeme",
+    "tips": ["pilsēta", "atpūta", "piedzīvojumi"],
+    "budžets": 1200,
+    "ilgums": 8,
+    "aktivitātes": ["Pludmale", "Ekskursijas", "Piedzīvojumu sporti"],
+    "apraksts": "Tropiska atpūta ar piedzīvojumiem."
+  },
+
+  {
+
+    "valsts": "Šveice",
+    "tips": ["daba", "piedzīvojumi"],
+    "budžets": 1600,
+    "ilgums": 7,
+    "aktivitātes": ["Kalnu pārgājieni", "Slēpošana", "Ezera ekskursijas"],
+    "apraksts": "Aktīva atpūta kalnos ar elpu aizraujošiem skatiem."
+  },
+
+  {
+
+    "valsts": "Grieķija",
+    "tips": ["pilsēta", "atpūta"],
+    "budžets": 700,
+    "ilgums": 6,
+    "aktivitātes": ["Pludmale", "Ekskursijas", "Vēsturiskas vietas"],
+    "apraksts": "Klasiskas pludmales un vēsturiskas vietas."
+  },
+
+  {
+
+    "valsts": "Kanāda",
+    "tips": ["daba", "piedzīvojumi"],
+    "budžets": 2000,
+    "ilgums": 10,
+    "aktivitātes": ["Nacionālie parki", "Pārgājieni", "Slēpošana"],
+    "apraksts": "Plaši dabas skati un aktīvi piedzīvojumi."
+  },
+
+  {
+
+    "valsts": "Meksika",
+    "tips": ["pilsēta", "atpūta", "piedzīvojumi"],
+    "budžets": 1100,
+    "ilgums": 7,
+    "aktivitātes": ["Pludmale", "Ekskursijas", "Piedzīvojumu sporti"],
+    "apraksts": "Tropiska atpūta ar vēsturiskām vietām."
+  },
+
+  {
+
+    "valsts": "Vācija",
+    "tips": ["pilsēta", "daba"],
+    "budžets": 900,
+    "ilgums": 6,
+    "aktivitātes": ["Muzeji", "Ekskursijas", "Pārgājieni"],
+    "apraksts": "Kultūra, daba un pilsētas dzīve."
+  },
+
+
+  {
+    "valsts": "Islandija",
+    "tips": ["daba", "piedzīvojumi"],
+    "budžets": 1700,
+    "ilgums": 8,
+    "aktivitātes": ["Ledāji", "Fiordi", "Pārgājieni"],
+    "apraksts": "Dabas brīnums ar aktīvu atpūtu."
+  },
+
+
+
+  {
+    "valsts": "Indija",
+    "tips": ["pilsēta", "daba", "piedzīvojumi"],
+    "budžets": 900,
+    "ilgums": 10,
+    "aktivitātes": ["Tempļi", "Tirgus", "Pārgājieni"],
+    "apraksts": "Kultūra, daba un piedzīvojumi vienā."
+  },
+
+  {
+    "valsts": "Austrālija",
+    "tips": ["daba", "piedzīvojumi", "pilsēta"],
+    "budžets": 2500,
+    "ilgums": 14,
+    "aktivitātes": ["Pludmale", "Nacionālie parki", "Piedzīvojumu sporti"],
+    "apraksts": "Plaši dabas skati un modernās pilsētas."
+  },
+
+  {
+
+    "valsts": "Brazīlija",
+    "tips": ["pilsēta", "atpūta", "piedzīvojumi"],
+    "budžets": 1300,
+    "ilgums": 10,
+    "aktivitātes": ["Pludmale", "Kultūras festivāli", "Piedzīvojumu sporti"],
+    "apraksts": "Tropiska atpūta ar krāsainu kultūru."
+  },
+
+  {
+
+    "valsts": "Japāna",
+    "tips": ["pilsēta", "daba", "atpūta"],
+    "budžets": 2000,
+    "ilgums": 12,
+    "aktivitātes": ["Templi apmeklējums", "Dabas parki", "Gastronomija"],
+    "apraksts": "Kultūra, daba un ēdiens vienā ceļojumā."
+  },
+
+  {
+    "valsts": "Turcija",
+    "tips": ["pilsēta", "atpūta", "daba"],
+    "budžets": 800,
+    "ilgums": 7,
+    "aktivitātes": ["Pludmale", "Ekskursijas", "Vēsturiskas vietas"],
+    "apraksts": "Vēsture un atpūta saulainās pludmalēs."
+  },
+
+
+  {
+    "valsts": "Ēģipte",
+    "tips": ["pilsēta", "atpūta", "daba"],
+    "budžets": 850,
+    "ilgums": 6,
+    "aktivitātes": ["Piramīdas", "Pludmale", "Ekskursijas"],
+    "apraksts": "Vēstures un atpūtas kombinācija."
+  }
+
+  
+]
