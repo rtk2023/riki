@@ -1,0 +1,14 @@
+#userInputField {
+    white-space: pre;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+    width: 100%;
+    height: 300px;
+}
+
+#display {
+    display: block;
+    padding: 20px;
+    border: 1px solid #ccc;
+    white-space: normal;
+}
