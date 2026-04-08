@@ -81,16 +81,18 @@ document.addEventListener("DOMContentLoaded", () => {
 	     });
 
 
-		//  maksimums pec score
+		//  maksimums pēc score
         const maxScore = Math.max(...scored.map(d => d.score));
         const topDestinations = scored.filter(d => d.score === maxScore);
 
-		
+		// + random ja vairakas iepējas
+        const selected = topDestinations[Math.floor(Math.random() * topDestinations.length)];
 
+
+		
+		
 		
 	});
-
-	
 });
 
 
