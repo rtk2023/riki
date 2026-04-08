@@ -14,3 +14,11 @@
 .show {
   display: block;
 }
+body {
+	background-image:url("https://images.hdqwalls.com/wallpapers/dark-souls-3-8k-om.jpg");
+	background-size:cover;
+	background-repeat:no-repeat;
+}
+h1 {
+	color:blue;
+}
