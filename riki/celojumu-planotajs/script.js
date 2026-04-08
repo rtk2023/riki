@@ -67,13 +67,13 @@ document.addEventListener("DOMContentLoaded", () => {
 	
 		// Pieskir katram galamerķim punktus pēc interešu atbilstības
 		const scored = filtered.map(dest => {
+			
 	            const matchCount = dest.tips.filter(t => interests.includes(t)).length;
 	
 	            const budgetScore = budget - dest.budžets;
-			
-	
 	            const durationScore = duration - dest.ilgums;
-	
+			
+				// -intereses svars + budzets + ilgums
 	            const totalScore = matchCount * 10 + budgetScore * 0.1 + durationScore * 0.2;
 	
 	
