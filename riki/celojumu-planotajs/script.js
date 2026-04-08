@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	    	return;
 	    }
 	
-			
+		// Pieskir katram galamerķim punktus pēc interešu atbilstības
 		const scored = filtered.map(dest => {
 	            const matchCount = dest.tips.filter(t => interests.includes(t)).length;
 	
