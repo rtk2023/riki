@@ -39,19 +39,35 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (isNaN(duration) ||  duration <= 0) {
-        suggestionEl.textContent = "Ludzu ievadiet derīgu ceļojuma ilgumu >0 ";
+        suggestionEl.textContent = "Lūdzu ievadiet derīgu ceļojuma ilgumu >0 ";
         return;
     }
     if (interests.length === 0) {
         suggestionEl.textContent = "Lūdzu izvēlieties vismaz vienu interesi";
-			
         return;
     }
 
 
+	// -
 
+	const filtered = destinations.filter(dest => {
+		
+            return dest.budžets <= budget &&
+                   dest.ilgums <= duration   &&
+                   dest.tips.some(t => interests.includes(t));
+    });
+
+    if (filtered.length === 0) {
+        suggestionEl.textContent = "Diemžel nav piemērotu galamērķu ar šiem kriterijiem";
+		
+    return;
+    }
+
+		
 
 
 		
 	});
+
+	
 });
