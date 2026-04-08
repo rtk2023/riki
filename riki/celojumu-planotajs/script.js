@@ -6,5 +6,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let destinations = [];
 	
+	fetch("destinations.json")
+		
+        .then(response => {
+            if (!response.ok) throw new Error("Neizdevas ielādēt datus");
+            return response.json();
+        })
+        .then( data => {
+            destinations = d ata;
+        })
+		
+        .catch(error =>  {
+            suggestionEl.textContent = "Klūda datu ielādē: " + error.message;
+        });
 
+	// --
+
+	
+
+
+
+
+	
 });
