@@ -90,6 +90,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 		
+		suggestionEl.innerHTML = `
+            <strong> Galamērķis: </strong> ${selected.valsts}<br>
+            <strong>Tips: </strong> ${selected.tips.join(", ")}<br>
+            <strong> Budžets: </strong> €${selected.budžets}<br>
+			
+            <strong>Ilgums:</strong> ${selected.ilgums} dienas<br>
+            <strong> Aktivitātes: </strong> ${selected.aktivitātes.join(", ")}<br>
+            <strong> Apraksts: </strong> ${selected.apraksts}
+        `;
 		
 		
 	});
