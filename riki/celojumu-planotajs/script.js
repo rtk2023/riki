@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return response.json();
         })
         .then( data => {
-            destinations = d ata;
+            destinations = data;
         })
 		
         .catch(error =>  {
@@ -22,7 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	// --
 
-	
+	form.addEventListener("submit", event => {
+        event.preventDefault();
+
+
+	});
 
 
 
