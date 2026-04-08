@@ -32,5 +32,26 @@ document.addEventListener("DOMContentLoaded", () => {
         const interests = Array.from(interestsEls).map(el => el.value);
 
 
+
+	if (isNaN(budget) || budget <= 0) {
+        suggestionEl.textContent = "Lūdzu ievadiet korektu budžetu >0 ";
+        return;
+    }
+
+    if (isNaN(duration) ||  duration <= 0) {
+        suggestionEl.textContent = "Ludzu ievadiet derīgu ceļojuma ilgumu >0 ";
+        return;
+    }
+    if (interests.length === 0) {
+        suggestionEl.textContent = "Lūdzu izvēlieties vismaz vienu interesi";
+			
+        return;
+    }
+
+
+
+
+
+		
 	});
 });
