@@ -2,10 +2,50 @@ const inputField = document.getElementById("userInputField");
 const outputField = document.getElementById("display");
 
 inputField.addEventListener("input", (event) => {
-    const rawInput = event.target.value; // new line = \n
-    const processedInput = markdown(rawInput);
-    outputField.innerHTML = processedInput;
+    const rawInput = event.target.value;
+    processInput(rawInput);
 });
+
+function processInput(rawInput) {
+	const processedInput = markdown(rawInput);
+    outputField.innerHTML = processedInput;
+};
+
+const fileInput = document.getElementById('fileInput');
+ 
+fileInput.addEventListener('change', (e) => {
+	const file = e.target.files[0];
+	if (!file) return;
+
+	const reader = new FileReader();
+
+	reader.readAsText(file, 'utf8');
+
+	reader.onload = (event) => {
+		const content = event.target.result;
+		inputField.value = content;
+
+		processInput(content);
+	};
+
+	reader.onerror = () => {
+		console.error('Error reading file:', reader.error);
+	};
+});
+
+function downloadFile() {
+	const content = inputField.value;
+	const blob = new Blob([content], { type: 'text/plain' });
+	
+	const url = URL.createObjectURL(blob);
+	
+	const a = document.createElement('a');
+	a.href = url;
+	a.download = 'your-markdown-doc.md';
+	a.click();
+	
+	URL.revokeObjectURL(url);
+}
 
 function markdown(src) {
 	// Drawdown
