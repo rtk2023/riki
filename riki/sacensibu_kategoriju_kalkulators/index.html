@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sacensību kategoriju kalkulators</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+    
+<main>
+<div class="container mt-5">
+    <div class="card shadow p-4">
+        <h2 class="text-center mb-4">Sacensību kategoriju kalkulators</h2>
+
+        <!-- svars -->
+        <div class="mb-3">
+            <label for="svars" class="form-label">Svars (kg)</label>
+            <input type="number" id="svars" class="form-control" min="30">
+        </div>
+
+        <!-- gads -->
+        <div class="mb-3">
+            <label for="gads" class="form-label">Dzimšanas gads</label>
+            <input type="number" id="gads" class="form-control" min="1930">
+        </div>
+
+        <!-- dzimums -->
+        <div class="mb-3">
+            <label for="dzimums" class="form-label">Dzimums</label>
+            <select id="dzimums" class="form-select" onchange="updateCinasVeids()">
+                <option value="">Izvēlies</option>
+                <option value="v">Vīrietis</option>
+                <option value="s">Sieviete</option>
+            </select>
+        </div>
+
+        <!-- Cīņas veids -->
+        <div class="mb-3">
+            <label for="cinasVeids" class="form-label">Cīņas veids</label>
+            <select id="cinasVeids" class="form-select">
+                <option value="">Izvēlies</option>
+                <option value="FS">Brīvā cīņa (vīrieši)</option>
+                <option value="WFS">Brīvā cīņa (sievietes)</option>
+                <option value="GR">Grieķu-romiešu</option>
+            </select>
+        </div>
+
+        <!-- button -->
+        <div class="d-flex gap-2">
+            <button onclick="aprekinat()" class="btn btn-primary w-50">Aprēķināt</button>
+            <button onclick="notirit()" class="btn btn-secondary w-50">Notīrīt</button>
+        </div>
+
+        <!-- result -->
+        <div id="rezultats" class="mt-4" aria-live="polite"></div>
+    </div>
+</div>
+</main>
+
+<script>
+
+function updateCinasVeids() {
+    const dzimums = document.getElementById('dzimums').value;
+    const gregOption = document.querySelector('#cinasVeids option[value="GR"]');
+    const wfsOption = document.querySelector('#cinasVeids option[value="WFS"]');
+    const fsOption = document.querySelector('#cinasVeids option[value="FS"]');
+
+    if (dzimums === "s") {
+        gregOption.disabled = true;
+        fsOption.disabled = true;
+        wfsOption.disabled = false;
+    } else if (dzimums === "v") {
+        gregOption.disabled = false;
+        fsOption.disabled = false;
+        wfsOption.disabled = true;
+    }
+}
+
+function aprekinat() {
+    const svars = parseFloat(document.getElementById('svars').value);
+    const gads = parseInt(document.getElementById('gads').value);
+    const dzimums = document.getElementById('dzimums').value;
+    const veids = document.getElementById('cinasVeids').value;
+    const rezultats = document.getElementById('rezultats');
+
+    const currentYear = new Date().getFullYear();
+
+    if (!svars || !gads || !dzimums || !veids) {
+        rezultats.innerHTML = `<div class="alert alert-danger">Aizpildi visus laukus!</div>`;
+        return;
+    }
+
+    if (svars < 25 || svars > 200) {
+        rezultats.innerHTML = `<div class="alert alert-danger">Svars jābūt starp 25 un 200 kg!</div>`;
+        return;
+    }
+
+    if (gads > currentYear || gads < 1930) {
+        rezultats.innerHTML = `<div class="alert alert-danger">Nepareizs dzimšanas gads!</div>`;
+        return;
+    }
+
+    if (dzimums === "s" && veids === "GR") {
+        rezultats.innerHTML = `<div class="alert alert-danger">
+            Sievietes nevar piedalīties grieķu-romiešu cīņā!
+        </div>`;
+        return;
+    }
+
+    const vecums = currentYear - gads;
+
+    if (vecums < 6) {
+        rezultats.innerHTML = `<div class="alert alert-danger">Pārāk jauns sacensībām!</div>`;
+        return;
+    }
+
+    // vecuma grupa
+    let grupa = "";
+    if (vecums <= 15) grupa = "Jaunieši";
+    else if (vecums <= 17) grupa = "Juniori";
+    else grupa = "Pieaugušie";
+
+    // svara kat
+        // NOTEIKT GRUPU
+    let kategorijas = [];
+
+    if (gads >= 2006 && gads <= 2008) {
+        if (veids === "WFS") kategorijas = [50,53,55,57,59,62,65,68,72,76];
+        if (veids === "GR") kategorijas = [55,60,63,67,72,77,82,87,97,130];
+        if (veids === "FS") kategorijas = [57,61,65,70,74,79,86,92,97,125];
+    }
+    else if (gads >= 2009 && gads <= 2010) {
+        if (veids === "WFS") kategorijas = [43,46,49,53,57,61,65,69,73];
+        if (veids === "GR") kategorijas = [45,48,51,55,60,65,71,80,92,110];
+        if (veids === "FS") kategorijas = [45,48,51,55,60,65,71,80,92,110];
+    }
+    else if (gads >= 2011 && gads <= 2012) {
+        if (veids === "WFS") kategorijas = [39,42,46,50,54,58,62,66];
+        if (veids === "GR") kategorijas = [38,41,44,48,52,57,62,68,75,85,110];
+        if (veids === "FS") kategorijas = [38,41,44,48,52,57,62,68,75,85,110];
+    }
+    else if (gads >= 2013) {
+        if (veids === "WFS") kategorijas = [20,23,26,29,32,35,40,45,50,60];
+        if (veids === "GR") kategorijas = [26,29,32,35,38,42,47,53,59,66,85];
+        if (veids === "FS") kategorijas = [26,29,32,35,38,42,47,53,59,66,85];
+    }
+
+    if (kategorijas.length === 0) {
+        rezultats.innerHTML = `<div class="alert alert-warning">Nav datu šai vecuma grupai!</div>`;
+        return;
+    }
+
+    // ATRAST KATEGORIJU
+    let kategorija = "";
+    let next = null;
+
+    for (let i = 0; i < kategorijas.length; i++) {
+        if (svars <= kategorijas[i]) {
+            kategorija = kategorijas[i];
+            next = kategorijas[i + 1] || null;
+            break;
+        }
+    }
+
+    if (!kategorija) {
+        kategorija = kategorijas[kategorijas.length - 1] + "+";
+    }
+
+    // KG LĪDZ NĀKAMAJAI
+    let kgInfo = "";
+    if (next) {
+        let diff = (next - svars).toFixed(1);
+        kgInfo = `Līdz nākamajai kategorijai: <b>${diff} kg</b>`;
+    } else {
+        kgInfo = "Tu esi augstākajā kategorijā";
+    }
+
+    // IETEIKUMS
+    let ieteikums = "";
+    if (next && (next - svars) < 2) {
+        ieteikums = "Tu esi tuvu nākamajai kategorijai!";
+    } else {
+        ieteikums = "Tu esi stabilā kategorijā.";
+    }
+
+    // OUTPUT
+    rezultats.innerHTML = `
+        <div class="alert alert-success">
+            <p>Vecums: <b>${vecums}</b></p>
+            <p>Grupa: <b>${grupa}</b></p>
+            <p>Kategorija: <b>${kategorija} kg</b></p>
+            <p>${kgInfo}</p>
+            <p><i>${ieteikums}</i></p>
+        </div>
+    `;
+}
+
+function notirit() {
+    document.getElementById('svars').value = "";
+    document.getElementById('gads').value = "";
+    document.getElementById('dzimums').value = "";
+    document.getElementById('cinasVeids').value = "";
+
+    document.getElementById('rezultats').innerHTML = "";
+}
+
+</script>
+
+</body>
+</html>
