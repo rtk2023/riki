@@ -8,10 +8,18 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+    <div class="split left">
+        <div class="centered">
     <p>Input: </p>
     <textarea id="userInputField" rows="10" cols="50" placeholder="Type your markdown here..." style="resize: none; white-space: pre; overflow-x: auto;"></textarea>
+        </div>
+    </div>
+    <div class="split right">
+        <div class="centered">
     <p>Output: <span id="display" style="white-space: pre-wrap;"></span></p>
     <input type="file" id="fileInput" accept=".txt,.md">
     <button onclick="downloadFile()">Save File</button>
+        </div>
+    </div>
 </body>
 </html>
