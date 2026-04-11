@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cipher Encoder/Decoder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="header">
+        <h1>Cipher Encoder/Decoder</h1>
+    </header>
+    <main>
+        <section class="form-section">
+            <label for="cipherType">Choose a cipher:</label>
+            <select id="cipherType">
+                <option value="atbash">Atbash Cipher</option>
+                <option value="caesar">Caesar Cipher</option>
+                <option value="vigenere">Vigenère Cipher</option>
+                <option value="base64">Base64</option>
+                <option value="morse">Morse Code</option>
+                <option value="html">HTML Encoder/Decoder</option>
+            </select>
+
+            <label for="inputText">Input text:</label>
+            <textarea id="inputText" rows="5" placeholder="Enter your text here..."></textarea>
+
+            <label for="key" id="keyLabel" style="display: none;">Key/Shift (if needed):</label>
+            <input type="text" id="key" placeholder="Optional key or shift value" style="display: none;">
+
+            <div class="button-group">
+                <button id="encodeButton">Encode</button>
+                <button id="decodeButton">Decode</button>
+            </div>
+        </section>
+        <section class="result-section">
+            <h2>Result:</h2>
+            <p id="result"></p>
+            <button class="button-copy" id="copyButton" style="display: none;">Copy to Clipboard</button>
+        </section>
+    </main>
+    <script src="AtbashCipher.js"></script>
+    <script src="CeaserCipher.js"></script>
+    <script src="VigenereCipher.js"></script>
+    <script src="base64.js"></script>
+    <script src="morse.js"></script>
+    <script src="htmlEncoder.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
