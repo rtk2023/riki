@@ -7,7 +7,7 @@ Tas palīdz ātri un ērti pārbaudīt Markdown sintaksi bez citu programmu pal�
 
 ## PĀRSKATS
 
-### ATBALSTĪTIĀ FUNKCIONALITĀTE
+### ATBALSTĪTĀ FUNKCIONALITĀTE
 
 - virsraksti (# līdz ######)
 - rindkopas
