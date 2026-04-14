@@ -7,7 +7,7 @@ inputField.addEventListener("input", (event) => {
 });
 
 function processInput(rawInput) {
-	const processedInput = markdown(rawInput);
+	const processedInput = parseMarkdown(rawInput);
     outputField.innerHTML = processedInput;
 };
 
@@ -47,130 +47,77 @@ function downloadFile() {
 	URL.revokeObjectURL(url);
 }
 
-function markdown(src) {
-	// Drawdown
-	// (c) Adam Leggett
-	// MIT License
+const RX = {
+	lineBreaks: /\r\n?/g,
 
-	var rx_lt = /</g;
-	var rx_gt = />/g;
-	var rx_space = /\t|\r|\uf8ff/g;
-	var rx_escape = /\\([\\\|`*_{}\[\]()#+\-~])/g;
-	var rx_hr = /^([*\-=_] *){3,}$/gm;
-	var rx_blockquote = /\n *&gt; *([^]*?)(?=(\n|$){2})/g;
-	var rx_list = /\n( *)(?:[*\-+]|((\d+)|([a-z])|[A-Z])[.)]) +([^]*?)(?=(\n|$){2})/g;
-	var rx_listjoin = /<\/(ol|ul)>\n\n<\1>/g;
-	var rx_highlight = /(^|[^A-Za-z\d\\])(([*_])|(~)|(\^)|(--)|(\+\+)|`)(\2?)([^<]*?)\2\8(?!\2)(?=\W|_|$)/g;
-	var rx_code = /\n((```|~~~).*\n?([^]*?)\n?\2|((    .*?\n)+))/g;
-	var rx_link = /((!?)\[(.*?)\]\((.*?)( ".*")?\)|\\([\\`*_{}\[\]()#+\-.!~]))/g;
-	var rx_table = /\n(( *\|.*?\| *\n)+)/g;
-	var rx_thead = /^.*\n( *\|( *\:?-+\:?-+\:? *\|)* *\n|)/;
-	var rx_row = /.*\n/g;
-	var rx_cell = /\||(.*?[^\\])\|/g;
-	var rx_heading = /(?=^|>|\n)([>\s]*?)(#{1,6}) (.*?)( #*)? *(?=\n|$)/g;
-	var rx_para = /(?=^|>|\n)\s*\n+([^<]+?)\n+\s*(?=\n|<|$)/g;
-	var rx_stash = /-\d+\uf8ff/g;
+	amp: /&/g,
+	lt: /</g,
+	gt: />/g,
 
-	function replace(rex, fn) {
-		src = src.replace(rex, fn);
-	}
+	fencedCode: /(^|\n)```([a-zA-Z0-9_-]+)?\n([\s\S]*?)\n```(?=\n|$)/g,
+	heading: /(^|\n)(#{1,6})[ \t]+(.+?)(?=\n|$)/g,
+	hr: /(^|\n)[ \t]*([-*_])[ \t]*(?:\2[ \t]*){2,}(?=\n|$)/g,
+	blockquote: /(^|\n)[ \t]*>[ \t]?(.+?)(?=\n|$)/g,
+	ulItem: /(^|\n)[ \t]*[-*+][ \t]+(.+?)(?=\n|$)/g,
+	olItem: /(^|\n)[ \t]*\d+\.[ \t]+(.+?)(?=\n|$)/g,
 
-	function element(tag, content) {
-		// Adds class to all elements
-		return '<' + tag + ' class="markdown">' + content + '</' + tag + '>';
-	}
+	inlineCode: /`([^`\n]+?)`/g,
+	image: /!\[([^\]]*?)\]\(([^)\s]+)(?:\s+"([^"]*?)")?\)/g,
+	link: /\[([^\]]+?)\]\(([^)\s]+)(?:\s+"([^"]*?)")?\)/g,
+	strong: /(\*\*|__)(?=\S)([\s\S]*?\S)\1/g,
+	em: /(\*|_)(?=\S)([\s\S]*?\S)\1/g,
+	strike: /~~(?=\S)([\s\S]*?\S)~~/g,
 
-	function blockquote(src) {
-		return src.replace(rx_blockquote, function(all, content) {
-			return element('blockquote', blockquote(highlight(content.replace(/^ *&gt; */gm, ''))));
-		});
-	}
+	blockSplit: /\n{2,}/g
+};
 
-	function list(src) {
-		return src.replace(rx_list, function(all, ind, ol, num, low, content) {
-			var entry = element('li', highlight(content.split(
-				RegExp('\n ?' + ind + '(?:(?:\\d+|[a-zA-Z])[.)]|[*\\-+]) +', 'g')).map(list).join('</li><li>')));
+function parseInline(text) {
+	return text
+    .replace(RX.inlineCode, '<code>$1</code>')
+    .replace(RX.image, (_, alt, url, title) =>
+      `<img src="${url}" alt="${alt}"${title ? ` title="${title}"` : ""} />`)
+    .replace(RX.link, (_, text, url, title) =>
+      `<a href="${url}"${title ? ` title="${title}"` : ""}>${text}</a>`)
+    .replace(RX.strong, '<strong>$2</strong>')
+    .replace(RX.em, '<em>$2</em>')
+    .replace(RX.strike, '<del>$1</del>');
+}
 
-			return '\n' + (ol
-				? '<ol start="' + (num
-					? ol + '">'
-					: parseInt(ol,36) - 9 + '" style="list-style-type:' + (low ? 'low' : 'upp') + 'er-alpha">') + entry + '</ol>'
-				: element('ul', entry));
-		});
-	}
+function parseMarkdown(text) {
+	let src = text.replace(RX.lineBreaks, "\n");
 
-	function highlight(src) {
-		return src.replace(rx_highlight, function(all, _, p1, emp, sub, sup, small, big, p2, content) {
-			return _ + element(
-				  emp ? (p2 ? 'strong' : 'em')
-				: sub ? (p2 ? 's' : 'sub')
-				: sup ? 'sup'
-				: small ? 'small'
-				: big ? 'big'
-				: 'code',
-				highlight(content));
-		});
-	}
+	src = src.replace(RX.amp, "&amp;");
+	src = src.replace(RX.lt, "&lt;");
+	src = src.replace(RX.gt, "&gt;");
 
-	function unesc(str) {
-		return str.replace(rx_escape, '$1');
-	}
+	const stash = [];
+	src = src.replace(RX.fencedCode, function (_, before, _, codeText) {
+		const html = `${before}<pre><code>${codeText}</code></pre>`;
 
-	var stash = [];
-	var si = 0;
-
-	src = '\n' + src + '\n';
-
-	replace(rx_lt, '&lt;');
-	replace(rx_gt, '&gt;');
-	replace(rx_space, '  ');
-
-	// blockquote
-	src = blockquote(src);
-
-	// horizontal rule
-	replace(rx_hr, '<hr/>');
-
-	// list
-	src = list(src);
-	replace(rx_listjoin, '');
-
-	// code
-	replace(rx_code, function(all, p1, p2, p3, p4) {
-		stash[--si] = element('pre', element('code', p3||p4.replace(/^    /gm, '')));
-		return si + '\uf8ff';
+		const index = stash.push(html) - 1;
+		return '@@CODE_' + index + '@@';
 	});
 
-	// link or image
-	replace(rx_link, function(all, p1, p2, p3, p4, p5, p6) {
-		stash[--si] = p4
-			? p2
-				? '<img src="' + p4 + '" alt="' + p3 + '"/>'
-				: '<a href="' + p4 + '">' + unesc(highlight(p3)) + '</a>'
-			: p6;
-		return si + '\uf8ff';
-	});
+	src = src.replace(RX.heading, (_, before, hashes, text) => `${before}<h${hashes.length}>${parseInline(text)}</h${hashes.length}>`);
+	src = src.replace(RX.hr, "$1<hr>");
+	src = src.replace(RX.blockquote, (_, before, text) => `${before}<blockquote>${parseInline(text)}</blockquote>`);
+	src = src.replace(RX.ulItem, (_, before, text) => `${before}<li data-ul="1">${parseInline(text)}</li>`);
+	src = src.replace(RX.olItem, (_, before, text) => `${before}<li data-ol="1">${parseInline(text)}</li>`);
 
-	// table
-	replace(rx_table, function(all, table) {
-		var sep = table.match(rx_thead)[1];
-		return '\n' + element('table',
-			table.replace(rx_row, function(row, ri) {
-				return row == sep ? '' : element('tr', row.replace(rx_cell, function(all, cell, ci) {
-					return ci ? element(sep && !ri ? 'th' : 'td', unesc(highlight(cell || ''))) : ''
-				}))
-			})
-		)
-	});
+	src = src
+    .replace(/(?:^|\n)(<li data-ul="1">[\s\S]*?<\/li>(?:\n<li data-ul="1">[\s\S]*?<\/li>)*)/g, (_, group) =>
+      `\n<ul>${group.replace(/ data-ul="1"/g, "")}</ul>`)
+    .replace(/(?:^|\n)(<li data-ol="1">[\s\S]*?<\/li>(?:\n<li data-ol="1">[\s\S]*?<\/li>)*)/g, (_, group) =>
+      `\n<ol>${group.replace(/ data-ol="1"/g, "")}</ol>`);
 
-	// heading
-	replace(rx_heading, function(all, _, p1, p2) { return _ + element('h' + p1.length, unesc(highlight(p2))) });
+	const blocks = src.split(RX.blockSplit).map(s => s.trim()).filter(Boolean);
+	src = blocks.map(b => {
+		if (/^<h\d|^<pre>|^<ul>|^<ol>|^<blockquote>|^<hr>/.test(b)) return b;
+		if (/^@@CODE_\d+@@$/.test(b)) return b;
+		return `<p>${parseInline(b)}</p>`;
+	}).join("\n");
 
-	// paragraph
-	replace(rx_para, function(all, content) { return element('p', unesc(highlight(content))) });
+	src = src.replace(/@@CODE_(\d+)@@/g, (_, i) => stash[Number(i)]);
 
-	// stash
-	replace(rx_stash, function(all) { return stash[parseInt(all)] });
-
-	return src.trim();
+	return src;
 }
