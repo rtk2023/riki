@@ -39,15 +39,23 @@ document.addEventListener("DOMContentLoaded", () => {
             suggestionEl.textContent = "Kļūda : " + error.message;
         });
 
+
 	
-
-
 	
     tooltip_txt.textContent = localStorage.getItem("prev-search") || "Nav rezultātu";
 
 
 	
     form.addEventListener("submit", event => {
+
+		/* load check*/
+
+		if (!destinationsLoaded) {
+            suggestionEl.textContent = " Dati vēl lādējas ";
+            return;
+
+        }
+		
 		
         event.preventDefault();
 
