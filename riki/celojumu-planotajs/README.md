@@ -40,14 +40,14 @@ Dinamisku saskarnes atjaunošanu
 │
 ├── index.html
 ├── styles.css
-├── /js
-│   ├── main.js
-│   ├── filter.js
-│   ├── scoring.js
-│   ├── ui.js
-│
 ├── destinations.json
-└── README.md
+├── README.md
+│
+└── js
+    ├── main.js
+    ├── filter.js
+    ├── scoring.js
+    └── ui.js
 
 ---
 ## Funkcionalitāte
