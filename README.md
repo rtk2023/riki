@@ -36,7 +36,6 @@ Visi ekrāni (kategorijas izvēle, sākuma ekrāns, testa ekrāns, rezultātu ek
 
 ## Resursi
 Izstrādē izmantotie resursi un noderīgas saites:
-- [Google Fonts (Rajdhani, Source Sans 3)](https://fonts.google.com/)
 - [W3C HTML validators](https://validator.w3.org/)
 - [CSS validators](https://jigsaw.w3.org/css-validator/)
 - [Google Lighthouse](https://pagespeed.web.dev/)
