@@ -13,10 +13,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const seasonEl = document.getElementById("season");
 
     const climateEl = document.getElementById("climate");
+
     const infoPanel = document.getElementById("infoPanel");
     const infoContent = document.getElementById("infoContent");
 
-	const destinationImage = document.getElementById("destinationImage");
+    const destinationImage = document.getElementById("destinationImage");
 
 
 	/* fetch */
@@ -59,6 +60,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	        infoPanel.style.display = "block";
 
+
+
+
+            if (random.attēls) {
+                destinationImage.src = random.attēls;
+                destinationImage.style.display = "block";
+            } 
+            
+            else {
+                destinationImage.style.display = "none";
+            }
+
+
+        
 	        infoContent.innerHTML = `
 	            <strong>Kontinents:</strong> ${random.kontinents || "-"}<br>
 	            <strong>Klimats:</strong> ${random.klimats || "-"}<br>
@@ -81,11 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-		
-
         event.preventDefault();
-
-		
 
         const budget = parseFloat(document.getElementById("budget").value);
         const duration = parseInt(document.getElementById("duration").value);
@@ -110,8 +121,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
 
-
-		
         /* filtration fixes*/
         const filtered = destinations.filter(dest => {
 
@@ -131,6 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (filtered.length === 0) {
             suggestionEl.textContent = "Diemžēl nav piemērotu galamērķu ar šiem kritērijiem";
             infoPanel.style.display = "none";
+            destinationImage.style.display = "none";
             return;
         }
 
@@ -143,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const totalScore = matchCount * 10 + budgetScore * 0.1 + durationScore * 0.2;
 
-            return { ...dest,  score: totalScore };
+            return { ...dest, score: totalScore };
         });
 
 
@@ -157,6 +167,21 @@ document.addEventListener("DOMContentLoaded", () => {
         const topDestinations = scored.filter(d => d.score === maxScore);
 
         const selected = topDestinations[Math.floor(Math.random() * topDestinations.length)];
+
+
+
+
+        if (selected.attēls) {
+            destinationImage.src = selected.attēls;
+            destinationImage.style.display = "block";
+        } 
+        
+        else {
+            destinationImage.style.display = "none";
+        }
+
+
+
 
 
         suggestionEl.innerHTML = `
@@ -182,9 +207,6 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
 
 
-
-
-		
 		// --
 
         localStorage.setItem('prev-search', `
@@ -196,8 +218,6 @@ document.addEventListener("DOMContentLoaded", () => {
             (${(selected.tips || []).join(", ")})
         `);
 
-
-		
         tooltip_txt.textContent =
             localStorage.getItem("prev-search") || "Nav rezultātu";
 
