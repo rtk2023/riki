@@ -42,9 +42,38 @@ document.addEventListener("DOMContentLoaded", () => {
     tooltip_txt.textContent = localStorage.getItem("prev-search") || "Nav rezultātu";
 
 
+	/* surprise random-f-l*/
+	surpriseBtn.addEventListener("click", () => {
+
+        if (!destinationsLoaded || destinations.length === 0) return;
+
+        const random = destinations[Math.floor(Math.random() * destinations.length)];
+
+        suggestionEl.innerHTML = `
+            <strong>SURPRISE!</strong><br><br>
+            <strong>${random.valsts}</strong><br>
+            ${random.apraksts}
+        `;
+
+
+		
+        infoPanel.style.display = "block";
+
+        infoContent.innerHTML = `
+            <strong>Kontinents:</strong> ${random.kontinents}<br>
+            <strong>Klimats:</strong> ${random.klimats}<br>
+            <strong>Valūta:</strong> ${random.valūta}<br>
+            <strong>Iedzīvotāji:</strong> ${random.iedzīvotāji}<br>
+
+            <strong>Valodas:</strong> ${(random.valodas || []).join(", ")}<br>
+            <strong>Slavenākā vieta:</strong> ${random.slavenākā_vieta}
+        `;
+    });
+
+
+
+
 	
-
-
 	
     form.addEventListener("submit", event => {
 
@@ -106,31 +135,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 		
-		/* surprise random-f-l*/
-		surpriseBtn.addEventListener("click", () => {
-
-            if (!destinationsLoaded) return;
-
-            const random = destinations[Math.floor(Math.random() * destinations.length)];
-
-            suggestionEl.innerHTML = `
-                <strong>SURPRISE!</strong><br><br>
-                <strong>${random.valsts}</strong><br>
-                ${random.apraksts}
-            `;
-
-            infoPanel.style.display = "block";
-
-            infoContent.innerHTML = `
-                <strong>Kontinents:</strong> ${selected.kontinents}<br>
-                <strong>Klimats:</strong> ${selected.klimats}<br>
-                <strong>Valūta:</strong> ${selected.valūta}<br>
-                <strong>Iedzīvotāji:</strong> ${selected.iedzīvotāji}<br>
-				
-                <strong>Valodas:</strong> ${selected.valodas.join(", ")}<br>
-                <strong>Slavenākā vieta:</strong> ${selected.slavenākā_vieta}
-            `;
-        });
 
 
         
