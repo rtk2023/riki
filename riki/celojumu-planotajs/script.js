@@ -39,10 +39,10 @@ document.addEventListener("DOMContentLoaded", () => {
             suggestionEl.textContent = "Kļūda : " + error.message;
         });
 
+    tooltip_txt.textContent = localStorage.getItem("prev-search") || "Nav rezultātu";
+
 
 	
-	
-    tooltip_txt.textContent = localStorage.getItem("prev-search") || "Nav rezultātu";
 
 
 	
