@@ -15,23 +15,83 @@ un JavaScript loģiku, lai ģenerētu personalizētus ceļojumu ieteikumus.
 
 Lietotne sastāv no 3 loģiskām daļām:
 
-UI slānis
+Saskarnes slānis. -
 Nodrošina lietotāja saskarni un rezultātu attēlošanu.
 
-Datu slānis (JSON)
+Datu slānis. -
 Satur galamērķu datubāzi ar paplašinātu informāciju:
 pamata parametri 
 papildu atribūti 
 informatīvie dati
 attēli (ārējo URL formātā)
 
-Loģikas slānis (JS) /n
+Loģikas slānis. -
 datu ielāde
 filtrēšana un vērtēšana
 Ieteikumu ģenerēšanu
 Nejaušaieteikuma izvēle
 Datu saglabāšanu
 Dinamisku saskarnes atjaunošanu
+
+--
+## Direktorija
+
+/root
+│
+├── index.html
+├── styles.css
+├── /js
+│   ├── main.js
+│   ├── filter.js
+│   ├── scoring.js
+│   ├── ui.js
+│
+├── destinations.json
+└── README.md
+
+--
+## Funkcionalitāte
+
+Lietotāja ievades apstrāde.
+Galamērķu filtrēšana pēc kritērijiem.
+Rezultātui vērtēšana.
+Ieteikumu ģenerēšana.
+Iepriekšējā vaicājumaa saglabāšana.
+Attēlu attēlošana.
+Informācijas panelis par galamērķi.
+“Pārsteidz Mani” funkcija.
+
+--
+
+## Iespējamie uzlabojumi
+
+Integrācija - API.
+Datu bāzes pieslēgšana.
+Lietotāja kontu sistēma.
+Personalizēti ieteikumi ar NLA algoritmiem.
+Interaktīva karte.
+valodu atbalsts.
+Tumšā/gaišā režīma pārslēgšana.
+Reāllaika ieteikumi bez formas iesniegšanas (pogas nospiešanas) nepieciešamības.
+
+--
+
+## Zināmie defekti
+
+NAV
+
+--
+
+## Resursi
+
+https://developer.mozilla.org/en-US/ (JavaScript, HTML, CSS dokumentācija)
+https://unsplash.com/ (attēlu avots)
+https://fontawesome.com/  (ikonas)
+https://json.org/ (JSON formāta apraksts)
+https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API  (Fetch API)
+https://www.w3schools.com
+https://www.geeksforgeeks.org
+
 
 --
 
