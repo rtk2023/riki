@@ -91,7 +91,7 @@ https://json.org/ (JSON formāta apraksts)
 https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API  (Fetch API)
 https://www.w3schools.com
 https://www.geeksforgeeks.org
-
+https://uiverse.io/elements
 
 --
 
