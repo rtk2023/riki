@@ -174,7 +174,7 @@
             border-radius: 5px;
             border: none;
             transition: all 0.5s ease-in-out;
-            font-size: 20px;
+            font-size: 16px;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-weight: 600;
 
@@ -196,9 +196,9 @@
             position: absolute;
             left: 0;
             height: 40px;
-            width: 70px;
-            display: flex;
+            width: 50px;
             justify-content: center;
+            display: flex;
             align-items: center;
             transition: all 0.5s;
         }
@@ -206,6 +206,7 @@
         .btn .text {
             transform: translateX(55px);
             transition: all 0.5s;
+            margin-left: -25px;
         }
 
 
