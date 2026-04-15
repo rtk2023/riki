@@ -25,7 +25,7 @@ papildu atribūti
 informatīvie dati
 attēli (ārējo URL formātā)
 
-Loģikas slānis (JS)
+Loģikas slānis (JS) /n
 datu ielāde
 filtrēšana un vērtēšana
 Ieteikumu ģenerēšanu
