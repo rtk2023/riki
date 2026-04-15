@@ -1,4 +1,5 @@
 
+
 document.addEventListener("DOMContentLoaded", () => {
 
 	/* -- */
@@ -194,6 +195,15 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
 
 
+
+        document.getElementById("infoPanel").scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+
+
+
         infoPanel.style.display = "block";
 
         infoContent.innerHTML = `
@@ -224,4 +234,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
-
