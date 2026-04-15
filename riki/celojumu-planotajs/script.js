@@ -20,22 +20,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-	
-	
-
+	/* fetch */
+    let destinationsLoaded = false;
 
     fetch("destinations.json")
-		
+
         .then(response => {
-            if (!response.ok) throw new Error("Neizdevas ielādēt datus");
+            if (!response.ok) throw new Error("Neizdevās ieladēt");
+
             return response.json();
         })
         .then(data => {
             destinations = data;
+            destinationsLoaded = true;
         })
+
         .catch(error => {
-            suggestionEl.textContent = "Kļūda datu ielādē: " + error.message;
+            suggestionEl.textContent = "Kļūda : " + error.message;
         });
+
+	
 
 
 	
