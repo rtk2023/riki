@@ -1,11 +1,27 @@
 
 
 document.addEventListener("DOMContentLoaded", () => {
+
+	/* -- */
     const form = document.getElementById("travel-form");
 	
     const suggestionEl = document.getElementById("suggestion");
     const tooltip_txt = document.querySelector(".tooltiptext");
     let destinations = [];
+
+	
+	const surpriseBtn = document.getElementById("surpriseBtn");
+    const seasonEl= document.getElementById("season");
+	
+    const climateEl = document.getElementById("climate");
+
+    const infoPanel = document.getElementById("infoPanel");
+    const infoContent = document.getElementById("infoContent");
+
+
+
+	
+	
 
 
     fetch("destinations.json")
