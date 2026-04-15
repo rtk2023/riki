@@ -1,14 +1,7 @@
 # 🌍 Ceļojumu Plānotājs
 
-## Projekta apraksts
-Ceļojumu Plānotājs ir WEB lietotne, kas palīdz lietotājiem atrast piemērotus ceļojumu galamērķus, balstoties uz viņu vēlmēm.
-
-Lietotājs ievada:
-- Budžetu  
-- Ceļojuma ilgumu  
-- Intereses (piemēram: daba, pilsēta, atpūta, piedzīvojumi)
-
-Sistēma ģenerē personalizētu ceļojuma piedāvājumu ar galamērķi, aktivitātēm un aprakstu.
+## Projekts - Ievads
+Ceļojumu Plānotājs ir interaktīva WEB lietotne, kas palīdz lietotājiem atrast piemērotākos ceļojumu galamērķus, balstoties uz individuālām vēlmēm, piemēram, budžetu, ilgumu un interesēm utt.
 
 ---
 
