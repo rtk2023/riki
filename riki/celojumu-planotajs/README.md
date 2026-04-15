@@ -5,10 +5,9 @@ Ceļojumu Plānotājs ir interaktīva WEB lietotne, kas palīdz lietotājiem atr
 
 ---
 
-## 🛠️ Izmantotās tehnoloģijas
-- HTML  
-- CSS  
-- JavaScript  
+## Pārskats
+Projekts ir realizēts kā klienta puses (frontend) tīmekļa lietotne, kas izmanto statiskus datus (glabātus JSON formātā)
+un JavaScript loģiku, lai ģenerētu personalizētus ceļojumu ieteikumus. 
 
 ---
 
