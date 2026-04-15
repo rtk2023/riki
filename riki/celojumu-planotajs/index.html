@@ -15,38 +15,86 @@
   
     <header>
         <h1>🌍 Ceļojumu Plānotājs</h1>
-        <p>Ievadi savas preferences un mēs ieteiksim piemērotu ceļojuma galamērķi!</p>
+        <p>Ievadi savas preferences un mēs ieteiksim piemērotu ceļojuma galamērķi</p>
     </header>
 
     
     <main>
         
         <section>
-            <h2>Datu ievade:</h2>
-
+            <h2>Parametri: <h2>
             <form id="travel-form">
-                <label for="budget">Plānotais budžets (€):</label><br>
+
+                <label for="budget">Budžets (€):</label><br>
                 <input type="number" id="budget" name="budget" min="1" max="10000" required placeholder="5000.00 €">
 
-                <label for="duration">Plānotais ceļojuma ilgums (dienās):</label><br>
-                <input type="number" id="duration" name="duration" min="1" max = "365" required placeholder="7"><br><br>
+                <label for="duration">Ceļojuma ilgums (dienās):</label><br>
+                <input type="number"   id="duration" name="duration" min="1" max="365" required placeholder="7"><br><br>
 
 
-                <label>Jūsu intereses?</label><br>
-                <input type="checkbox" id="nature" name="interests" value = "daba">
+                <label>Jūsu intereses</label><br>
+
+                <input type="checkbox" id="nature" name="interests" value="daba">
                 <label for="nature">Daba</label><br>
                 <input type="checkbox" id="city" name="interests" value="pilsēta">
                 <label for="city">Pilsēta</label><br>
                 
                 <input type="checkbox" id="relax" name="interests" value="atpūta">
                 <label for="relax">Atpūta</label><br>
-                <input type= "checkbox" id="adventure" name="interests"  value = "piedzīvojumi">
+
+                <input type="checkbox" id="adventure" name="interests" value="piedzīvojumi">
                 <label for="adventure">Piedzīvojumi</label><br><br>
 
-                <button type="submit">Ģenerēt ieteikumu</button>
+                
+                <div id="extra-filters">
+
+                    <label>Sezona:</label><br>
+                    <select id="season">
+                        <option value="">-- nav izvēlēts -</option>
+                        <option value="pavasaris">Pavasaris</option>
+                        <option value="vasara">Vasara</option>
+
+                        <option value="rudens">Rudens</option>
+                        <option value="ziema">Ziema</option>
+
+
+                    </select>
+
+                    <br>
+                    <br>
+
+                    <label>Klimats:</label><br>
+                    <select id="climate">
+                        <option value="">-- nav izvēlēts --</option>
+                        <option value="silts">Silts</option>
+                        <option value="auksts">Auksts</option>
+
+                        <option value="tropisks">Tropisks</option>
+                        <option value="mērens">Mērens</option>
+                    </select>
+
+                    <br><br>
+
+                </div>
+
+
+
+                <button type="submit" class="btn">
+                    <div class="icon"><i class="fa fa-plane"></i></div>
+                    <div class="text">Ieteikt</div>
+                </button>
+
+                <button type="button" id="surpriseBtn" class="btn" style="margin-top:10px;">
+                    <div class="icon"><i class="fa fa-random"></i></div>
+                    <div class="text">Pārsteidz Mani</div>
+                </button>
+
             </form>
             
         </section>
+
+
+                
 
         <section id="results">
             
