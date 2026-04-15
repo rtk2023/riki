@@ -8,7 +8,7 @@
 		<title>SoulsQuest</title>
 	</head>
 	<body onload = "filterSelection('all')">
-		<script src="script.js"></script>
+		
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog" role="document">
@@ -30,7 +30,7 @@
 		<h1 class="text-primary">SoulsQuest (Ralfiņ Salabo)</h1>
 		<!-- paldies w3schools :) -->
 		<div id="myBtnContainer">
-		  <button class="btn btn-primary active" onclick="filterSelection('all')"> Show all</button>
+		  <button class="btn btn-primary showAll active" onclick="filterSelection('all')"> Show all</button>
 		  <button class="btn btn-primary" onclick="filterSelection('human')"> Human</button>
 		  <button class="btn btn-primary" onclick="filterSelection('furry')"> Furry</button>
 		  <button class="btn btn-primary" onclick="filterSelection('dragon')"> Dragon</button>
@@ -44,12 +44,13 @@
 
 		<!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
 		<div class="container m-2">
-		  <div onclick="changeModalContent(0)" class="filterDiv human beard skirt">Human with beard and skirt</div>
-		  <div onclick="changeModalContent(1)" class="filterDiv furry moustache jeans">Furry with moustache and jeans</div>
-		  <div onclick="changeModalContent(2)" class="filterDiv dragon no_facial_hair armor">Dragon with no facial hair and armor</div>
-		  <div onclick="changeModalContent(3)" class="filterDiv human no_facial_hair armor">Human with no facial hair and armor</div>
-		  <div onclick="changeModalContent(4)" class="filterDiv human moustache jeans">Human with moustache and jeans</div>
-		  <div onclick="changeModalContent(5)" class="filterDiv furry no_facial_hair skirt">Furry with no facial hair and skirt</div>
+		  <div onclick="changeModalContent(0)" class="filterDiv human beard skirt show">Human with beard and skirt</div>
+		  <div onclick="changeModalContent(1)" class="filterDiv furry moustache jeans show">Furry with moustache and jeans</div>
+		  <div onclick="changeModalContent(2)" class="filterDiv dragon no_facial_hair armor show">Dragon with no facial hair and armor</div>
+		  <div onclick="changeModalContent(3)" class="filterDiv human no_facial_hair armor show">Human with no facial hair and armor</div>
+		  <div onclick="changeModalContent(4)" class="filterDiv human moustache jeans show">Human with moustache and jeans</div>
+		  <div onclick="changeModalContent(5)" class="filterDiv furry no_facial_hair skirt show">Furry with no facial hair and skirt</div>
 		</div>
+		<script src="script.js"></script>
 	</body>
 </html>
