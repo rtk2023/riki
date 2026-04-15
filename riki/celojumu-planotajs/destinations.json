@@ -1,14 +1,23 @@
 
 
 [
-  {
-    "valsts": "Itālija",
-    "tips": ["pilsēta", "atpūta"],
-    "budžets": 800,
-    "ilgums": 5,
-    "aktivitātes": ["Ekskursijas", "Ēdiens", "Muzeji"],
-    "apraksts": "Ideāli piemērots kultūras un ēdiena cienītājiem."
-  },
+	  {
+	  "valsts": "Itālija",
+	  "tips": ["pilsēta", "atpūta"],
+	  "budžets": 800,
+	  "ilgums": 5,
+	  "aktivitātes": ["Ekskursijas", "Ēdiens", "Muzeji"],
+	  "apraksts": "Ideāli piemērots kultūras un vēstures cienītājiem.",
+	  "kontinents": "Eiropa",
+	  "klimats": "silts",
+	  "sezona": ["pavasaris", "vasara", "rudens"],
+	  "valūta": "EUR",
+	  "iedzīvotāji": "59 miljoni",
+	  "valodas": ["itāļu"],
+	  "laimes_līmenis": 7,
+	  "slavenākā_vieta": "Kolizejs",
+	  "attēls": "https://unsplash.com/photos/colosseum-arena-photography-VFRTXGw1VjU"
+	},
 
   {
     "valsts": "Norvēģija",
