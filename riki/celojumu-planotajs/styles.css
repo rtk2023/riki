@@ -232,6 +232,26 @@
             transform: scale(1.01);
         }
 
+     
+       #extra-filters {
+       
+            margin-top: 10px;
+            padding:  10px;
+            border-left: 3px solid #FFCC00;
+            background: #181818;
+            border-radius: 6px;
+        }
+
+          #infoPanel {
+            margin-top: 1rem;
+            padding: 1rem;
+            background:  #1c1c1c;
+               
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+     
+
 
 
 
