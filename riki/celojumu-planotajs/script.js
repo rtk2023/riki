@@ -161,18 +161,15 @@ document.addEventListener("DOMContentLoaded", () => {
 		// --
 		
         localStorage.setItem('prev-search', `
-			JŪSU VAICĀJUMS: ${budget} € • ${duration} d. • ${interests.join(", ")}
-			 
-			IETEIKUMS:
-			Galamērķis: ${selected.valsts}
-			Tips: ${selected.tips.join(", ")}
-			Budžets: €${selected.budžets}
-			Ilgums: ${selected.ilgums}
-			Aktivitātes: ${selected.aktivitātes.join(", ")}
-			Apraksts: ${selected.apraksts}
+            Budget: ${budget}€
+            Duration: ${duration} days
+            Interests: ${interests.join(", ")}
+
+            => ${selected.valsts}
+            (${selected.tips.join(", ")})
         `);
 
-        tooltip_txt.textContent = localStorage.getItem("prev-search") || "Nav rezultātu";
+        tooltip_txt.textContent =localStorage.getItem("prev-search") || "Nav rezultātu";
 
 		
     });
