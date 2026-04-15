@@ -33,7 +33,7 @@ Nejaušaieteikuma izvēle
 Datu saglabāšanu
 Dinamisku saskarnes atjaunošanu
 
---
+---
 ## Direktorija
 
 /root
@@ -49,7 +49,7 @@ Dinamisku saskarnes atjaunošanu
 ├── destinations.json
 └── README.md
 
---
+---
 ## Funkcionalitāte
 
 Lietotāja ievades apstrāde.
@@ -61,7 +61,7 @@ Attēlu attēlošana.
 Informācijas panelis par galamērķi.
 “Pārsteidz Mani” funkcija.
 
---
+---
 
 ## Iespējamie uzlabojumi
 
@@ -74,13 +74,13 @@ valodu atbalsts.
 Tumšā/gaišā režīma pārslēgšana.
 Reāllaika ieteikumi bez formas iesniegšanas (pogas nospiešanas) nepieciešamības.
 
---
+---
 
 ## Zināmie defekti
 
 NAV
 
---
+---
 
 ## Resursi
 
@@ -93,7 +93,7 @@ https://www.w3schools.com
 https://www.geeksforgeeks.org
 https://uiverse.io/elements
 
---
+---
 
 ## 🔗 GitHub repozitorijs
 https://github.com/Arthur-dev1/celojumu-planotajs/tree/main/riki/celojumu-planotajs
