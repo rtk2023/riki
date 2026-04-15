@@ -119,19 +119,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 ${random.apraksts}
             `;
 
-            infoPanel.style.display = "none";
+            infoPanel.style.display = "block";
+
+            infoContent.innerHTML = `
+                <strong>Kontinents:</strong> ${selected.kontinents}<br>
+                <strong>Klimats:</strong> ${selected.klimats}<br>
+                <strong>Valūta:</strong> ${selected.valūta}<br>
+                <strong>Iedzīvotāji:</strong> ${selected.iedzīvotāji}<br>
+				
+                <strong>Valodas:</strong> ${selected.valodas.join(", ")}<br>
+                <strong>Slavenākā vieta:</strong> ${selected.slavenākā_vieta}
+            `;
         });
 
-
-
-
-
-
-
-
-
-
-		
 
         
 
@@ -152,7 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <strong>Galamērķis:</strong> ${selected.valsts}<br>
             <strong>Tips:</strong> ${selected.tips.join(", ")}<br>
             <strong>Budžets:</strong> €${selected.budžets}<br>
-            <strong>Ilgums:</strong> ${selected.ilgums} dienas<br>
+            <strong> Ilgums:</strong> ${selected.ilgums} dienas<br>
             <strong>Aktivitātes:</strong> ${selected.aktivitātes.join(", ")}<br>
             <strong>Apraksts:</strong> ${selected.apraksts}
         `;
