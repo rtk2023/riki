@@ -11,6 +11,30 @@ un JavaScript loģiku, lai ģenerētu personalizētus ceļojumu ieteikumus.
 
 ---
 
+## Arhitektūra
+
+Lietotne sastāv no 3 loģiskām daļām:
+
+UI slānis
+Nodrošina lietotāja saskarni un rezultātu attēlošanu.
+
+Datu slānis (JSON)
+Satur galamērķu datubāzi ar paplašinātu informāciju:
+pamata parametri 
+papildu atribūti 
+informatīvie dati
+attēli (ārējo URL formātā)
+
+Loģikas slānis (JS)
+datu ielāde
+filtrēšana un vērtēšana
+Ieteikumu ģenerēšanu
+Nejaušaieteikuma izvēle
+Datu saglabāšanu
+Dinamisku saskarnes atjaunošanu
+
+--
+
 ## 🔗 GitHub repozitorijs
 https://github.com/Arthur-dev1/celojumu-planotajs/tree/main/riki/celojumu-planotajs
 ---
