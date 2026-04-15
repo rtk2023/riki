@@ -81,13 +81,25 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        
-        const filtered = destinations.filter(dest =>
-            dest.budžets <= budget &&
-            dest.ilgums <= duration &&
-            dest.tips.some(t => interests.includes(t))
-											 
-        );
+		
+        /* filtration fixes*/
+        const filtered = destinations.filter(dest => {
+
+	        const baseMatch =
+	            dest.budžets <= budget &&
+	            dest.ilgums <= duration &&
+	            dest.tips.some(t => interests.includes(t));
+	
+	
+	        const seasonMatch =!seasonEl.value ||  dest.sezona?.includes(seasonEl.value);
+	        const climateMatch =!climateEl.value || dest.klimats === climateEl.value;
+	
+	        return  baseMatch && seasonMatch && climateMatch;
+        });
+
+
+		
+		
 
         if (filtered.length === 0) {
             suggestionEl.textContent = "Diemžēl nav piemērotu galamērķu ar šiem kritērijiem";
