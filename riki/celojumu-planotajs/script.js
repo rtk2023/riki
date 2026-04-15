@@ -98,13 +98,40 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-		
-		
-
+	
         if (filtered.length === 0) {
             suggestionEl.textContent = "Diemžēl nav piemērotu galamērķu ar šiem kritērijiem";
             return;
         }
+
+
+		
+		/* surprise random-f-l*/
+		surpriseBtn.addEventListener("click", () => {
+
+            if (!destinationsLoaded) return;
+
+            const random = destinations[Math.floor(Math.random() * destinations.length)];
+
+            suggestionEl.innerHTML = `
+                <strong>SURPRISE!</strong><br><br>
+                <strong>${random.valsts}</strong><br>
+                ${random.apraksts}
+            `;
+
+            infoPanel.style.display = "none";
+        });
+
+
+
+
+
+
+
+
+
+
+		
 
         
 
