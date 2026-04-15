@@ -36,19 +36,17 @@ Dinamisku saskarnes atjaunošanu
 ---
 ## Direktorija
 
-/root
-|
-|-- index.html
-|-- styles.css
-|-- script.js
-|-- destinations.json
-|-- README.md
-|
-|-- js/
-    |-- main.js
-    |-- filter.js
-    |-- scoring.js
-    |-- ui.js
+/root\n
+/index.html\n
+/styles.css\n
+/script.js\n
+/destinations.json\n
+/README.md\n
+/js\n
+  main.js\n
+  filter.js\n
+  scoring.js\n
+  ui.js\n
 
 ---
 ## Funkcionalitāte
