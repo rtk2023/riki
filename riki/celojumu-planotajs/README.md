@@ -96,7 +96,7 @@ https://uiverse.io/elements
 
 ## 🔗 GitHub 
 https://github.com/Arthur-dev1/celojumu-planotajs/tree/main/riki/celojumu-planotajs
-
+https://arthur-dev1.github.io/celojumu-planotajs-live/
 ---
 
 ##  Autori
