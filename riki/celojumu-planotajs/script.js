@@ -16,6 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const infoPanel = document.getElementById("infoPanel");
     const infoContent = document.getElementById("infoContent");
 
+	const destinationImage = document.getElementById("destinationImage");
+
 
 	/* fetch */
     let destinationsLoaded = false;
