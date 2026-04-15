@@ -223,6 +223,18 @@
         }
 
 
+  /* = */
+
+        #single-result-card {
+            transition: 0.3s ease;
+        }
+        #single-result-card:hover {
+            transform: scale(1.01);
+        }
+
+
+
+
 
 
 
