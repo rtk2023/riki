@@ -1,57 +1,191 @@
-#userInputField {
-    white-space: pre;
-    overflow-x: auto;
-    font-family: 'Courier New', monospace;
-    width: 100%;
-    flex: 1;
-    resize: none;
+html, body {
+    height: 100%;
     margin: 0;
-    padding: 20px;
-    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
-#display {
-    display: block;
+/* galvenais konteiners */
+.editor-container {
+    display: flex;
+    flex: 1; 
+    height: calc(100% - 50px);
+}
+
+.pane {
     flex: 1;
-    padding: 20px;
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#display {
+    color: #333;
+    line-height: 1.6;
+}
+
+/* toolbar */
+.bottom-bar {
+    height: 50px;
+    background-color: #372f3a;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+}
+
+.logo {
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #ff41a0;
+}
+
+/* poogas */
+.btn {
+    background: #34495e;
+    color: white;
     border: none;
-    white-space: normal;
+    padding: 8px 15px;
+    margin-left: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background 0.3s;
+    text-decoration: none;
+    display: inline-block;
 }
-.split {
-  height: 100%;
-  width: 50%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  overflow-x: hidden;
-  padding: 0;
+
+.btn:hover {
+    background: #9307a5;
 }
-.centered {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform: none;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
+
+.btn.primary {
+    background: #ff41a0;
 }
+
+.btn.primary:hover {
+    background: #9307a5;
+}
+
+/* input output stiligs */
 .left {
-  left: 0;
-  background-color: #f1f1f1;
+    background-color: #222425; 
+    border-right: 1px solid #0d1117;
 }
+
+#userInputField {
+    color: #e6edf3;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+    font-size: 14px;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 30px;
+    box-sizing: border-box;
+    resize: none;
+    outline: none;
+}
+
 .right {
-  right: 0;
-  background-color: #ffffff;
+    background-color: #000000; 
+    overflow-y: auto;
+    padding: 30px;
 }
-.left .centered p {
-  margin: 0;
+
+/* smuks github fonts */
+#display {
+    color: #c9d1d9;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    word-wrap: break-word;
 }
-.right .centered p {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  margin: 0;
+
+/* headeri */
+#display h1, #display h2, #display h3, #display h4, #display h5, #display h6 {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+#display h1 { font-size: 2em; }
+#display h2 { font-size: 1.5em; }
+#display h3 { font-size: 1.25em; }
+
+/* APAKSEJA LINIJA zem virsraksta */
+#display h1, #display h2 {
+    border-bottom: 1px solid #21262d;
+    padding-bottom: 0.3em;
+}
+
+/* rindkopas un saraksti */
+#display p, #display blockquote, #display ul, #display ol, #display pre {
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+#display ul, #display ol {
+    padding-left: 2em;
+}
+
+/* inputa izskats */
+#display code {
+    background-color: rgba(110, 118, 129, 0.4);
+    border-radius: 6px;
+    padding: 0.2em 0.4em;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 85%;
+}
+
+#display pre {
+    background-color: #30363d;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 16px;
+    overflow: auto;
+}
+
+#display pre code {
+    background-color: transparent;
+    padding: 0;
+    font-size: 100%;
+    border: none;
+}
+
+/* citati */
+#display blockquote {
+    padding: 0 1em;
+    color: #8b949e;
+    border-left: 0.25em solid #30363d;
+}
+
+#display hr {
+    height: 0.25em;
+    padding: 0;
+    margin: 24px 0;
+    background-color: #30363d;
+    border: 0;
+}
+
+/* saites */
+#display a {
+    color: #58a6ff;
+    text-decoration: none;
+}
+
+#display a:hover {
+    text-decoration: underline;
+}
+
+/* attēli */
+#display img {
+    max-width: 100%;
+    box-sizing: content-box;
+    background-color: #0d1117;
 }
