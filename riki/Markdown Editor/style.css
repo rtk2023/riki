@@ -218,18 +218,18 @@ html, body {
 
 @media (max-width: 640px) {
     html, body {
-        overflow: auto;
+        overflow: hidden;
     }
 
     .editor-container {
         flex-direction: column;
-        height: auto;
-        min-height: calc(100vb - 50px);
+        height: calc(100vb - 50px);
     }
 
     .pane {
         flex: none;
-        height: 50vh;
+        height: 50%;
+        overflow-y: auto;
     }
 
     #userInputField {
