@@ -149,6 +149,6 @@ Pārvērš tekstu uz Morsu un atpakaļ. Atstarpes atdala rakstzīmes izvadē.
 
 ## Autori
 
-2024: RTK audzēknis
-2026: RTK audzēknis
+2026: Daniels Ričards Šervinckis P23-2
+2026: Patriks Žirba P23-2
 
