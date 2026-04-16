@@ -64,7 +64,7 @@ Dinamisku saskarnes atjaunošanu
 > Iepriekšējā vaicājumaa saglabāšana.
 > Attēlu attēlošana.
 > Informācijas panelis par galamērķi.
-> “Pārsteidz Mani” funkcija.
+> “Pārsteidz Mani” - nejauša ceļojuma ieteikuma izvades funkcija.
 ```
 ---
 
