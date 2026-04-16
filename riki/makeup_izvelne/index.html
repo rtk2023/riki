@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tavs skaistuma stils</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body{
+  background:#fffaf0;
+  font-family:Arial;
+}
+
+h1{
+  text-align:center;
+  color:#900c3f;
+}
+
+h2{
+  text-align:center;
+  font-size:16px;
+  color:#555;
+}
+
+.section-card{
+  background:#fff;
+  padding:15px;
+  border-radius:14px;
+  border:1px solid rgba(144,12,63,0.08);
+  box-shadow:0 6px 18px rgba(0,0,0,0.06);
+  height:100%;
+}
+
+.section-title{
+  font-size:18px;
+  font-weight:600;
+  margin-bottom:12px;
+  color:#900c3f;
+  text-align:center;
+}
+
+.btn-group-wrap{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+}
+
+.btn-choice{
+  min-width:120px;
+  padding:8px 10px;
+  border-radius:12px;
+  background:#ffe6e6;
+  font-size:14px;
+  border:1px solid #f3c1c1;
+  transition:0.2s;
+  text-align:center;
+}
+
+.btn-choice:hover{
+  transform:scale(1.04);
+}
+
+.btn-choice.selected{
+  background:#ffccd5;
+  border:2px solid #900c3f;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container py-4">
+
+<h1>Tavs skaistuma stils</h1>
+<h2>Izvēlies parametrus un saņem personalizētu ieteikumu</h2>
+
+<div class="mb-3">
+<div class="d-flex justify-content-between">
+<small>Izvēlēts</small>
+<small id="progressText">0/6</small>
+</div>
+<div class="progress">
+<div class="progress-bar bg-success" id="progressBar" style="width:0%"></div>
+</div>
+</div>
+
+<div class="row g-4">
+
+<div class="col-12 col-md-6">
+<div class="section-card">
+<div class="section-title">Ādas tips</div>
+<div class="btn-group-wrap">
+<button class="btn btn-choice" data-cat="ĀdasTips" data-val="Sausa">Sausa</button>
+<button class="btn btn-choice" data-cat="ĀdasTips" data-val="Taukaina">Taukaina</button>
+<button class="btn btn-choice" data-cat="ĀdasTips" data-val="Kombinēta">Kombinēta</button>
+<button class="btn btn-choice" data-cat="ĀdasTips" data-val="Normāla">Normāla</button>
+</div>
+</div>
+</div>
+
+<div class="col-12 col-md-6">
+<div class="section-card">
+<div class="section-title">Ādas tonis</div>
+<div class="btn-group-wrap">
+<button class="btn btn-choice" data-cat="ĀdasTonis" data-val="Gaišs">Gaišs</button>
+<button class="btn btn-choice" data-cat="ĀdasTonis" data-val="Normāls">Normāls</button>
+<button class="btn btn-choice" data-cat="ĀdasTonis" data-val="Tumšs">Tumšs</button>
+</div>
+</div>
+</div>
+
+<div class="col-12 col-md-6">
+<div class="section-card">
+<div class="section-title">Acu krāsa</div>
+<div class="btn-group-wrap">
+<button class="btn btn-choice" data-cat="AcuKrasa" data-val="Zilas">Zilas</button>
+<button class="btn btn-choice" data-cat="AcuKrasa" data-val="Zaļas">Zaļas</button>
+<button class="btn btn-choice" data-cat="AcuKrasa" data-val="Brūnas">Brūnas</button>
+<button class="btn btn-choice" data-cat="AcuKrasa" data-val="Pelēkas">Pelēkas</button>
+</div>
+</div>
+</div>
+
+<div class="col-12 col-md-6">
+<div class="section-card">
+<div class="section-title">Matu krāsa</div>
+<div class="btn-group-wrap">
+<button class="btn btn-choice" data-cat="MatuKrasa" data-val="Blondi">Blondi</button>
+<button class="btn btn-choice" data-cat="MatuKrasa" data-val="Melni">Melni</button>
+<button class="btn btn-choice" data-cat="MatuKrasa" data-val="Brūni">Brūni</button>
+<button class="btn btn-choice" data-cat="MatuKrasa" data-val="Gaiši brūni">Gaiši brūni</button>
+<button class="btn btn-choice" data-cat="MatuKrasa" data-val="Krāsaini">Krāsaini</button>
+</div>
+</div>
+</div>
+
+<div class="col-12 col-md-6">
+<div class="section-card">
+<div class="section-title">Sejas forma</div>
+<div class="btn-group-wrap">
+<button class="btn btn-choice" data-cat="SejasForma" data-val="Apaļa">Apaļa</button>
+<button class="btn btn-choice" data-cat="SejasForma" data-val="Ovāla">Ovāla</button>
+<button class="btn btn-choice" data-cat="SejasForma" data-val="Kvadrātveida">Kvadrātveida</button>
+<button class="btn btn-choice" data-cat="SejasForma" data-val="Dimanta">Dimanta</button>
+<button class="btn btn-choice" data-cat="SejasForma" data-val="Sirds">Sirds</button>
+</div>
+</div>
+</div>
+
+<div class="col-12 col-md-6">
+<div class="section-card">
+<div class="section-title">Acu forma</div>
+<div class="btn-group-wrap">
+<button class="btn btn-choice" data-cat="AcuForma" data-val="Mandeļveida">Mandeļveida</button>
+<button class="btn btn-choice" data-cat="AcuForma" data-val="Apaļas">Apaļas</button>
+<button class="btn btn-choice" data-cat="AcuForma" data-val="Leņķi uz leju">Leņķi uz leju</button>
+<button class="btn btn-choice" data-cat="AcuForma" data-val="Leņķi uz augšu">Leņķi uz augšu</button>
+<button class="btn btn-choice" data-cat="AcuForma" data-val="Monolīds">Monolīds</button>
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="text-center mt-4">
+<button class="btn btn-success btn-lg" onclick="generate()">Ģenerēt</button>
+<button class="btn btn-warning btn-lg" onclick="randomFill()">Nejauša atlase</button>
+<button class="btn btn-danger btn-lg" onclick="clearAll()">Notīrīt</button>
+</div>
+
+</div>
+
+<div class="modal fade" id="modal">
+<div class="modal-dialog modal-dialog-centered modal-lg">
+<div class="modal-content">
+
+<div class="modal-header">
+<div class="modal-title">Jūsu rezultāts</div>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+
+<div class="modal-body" id="result"></div>
+
+</div>
+</div>
+</div>
+
+<script>
+const choices = {};
+
+document.querySelectorAll(".btn-choice").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    const cat = btn.dataset.cat;
+    const val = btn.dataset.val;
+
+    choices[cat]=val;
+
+    document.querySelectorAll(`[data-cat="${cat}"]`)
+      .forEach(b=>b.classList.remove("selected"));
+
+    btn.classList.add("selected");
+
+    update();
+  });
+});
+
+function update(){
+  const done = Object.keys(choices).length;
+  document.getElementById("progressText").innerText = done + "/6";
+  document.getElementById("progressBar").style.width = (done/6*100) + "%";
+}
+
+function getResult(){
+
+  const s = choices["ĀdasTips"];
+  const t = choices["ĀdasTonis"];
+  const e = choices["AcuKrasa"];
+  const h = choices["MatuKrasa"];
+  const f = choices["SejasForma"];
+
+  let style = "dabīgs un elegants stils";
+
+  if(s==="Taukaina"&&e==="Brūnas"){
+    style="vakara glam stils ar matētu bāzi un izteiktu acu akcentu";
+  }
+  else if(s==="Sausa"&&e==="Zilas"){
+    style="maigs, mitrinošs dienas stils ar vieglu mirdzumu";
+  }
+  else if(f==="Apaļa"){
+    style="konturēts stils, kas vizuāli izceļ un pagarina seju";
+  }
+  else if(e==="Zaļas"){
+    style="silto toņu harmonija ar dabisku acu akcentu";
+  }
+
+  let ieteikumi = "";
+  let kapec = "";
+
+  if(s==="Sausa"){
+    ieteikumi += "• Izvēlies mitrinošu bāzi un krēmveida tekstūras.<br>";
+    kapec += "Ādas tips (Sausa) palīdz izvēlēties produktus, kas piešķir ādai komfortu un dabisku spīdumu.<br>";
+  }
+
+  if(s==="Taukaina"){
+    ieteikumi += "• Lieto matējošus produktus un vieglu pūderi T zonai.<br>";
+    kapec += "Ādas tips (Taukaina) nosaka, ka nepieciešams kontrolēt spīdumu un noturību.<br>";
+  }
+
+  if(s==="Kombinēta"){
+    ieteikumi += "• Apvieno vieglu tonālo ar pūderi tikai noteiktās zonās.<br>";
+    kapec += "Kombinēta āda prasa līdzsvaru starp mitrināšanu un matēšanu.<br>";
+  }
+
+  if(s==="Normāla"){
+    ieteikumi += "• Izvēlies vieglu un dabisku pārklājumu.<br>";
+    kapec += "Normāla āda ļauj brīvi eksperimentēt ar dažādiem produktiem.<br>";
+  }
+
+  if(t==="Gaišs"){
+    ieteikumi += "• Persiku un maigi rozā toņi sejai.<br>";
+    kapec += "Gaišs ādas tonis izskatās harmoniski ar maigiem, siltajiem toņiem.<br>";
+  }
+
+  if(t==="Normāls"){
+    ieteikumi += "• Nude, zeltaini un neitrāli toņi.<br>";
+    kapec += "Normāls tonis ļauj izmantot universālu krāsu paleti.<br>";
+  }
+
+  if(t==="Tumšs"){
+    ieteikumi += "• Bronzas, šokolādes un siltie toņi.<br>";
+    kapec += "Tumšā āda izceļas ar dziļiem un bagātiem toņiem.<br>";
+  }
+
+  if(e==="Zilas"){
+    ieteikumi += "• Brūni un bronzas acu ēnu toņi.<br>";
+    kapec += "Zilas acis kļūst izteiksmīgākas ar siltajiem kontrastiem.<br>";
+  }
+
+  if(e==="Zaļas"){
+    ieteikumi += "• Violeto un zemes toņu kombinācijas.<br>";
+    kapec += "Zaļas acis izceļas ar kontrastējošiem, siltajiem un violetajiem toņiem.<br>";
+  }
+
+  if(e==="Brūnas"){
+    ieteikumi += "• Zelta un šokolādes toņi.<br>";
+    kapec += "Brūnas acis izskatās dziļākas ar zeltainiem akcentiem.<br>";
+  }
+
+  if(e==="Pelēkas"){
+    ieteikumi += "• Sudraba un aukstie toņi.<br>";
+    kapec += "Pelēkas acis izceļas ar vēsiem, elegantiem toņiem.<br>";
+  }
+
+  if(f==="Apaļa"){
+    ieteikumi += "• Konturē vaigu zonas, lai izceltu sejas formu.<br>";
+  }
+
+  if(f==="Ovāla"){
+    ieteikumi += "• Viegls sārtums un minimāla korekcija.<br>";
+  }
+
+  if(f==="Kvadrātveida"){
+    ieteikumi += "• Mīkstini žokļa līniju ar konturēšanu.<br>";
+  }
+
+  if(f==="Dimanta"){
+    ieteikumi += "• Izcel pieri un zodu ar izgaismošanu.<br>";
+  }
+
+  if(f==="Sirds"){
+    ieteikumi += "• Akcentē vaigus un acis līdzsvaram.<br>";
+  }
+
+  return `
+  <div class="alert alert-success">
+    <b>Jūsu stils:</b> ${style}
+  </div>
+
+  <div class="mt-3">
+    <b>Ieteikumi:</b><br><br>
+    ${ieteikumi}
+  </div>
+
+  <div class="mt-3 p-3 bg-light rounded">
+    <b>Kāpēc tas der jums:</b><br><br>
+    ${kapec}
+    ✨ Šī kombinācija palīdz izcelt jūsu dabisko skaistumu un veido harmonisku kopskatu. ✨ 
+  </div>
+  `;
+}
+
+function generate(){
+  const req=["ĀdasTips","ĀdasTonis","AcuKrasa","MatuKrasa","SejasForma","AcuForma"];
+  if(req.some(c=>!choices[c])){
+    alert("Aizpildiet visus laukus!");
+    return;
+  }
+
+  document.getElementById("result").innerHTML=getResult();
+  new bootstrap.Modal(document.getElementById("modal")).show();
+}
+
+function clearAll(){
+  for(let k in choices) delete choices[k];
+  document.querySelectorAll(".btn-choice").forEach(b=>b.classList.remove("selected"));
+  update();
+}
+
+function randomFill(){
+  const m={
+    ĀdasTips:["Sausa","Taukaina","Kombinēta","Normāla"],
+    ĀdasTonis:["Gaišs","Normāls","Tumšs"],
+    AcuKrasa:["Zilas","Zaļas","Brūnas","Pelēkas"],
+    MatuKrasa:["Blondi","Melni","Brūni","Gaiši brūni","Krāsaini"],
+    SejasForma:["Apaļa","Ovāla","Kvadrātveida","Dimanta","Sirds"],
+    AcuForma:["Mandeļveida","Apaļas","Leņķi uz leju","Leņķi uz augšu","Monolīds"]
+  };
+
+  for(let c in m){
+    choices[c]=m[c][Math.floor(Math.random()*m[c].length)];
+  }
+
+  document.querySelectorAll(".btn-choice").forEach(btn=>{
+    const cat=btn.dataset.cat;
+    btn.classList.toggle("selected",choices[cat]===btn.dataset.val);
+  });
+
+  update();
+}
+
+update();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
