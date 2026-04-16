@@ -2,15 +2,15 @@
 <!DOCTYPE html>
 <html lang="lv">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="styles.css">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <title>Ceļojumu Plānotājs / Uzd.6.</title>
 </head>
+
 <body>
   
     <header>
@@ -18,24 +18,23 @@
         <p>Ievadi savas preferences un mēs ieteiksim piemērotu ceļojuma galamērķi</p>
     </header>
 
-    
     <main>
         
         <section>
-            <h2>Parametri: <h2>
-            <form id="travel-form">
+            <h2>Parametri:</h2>
 
+            <form id="travel-form">
                 <label for="budget">Budžets (€):</label><br>
                 <input type="number" id="budget" name="budget" min="1" max="10000" required placeholder="5000.00 €">
 
                 <label for="duration">Ceļojuma ilgums (dienas):</label><br>
-                <input type="number"   id="duration" name="duration" min="1" max="365" required placeholder="7"><br><br>
-
+                <input type="number" id="duration" name="duration" min="1" max="365" required placeholder="7"><br><br>
 
                 <label>Jūsu intereses</label><br>
 
                 <input type="checkbox" id="nature" name="interests" value="daba">
                 <label for="nature">Daba</label><br>
+
                 <input type="checkbox" id="city" name="interests" value="pilsēta">
                 <label for="city">Pilsēta</label><br>
                 
@@ -45,37 +44,29 @@
                 <input type="checkbox" id="adventure" name="interests" value="piedzīvojumi">
                 <label for="adventure">Piedzīvojumi</label><br><br>
 
-                
                 <div id="extra-filters">
-
                     <label>Sezona:</label><br>
                     <select id="season">
                         <option value="">-- nav izvēlēts --</option>
                         <option value="pavasaris">Pavasaris</option>
                         <option value="vasara">Vasara</option>
-
                         <option value="rudens">Rudens</option>
                         <option value="ziema">Ziema</option>
-
-
                     </select>
 
-                    <br> <br>
+                    <br><br>
 
                     <label>Klimats:</label><br>
                     <select id="climate">
                         <option value="">-- nav izvēlēts --</option>
                         <option value="silts">Silts</option>
                         <option value="auksts">Auksts</option>
-
                         <option value="tropisks">Tropisks</option>
                         <option value="mērens">Mērens</option>
                     </select>
 
                     <br><br>
-
                 </div>
-
 
                 <button type="submit" class="btn">
                     <div class="icon"><i class="fa fa-plane"></i></div>
@@ -86,20 +77,13 @@
                     <div class="icon"><i class="fa fa-random"></i></div>
                     <div class="text">Pārsteidz mani</div>
                 </button>
-
             </form>
-            
         </section>
-                
-                
-
-        // ---      m.c.b.
 
         <section id="results">
             <h2>Ceļojuma ieteikums:</h2>
             
             <div id="single-result-card">
-                
                 <img id="destinationImage" src="" alt="Ceļojuma attēls" style="display:none; width:100%; border-radius:10px; margin-bottom:10px;">
                 <p id="suggestion">
                     Šeit tiks parādīts ieteiktais galamērķis pēc datu ievades.
@@ -107,54 +91,43 @@
             </div>
         </section>
 
-
-
         <section id="infoPanel" style="display:none;">
-
-            <h3>Galamērķa Informācija:</h3>
-
+            <h3>Galamērķa informācija:</h3>
             <p id="infoContent">---</p>
         </section>
 
-
-    // -- res. 
-            
-    <section style="display:flex; justify-content:center; align-items:center;">
-
+        <section style="display:flex; justify-content:center; align-items:center;">
             <i style="margin-right:10px;" class="fa-solid fa-compass icon"></i>
 
             <div class="tooltip">
-
                 <p style="text-decoration: underline; cursor: pointer;" class="previous-search">
-                    <i>Mans iepriekšejais meklēšanas rezultāts</i>
+                    <i>Mans iepriekšējais meklēšanas rezultāts</i>
                 </p>
                 <span class="tooltiptext">Nav rezultātu</span>
-
             </div>
-
-    </section>
-
+        </section>
 
     </main>
-                
 
     <footer>
         <p>Autori: P23-2. (9. un 10.)</p>
         <p>&copy; 2026</p>
 
-        <br>
-        <br>
+        <br><br>
 
-        <a href="https://rtk2023.github.io/riki/" style="text-decoration:none"><p>Rīku saraksts</p></a>
-        <a href="https://github.com/rtk2023/riki" style="text-decoration:none"><p>GitHub</p></a>
+        <a href="https://rtk2023.github.io/riki/" style="text-decoration:none">
+            <p>Rīku saraksts</p>
+        </a>
+
+        <a href="https://github.com/rtk2023/riki" style="text-decoration:none">
+            <p>GitHub</p>
+        </a>
     </footer>
 
     <script src="script.js"></script>
     
 </body>
 </html>
-
-
 
 
 
