@@ -38,7 +38,7 @@ async function fetchJsonWithRetry(url, endpointName, { retries = 2 } = {}) {
 			return toArrayPayload(payload, endpointName);
 		}
 
-		console.error(`${endpointName} failed after retries (429).`);
+		console.error(`${endpointName} failed.`);
 		return [];
 	})();
 
@@ -86,9 +86,10 @@ async function showPointsTable(driversOverride) {
 
 	const btnCurrent = document.getElementById("btnCurrent");
 	btnCurrent.setAttribute("class", "btn btn-secondary");
+	btnCurrent.classList.remove("is-selected");
 
 	const btnOriginal = document.getElementById("btnOriginal");
-	btnOriginal.setAttribute("class", "btn btn-primary")
+	btnOriginal.setAttribute("class", "btn btn-primary is-selected");
 
 	const driverData = driversOverride ?? await getDriversData();
 	const tableBody = document.getElementById("pointsTableBody");
@@ -286,10 +287,10 @@ async function setup() {
 
 async function resetRaces(){
 	const btnCurrent = document.getElementById("btnCurrent");
-	btnCurrent.setAttribute("class", "btn btn-primary");
+	btnCurrent.setAttribute("class", "btn btn-primary is-selected");
 
 	const btnOriginal = document.getElementById("btnOriginal");
-	btnOriginal.setAttribute("class", "btn btn-secondary")
+	btnOriginal.setAttribute("class", "btn btn-secondary");
 
 	const driverData = await getDriversData();
 	const tableBody = document.getElementById("pointsTableBody");

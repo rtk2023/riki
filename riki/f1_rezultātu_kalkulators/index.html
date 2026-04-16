@@ -7,10 +7,26 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="style.css">
     <title>F1 Drivers Championship Calculator</title>
 </head>
 
 <body onload="setup()">
+    <!-- Header -->
+    <header class="py-3 bg-white shadow-sm mb-3">
+        <div class="container d-flex align-items-center justify-content-between">
+            <a href="#" class="d-flex align-items-center text-decoration-none text-dark">
+                <span style="font-weight:600;font-size:18px;">F1 Rezultātu Kalkulators</span>
+            </a>
+            <nav class="d-none d-md-flex gap-3">
+                <a href="#" class="text-decoration-none text-dark">Sākums</a>
+                <a href="#calculator" class="text-decoration-none text-dark">Kalkulators</a>
+                <a href="https://rtk2023.github.io/riki/" class="text-decoration-none text-dark">Rīki</a>
+                <a href="https://github.com/rtk2023/riki" target="_blank" rel="noopener"
+                    class="text-decoration-none">GitHub</a>
+            </nav>
+        </div>
+    </header>
     <!--SACENSĪBU TABULA-->
     <div class="container">
         <table id="racesTable" class="table table-striped text-center">
