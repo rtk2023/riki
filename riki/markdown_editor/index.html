@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Simple live Markdown Editor">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="editor-container">
+        <div class="pane left">
+            <textarea id="userInputField" placeholder="Type your markdown here..."></textarea>
+        </div>
+        <div class="pane right">
+            <div id="display"></div>
+        </div>
+    </main>
+
+    <footer class="bottom-bar">
+        <div class="logo">MARKDOWN EDITOR</div>
+        <div class="tools">
+            <a href="https://rtk2023.github.io/riki/" target="_blank">Rīku saraksts</a>
+            <a href="https://github.com/rtk2023/riki" target="_blank">Rīku github</a>
+        </div>
+        <div class="actions">
+            <input type="file" id="fileInput" accept=".txt,.md" hidden>
+            <label for="fileInput" class="btn">Import</label>
+            <button class="btn primary" onclick="downloadFile()">Export as .md</button>
+        </div>
+    </footer>
+</body>
+</html>
