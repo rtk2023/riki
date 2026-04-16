@@ -36,6 +36,7 @@ Dinamisku saskarnes atjaunošanu
 ---
 ## Direktorija
 
+***
 /root
 ├── index.html
 ├── styles.css
@@ -47,6 +48,7 @@ Dinamisku saskarnes atjaunošanu
     ├── filter.js
     ├── scoring.js
     └── ui.js
+***
 
 ---
 ## Funkcionalitāte
