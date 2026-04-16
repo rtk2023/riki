@@ -47,11 +47,7 @@ Dinamisku saskarnes atjaunošanu
 ├── script.js
 ├── destinations.json
 ├── README.md
-└── js
-    ├── main.js
-    ├── filter.js
-    ├── scoring.js
-    └── ui.js
+
 ```
 
 ---
