@@ -103,7 +103,7 @@ Dinamisku saskarnes atjaunošanu
 
 ## 🔗 GitHub 
 ```
-> https://github.com/Arthur-dev1/celojumu-planotajs/tree/main/riki/celojumu-planotajs
+> https://github.com/Arthur-dev1/celojumu-planotajs/tree/main/riki/celojumu_planotajs
 > https://arthur-dev1.github.io/celojumu-planotajs-live/
 ```
 ---
