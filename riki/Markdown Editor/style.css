@@ -12,12 +12,15 @@ html, body {
     display: flex;
     flex: 1; 
     height: calc(100% - 50px);
+    flex-direction: row;
 }
 
 .pane {
     flex: 1;
     display: flex;
     flex-direction: column;
+    min-width: 0;
+    min-height: 0;
 }
 
 
@@ -36,6 +39,9 @@ html, body {
     justify-content: space-between;
     padding: 0 20px;
     box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+    flex-wrap: wrap;
+    gap: 8px;
+    box-sizing: border-box;
 }
 
 .logo {
@@ -188,4 +194,72 @@ html, body {
     max-width: 100%;
     box-sizing: content-box;
     background-color: #0d1117;
+}
+
+.tools a {
+    color: #dbc8d1;
+    text-decoration: none;
+    margin-right: 25px;
+}
+
+@media (max-width: 900px) {
+    #userInputField {
+        padding: 16px;
+    }
+
+    .right {
+        padding: 16px;
+    }
+
+    .tools a {
+        margin-right: 12px;
+    }
+}
+
+@media (max-width: 640px) {
+    html, body {
+        overflow: auto;
+    }
+
+    .editor-container {
+        flex-direction: column;
+        height: auto;
+        min-height: calc(100vb - 50px);
+    }
+
+    .pane {
+        flex: none;
+        height: 50vh;
+    }
+
+    #userInputField {
+        height: 100%;
+        padding: 12px;
+        font-size: 13px;
+    }
+
+    .right {
+        padding: 12px;
+        overflow-y: auto;
+    }
+
+    .left {
+        border-right: none;
+        border-bottom: 2px solid #0d1117;
+    }
+
+    .bottom-bar {
+        padding: 8px 12px;
+        min-height: auto;
+    }
+
+    .tools {
+        display: none;
+    }
+
+    .btn {
+        padding: 6px 10px;
+        font-size: 12px;
+        margin-left: 6px;
+    }
 }
