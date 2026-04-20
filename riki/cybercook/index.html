@@ -12,31 +12,31 @@
     </header>
     <main>
         <section class="form-section">
-            <label for="cipherType">Choose a cipher:</label>
+            <label for="cipherType">Izvēlēties šifru:</label>
             <select id="cipherType">
-                <option value="atbash">Atbash Cipher</option>
-                <option value="caesar">Caesar Cipher</option>
-                <option value="vigenere">Vigenère Cipher</option>
+                <option value="atbash">Atbash šifrs</option>
+                <option value="caesar">Caesar šifrs</option>
+                <option value="vigenere">Vigenère šifrs</option>
                 <option value="base64">Base64</option>
-                <option value="morse">Morse Code</option>
-                <option value="html">HTML Encoder/Decoder</option>
+                <option value="morse">Morse kods</option>
+                <option value="html">HTML kodētājs/atkodētājs</option>
             </select>
 
-            <label for="inputText">Input text:</label>
-            <textarea id="inputText" rows="5" placeholder="Enter your text here..."></textarea>
+            <label for="inputText">Ievadiet tekstu:</label>
+            <textarea id="inputText" rows="5" placeholder="Ievadiet tekstu..."></textarea>
 
             <label for="key" id="keyLabel" style="display: none;">Key/Shift (if needed):</label>
-            <input type="text" id="key" placeholder="Optional key or shift value" style="display: none;">
+            <input type="text" id="key" placeholder="Neobligāts atslēga vai nobīde" style="display: none;">
 
             <div class="button-group">
-                <button id="encodeButton">Encode</button>
-                <button id="decodeButton">Decode</button>
+                <button id="encodeButton">Kodēt</button>
+                <button id="decodeButton">Atkodēt</button>
             </div>
         </section>
         <section class="result-section">
-            <h2>Result:</h2>
+            <h2>Rezultāts:</h2>
             <p id="result"></p>
-            <button class="button-copy" id="copyButton" style="display: none;">Copy to Clipboard</button>
+            <button class="button-copy" id="copyButton" style="display: none;">Kopēt</button>
         </section>
     </main>
     <script src="AtbashCipher.js"></script>
