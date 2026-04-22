@@ -1,59 +1,30 @@
-function toArrayPayload(payload, endpointName) {
-	if (Array.isArray(payload)) return payload;
-	console.error(`${endpointName} returned non-array payload:`, payload);
-	return [];
-}
+async function fetchJson(url, endpointName) {
+	try {
+		const response = await fetch(url);
 
-function sleep(ms) {
-	return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-const inFlightJsonByUrl = new Map();
-
-async function fetchJsonWithRetry(url, endpointName, { retries = 2 } = {}) {
-	if (inFlightJsonByUrl.has(url)) return inFlightJsonByUrl.get(url);
-
-	const p = (async () => {
-		for (let attempt = 0; attempt <= retries; attempt++) {
-			const response = await fetch(url);
-
-			if (response.status === 429) {
-				const backoffMs = 400 * Math.pow(2, attempt);
-				await sleep(backoffMs);
-				continue;
+		if (!response.ok) {
+			let body = null;
+			try {
+				body = await response.json();
+			} catch {
+				// ignore
 			}
-
-			if (!response.ok) {
-				let body = null;
-				try {
-					body = await response.json();
-				} catch {
-					// ignore
-				}
-				console.error(`${endpointName} HTTP error ${response.status}`, body);
-				return [];
-			}
-
-			const payload = await response.json();
-			return toArrayPayload(payload, endpointName);
+			console.error(`${endpointName} HTTP error ${response.status}`, body);
+			return [];
 		}
 
-		console.error(`${endpointName} failed.`);
+		const payload = await response.json();
+		return Array.isArray(payload) ? payload : [];
+	} catch (err) {
+		console.error(`${endpointName} failed.`, err);
 		return [];
-	})();
-
-	inFlightJsonByUrl.set(url, p);
-	try {
-		return await p;
-	} finally {
-		inFlightJsonByUrl.delete(url);
 	}
 }
 
 async function getPointsData() {
 	const url = "https://api.openf1.org/v1/championship_drivers?meeting_key=1281";
 
-	const data = await fetchJsonWithRetry(url, "championship_drivers");
+	const data = await fetchJson(url, "championship_drivers");
 
 	const currentPoints = data
 		.map(driver => ({ driver_number: driver.driver_number, points: driver.points_current }))
@@ -65,7 +36,7 @@ async function getPointsData() {
 async function getDriversData() {
 	const points = await getPointsData();
 	const url = "https://api.openf1.org/v1/drivers?session_key=latest";
-	const data = await fetchJsonWithRetry(url, "drivers");
+	const data = await fetchJson(url, "drivers");
 
 	const driversData = data
 		.map(driver => ({ headshot: driver.headshot_url, acronym: driver.name_acronym, driver_number: driver.driver_number, name: driver.full_name, team: driver.team_name }))
@@ -151,7 +122,7 @@ async function showPointsTable(driversOverride) {
 async function getRaceData() {
 	const url = "https://api.openf1.org/v1/meetings?year=2026&date_start>=2026-03-06";
 
-	const data = await fetchJsonWithRetry(url, "meetings");
+	const data = await fetchJson(url, "meetings");
 
 	const races = data
 		.map(race => ({
@@ -174,6 +145,7 @@ async function getRaceData() {
 
 const WINNERS_STORAGE_KEY = "f1_upcoming_winner_by_meeting_key";
 
+// READ SAVED WINNERS - nolasa un apstrādā informāciju par saglabātajiem uzvarētājiem
 function readSavedWinners() {
 	try {
 		const raw = localStorage.getItem(WINNERS_STORAGE_KEY);
@@ -185,17 +157,20 @@ function readSavedWinners() {
 	}
 }
 
+// SAVE WINNER - veic uzvarētāja saglabāšanu vietējā krātuvē, lai ievadītie rezultāti nepazustu atsvaidzināšanas brīdī
 function saveWinner(meetingKey, winner) {
 	const all = readSavedWinners();
 	all[String(meetingKey)] = winner;
 	localStorage.setItem(WINNERS_STORAGE_KEY, JSON.stringify(all));
 }
 
+// GET SAVED WINNER - nolasa ievadīto uzvarētāju attiecīgajām sacensībām
 function getSavedWinner(meetingKey) {
 	const all = readSavedWinners();
 	return all[String(meetingKey)] ?? null;
 }
 
+// IS UPCOMING RACE - pārbauda, vai sacensības nav norisinājušās, kā gadījumā lietotājs varēs ievadīt rezultātu
 function isUpcomingRace(race) {
 	if (!race?.start_date) return false;
 	const start = new Date(race.start_date);
@@ -203,6 +178,7 @@ function isUpcomingRace(race) {
 	return start.getTime() > Date.now();
 }
 
+// SHOW RACE TABLE - izveido tabulu, balstoties uz informāciju no getRaceData funkcijas, kas iegūst sacensību datus no API
 async function showRaceTable(racesOverride) {
 
 	const raceData = racesOverride ?? await getRaceData();
@@ -225,8 +201,8 @@ async function showRaceTable(racesOverride) {
 		raceWinnerItem.dataset.raceWinnerForKey = String(race.key);
 		const editButtonItem = document.createElement("td");
 		editButtonItem.innerHTML = upcoming
-			? `<button type="button" class="btn btn-primary open-modal" data-race-key="${race.key}" data-race-name="${race.full_name ?? ""}">Edit</button>`
-			: `<button type="button" class="btn btn-secondary" disabled title="Race already happened">Edit</button>`;
+			? `<button type="button" class="btn btn-primary open-modal" data-race-key="${race.key}" data-race-name="${race.full_name ?? ""}">Rediģet</button>`
+			: `<button type="button" class="btn btn-secondary" disabled title="Sacensības noslēgušās">Rediģēt</button>`;
 		row.appendChild(raceFlagItem);
 		row.appendChild(raceCountryItem);
 		row.appendChild(raceNameItem);
@@ -237,6 +213,7 @@ async function showRaceTable(racesOverride) {
 
 }
 
+// SETUP - veic lapas iestatīšanu, iegūstot datus no API.
 async function setup() {
 	const driversPromise = getDriversData();
 	const racesPromise = getRaceData();
@@ -251,10 +228,6 @@ async function setup() {
 		if (!btn) return;
 
 		const modal = window.Modal;
-		if (!modal) {
-			console.error("Modal is not initialized. Did modal.js load?");
-			return;
-		}
 
 		const raceName = btn.dataset.raceName || "Race";
 		const raceKey = btn.dataset.raceKey;
@@ -285,6 +258,7 @@ async function setup() {
 	});
 }
 
+// RESET RACES - veic lietotāja definēto rezultātu atiestatīšanu
 async function resetRaces(){
 	const btnCurrent = document.getElementById("btnCurrent");
 	btnCurrent.setAttribute("class", "btn btn-primary is-selected");

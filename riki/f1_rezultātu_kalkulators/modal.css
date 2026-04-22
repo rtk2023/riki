@@ -1,3 +1,4 @@
+/*PIEZĪME - MODĀLAIS LOGS TIKA ŅEMTS NO https://sjns19.medium.com/making-a-simple-re-usable-modal-dialog-system-using-vanilla-javascript-4eae68b3557c*/
 .modal {
     position: fixed;
     display: flex;

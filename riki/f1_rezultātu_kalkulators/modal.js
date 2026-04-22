@@ -1,3 +1,5 @@
+// PIEZĪME - MODĀLAIS LOGS TIKA ŅEMTS NO https://sjns19.medium.com/making-a-simple-re-usable-modal-dialog-system-using-vanilla-javascript-4eae68b3557c
+
 let documentBody = document.body;
 let Modal = undefined;
 
@@ -27,14 +29,14 @@ function ModalDialog() {
   this.show = function (raceName, drivers, options = {}) {
     let instance = this;
 
-    instance.modalHeader.innerHTML = `<h3>Edit race ${raceName}</h3>`;
+    instance.modalHeader.innerHTML = `<h3>Rediģēt sacensības: ${raceName}</h3>`;
     instance.modalBody.innerHTML = `
-      <label for="driverDrop">Winner: </label>
+      <label for="driverDrop">Uzvarētājs: </label>
       <select id="driverDrop" name="driverDrop"></select>
     `;
 
-    instance.confirmButton.innerHTML = "Okay";
-    instance.cancelButton.innerHTML = "Close";
+    instance.confirmButton.innerHTML = "Apstiprināt";
+    instance.cancelButton.innerHTML = "Aizvērt";
 
     const selectElement = instance.modalBody.querySelector("#driverDrop");
     selectElement.innerHTML = "";
