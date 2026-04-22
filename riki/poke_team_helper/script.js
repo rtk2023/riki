@@ -84,8 +84,10 @@ function displayResult(types, weaknesses, partners, name, inputImage) {
                 </div>
                 <div class="box">
                     <h1>${name}</h1>
-                    <p>Tipi:   ${renderTypes(types)}</p>
-                    <p>Vājības:  ${renderTypes(weaknesses)}</p>
+                    <div class="info">
+                        <p><span>Tipi:</span> ${renderTypes(types)}</p>
+                        <p><span>Vājības:</span> ${renderTypes(weaknesses)}</p>
+                    </div>
                 </div>
             </div>
             <h2>Ieteiktie partneri:</h2>
