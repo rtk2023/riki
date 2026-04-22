@@ -13,12 +13,12 @@ const headerElement = document.getElementById("header");
 
 // Cipher configs
 const cipherConfig = {
-    atbash: { name: "Atbash Cipher", requiresKey: false, supportsEncode: true, supportsDecode: true },
-    caesar: { name: "Caesar Cipher", requiresKey: true, supportsEncode: true, supportsDecode: true },
-    vigenere: { name: "Vigenère Cipher", requiresKey: true, supportsEncode: true, supportsDecode: true },
+    atbash: { name: "Atbash šifrs", requiresKey: false, supportsEncode: true, supportsDecode: true },
+    caesar: { name: "Caesar šifrs", requiresKey: true, supportsEncode: true, supportsDecode: true },
+    vigenere: { name: "Vigenère šifrs", requiresKey: true, supportsEncode: true, supportsDecode: true },
     base64: { name: "Base64", requiresKey: false, supportsEncode: true, supportsDecode: true },
-    morse: { name: "Morse Code", requiresKey: false, supportsEncode: true, supportsDecode: true },
-    html: { name: "HTML Encoder/Decoder", requiresKey: false, supportsEncode: true, supportsDecode: true }
+    morse: { name: "Morse kodds", requiresKey: false, supportsEncode: true, supportsDecode: true },
+    html: { name: "HTML kodetājs/atkodētājs", requiresKey: false, supportsEncode: true, supportsDecode: true }
 };
 
 // Update UI when cipher type changes
@@ -63,7 +63,7 @@ function processCipher(operation) {
                 break;
             case "caesar":
                 if (!key || isNaN(parseInt(key))) {
-                    output = "Error: Please provide a valid shift value (numeric)";
+                    output = "Kļuda: Lūdzu, norādiet derīgu nobīdi (skaitliski)";
                     break;
                 }
                 output = operation === "encode"
@@ -72,7 +72,7 @@ function processCipher(operation) {
                 break;
             case "vigenere":
                 if (!key) {
-                    output = "Error: Please provide a keyword";
+                    output = "Kļuda: Lūdzu, norādiet atslēgu";
                     break;
                 }
                 output = operation === "encode"
@@ -84,7 +84,7 @@ function processCipher(operation) {
                     ? encodeBase64(inputText)
                     : decodeBase64(inputText);
                 if (output === null) {
-                    output = "Error: Invalid Base64 input";
+                    output = "Kļuda: Nederīga Base64 ievade";
                 }
                 break;
             case "morse":
@@ -98,7 +98,7 @@ function processCipher(operation) {
                     : decodeHTML(inputText);
                 break;
             default:
-                output = "Error: Invalid cipher type!";
+                output = "Kļuda: Nederīgs šifra!";
         }
 
         // Show result
@@ -106,8 +106,8 @@ function processCipher(operation) {
         copyButton.style.display = "block";
 
     } catch (error) {
-        console.error("Cipher error:", error);
-        resultElement.textContent = `Error: ${error.message}`;
+        console.error("Šifra kļūda:", error);
+        resultElement.textContent = `Kļuda: ${error.message}`;
         copyButton.style.display = "none";
     }
 }
@@ -116,21 +116,21 @@ function processCipher(operation) {
 function copyToClipboard() {
     const text = resultElement.textContent;
     if (!text) {
-        alert("Nothing to copy!");
+        alert("Kļuda: Nav ko kopēt!");
         return;
     }
 
     navigator.clipboard.writeText(text)
         .then(() => {
             const originalText = copyButton.textContent;
-            copyButton.textContent = "Copied!";
+            copyButton.textContent = "Nokopēts!";
             setTimeout(() => {
                 copyButton.textContent = originalText;
             }, 2000);
         })
         .catch(err => {
-            console.error("Copy failed:", err);
-            alert("Failed to copy to clipboard!");
+            console.error("Kļuda: Neizdevās kopēt tekstu", err);
+            alert("Kļuda: Neizdevās kopēt tekstu");
         });
 }
 

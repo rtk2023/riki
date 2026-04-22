@@ -39,6 +39,22 @@ header {
     overflow: hidden;
 }
 
+.top-nav {
+    position:absolute;
+    top: 20px;
+    left: 30px;
+    z-index: 100;
+}
+
+.top-nav a {
+    color: var(--primary-accent); 
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+
 header::before {
     content: '';
     position: absolute;
@@ -302,6 +318,15 @@ button:active {
 }
 
 @media (max-width: 768px) {
+    
+    .top-nav {
+        position: static;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+
     main {
         padding: 30px 20px;
     }

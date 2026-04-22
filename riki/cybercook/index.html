@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="šifru kodētājs/atkodētājs">
     <title>Cipher Encoder/Decoder</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <nav class="top-nav">
+        <a href="https://rtk2023.github.io/riki/">Riki majaslapa</a> 
+        <span>vai</span>
+        <a href="https://github.com/rtk2023/riki">Riki github</a>
+    </nav>
     <header id="header">
-        <h1>Cipher Encoder/Decoder</h1>
+        <h1>Šifru kodētājs/atkodētājs</h1>
     </header>
     <main>
         <section class="form-section">
@@ -25,8 +31,8 @@
             <label for="inputText">Ievadiet tekstu:</label>
             <textarea id="inputText" rows="5" placeholder="Ievadiet tekstu..."></textarea>
 
-            <label for="key" id="keyLabel" style="display: none;">Key/Shift (if needed):</label>
-            <input type="text" id="key" placeholder="Neobligāts atslēga vai nobīde" style="display: none;">
+            <label for="key" id="keyLabel" style="display: none;">Pārbīde uz priekšu  (ja nepieciešams):</label>
+            <input type="text" id="key" placeholder="Neobligāta nobīde" style="display: none;">
 
             <div class="button-group">
                 <button id="encodeButton">Kodēt</button>
