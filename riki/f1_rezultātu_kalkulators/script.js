@@ -42,7 +42,7 @@ async function getDriversData() {
 		.map(driver => ({ headshot: driver.headshot_url, acronym: driver.name_acronym, driver_number: driver.driver_number, name: driver.full_name, team: driver.team_name }))
 		.sort((a, b) => a.driver_number - b.driver_number);
 
-	const driversMap = new Map(driversData.map(d => [d.driver_number, d]));
+	const driversMap = new Map(driversData.map(d => [d.driver_number, d]));	// izveido karti, lai apvienotu braucējus ar punktu skaitu
 	const drivers = points
 		.map(p => ({
 			...(driversMap.get(p.driver_number) || {}),
@@ -67,12 +67,13 @@ async function showPointsTable(driversOverride) {
 	const driverData = driversOverride ?? await getDriversData();	// Sagaida datus no getDriversData funkcijas
 	const tableBody = document.getElementById("pointsTableBody");
 	tableBody.innerHTML = "";
-	let driverPosition = 1;	// Sāk atskaiti no 1. vietas
+	let driverPosition = 1;
 
+	// aprēķina fiktīvos punktus, balstoties uz localStorage (lietotāja ievadītajiem datiem)
 	const predictedWins = (() => {
 		const all = Object.values(readSavedWinners());	// Nolasa informāciju par saglabātajiem uzvarētājiem
 		const winsByDriver = new Map();
-		for (const w of all) {	// w - uzvaras
+		for (const w of all) {
 			const num = w?.driverNumber;
 			if (!num) continue;
 			winsByDriver.set(String(num), (winsByDriver.get(String(num)) ?? 0) + 1);	// Pieskaita uzvaras katram braucējam
@@ -82,7 +83,7 @@ async function showPointsTable(driversOverride) {
 
 	const enriched = (driverData ?? []).map(d => {
 		const basePoints = Number(d.points ?? 0);
-		const winCount = predictedWins.get(String(d.driver_number)) ?? 0;	
+		const winCount = predictedWins.get(String(d.driver_number)) ?? 0;
 		const bonusPoints = winCount * 25;	//Iegūst 25 punktus par katru uzvaru
 		return {
 			...d,
@@ -263,7 +264,7 @@ async function setup() {
 }
 
 // RESET RACES - veic lietotāja definēto rezultātu atiestatīšanu
-async function resetRaces(){
+async function resetRaces() {
 	const btnCurrent = document.getElementById("btnCurrent");
 	btnCurrent.setAttribute("class", "btn btn-primary is-selected");
 
