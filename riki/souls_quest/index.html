@@ -7,12 +7,12 @@
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 		<title>SoulsQuest</title>
 	</head>
-	<body class = "bg-secondary">
+	<body class = "bg-dark" >
 		
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog" role="document">
-				<div class="modal-content">
+				<div class="modal-content text-white bg-dark">
 					<div class="modal-header">
 						<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -21,29 +21,29 @@
 					Modal Text
 				  </div>
 				  <div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-					<button type="button" id="nextPageButton" class="btn btn-primary">Next (No functionality currently)</button>
+					<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+					<button type="button" id="nextPageButton" class="btn btn-outline-danger">Next (No functionality currently)</button>
 				  </div>
 				</div>
 			</div>
 		</div>
-		<h1 class="text-secondary bg-dark m-0 pb-2">SoulsQuest</h1>
+		<h1 class="text-danger bg-dark m-0 pb-2">SoulsQuest</h1>
 		<!-- paldies w3schools :) -->
 		<nav class="navbar navbar-light bg-dark p-0">
 			<div id="myBtnContainer">
-				<button class="btn btn-primary" id ="showAll" onclick="filterSelection('all')">Clear</button>
+				<button class="btn btn-danger" id ="showAll" onclick="filterSelection('all')">Clear</button>
 				<div class="btn-group" role="group" aria-label="Basic example">
-					<button class="btn btn-primary" onclick="filterSelection('human')"> Human</button>
-					<button class="btn btn-primary" onclick="filterSelection('non-human')"> Non-human</button>
-					<button class="btn btn-primary" onclick="filterSelection('slim_build')"> Slim Build</button>
-					<button class="btn btn-primary" onclick="filterSelection('large_build')"> Large Build</button>
-					<button class="btn btn-primary" onclick="filterSelection('hair')"> Hair</button>
-					<button class="btn btn-primary" onclick="filterSelection('bald')"> Bald</button>
-					<button class="btn btn-primary" onclick="filterSelection('hood')"> Hooded</button>
-					<button class="btn btn-primary" onclick="filterSelection('mask')"> Masked</button>
-					<button class="btn btn-primary" onclick="filterSelection('armor')"> Armor</button>
-					<button class="btn btn-primary" onclick="filterSelection('male')"> Male</button>
-					<button class="btn btn-primary" onclick="filterSelection('female')"> Female</button>
+					<button class="btn btn-outline-danger" onclick="filterSelection('human')"> Human</button>
+					<button class="btn btn-outline-danger" onclick="filterSelection('non-human')"> Non-human</button>
+					<button class="btn btn-outline-danger" onclick="filterSelection('slim_build')"> Slim Build</button>
+					<button class="btn btn-outline-danger" onclick="filterSelection('large_build')"> Large Build</button>
+					<button class="btn btn-outline-danger" onclick="filterSelection('hair')"> Hair</button>
+					<button class="btn btn-outline-danger" onclick="filterSelection('bald')"> Bald</button>
+					<button class="btn btn-outline-danger" onclick="filterSelection('hood')"> Hooded</button>
+					<button class="btn btn-outline-danger" onclick="filterSelection('mask')"> Masked</button>
+					<button class="btn btn-outline-danger" onclick="filterSelection('armor')"> Armor</button>
+					<button class="btn btn-outline-danger" onclick="filterSelection('male')"> Male</button>
+					<button class="btn btn-outline-danger" onclick="filterSelection('female')"> Female</button>
 				</div>
 			</div>
 		</nav>
