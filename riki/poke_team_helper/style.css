@@ -1,20 +1,130 @@
 body {
+  display: flex;
+  flex-direction: column;
+  color: #E8ECF1;
   font-family: Arial;
   text-align: center;
-  background: #f4f4f4;
+  background-color: #1A1F28;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+main {
+  flex: 1;
+}
+
+h1 {
+  font-size: 48px;
+  color: #E8ECF1;
+}
+
+h2 {
+  color: #E8ECF1;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+}
+
+a {
+  color: #B4BAC2;
+  margin: 0 10px;
+}
+
+a:hover {
+  color: #1D9BF0;
 }
 
 input {
-  padding: 10px;
+  color:#E8ECF1;
+  background-color:#0F1419;
+  border: 2px solid #E8ECF1;
+  border-radius: 5px;
+  padding: 15px;
   font-size: 16px;
 }
 
 button {
-  padding: 10px;
+  color:#E8ECF1;
+  font-size: 16px;
+  background-color: #0F1419;
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
   margin-left: 10px;
+  cursor: pointer;
+}
+#wrapper {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  justify-content: center;
+  
+  align-items: center;
+  margin-bottom: 5vh;
+  border: 2px solid #2A3140;
+  color : #B4BAC2;
+  background-color: #0F1419;
+  padding: 3%;
+  width: fit-content;
+}
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+}
+.box h1 {
+  margin: 0;
+  font-size: 2.6rem;
 }
 
+.box p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+.pokemonList {
+  display: flex;
+  flex-wrap: wrap;  
+  justify-content: space-evenly;
+  gap: 1vw;
+}
+.card {
+  flex: 0 0 18%;
+  padding: 2%;
+  margin-bottom: 1vw;
+  border: 1px solid #2A3140;
+  border-radius: 3%;
+  color : #B4BAC2;
+  background-color: #0F1419;
+  width: fit-content;
+}
 #result {
   margin-top: 20px;
   font-size: 18px;
+}
+.type-badge {
+  padding: 4px 10px;
+  margin: 2px;
+  border-radius: 12px;
+  color: #E8ECF1;
+  color: white;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+  font-size: 1rem;
+  text-transform: capitalize;
+  display: inline-block;
 }
