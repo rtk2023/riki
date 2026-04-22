@@ -3,10 +3,12 @@
   float: left;
   background-color: #2196F3;
   color: #ffffff;
-  width: 300px;
-  line-height: 100px;
+  width: 400px;
+  line-height: 150px;
   text-align: center;
-  margin: 2px;
+  margin-top:20px;
+  margin-left:20px;
+  font-size:28px;
   display: none; /* Hidden by default */
 }
 
@@ -14,11 +16,11 @@
 .show {
   display: block;
 }
-body {
-	background-image:url("https://images.hdqwalls.com/wallpapers/dark-souls-3-8k-om.jpg");
-	background-size:cover;
-	background-repeat:no-repeat;
-}
 h1 {
 	color:blue;
+}
+#fillerDiv{
+	height:300px;
+	background-image:url('https://cdn.wccftech.com/wp-content/uploads/2017/03/01_1490346156-2048x1152.jpg');
+	background-position:0% 50%;
 }

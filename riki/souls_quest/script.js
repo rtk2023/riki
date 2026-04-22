@@ -10,7 +10,19 @@ const modalContent = [
 	[{title : "Solaire of Astora",content : "Very positive and encouraging man, found first praising the sun and offering the player help in upcoming boss fights. Hailing from the lands of Astora, he found himself in Lordran, the land where goddess of sun Gwynevere resides."},{title : "Solaires' location",content : "Under the bridge after beating Taurus Demon."}],
 	[{title : "Siegmeyer of Catarina",content : "A man with wierd, onion shaped armor, behaving very confused every time you meet him."},{title : "Siegmeyers' location",content : "Found next to Sen's Fortress gate "}],
 	[{title : "Laurentius of the Great Swamp",content : "A very emotional and human man, a scholar of pyromancy, that can teach the player to use it."},{title : "Laurentius' location",content : "Upon going into depths, drop down next to the butcher enemy, after entering a room full of barrels, he will call out to you to free him."}],
-	[{title : "Ingward",content : "A mysterious sorcerer that covers his face with a mask. He can reverse a curse that the player can obtain either from Obelisk enemies un the Depths or Seath the Scaleless at Duke's Archives."},{title : "Ingwards' location",content : "Deep inside of New Londo Ruins beneath Firelink Shrine."}]
+	[{title : "Ingward",content : "A mysterious sorcerer that covers his face with a mask. He can reverse a curse that the player can obtain either from Obelisk enemies un the Depths or Seath the Scaleless at Duke's Archives."},{title : "Ingwards' location",content : "Deep inside of New Londo Ruins beneath Firelink Shrine."}],
+	//{title : "",content : ""} <---- liec jaunus šitādus lai būtu jaunas lapas,katrs jaunais ir viena jauna lapa. 
+	[{title : "",content : ""},{title : "",content : ""}],
+	[{title : "",content : ""},{title : "",content : ""}],
+	[{title : "",content : ""},{title : "",content : ""}],
+	[{title : "",content : ""},{title : "",content : ""}],
+	[{title : "",content : ""},{title : "",content : ""}],
+	[{title : "",content : ""},{title : "",content : ""}],
+	[{title : "",content : ""},{title : "",content : ""}],
+	[{title : "",content : ""},{title : "",content : ""}],
+	[{title : "",content : ""},{title : "",content : ""}],
+	[{title : "",content : ""},{title : "",content : ""}],
+	[{title : "",content : ""},{title : "",content : ""}]
 	];
 document.getElementById("nextPageButton").addEventListener("click", function() {
 		pageNumber++;
@@ -90,17 +102,14 @@ function w3RemoveClass(element, name) {
 // Add active class to the current control button (highlight it)
 	for (let i = 0; i < btns.length; i++) {
     btns[i].addEventListener("click", function() {
-		if(this.classList.contains("showAll")){
+		if(this == document.getElementById("showAll")){
 			let current = btnContainer.getElementsByClassName("btn");
 			for(let j = 0;j<current.length;j++){
-				w3RemoveClass(current[j],"active");
-			}
-			if(!this.classList.contains("active")){
-			this.className += " active";
+				w3RemoveClass(current[j]," active");
 			}
 		}
 		else if(this.classList.contains("active")){
-			w3RemoveClass(this,"active");
+			w3RemoveClass(this," active");
 		}
 		else if(!this.classList.contains("active")){
 			this.className += " active";
