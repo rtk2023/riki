@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="style.css">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+		<title>SoulsQuest</title>
+	</head>
+	<body>
+		
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			  </div>
+			  <div class="modal-body" id="exampleModalContent">
+				Ko tu te dari bro
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				<button type="button" id="nextPageButton" class="btn btn-primary">Next (No functionality currently)</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<h1 class="text-primary">SoulsQuest (Ralfiņ Salabo)</h1>
+		<!-- paldies w3schools :) -->
+		<div id="myBtnContainer">
+		  <button class="btn btn-primary showAll active" onclick="filterSelection('all')"> Show all</button>
+		  <button class="btn btn-primary" onclick="filterSelection('human')"> Human</button>
+		  <button class="btn btn-primary" onclick="filterSelection('hair')"> Hair</button>
+		  <button class="btn btn-primary" onclick="filterSelection('slim_build')"> Slim Build</button>
+		  <button class="btn btn-primary" onclick="filterSelection('large_build')"> Large Build</button>
+		  <button class="btn btn-primary" onclick="filterSelection('dragon')"> Dragon</button>
+		  <button class="btn btn-primary" onclick="filterSelection('hood')"> Hooded</button>
+		  <button class="btn btn-primary" onclick="filterSelection('mask')"> Masked</button>
+		  <button class="btn btn-primary" onclick="filterSelection('armor')"> Armor</button>
+		  <button class="btn btn-primary" onclick="filterSelection('bald')"> Bald</button>
+		</div>
+
+		<!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
+		<div class="container m-2">
+		<div onclick="changeModalContent(0)" class="filterDiv human hair armor large_build show">Petrus of Thorolund</div>
+		<div onclick="changeModalContent(1)" class="filterDiv human hair slim_build show">Crestfallen Warrior</div>
+		<div onclick="changeModalContent(2)" class="filterDiv human armor slim_build mask show">Solaire of Astora</div>
+		<div onclick="changeModalContent(3)" class="filterDiv human armor large_build mask show">Siegmeyer of Catarina</div>
+		<div onclick="changeModalContent(4)" class="filterDiv human slim_build hood show">Laurentius of The Great Swamp</div>
+		<div onclick="changeModalContent(5)" class="filterDiv human slim_build mask show">Ingward</div>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>
