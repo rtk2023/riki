@@ -1,8 +1,11 @@
 
 .filterDiv {
   float: left;
-  background-color: #2196F3;
-  color: #ffffff;
+  background-color: transparent;
+  border: 2px solid black;
+  background-repeat: no-repeat;
+  color: #f44336;
+  border-color: #f44336;
   width: 400px;
   line-height: 150px;
   text-align: center;
@@ -10,8 +13,14 @@
   margin-left:20px;
   font-size:28px;
   display: none; /* Hidden by default */
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 9px;
 }
-
+.filterDiv:hover {
+	background: #f44336;
+	color: white;
+}
 /* The "show" class is added to the filtered elements */
 .show {
   display: block;
