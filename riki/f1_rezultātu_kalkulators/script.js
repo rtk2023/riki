@@ -53,8 +53,10 @@ async function getDriversData() {
 	return drivers;
 }
 
+// SHOW POINTS TABLE - atspoguļo braucēju datus un rezultātus tabulā.
 async function showPointsTable(driversOverride) {
 
+	// Izmaina pogas stilu, atkarībā no tās pogas, kura izvēlēta.
 	const btnCurrent = document.getElementById("btnCurrent");
 	btnCurrent.setAttribute("class", "btn btn-secondary");
 	btnCurrent.classList.remove("is-selected");
@@ -62,34 +64,35 @@ async function showPointsTable(driversOverride) {
 	const btnOriginal = document.getElementById("btnOriginal");
 	btnOriginal.setAttribute("class", "btn btn-primary is-selected");
 
-	const driverData = driversOverride ?? await getDriversData();
+	const driverData = driversOverride ?? await getDriversData();	// Sagaida datus no getDriversData funkcijas
 	const tableBody = document.getElementById("pointsTableBody");
 	tableBody.innerHTML = "";
-	let driverPosition = 1;
+	let driverPosition = 1;	// Sāk atskaiti no 1. vietas
 
 	const predictedWins = (() => {
-		const all = Object.values(readSavedWinners());
+		const all = Object.values(readSavedWinners());	// Nolasa informāciju par saglabātajiem uzvarētājiem
 		const winsByDriver = new Map();
-		for (const w of all) {
+		for (const w of all) {	// w - uzvaras
 			const num = w?.driverNumber;
 			if (!num) continue;
-			winsByDriver.set(String(num), (winsByDriver.get(String(num)) ?? 0) + 1);
+			winsByDriver.set(String(num), (winsByDriver.get(String(num)) ?? 0) + 1);	// Pieskaita uzvaras katram braucējam
 		}
 		return winsByDriver;
 	})();
 
 	const enriched = (driverData ?? []).map(d => {
 		const basePoints = Number(d.points ?? 0);
-		const winCount = predictedWins.get(String(d.driver_number)) ?? 0;
-		const bonusPoints = winCount * 25;
+		const winCount = predictedWins.get(String(d.driver_number)) ?? 0;	
+		const bonusPoints = winCount * 25;	//Iegūst 25 punktus par katru uzvaru
 		return {
 			...d,
 			basePoints,
 			bonusPoints,
 			totalPoints: basePoints + bonusPoints,
 		};
-	}).sort((a, b) => b.totalPoints - a.totalPoints);
+	}).sort((a, b) => b.totalPoints - a.totalPoints);	// Sakārto tabulu pēc punktu skaita dilstošā secībā
 
+	//Cikls aizpilda tabulu ar visiem braucējiem + to aprēķinātajiem rezultātiem no enriched (papildinātā) masīva
 	for (const driver of enriched) {
 		const row = document.createElement("tr");
 		const driverPositionItem = document.createElement("td");
@@ -119,6 +122,7 @@ async function showPointsTable(driversOverride) {
 
 }
 
+//GET RACE DATA -  iegūst datus par visām sacensībām 2026. gadā (izņemot pirms-sezonas testus) no API
 async function getRaceData() {
 	const url = "https://api.openf1.org/v1/meetings?year=2026&date_start>=2026-03-06";
 
@@ -201,7 +205,7 @@ async function showRaceTable(racesOverride) {
 		raceWinnerItem.dataset.raceWinnerForKey = String(race.key);
 		const editButtonItem = document.createElement("td");
 		editButtonItem.innerHTML = upcoming
-			? `<button type="button" class="btn btn-primary open-modal" data-race-key="${race.key}" data-race-name="${race.full_name ?? ""}">Rediģet</button>`
+			? `<button type="button" class="btn btn-primary open-modal" data-race-key="${race.key}" data-race-name="${race.full_name ?? ""}">Rediģēt</button>`
 			: `<button type="button" class="btn btn-secondary" disabled title="Sacensības noslēgušās">Rediģēt</button>`;
 		row.appendChild(raceFlagItem);
 		row.appendChild(raceCountryItem);
