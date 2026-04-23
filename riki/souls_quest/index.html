@@ -22,7 +22,7 @@
 				  </div>
 				  <div class="modal-footer">
 					<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-					<button type="button" id="nextPageButton" class="btn btn-outline-danger">Next (No functionality currently)</button>
+					<button type="button" id="nextPageButton" class="btn btn-outline-danger">Next</button>
 				  </div>
 				</div>
 			</div>
@@ -31,8 +31,8 @@
 		<!-- paldies w3schools :) -->
 		<nav class="navbar navbar-light bg-dark p-0">
 			<div id="myBtnContainer">
-				<button class="btn btn-danger" id ="showAll" onclick="filterSelection('all')">Clear</button>
-				<div class="btn-group" role="group" aria-label="Basic example">
+				<button class="btn btn-danger me-2" id ="showAll" onclick="filterSelection('all')">Clear</button>
+				<div class="btn-group me-5" role="group" aria-label="Basic example">
 					<button class="btn btn-outline-danger" onclick="filterSelection('human')"> Human</button>
 					<button class="btn btn-outline-danger" onclick="filterSelection('non-human')"> Non-human</button>
 					<button class="btn btn-outline-danger" onclick="filterSelection('slim_build')"> Slim Build</button>
@@ -44,6 +44,10 @@
 					<button class="btn btn-outline-danger" onclick="filterSelection('armor')"> Armor</button>
 					<button class="btn btn-outline-danger" onclick="filterSelection('male')"> Male</button>
 					<button class="btn btn-outline-danger" onclick="filterSelection('female')"> Female</button>
+				</div>
+				<div class= "btn-group " role = "group">
+					<button class="btn btn-outline-danger" onclick="window.location.href='https://github.com/rtk2023/riki';">Rīku saraksts </button>
+					<button class="btn btn-outline-danger" onclick="window.location.href='https://github.com/RainersN/riki/tree/main/riki/souls_quest';">Github projekts</button>
 				</div>
 			</div>
 		</nav>
@@ -57,17 +61,17 @@
 			<div onclick="changeModalContent(3)" class="filterDiv human armor large_build mask show"><img src="https://th.bing.com/th/id/R.b634139450c41666ec7ecaddc3e8f433?rik=SDcag2AGwobQOA&riu=http%3a%2f%2fdarksouls.wiki.fextralife.com%2ffile%2fDark-Souls%2fsiegmeyer_of_catarina.jpg&ehk=WrXOC8GFsnQ%2bISDWozYF2Z1rGXEOa5qOdHK7qQf2YVQ%3d&risl=&pid=ImgRaw&r=0" alt="Siegmeyer of Catarina" width="200" height="300"><br><span>Siegmeyer of Catarina</span></div>
 			<div onclick="changeModalContent(4)" class="filterDiv human slim_build hood show"><img src="https://tse3.mm.bing.net/th/id/OIP.SqdVvrPzUDtID22C23je6QHaJQ?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Laurentius of The Great Swamp" width="200" height="300"><br><span>Laurentius of The Great Swamp</span></div>
 			<div onclick="changeModalContent(5)" class="filterDiv human slim_build mask show"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/ingward_the_sealer_concept_art_header1.jpg" alt="Ingward" width="200" height="300"><br><span>Ingward</span></div>
-			<div onclick="changeModalContent(6)" class="filterDiv human slim_build mask show"><img src="https://tse4.mm.bing.net/th/id/OIP.gwp_6t10HbqETxvS6B5OEAAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Griggs of Vinheim" width="200" height="300"><br><span>Griggs of Vinheim</span></div>
-			<div onclick="changeModalContent(7)" class="filterDiv human slim_build mask show"><img src="https://static.tvtropes.org/pmwiki/pub/images/big-hat-logan_2346.jpg" alt="Big Hat Logan" width="200" height="300"><br><span>Big Hat Logan</span></div>
-			<div onclick="changeModalContent(8)" class="filterDiv human slim_build mask show"><img src="https://th.bing.com/th/id/R.0c26e64508e3b53b9a32e3d046d14ce6?rik=Vg45v1%2bem7w5TA&pid=ImgRaw&r=0" alt="Knight Lautrec of Carim" width="200" height="300"><br><span>Knight Lautrec of Carim</span></div>
-			<div onclick="changeModalContent(9)" class="filterDiv human slim_build mask show"><img src="https://static.tvtropes.org/pmwiki/pub/images/250px-patches_totg_5631.jpg" alt="Patches the Hyena" width="200" height="300"><br><span>Patches the Hyena</span></div>
-			<div onclick="changeModalContent(10)" class="filterDiv human slim_build mask show"><img src="https://tse1.mm.bing.net/th/id/OIP.C_Y1w-hIjXlraIzsI0oL7AAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Elizabeth" width="200" height="300"><br><span>Elizabeth</span></div>
-			<div onclick="changeModalContent(11)" class="filterDiv human slim_build mask show"><img src="https://tse4.mm.bing.net/th/id/OIP.LR-OnSjpdWQ61fqj1oDmdQAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Reah of Thorolund" width="200" height="300"><br><span>Reah of Thorolund</span></div>
-			<div onclick="changeModalContent(12)" class="filterDiv human slim_build mask show"><img src="https://tse1.mm.bing.net/th/id/OIP.cissfIasukF_RdmA-_ZkTQAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Dusk of Oolacile" width="200" height="300"><br><span>Dusk of Oolacile</span></div>
-			<div onclick="changeModalContent(13)" class="filterDiv human slim_build mask show"><img src="https://tse2.mm.bing.net/th/id/OIP.8JLKxQQqyp3J1iJRPeS1JgHaN4?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Kingseeker Frampt" width="200" height="300"><br><span>Kingseeker Frampt</span></div>
-			<div onclick="changeModalContent(14)" class="filterDiv human slim_build mask show"><img src="https://tse3.mm.bing.net/th/id/OIP.ENySKLcSAO2jKm75il6v2AAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Daughter of Chaos" width="200" height="300"><br><span>Daughter of Chaos</span></div>
-			<div onclick="changeModalContent(15)" class="filterDiv human slim_build mask show"><img src="https://tse1.mm.bing.net/th/id/OIP.ym48aXziJ8iSgNOOaFFJWQAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Alvina of the Darkroot Wood" width="200" height="300"><br><span>Alvina of the Darkroot Wood</span></div>
-			<div onclick="changeModalContent(16)" class="filterDiv human slim_build mask show"><img src="https://static.tvtropes.org/pmwiki/pub/images/griggs-of-vinheim_5429.jpg" alt="Rickert of Vinheim" width="200" height="300"><br><span>Rickert of Vinheim</span></div>
+			<div onclick="changeModalContent(6)" class="filterDiv human slim_build male hair show"><img src="https://tse4.mm.bing.net/th/id/OIP.gwp_6t10HbqETxvS6B5OEAAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Griggs of Vinheim" width="200" height="300"><br><span>Griggs of Vinheim</span></div>
+			<div onclick="changeModalContent(7)" class="filterDiv human slim_build male hood hair show"><img src="https://static.tvtropes.org/pmwiki/pub/images/big-hat-logan_2346.jpg" alt="Big Hat Logan" width="200" height="300"><br><span>Big Hat Logan</span></div>
+			<div onclick="changeModalContent(8)" class="filterDiv human slim_build armor male mask show"><img src="https://th.bing.com/th/id/R.0c26e64508e3b53b9a32e3d046d14ce6?rik=Vg45v1%2bem7w5TA&pid=ImgRaw&r=0" alt="Knight Lautrec of Carim" width="200" height="300"><br><span>Knight Lautrec of Carim</span></div>
+			<div onclick="changeModalContent(9)" class="filterDiv human slim_build bald male show"><img src="https://static.tvtropes.org/pmwiki/pub/images/250px-patches_totg_5631.jpg" alt="Patches the Hyena" width="200" height="300"><br><span>Patches the Hyena</span></div>
+			<div onclick="changeModalContent(10)" class="filterDiv non-human large_build hood female show"><img src="https://tse1.mm.bing.net/th/id/OIP.C_Y1w-hIjXlraIzsI0oL7AAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Elizabeth" width="200" height="300"><br><span>Elizabeth</span></div>
+			<div onclick="changeModalContent(11)" class="filterDiv human slim_build hood female show"><img src="https://tse4.mm.bing.net/th/id/OIP.LR-OnSjpdWQ61fqj1oDmdQAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Reah of Thorolund" width="200" height="300"><br><span>Reah of Thorolund</span></div>
+			<div onclick="changeModalContent(12)" class="filterDiv human slim_build female show"><img src="https://tse1.mm.bing.net/th/id/OIP.cissfIasukF_RdmA-_ZkTQAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Dusk of Oolacile" width="200" height="300"><br><span>Dusk of Oolacile</span></div>
+			<div onclick="changeModalContent(13)" class="filterDiv non-human large_build male show"><img src="https://tse2.mm.bing.net/th/id/OIP.8JLKxQQqyp3J1iJRPeS1JgHaN4?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Kingseeker Frampt" width="200" height="300"><br><span>Kingseeker Frampt</span></div>
+			<div onclick="changeModalContent(14)" class="filterDiv human large_build hair female show"><img src="https://tse3.mm.bing.net/th/id/OIP.ENySKLcSAO2jKm75il6v2AAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Daughter of Chaos" width="200" height="300"><br><span>Daughter of Chaos</span></div>
+			<div onclick="changeModalContent(15)" class="filterDiv non-human slim_build hair show"><img src="https://tse1.mm.bing.net/th/id/OIP.ym48aXziJ8iSgNOOaFFJWQAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Alvina of the Darkroot Wood" width="200" height="300"><br><span>Alvina of the Darkroot Wood</span></div>
+			<div onclick="changeModalContent(16)" class="filterDiv human slim_build bald male show"><img src="https://static.tvtropes.org/pmwiki/pub/images/griggs-of-vinheim_5429.jpg" alt="Rickert of Vinheim" width="200" height="300"><br><span>Rickert of Vinheim</span></div>
 			<div onclick="changeModalContent(17)" class="filterDiv human slim_build mask show"><img src="https://tse4.mm.bing.net/th/id/OIP.SxMPCM7pLgCPb4HOgTUU9QHaJQ?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Quelana of Izalith" width="200" height="300"><br><span>Quelana of Izalith</span></div>
 		</div>
 		<script src="script.js"></script>
