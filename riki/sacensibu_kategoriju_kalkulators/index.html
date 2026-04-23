@@ -4,210 +4,187 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sacensību kategoriju kalkulators</title>
-
+    <meta name="description" content="Sacensību kategoriju kalkulators cīkstoņiem.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="bg-light">
-    
-<main>
-<div class="container mt-5">
-    <div class="card shadow p-4">
-        <h2 class="text-center mb-4">Sacensību kategoriju kalkulators</h2>
 
-        <!-- svars -->
-        <div class="mb-3">
-            <label for="svars" class="form-label">Svars (kg)</label>
-            <input type="number" id="svars" class="form-control" min="30">
-        </div>
+<main class="container-fluid mt-4">
+    <div class="row g-3">
 
-        <!-- gads -->
-        <div class="mb-3">
-            <label for="gads" class="form-label">Dzimšanas gads</label>
-            <input type="number" id="gads" class="form-control" min="1930">
-        </div>
+        <!-- KREISAIS BLOKS (sacensību saraksts) -->
+        <aside class="col-lg-3">
+            <div class="card shadow p-3">
+                <h5 class="text-center">Sacensības 2026</h5>
 
-        <!-- dzimums -->
-        <div class="mb-3">
-            <label for="dzimums" class="form-label">Dzimums</label>
-            <select id="dzimums" class="form-select" onchange="updateCinasVeids()">
-                <option value="">Izvēlies</option>
-                <option value="v">Vīrietis</option>
-                <option value="s">Sieviete</option>
-            </select>
-        </div>
+                <!-- APRĪLIS -->
+                <h6 class="mt-2">📅 Aprīlis</h6>
+                <ul class="small">
+                    <li><b>16.–19.</b> Rumānija, Bukareste — Constantin Alexandru & Ioan W. Popovici (U17) | BC, GRC, BCS</li>
+                    <li><b>20.–26.</b> Albānija, Tirāna — Eiropas čempionāts (Pieaugušie) | BC, GRC, BCS</li>
+                    <li><b>25.</b> Latvija, Jaunolaine — Olaines kauss 2026 (U14–U17) | BC, BCS</li>
+                    <li><b>26.</b> Latvija, Jaunolaine — Olaines lauvēns (U9–U13) | BC, BCS</li>
+                </ul>
 
-        <!-- Cīņas veids -->
-        <div class="mb-3">
-            <label for="cinasVeids" class="form-label">Cīņas veids</label>
-            <select id="cinasVeids" class="form-select">
-                <option value="">Izvēlies</option>
-                <option value="FS">Brīvā cīņa (vīrieši)</option>
-                <option value="WFS">Brīvā cīņa (sievietes)</option>
-                <option value="GR">Grieķu-romiešu</option>
-            </select>
-        </div>
+                <hr>
 
-        <!-- button -->
-        <div class="d-flex gap-2">
-            <button onclick="aprekinat()" class="btn btn-primary w-50">Aprēķināt</button>
-            <button onclick="notirit()" class="btn btn-secondary w-50">Notīrīt</button>
-        </div>
+                <!-- MAIJS -->
+                <h6>📅 Maijs</h6>
+                <ul class="small">
+                    <li><b>02.</b> Latvija, Ādaži — Ādažu kauss (U11–U15) | GRC</li>
+                    <li><b>09.</b> Latvija, Ķekava — Latvijas čempionāts U13 | BC, GRC, BCS</li>
+                    <li><b>11.–17.</b> Bulgārija, Samokov — Eiropas čempionāts U17 | BC, GRC, BCS</li>
+                    <li><b>16.</b> Latvija, Cēsis — Cēsu kauss 2026 (U10–U15) | GRC, BCS, BC | PBLCCK</li>
+                    <li><b>20.–24.</b> Bulgārija, Samokov — Eiropas čempionāts U15 | BC, GRC, BCS</li>
+                    <li><b>30.</b> Latvija, Rīga — Cietais Rieksts 2026 | BC</li>
+                </ul>
 
-        <!-- result -->
-        <div id="rezultats" class="mt-4" aria-live="polite"></div>
-    </div>
-</div>
+                <hr>
+
+                <!-- JŪNIJS -->
+                <h6>📅 Jūnijs</h6>
+                <ul class="small">
+                    <li><b>19.</b> Latvija, Valmiera — Latvijas Jaunatnes Olimpiāde 2026 (U17) | BC, GRC, BCS</li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- CENTRAIS BLOKS (kalkulators) -->
+        <section class="col-lg-6 mx-auto" style="max-width: 600px;">
+            <div class="card shadow p-4">
+
+                <!-- Virsraksts -->
+                <h1 class="text-center mb-4 h2">Sacensību kategoriju kalkulators</h1>
+
+                <!-- Svara ievade -->
+                <div class="mb-3">
+                    <label for="svars" class="form-label">Svars (kg)</label>
+                    <input type="number" id="svars" class="form-control" min="30">
+                </div>
+
+                <!-- Dzimšanas gada ievade -->
+                <div class="mb-3">
+                    <label for="gads" class="form-label">Dzimšanas gads</label>
+                    <input type="number" id="gads" class="form-control" min="1930">
+                </div>
+
+                <!-- Dzimuma izvēle -->
+                <div class="mb-3">
+                    <label for="dzimums" class="form-label">Dzimums</label>
+
+                    <!-- izsauc JS funkciju -->
+                    <select id="dzimums" class="form-select" onchange="updateCinasVeids()">
+                        <option value="">Izvēlies</option>
+                        <option value="v">Vīrietis</option>
+                        <option value="s">Sieviete</option>
+                    </select>
+                </div>
+
+                <!-- Cīņas veida izvēle -->
+                <div class="mb-3">
+                    <label for="cinasVeids" class="form-label">Cīņas veids</label>
+                    <select id="cinasVeids" class="form-select">
+                        <option value="">Izvēlies</option>
+                        <option value="FS">Brīvā cīņa (vīrieši)</option>
+                        <option value="WFS">Brīvā cīņa (sievietes)</option>
+                        <option value="GR">Grieķu-romiešu</option>
+                    </select>
+                </div>
+
+                <hr>
+
+                <!-- Pogas -->
+                <div class="d-flex gap-2">
+                    <!-- Izsauc aprēķina funkciju -->
+                    <button onclick="aprekinat()" class="btn btn-primary w-50">Aprēķināt</button>
+
+                    <!-- Notīra laukus -->
+                    <button onclick="notirit()" class="btn btn-secondary w-50">Notīrīt</button>
+                </div>
+
+                <!-- Rezultāta attēlošana -->
+                <div id="rezultats" class="mt-4" aria-live="polite"></div>
+
+            </div> 
+
+            <hr>
+
+            <!-- Motivācijas bloks -->
+            <div class="card shadow p-4 text-center">
+                <h2 class="mb-3 h4">Motivācija sportistiem</h2>
+                <button class="btn btn-success" onclick="showMotivation()">
+                    Saņemt motivāciju
+                </button>
+            </div>
+        </section>
+
+        <!-- LABAIS BLOKS (rekordi) -->
+        <aside class="col-lg-3">
+            <div class="card shadow p-3">
+                <h3 class="text-center h5">Rekordi</h3>
+
+               <h4 class="h6">🌍 Pasaules rekordi</h4>
+    <ul class="small">
+        <li><b>Mihains Lopess (Kuba)</b> — vienīgais 5-kārtējais olimpiskais čempions vienā disciplīnā (grieķu-romiešu cīņa, 2008–2024).</li>
+
+        <li><b>Saori Josida (Japāna)</b> — 13 pasaules čempionātu zelta medaļas un 3 olimpiskie zelti.</li>
+
+        <li><b>Kaori Ičo (Japāna)</b> — pirmā sieviete ar 4 olimpiskajiem zeltiem pēc kārtas (2004–2016) </li>
+
+        <li><b>Aleksandrs Kareļins (PSRS/Krievija)</b> — 12-kārtējs Eiropas čempions (rekords) un 9-kārtējs pasaules čempions grieķu-romiešu cīņā.</li>
+
+        <li><b>Aleksandrs Medveds (PSRS)</b> — 3-kārtējs olimpiskais čempions brīvajā cīņā dažādās svara kategorijās (1964, 1968, 1972).</li>
+        
+        <li><b>Aleksandrs Kareļins</b> — 13 gadu uzvaru sērija (1987–2000), 6 gadus nezaudēja nevienu punktu.</li>
+    </ul>
+
+    <hr>
+
+    <h5 class="h6">🇱🇻 Latvijas rekordi</h5>
+    <ul class="small">
+        <li><b>Anastasija Grigorjeva</b> — titulētākā Latvijas cīkstone: 4 Eiropas čempiones tituli (2010, 2013, 2014, 2016) un Eiropas spēļu uzvarētāja.</li>
+
+        <li><b>Edvīns Bietags</b> — vienīgā olimpiskā medaļa Latvijas cīņas vēsturē (sudrabs, grieķu-romiešu cīņa, Berlīne 1936).</li>
+
+    </ul>
+        </div>   
+        </aside>
+
+    </div> 
 </main>
 
-<script>
+<!-- MODĀLAIS LOGS motivācijai -->
+<div class="modal fade" id="motivModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center p-4">
 
-function updateCinasVeids() {
-    const dzimums = document.getElementById('dzimums').value;
-    const gregOption = document.querySelector('#cinasVeids option[value="GR"]');
-    const wfsOption = document.querySelector('#cinasVeids option[value="WFS"]');
-    const fsOption = document.querySelector('#cinasVeids option[value="FS"]');
+            <h4 class="mb-3 h4">Motivācija</h4>
+            <div id="motivText" class="fs-5 mb-3"></div>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                Aizvērt
+            </button>
 
-    if (dzimums === "s") {
-        gregOption.disabled = true;
-        fsOption.disabled = true;
-        wfsOption.disabled = false;
-    } else if (dzimums === "v") {
-        gregOption.disabled = false;
-        fsOption.disabled = false;
-        wfsOption.disabled = true;
-    }
-}
-
-function aprekinat() {
-    const svars = parseFloat(document.getElementById('svars').value);
-    const gads = parseInt(document.getElementById('gads').value);
-    const dzimums = document.getElementById('dzimums').value;
-    const veids = document.getElementById('cinasVeids').value;
-    const rezultats = document.getElementById('rezultats');
-
-    const currentYear = new Date().getFullYear();
-
-    if (!svars || !gads || !dzimums || !veids) {
-        rezultats.innerHTML = `<div class="alert alert-danger">Aizpildi visus laukus!</div>`;
-        return;
-    }
-
-    if (svars < 25 || svars > 200) {
-        rezultats.innerHTML = `<div class="alert alert-danger">Svars jābūt starp 25 un 200 kg!</div>`;
-        return;
-    }
-
-    if (gads > currentYear || gads < 1930) {
-        rezultats.innerHTML = `<div class="alert alert-danger">Nepareizs dzimšanas gads!</div>`;
-        return;
-    }
-
-    if (dzimums === "s" && veids === "GR") {
-        rezultats.innerHTML = `<div class="alert alert-danger">
-            Sievietes nevar piedalīties grieķu-romiešu cīņā!
-        </div>`;
-        return;
-    }
-
-    const vecums = currentYear - gads;
-
-    if (vecums < 6) {
-        rezultats.innerHTML = `<div class="alert alert-danger">Pārāk jauns sacensībām!</div>`;
-        return;
-    }
-
-    // vecuma grupa
-    let grupa = "";
-    if (vecums <= 15) grupa = "Jaunieši";
-    else if (vecums <= 17) grupa = "Juniori";
-    else grupa = "Pieaugušie";
-
-    // svara kat
-        // NOTEIKT GRUPU
-    let kategorijas = [];
-
-    if (gads >= 2006 && gads <= 2008) {
-        if (veids === "WFS") kategorijas = [50,53,55,57,59,62,65,68,72,76];
-        if (veids === "GR") kategorijas = [55,60,63,67,72,77,82,87,97,130];
-        if (veids === "FS") kategorijas = [57,61,65,70,74,79,86,92,97,125];
-    }
-    else if (gads >= 2009 && gads <= 2010) {
-        if (veids === "WFS") kategorijas = [43,46,49,53,57,61,65,69,73];
-        if (veids === "GR") kategorijas = [45,48,51,55,60,65,71,80,92,110];
-        if (veids === "FS") kategorijas = [45,48,51,55,60,65,71,80,92,110];
-    }
-    else if (gads >= 2011 && gads <= 2012) {
-        if (veids === "WFS") kategorijas = [39,42,46,50,54,58,62,66];
-        if (veids === "GR") kategorijas = [38,41,44,48,52,57,62,68,75,85,110];
-        if (veids === "FS") kategorijas = [38,41,44,48,52,57,62,68,75,85,110];
-    }
-    else if (gads >= 2013) {
-        if (veids === "WFS") kategorijas = [20,23,26,29,32,35,40,45,50,60];
-        if (veids === "GR") kategorijas = [26,29,32,35,38,42,47,53,59,66,85];
-        if (veids === "FS") kategorijas = [26,29,32,35,38,42,47,53,59,66,85];
-    }
-
-    if (kategorijas.length === 0) {
-        rezultats.innerHTML = `<div class="alert alert-warning">Nav datu šai vecuma grupai!</div>`;
-        return;
-    }
-
-    // ATRAST KATEGORIJU
-    let kategorija = "";
-    let next = null;
-
-    for (let i = 0; i < kategorijas.length; i++) {
-        if (svars <= kategorijas[i]) {
-            kategorija = kategorijas[i];
-            next = kategorijas[i + 1] || null;
-            break;
-        }
-    }
-
-    if (!kategorija) {
-        kategorija = kategorijas[kategorijas.length - 1] + "+";
-    }
-
-    // KG LĪDZ NĀKAMAJAI
-    let kgInfo = "";
-    if (next) {
-        let diff = (next - svars).toFixed(1);
-        kgInfo = `Līdz nākamajai kategorijai: <b>${diff} kg</b>`;
-    } else {
-        kgInfo = "Tu esi augstākajā kategorijā";
-    }
-
-    // IETEIKUMS
-    let ieteikums = "";
-    if (next && (next - svars) < 2) {
-        ieteikums = "Tu esi tuvu nākamajai kategorijai!";
-    } else {
-        ieteikums = "Tu esi stabilā kategorijā.";
-    }
-
-    // OUTPUT
-    rezultats.innerHTML = `
-        <div class="alert alert-success">
-            <p>Vecums: <b>${vecums}</b></p>
-            <p>Grupa: <b>${grupa}</b></p>
-            <p>Kategorija: <b>${kategorija} kg</b></p>
-            <p>${kgInfo}</p>
-            <p><i>${ieteikums}</i></p>
         </div>
-    `;
-}
+    </div>
+</div>
 
-function notirit() {
-    document.getElementById('svars').value = "";
-    document.getElementById('gads').value = "";
-    document.getElementById('dzimums').value = "";
-    document.getElementById('cinasVeids').value = "";
+<!-- Apakšējās saites -->
+<div class="mt-2 text-center">
+    <a href="https://rtk2023.github.io/riki/" target="_blank" rel="noopener"
+       class="small text-muted text-decoration-none">
+        Visi rīki |
+    </a>
 
-    document.getElementById('rezultats').innerHTML = "";
-}
+    <a href="https://github.com/ann335/sacensibu_kategoriju_kalkul" target="_blank" rel="noopener"
+       class="small text-muted text-decoration-none">
+        Github
+    </a>
+</div>
 
-</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+<script src="script.js"></script>
 
 </body>
 </html>
