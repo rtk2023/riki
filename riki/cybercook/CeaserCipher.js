@@ -3,7 +3,7 @@ function cipherEncode(text, shift) {
     const alphabet = 'abcdefghijklmnopqrstuvwxyz';
     const upperAlphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     let encodedText = '';
-
+shift =((shift % 26) + 26 ) % 26;
     for (let char of text) {
         if (alphabet.includes(char)) {
             let charIndex = alphabet.indexOf(char);
@@ -25,6 +25,7 @@ function cipherDecode(text, shift) {
     const upperAlphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     let decodedText = '';
 
+    shift =((shift % 26) + 26 ) % 26;
     for (let char of text) {
         if (alphabet.includes(char)) {
             let charIndex = alphabet.indexOf(char);
