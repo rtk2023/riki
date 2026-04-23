@@ -1,0 +1,243 @@
+/* PAGE BACKGROUND */
+body {
+    background: #f3f4f6;
+    font-family: 'Segoe UI', sans-serif;
+    color: #111;
+}
+
+/* CONTAINERS */
+.container {
+    margin-top: 30px;
+}
+
+/* TABLE = CARD LOOK */
+.table {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+/* HEADER */
+thead {
+    background: #ffffff;
+}
+
+th {
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #6b7280;
+    font-weight: 600;
+    border-bottom: 1px solid #e5e7eb !important;
+}
+
+/* ROWS */
+td {
+    border: none !important;
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+/* ROW STYLE */
+tbody tr {
+    background: #f9fafb;
+    transition: 0.2s;
+}
+
+tbody tr + tr {
+    border-top: 8px solid white; /* spacing between rows like cards */
+}
+
+tbody tr:hover {
+    background: #eef2f7;
+}
+
+/* POSITION COLUMN (like circles feel) */
+#pointsTable td:first-child {
+    font-weight: bold;
+    width: 60px;
+}
+
+/* TOP 3 COLORS */
+#pointsTable tbody tr:nth-child(1) td:first-child {
+    color: #eab308; /* gold */
+}
+
+#pointsTable tbody tr:nth-child(2) td:first-child {
+    color: #9ca3af; /* silver */
+}
+
+#pointsTable tbody tr:nth-child(3) td:first-child {
+    color: #f97316; /* bronze */
+}
+
+/* BUTTONS */
+button {
+    border-radius: 10px !important;
+    padding: 8px 16px !important;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+/* SECONDARY BUTTON */
+#btnCurrent {
+    background: #e5e7eb;
+    border: none;
+    color: #111;
+}
+
+#btnCurrent:hover {
+    background: #d1d5db;
+}
+
+/* PRIMARY BUTTON */
+#btnOriginal {
+    background: #e5e7eb;
+    border: none;
+    color: #111;
+}
+
+#btnOriginal:hover {
+    background: #d1d5db;
+}
+
+/* SELECTED BUTTONS */
+#btnCurrent.is-selected,
+#btnOriginal.is-selected {
+    background: #e10600;
+    border: none;
+    color: #fff;
+}
+
+#btnCurrent.is-selected:hover,
+#btnOriginal.is-selected:hover {
+    background: #c00500;
+}
+
+/* SMALL DETAILS */
+img {
+    border-radius: 4px;
+}/* PAGE BACKGROUND */
+body {
+    background: #f3f4f6;
+    font-family: 'Segoe UI', sans-serif;
+    color: #111;
+}
+
+/* CONTAINERS */
+.container {
+    margin-top: 30px;
+}
+
+/* TABLE = CARD LOOK */
+.table {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+/* HEADER */
+thead {
+    background: #ffffff;
+}
+
+th {
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #6b7280;
+    font-weight: 600;
+    border-bottom: 1px solid #e5e7eb !important;
+}
+
+/* ROWS */
+td {
+    border: none !important;
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+/* ROW STYLE */
+tbody tr {
+    background: #f9fafb;
+    transition: 0.2s;
+}
+
+tbody tr + tr {
+    border-top: 8px solid white; /* spacing between rows like cards */
+}
+
+tbody tr:hover {
+    background: #eef2f7;
+}
+
+/* POSITION COLUMN (like circles feel) */
+#pointsTable td:first-child {
+    font-weight: bold;
+    width: 60px;
+}
+
+/* TOP 3 COLORS */
+#pointsTable tbody tr:nth-child(1) td:first-child {
+    color: #eab308; /* gold */
+}
+
+#pointsTable tbody tr:nth-child(2) td:first-child {
+    color: #9ca3af; /* silver */
+}
+
+#pointsTable tbody tr:nth-child(3) td:first-child {
+    color: #f97316; /* bronze */
+}
+
+/* BUTTONS */
+button {
+    border-radius: 10px !important;
+    padding: 8px 16px !important;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+/* SECONDARY BUTTON */
+#btnCurrent {
+    background: #e5e7eb;
+    border: none;
+    color: #111;
+}
+
+#btnCurrent:hover {
+    background: #d1d5db;
+}
+
+/* PRIMARY BUTTON */
+#btnOriginal {
+    background: #e5e7eb;
+    border: none;
+    color: #111;
+}
+
+#btnOriginal:hover {
+    background: #d1d5db;
+}
+
+/* SELECTED BUTTONS */
+#btnCurrent.is-selected,
+#btnOriginal.is-selected {
+    background: #e10600;
+    border: none;
+    color: #fff;
+}
+
+#btnCurrent.is-selected:hover,
+#btnOriginal.is-selected:hover {
+    background: #c00500;
+}
+
+/* SMALL DETAILS */
+img {
+    border-radius: 4px;
+}
