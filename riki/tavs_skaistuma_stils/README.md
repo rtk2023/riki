@@ -1,52 +1,61 @@
-# Tavs skaistuma stils
+# Tavs Skaistuma Stils
 
 ## Ievads
-Šis projekts ir interaktīvs tīmekļa rīks, kas palīdz lietotājam izvēlēties sev piemērotāko kosmētikas stilu, balstoties uz sejas, ādas un matu īpašībām. Rīks sniedz personalizētus ieteikumus un palīdz labāk izprast, kādi kosmētikas toņi un paņēmieni vislabāk izceļ individuālo skaistumu.
+Šis rīks ļauj lietotājam noteikt savu individuālo skaistuma stilu, balstoties uz sejas īpašībām, piemēram, ādas tipu, acu krāsu un sejas formu.
 
-## Projekta apraksts
-Projekts ir veidots kā viena lapas (single-page) tīmekļa lietotne, izmantojot HTML, CSS, JavaScript un Bootstrap.
+## Pārskats
+Projekts ir izstrādāts kā vienas lapas tīmekļa lietotne, izmantojot HTML, CSS un JavaScript.
 
-Lietotājs izvēlas dažādus parametrus:
-- ādas tipu
-- ādas toni
-- acu krāsu
-- matu krāsu
-- sejas formu
-- acu formu
+### Arhitektūra
+- Frontend-only risinājums – nav nepieciešams serveris
+- Lietotāja ievade tiek apstrādāta pārlūkprogrammā
+- Dati tiek saglabāti JavaScript objektā (`choices`)
 
-Balstoties uz izvēlēm, sistēma ģenerē:
-- piemērotu kosmētikas stilu
-- praktiskus ieteikumus
-- krāsu un produktu rekomendācijas
+### Failu struktūra
+- `index.html` – galvenais fails, kas satur:
+  - HTML struktūru
+  - CSS stilus 
+  - JavaScript loģiku 
 
+### Galvenā funkcionalitāte
+- Lietotājs izvēlas:
+  - Ādas tipu
+  - Ādas toni
+  - Acu krāsu
+  - Matu krāsu
+  - Sejas formu
+  - Acu formu
+- Progresa josla rāda aizpildes statusu
+- Validācija pārbauda, vai visas izvēles ir veiktas
+- Rezultāts tiek ģenerēts modālajā logā
+- Pieejamas papildfunkcijas:
+  - Nejauša izvēle
+  - Notīrīt izvēles
 
-## Failu struktūra
-Projekts sastāv no viena galvenā faila:
+### Tehnoloģijas
+- HTML
+- CSS
+- JavaScript 
+- Bootstrap
 
-`index.html` – satur visu projektu (HTML, CSS un JavaScript)
+## Iespējamie uzlabojumi
+- Saglabāt rezultātus (localStorage)
+- Pievienot lietotāja kontus
+- Izmantot mākslīgo intelektu precīzākai analīzei
+- Pievienot attēlus un vizuālus piemērus
+- Uzlabot loģiku (vairāk kombināciju un precizitāte)
+- Pievienot daudzvalodu atbalstu
 
+## Zināmie defekti
+- Analīzes loģika ir vienkāršota (neaptver visas kombinācijas)
+- Nav servera validācijas
+- Dizains var atšķirties dažādās ierīcēs
+- Nav saglabāšanas pēc lapas pārlādes
 
-## Validācija
-
-Programmā tiek veikta ievades datu pārbaude, lai nodrošinātu, ka lietotājs ir izvēlējies visus nepieciešamos parametrus pirms rezultāta ģenerēšanas. Ja kāds no laukiem nav aizpildīts, lietotājam tiek parādīts paziņojums, ka jāizvēlas visi kritēriji.
-
-Tiek pārbaudīti šādi lauki:
-- ādas tips
-- ādas tonis
-- acu krāsa
-- matu krāsa
-- sejas forma
-- acu forma
-
-Rezultātu ģenerēšana ir iespējama tikai tad, ja visi izvēlētie parametri ir aizpildīti.
-
-## Izmantotie rīki
-
-- HTML – lapas struktūras izveidei
-- CSS – vizuālā noformējuma veidošanai
-- JavaScript – loģikas un interaktivitātes nodrošināšanai
-- Bootstrap – responsīvam dizainam un gataviem komponentiem (pogas, modālais logs, Izvēlēs josla)
+## Resursi
+- https://getbootstrap.com/
+- https://www.w3schools.com/
+- https://gitlab.com/tgrants/web
 
 ## Autori
-Ariana Terehova 
-Marija Soboleva
+2026: Ariana Terehova, Marija Soboleva 
