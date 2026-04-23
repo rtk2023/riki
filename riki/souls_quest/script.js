@@ -11,7 +11,7 @@ const modalContent = [
 	[{title : "Siegmeyer of Catarina",content : "A man with wierd, onion shaped armor, behaving very confused every time you meet him."},{title : "Siegmeyers' location",content : "Found next to Sen's Fortress gate "}],
 	[{title : "Laurentius of the Great Swamp",content : "A very emotional and human man, a scholar of pyromancy, that can teach the player to use it."},{title : "Laurentius' location",content : "Upon going into depths, drop down next to the butcher enemy, after entering a room full of barrels, he will call out to you to free him."}],
 	[{title : "Ingward",content : "A mysterious sorcerer that covers his face with a mask. He can reverse a curse that the player can obtain either from Obelisk enemies un the Depths or Seath the Scaleless at Duke's Archives."},{title : "Ingwards' location",content : "Deep inside of New Londo Ruins beneath Firelink Shrine."}],
-	//{title : "",content : ""} <---- liec jaunus šitādus lai būtu jaunas lapas,katrs jaunais ir viena jauna lapa. 
+	[{title : "",content : ""},{title : "",content : ""}],
 	[{title : "",content : ""},{title : "",content : ""}],
 	[{title : "",content : ""},{title : "",content : ""}],
 	[{title : "",content : ""},{title : "",content : ""}],
@@ -88,15 +88,15 @@ function w3AddClass(element, name) {
 
 // Hide elements that are not selected
 function w3RemoveClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    while (arr1.indexOf(arr2[i]) > -1) {
-      arr1.splice(arr1.indexOf(arr2[i]), 1);
-    }
-  }
-  element.className = arr1.join(" ");
+	var i, arr1, arr2;
+	arr1 = element.className.split(" ");
+	arr2 = name.split(" ");
+	for (i = 0; i < arr2.length; i++) {
+		while (arr1.indexOf(arr2[i]) > -1) {
+			arr1.splice(arr1.indexOf(arr2[i]), 1);
+			}
+		}
+	element.className = arr1.join(" ");
 }
 
 // Add active class to the current control button (highlight it)
