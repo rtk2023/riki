@@ -1,4 +1,4 @@
-# S.T.L.K.E.R GAMMA dziedināšanas kalkulators
+# S.T.A.L.K.E.R GAMMA dziedināšanas kalkulators
 ## Ievads
 Dzīvības punktu atjaunošanas kalkulators, kas ļauj iegūt lētāko variantu un ar kādām zālēm atjauno pirms un kādām pēc un  ir balstīts uz spēles modifikācijas S.T.A.L.K.E.R GAMMA
 
