@@ -25,8 +25,8 @@ Dati tiek ielādēti no ESPN.
 ## Faili
 
 - `index.html` 
-- `styles.css`.
-- `app.js` 
+- `style.css`.
+- `script.js` 
 - `README.md`
 
 ## Iespējamie uzlabojumi / Defekti
