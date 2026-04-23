@@ -1,0 +1,433 @@
+/*Reset & Base*/
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-image: url("https://cdn2.steamgriddb.com/grid/5adc1b32701008182cdec8b10782c9f4.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  font-family: 'Courier New', Courier, monospace;
+  color: #d4e8c2;
+  min-height: 100vh;
+}
+
+/*Page wrapper*/
+.page-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/*Limb Grid (3 columns)*/
+.limb-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  justify-items: center;
+  align-items: start;
+  margin-bottom: 2rem;
+}
+
+.limb-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.limb-empty { visibility: hidden; }
+
+/*Centre body image*/
+.limb-center-img {
+  justify-content: center;
+}
+.limb-center-img img {
+  max-width: 220px;
+  width: 100%;
+}
+
+/*Health Card*/
+.health-card {
+  background: rgba(10, 14, 10, 0.80);
+  border: 1px solid #3a5a2a;
+  border-radius: 6px;
+  padding: 0.5rem;
+  width: 100%;
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.card-img {
+  width: 100%;
+  border-radius: 4px;
+  display: block;
+}
+
+.card-text {
+  font-size: 0.72rem;
+  color: #8ab870;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/*Limb Title*/
+.limb-title {
+  color: #ffffff;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+/*Button Group*/
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid #3a6a20;
+}
+
+.health-btn {
+  background: rgba(20, 35, 12, 0.85);
+  color: #a8d08a;
+  border: none;
+  border-right: 1px solid #3a6a20;
+  padding: 0.3rem 0.55rem;
+  font-family: inherit;
+  font-size: 0.72rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.health-btn:last-child { border-right: none; }
+
+.health-btn:hover {
+  background: rgba(60, 120, 30, 0.5);
+  color: #d4e8c2;
+}
+
+.health-btn.active {
+  background: #3a7a1a;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/*Sakharov cell*/
+.limb-sakharov {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+#sakharov-btn {
+  background: #8b1a1a;
+  color: #fff;
+  border: 1px solid #c0392b;
+  border-radius: 4px;
+  padding: 0.55rem 1.2rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: background 0.15s;
+}
+
+#sakharov-btn:hover { background: #a82020; }
+
+/*HP Summary*/
+#hp-summary {
+  width: 100%;
+  max-width: 380px;
+}
+
+.hp-summary-box {
+  background: rgba(10, 14, 10, 0.88);
+  border: 1px solid #3a5a2a;
+  border-radius: 6px;
+  padding: 0.9rem 1rem;
+  font-size: 0.8rem;
+}
+
+.hp-summary-box h5 {
+  color: #7fd45a;
+  font-size: 0.85rem;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hp-summary-box hr {
+  border: none;
+  border-top: 1px solid #3a5a2a;
+  margin: 0.5rem 0;
+}
+
+.hp-summary-box strong {
+  color: #d4e8c2;
+  font-size: 0.82rem;
+}
+
+/*Summary table*/
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.summary-table th {
+  color: #7fd45a;
+  text-align: left;
+  padding: 0.2rem 0.4rem;
+  border-bottom: 1px solid #2a3a1a;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+}
+
+.summary-table td {
+  padding: 0.25rem 0.4rem;
+  border-bottom: 1px solid rgba(60,100,30,0.2);
+  color: #c8e0b0;
+}
+
+/*Inline progress bar*/
+.prog-wrap {
+  background: #1a2410;
+  border-radius: 3px;
+  height: 14px;
+  overflow: hidden;
+  border: 1px solid #2e4020;
+  min-width: 80px;
+}
+
+.prog-bar {
+  height: 100%;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  font-weight: bold;
+  color: #fff;
+  transition: width 0.4s ease;
+}
+
+.prog-success { background: #4caf50; }
+.prog-info    { background: #29b6f6; }
+.prog-warning { background: #ff9800; }
+.prog-danger  { background: #f44336; }
+.prog-secondary { background: #607d8b; }
+
+/* 
+	CALCULATOR SECTION
+*/
+#calc-section {
+  background: rgba(10, 14, 10, 0.88);
+  border: 1px solid #3a5a2a;
+  border-radius: 8px;
+  padding: 1.4rem 1.6rem;
+  margin: 0 auto 2rem;
+  max-width: 960px;
+  color: #d4e8c2;
+  box-shadow: 0 0 32px rgba(60, 140, 40, 0.25), inset 0 0 60px rgba(0,0,0,0.4);
+}
+
+#calc-section h4 {
+  color: #7fd45a;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #3a5a2a;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.calc-intro {
+  font-size: 0.75rem;
+  color: #556b45;
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+}
+
+.highlight-red { color: #ff6b6b; }
+
+.calc-title {
+  color: #a8e07a;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+/*Damage Summary Bars*/
+.calc-damage-summary {
+  background: rgba(0,0,0,0.3);
+  border: 1px solid #2a3a1a;
+  border-radius: 5px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.45rem 1.5rem;
+}
+
+.calc-dmg-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+}
+
+.calc-dmg-label {
+  width: 72px;
+  flex-shrink: 0;
+  color: #8ab870;
+}
+
+.calc-dmg-bar-wrap {
+  flex: 1;
+  background: #1a2410;
+  border-radius: 3px;
+  height: 10px;
+  overflow: hidden;
+  border: 1px solid #2e4020;
+}
+
+.calc-dmg-bar {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+
+.calc-dmg-ok   { background: #4caf50; }
+.calc-dmg-warn { background: #8bc34a; }
+.calc-dmg-bad  { background: #ff9800; }
+.calc-dmg-crit { background: #f44336; box-shadow: 0 0 6px #f44336aa; }
+
+.calc-dmg-pct {
+  width: 36px;
+  text-align: right;
+  color: #9ec87e;
+  font-size: 0.75rem;
+}
+
+/*Phase Block*/
+.calc-phase { margin-bottom: 1.2rem; }
+
+.calc-phase-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #ffd54f;
+  padding: 0.3rem 0.6rem;
+  background: rgba(255, 213, 79, 0.08);
+  border-left: 3px solid #ffd54f;
+  margin-bottom: 0.5rem;
+}
+
+/*Calculator Table*/
+.calc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+}
+
+.calc-table thead tr {
+  background: rgba(60, 100, 30, 0.4);
+  color: #7fd45a;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+}
+
+.calc-table th,
+.calc-table td {
+  padding: 0.35rem 0.6rem;
+  border-bottom: 1px solid rgba(60, 100, 30, 0.25);
+  text-align: left;
+  vertical-align: middle;
+}
+
+.calc-table tbody tr:hover { background: rgba(100, 180, 60, 0.07); }
+
+.calc-qty        { color: #ffd54f; font-weight: bold; text-align: center; }
+.calc-parts      { color: #a8d08a; font-size: 0.72rem; }
+.calc-cost       { color: #90caf9; text-align: right; }
+.calc-cost-total { color: #fff176; font-weight: bold; text-align: right; }
+.calc-note-td    { color: #888; font-size: 0.7rem; font-style: italic; }
+
+.calc-table tfoot td {
+  border-top: 1px solid #3a5a2a;
+  border-bottom: none;
+  padding-top: 0.4rem;
+}
+
+.calc-sub-label { color: #8ab870; text-align: right; font-size: 0.72rem; }
+.calc-sub-val   { color: #ffd54f; font-weight: bold; text-align: right; }
+
+/*Grand Total*/
+.calc-grand-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(60, 100, 30, 0.25);
+  border: 1px solid #4a7a2a;
+  border-radius: 5px;
+  padding: 0.55rem 0.9rem;
+  margin: 0.8rem 0;
+  font-size: 0.85rem;
+}
+
+.calc-grand-total {
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #ffd54f;
+  letter-spacing: 0.05em;
+}
+
+/*Notes*/
+.calc-notes { margin-top: 0.8rem; }
+
+.calc-note-item {
+  font-size: 0.76rem;
+  padding: 0.3rem 0.6rem;
+  margin-bottom: 0.3rem;
+  background: rgba(255, 100, 0, 0.08);
+  border-left: 3px solid #ff8c42;
+  border-radius: 2px;
+  color: #ffcc80;
+}
+
+.calc-note-item:first-child {
+  border-left-color: #81c784;
+  color: #c8e6c9;
+  background: rgba(0,200,50,0.06);
+}
+
+/*Healthy State*/
+.calc-healthy {
+  text-align: center;
+  padding: 1.5rem;
+  color: #81c784;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/*Disclaimer*/
+.calc-disclaimer {
+  font-size: 0.67rem;
+  color: #556b45;
+  margin-top: 0.8rem;
+  line-height: 1.5;
+  border-top: 1px solid #2a3a1a;
+  padding-top: 0.6rem;
+}
