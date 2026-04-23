@@ -9,8 +9,8 @@ Lietotājiem tiek dota iespēja filtrēt personāžus pēc izskata,dzimuma un ci
  - Pievienot sazarojošās izvēles,ja quest line ir vairākas iespējamas darbības.
  - Pievienot meklēšanas teksta logu,ja lietotājs jau zin NPC vārdu.
 ## Resursi
-- [Rīku saraksts] - https://github.com/rtk2023/riki
-- [Github projekts] - https://github.com/RainersN/riki/tree/main/riki/souls_quest
-- [W3Schools] - https://www.w3schools.com/
+- [Rīku saraksts] (https://github.com/rtk2023/riki)
+- [Github projekts] (https://github.com/RainersN/riki/tree/main/riki/souls_quest)
+- [W3Schools] (https://www.w3schools.com/)
 ## Autori
 2026: Rainers Niņuks,Dmitrijs Borodins,Ralfs Pakalns no P23-1
