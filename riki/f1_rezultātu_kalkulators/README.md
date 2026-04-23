@@ -12,15 +12,15 @@ Projektā tiek izmantots Bootstrap ietvars un OpenF1 API, lai iegūtu ritošos d
 - modal.css: Satur uznirstošā loga stilu (ņemts no interneta piemēra)
 
 ## Iespējamie uzlabojumi
-Braucēju un komandu titulu līderu saraksts.
-Vēsturisku sacensību un gadu rezultātu apskates vieta.
-Kvalifikācijas rezultātu atspoguļošana noteiktām sacensībām (ja kvalifikācija ir jau notikusi).
+- Braucēju un komandu titulu līderu saraksts.
+- Vēsturisku sacensību un gadu rezultātu apskates vieta.
+- Kvalifikācijas rezultātu atspoguļošana noteiktām sacensībām (ja kvalifikācija ir jau notikusi).
 ### Zināmie defekti
 API neatgriež aktuālo informāciju aprīlī, sakarā ar sacensību nenotikšanu - ir hard-coded pēdējā sesija pirms pauzes.
 
 ## Resursi
-OpenF1 API: <https://openf1.org/docs/#api-endpoints>
-Bootstrap Docs: <https://getbootstrap.com/docs/5.3/getting-started/introduction/>
+OpenF1 API: <https://openf1.org/docs/#api-endpoints>  
+Bootstrap Docs: <https://getbootstrap.com/docs/5.3/getting-started/introduction/>  
 Modālā loga piemērs: <https://sjns19.medium.com/making-a-simple-re-usable-modal-dialog-system-using-vanilla-javascript-4eae68b3557c>
 
 ## Autori

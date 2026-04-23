@@ -1,3 +1,4 @@
+// FETCH JSON - veic datu pieprasījumu JSON formā no API
 async function fetchJson(url, endpointName) {
 	try {
 		const response = await fetch(url);
@@ -21,6 +22,7 @@ async function fetchJson(url, endpointName) {
 	}
 }
 
+// GET POINTS DATA - iegūst datus par aktuālajiem punktiem no API
 async function getPointsData() {
 	const url = "https://api.openf1.org/v1/championship_drivers?meeting_key=1281";
 
@@ -28,11 +30,12 @@ async function getPointsData() {
 
 	const currentPoints = data
 		.map(driver => ({ driver_number: driver.driver_number, points: driver.points_current }))
-		.sort((a, b) => b.points - a.points);
+		.sort((a, b) => b.points - a.points);	// Sakārto braucējus pēc lielākā punktu skaita
 
 	return currentPoints;
 }
 
+// GET DRIVERS DATA - iegūst datus par braucējiem un kartējot tos, lai apvienotu ar punktiem
 async function getDriversData() {
 	const points = await getPointsData();
 	const url = "https://api.openf1.org/v1/drivers?session_key=latest";
@@ -40,7 +43,7 @@ async function getDriversData() {
 
 	const driversData = data
 		.map(driver => ({ headshot: driver.headshot_url, acronym: driver.name_acronym, driver_number: driver.driver_number, name: driver.full_name, team: driver.team_name }))
-		.sort((a, b) => a.driver_number - b.driver_number);
+		.sort((a, b) => a.driver_number - b.driver_number);	//sakārto braucējus pēc mazākā numura
 
 	const driversMap = new Map(driversData.map(d => [d.driver_number, d]));	// izveido karti, lai apvienotu braucējus ar punktu skaitu
 	const drivers = points
@@ -85,6 +88,7 @@ async function showPointsTable(driversOverride) {
 		const basePoints = Number(d.points ?? 0);
 		const winCount = predictedWins.get(String(d.driver_number)) ?? 0;
 		const bonusPoints = winCount * 25;	//Iegūst 25 punktus par katru uzvaru
+		// Atgriež masīvu ar datiem un kopējiem punktiem.
 		return {
 			...d,
 			basePoints,
