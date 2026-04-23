@@ -1,6 +1,6 @@
 let ouPokemonCache = null;
 let ouUsageCache = null;
-
+// Load OU data as early as possible so autocomplete is ready
 window.addEventListener("load", () => loadOUPokemon());
 
 async function analyzePokemon() {
@@ -12,13 +12,13 @@ async function analyzePokemon() {
     }
 
     const ouPokemon = await loadOUPokemon();
-
+     // Block non-OU Pokemon
     if (ouPokemon && !ouPokemon.has(name)) {
         alert(`${name} nav OU līmenī! Var meklēt tikai OU Pokemonus.`);
         return;
     }
-
-    const response = await fetch("https://pokeapi.co/api/v2/pokemon/" + name);
+    const apiName = smogonToPokeAPI[name] || name; // map trough Smogon so the name searched is found
+    const response = await fetch("https://pokeapi.co/api/v2/pokemon/" + apiName);
     if (!response.ok) {
         alert("Kļūda! Pokemons netika atrasts!");
         return;
@@ -31,7 +31,7 @@ async function analyzePokemon() {
     for (let attackType in typeChart) {
         let multiplier = 1;
         types.forEach(defType => {
-            if (typeChart[defType] && typeChart[defType][attackType]) {
+            if (typeChart[defType] && typeChart[defType][attackType] !== undefined) {
                 multiplier *= typeChart[defType][attackType];
             }
         });
@@ -107,6 +107,7 @@ function displayResult(types, weaknesses, partners, name, inputImage) {
     document.getElementById("result").innerHTML = html;
 }
 
+// Converts "Iron Valiant" -> "iron-valiant" to match PokeAPI format
 function normalizeSmogonName(name) {
     return name.toLowerCase().replace(/\s+/g, "-");
 }
@@ -202,15 +203,17 @@ async function loadOUPokemon() {
         ouUsageCache = {};
 
         for (const line of lines) {
+            // Captures both the name and usage percentage from each row
+            // Line format: | 1    | Great Tusk         | 35.68679% | 
             const match = line.trim().match(/^\|\s*\d+\s*\|\s*([A-Za-z][\w\s\-]+?)\s*\|\s*([\d.]+)%/);
             if (match) {
                 const normalizedName = normalizeSmogonName(match[1]);
                 const usagePercent = parseFloat(match[2]) / 100;
 
-                if (usagePercent >= 0.005) {
-                    ouPokemonCache.add(normalizedName);
-                    ouUsageCache[normalizedName] = usagePercent;
-                }
+                
+                ouPokemonCache.add(normalizedName);
+                ouUsageCache[normalizedName] = usagePercent;
+                
             }
         }
         console.log("Total lines in file:", lines.length);
@@ -229,25 +232,56 @@ async function loadOUPokemon() {
 
 
 
-
+// Maps Smogon names to PokeAPI names where they differ
 const smogonToPokeAPI = {
-    "enamorus": "enamorus-incarnate",
-    "keldeo": "keldeo-ordinary",
-    "maushold": "maushold-family-of-four",
-    "mimikyu": "mimikyu-disguised",
+    // Ogerpon forms
+    "ogerpon": "ogerpon",
     "ogerpon-wellspring": "ogerpon-wellspring-mask",
     "ogerpon-cornerstone": "ogerpon-cornerstone-mask",
     "ogerpon-hearthflame": "ogerpon-hearthflame-mask",
-    "ogerpon": "ogerpon-teal-mask",
-    "ogerpon": "ogerpon",
-    "palafin": "palafin-zero",
+    // Forces of Nature
+    "enamorus": "enamorus-incarnate",
+    "tornadus": "tornadus-incarnate",
+    "thundurus": "thundurus-incarnate",
+    // Keldeo / Meloetta / Shaymin
+    "keldeo": "keldeo-ordinary",
+    "meloetta": "meloetta-aria",
+    "shaymin": "shaymin-land",
+    // Maushold / Mimikyu
+    "maushold": "maushold-family-of-four",
+    "mimikyu": "mimikyu-disguised",
+    // Gender split forms
+    "indeedee": "indeedee-male",
+    "indeedee-f": "indeedee-female",
+    "meowstic": "meowstic-male",
+    "basculegion": "basculegion-male",
+    "basculegion-f": "basculegion-female",
+    "oinkologne": "oinkologne-male",
+    "oinkologne-f": "oinkologne-female",
+    "pyroar": "pyroar-male",           // female form isn't in OU
+    // Tauros Paldea
+    "tauros-paldea-combat": "tauros-paldea-combat-breed",
+    "tauros-paldea-blaze": "tauros-paldea-blaze-breed",
+    "tauros-paldea-aqua": "tauros-paldea-aqua-breed",
+    // Other alternate forms
+    "toxtricity": "toxtricity-amped",
+    "dudunsparce": "dudunsparce-two-segment",
+    "lycanroc": "lycanroc-midday",
+    "minior": "minior-red-meteor",
+    "morpeko": "morpeko-full-belly",
+    "eiscue": "eiscue-ice",
+    "basculin": "basculin-red-striped",
+    "oricorio": "oricorio-baile",
+    "oricorio-pa'u": "oricorio-pau",   // apostrophe stripped in PokeAPI
     "tatsugiri": "tatsugiri-curly",
     "squawkabilly": "squawkabilly-green-plumage",
-    "gimmighoul": "gimmighoul-chest",
+    "palafin": "palafin-zero",
+    "gimmighoul": "gimmighoul",
+    "gimmighoul-chest": "gimmighoul",
     "wo-chien": "wo-chien",
     "chien-pao": "chien-pao",
     "ting-lu": "ting-lu",
-    "chi-yu": "chi-yu"
+    "chi-yu": "chi-yu",
 };
 
 async function findPartners(weaknesses, yourTypes = []) {
@@ -260,14 +294,16 @@ async function findPartners(weaknesses, yourTypes = []) {
     const scored = [];
 
     for (let ouName of ouPokemon) {
+        const usage = ouUsageCache[ouName] || 0;
+        if (usage < 0.001) continue;
         try {
             const apiName = smogonToPokeAPI[ouName] || ouName;
-            const res = await fetch("https://pokeapi.co/api/v2/pokemon/" + apiName);
-
+            let res = await fetch("https://pokeapi.co/api/v2/pokemon/" + apiName);
+            // If mapped name fails, try the raw Smogon name as fallback
             if (!res.ok && apiName !== ouName) {
                 res = await fetch("https://pokeapi.co/api/v2/pokemon/" + ouName);
             }
-
+            // If both fail, skip silently
             if (!res.ok) {
                 console.log(`Skipping ${ouName} — not found in PokeAPI`);
                 continue;
@@ -282,32 +318,32 @@ async function findPartners(weaknesses, yourTypes = []) {
             for (let weakness of weaknesses) {
                 let multiplier = 1;
                 candidateTypes.forEach(defType => {
-                    if (typeChart[defType] && typeChart[defType][weakness]) {
+                    if (typeChart[defType] && typeChart[defType][weakness] !== undefined) {
                         multiplier *= typeChart[defType][weakness];
                     }
                 });
-                if (multiplier === 0) score += 5;
-                else if (multiplier <= 0.25) score += 4;
-                else if (multiplier < 1) score += 3;
-                else if (multiplier > 1) score -= 3;
+                if (multiplier === 0) score += 7;
+                else if (multiplier <= 0.25) score += 5;
+                else if (multiplier < 1) score += 4;
+                else if (multiplier > 1) score -= 4;
             }
 
             // B — can it hit your weakness types super effectively?
             for (let weakness of weaknesses) {
                 candidateTypes.forEach(atkType => {
                     if (typeChart[weakness] && typeChart[weakness][atkType]) {
-                        if (typeChart[weakness][atkType] > 1) score += 2;
+                        if (typeChart[weakness][atkType] > 1) score += 4;
                     }
                 });
             }
 
             // C — shared type penalty
             const overlap = candidateTypes.filter(t => yourTypes.includes(t)).length;
-            score -= overlap * 3;
+            score -= overlap * 10;
 
             // D — usage rate bonus
             const usage = ouUsageCache[ouName] || 0.005;
-            score += usage * 5;
+            score += usage * 10;
 
             const image =
                 pokeData.sprites.other?.["official-artwork"]?.front_default ||

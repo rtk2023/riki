@@ -118,6 +118,7 @@ button {
   align-items: center;
   flex-wrap: wrap;
   gap: 4px;
+  text-align: start;
 }
 
 .box p span:first-child {
