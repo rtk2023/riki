@@ -19,7 +19,7 @@ Iespējamie uzlabojumi:
 * Vizuāls grafiks, kas parāda komandas stiprās un vājās puses pret dažādiem tipiem.
 
 Zināmie defekti:
-* *Ja tādi ir, apraksti šeit (piemēram: "Uz mobilajām ierīcēm tabulas izkārtojums var nebūt pilnīgs"). Ja nav, vari rakstīt: "Pašlaik nav zināmu būtisku defektu."*
+Ir hard-coded saraksti, lai API atrastu pokemona vārdus, divu API nesaskaņas dēļ.
 
 Resursi:
 * [Rīku saraksts](https://rtk2023.github.io/riki/)
