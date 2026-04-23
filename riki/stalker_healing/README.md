@@ -18,6 +18,8 @@ Gribētu lai ir atbilstošāk spēlei, bet neiznāca iegūt īstās vērtības u
 
 ## Zināmie defekti
 
+Veidojot html izvietojumu grid formātā paliek daži tukši lauki, kas veido lieko kodu. Nākotnē varētu to mainīt un novērst ar, piemēram, display flex (skolotāja ieteikums)
+
 ## Resursi
 
 S.T.A.L.K.E.R GAMMA wiki: https://stalker-anomaly-gamma.fandom.com/wiki/S.T.A.L.K.E.R._Anomaly_GAMMA_Wiki
