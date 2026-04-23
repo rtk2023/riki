@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="lv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NBA rezultātu analītiķis</title>
+    <link rel="preconnect" href="https://site.api.espn.com" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Galvenais konteiners visai prognožu lapai -->
+    <main class="app-shell">
+      <header class="hero">
+        <div>
+          <h1>NBA rezultātu analītiķis</h1>
+        </div>
+        <nav class="header-links" aria-label="Galvenes saites">
+          <a href="https://rtk2023.github.io/riki/">Rīki</a>
+          <a href="https://github.com/rtk2023/riki">GitHub</a>
+        </nav>
+      </header>
+
+      <section class="controls" aria-label="Prognožu vadība">
+        <label class="control-label" for="gameDate">Spēles datums</label>
+        <input id="gameDate" type="date" />
+        <button id="refreshBtn" type="button">Ielādēt</button>
+        <button id="todayBtn" class="ghost-btn" type="button">Šodien</button>
+      </section>
+
+      <p id="statusLine" class="status-line" role="status" aria-live="polite"></p>
+
+      <section id="gamesContainer" class="games-grid" aria-label="Prognozētās spēles"></section>
+    </main>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>
