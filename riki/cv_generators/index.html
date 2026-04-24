@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV generator</title>
+   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="light">
+  <div class="app-header">
+    <h1><i class="fas fa-id-card"></i> CV generator</h1>
+    <button class="theme-toggle" id="themeToggle" aria-label="Switch theme">
+      <i class="fas fa-sun"></i>
+      <span>Light</span>
+      <i class="fas fa-moon"></i>
+    </button>
+  </div>
+
+  <div class="container">
+    <div class="form-panel">
+      <div class="section-title"><i class="fas fa-camera"></i> Profile picture</div>
+      <div class="profile-upload">
+        <div class="avatar-preview" id="avatarPreview">
+          <i class="fas fa-user-circle"></i>
+        </div>
+        <div class="file-input-wrapper">
+          <input type="file" id="profilePic" accept="image/*" onchange="handleProfilePicUpload(event)">
+          <div style="display: flex; align-items: center; margin-top: 4px;">
+            <p style="font-size: 0.7rem; color: var(--text-secondary);">JPEG/PNG, max 2MB</p>
+            <button class="remove-photo" onclick="removeProfilePic()" style="margin-left: auto;">Remove</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label><i class="fas fa-user"></i> Full name</label>
+        <input id="name" placeholder="John Doe" value="">
+        <div class="error-message" id="nameError"></div>
+      </div>
+      <div class="input-group">
+        <label><i class="fas fa-briefcase"></i> Title</label>
+        <input id="title" placeholder="Lead Product Designer" value="">
+      </div>
+      <div class="input-row">
+        <div class="input-group">
+          <label><i class="fas fa-envelope"></i> Email</label>
+          <input id="email" type="email" placeholder="dummy@domain.com">
+          <div class="error-message" id="emailError"></div>
+        </div>
+        <div class="input-group">
+          <label><i class="fas fa-phone"></i> Phone</label>
+          <input id="phone" type="tel" placeholder="+371 29 337 192">
+          <div class="error-message" id="phoneError"></div>
+        </div>
+      </div>
+
+      <div class="section-title"><i class="fas fa-pen"></i> Summary</div>
+      <textarea id="summary" placeholder="..."></textarea>
+
+      <div class="section-title"><i class="fas fa-briefcase"></i> Experience</div>
+      <textarea id="experience" placeholder="jobs (linebreak after each)"></textarea>
+
+      <div class="section-title"><i class="fas fa-graduation-cap"></i> Education</div>
+      <textarea id="education" placeholder="school name (linebreak after each)"></textarea>
+
+      <div class="section-title"><i class="fas fa-code"></i> Skills</div>
+      <textarea id="skills" placeholder="skill name (linebreak after each)"></textarea> 
+
+      <div class="button-group">
+        <button class="btn" onclick="generateCV()"><i class="fas fa-sync-alt"></i> Generate</button>
+        <button class="btn btn-outline" onclick="downloadPDF()"><i class="fas fa-print"></i> PDF / Print</button>
+      </div>
+      <p style="font-size: 0.7rem; margin-top: 18px; opacity: 0.7;"><i class="far fa-lightbulb"></i> Use line breaks for bullets.</p>
+    </div>
+
+    <!-- PREVIEW -->
+    <div class="preview-panel">
+      <div id="cv" class="cv"></div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
