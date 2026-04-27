@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="šifru kodētājs/atkodētājs">
+    <title>Cipher Encoder/Decoder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="https://rtk2023.github.io/riki/">Riki majaslapa</a> 
+        <span>vai</span>
+        <a href="https://github.com/rtk2023/riki">Riki github</a>
+    </nav>
+    <header id="header">
+        <h1>Šifru kodētājs/atkodētājs</h1>
+    </header>
+    <main>
+        <section class="form-section">
+            <label for="cipherType">Izvēlēties šifru:</label>
+            <select id="cipherType">
+                <option value="atbash">Atbash šifrs</option>
+                <option value="caesar">Caesar šifrs</option>
+                <option value="vigenere">Vigenère šifrs</option>
+                <option value="base64">Base64</option>
+                <option value="morse">Morse kods</option>
+                <option value="html">HTML kodētājs/atkodētājs</option>
+            </select>
+
+            <label for="inputText">Ievadiet tekstu:</label>
+            <textarea id="inputText" rows="5" placeholder="Ievadiet tekstu..."></textarea>
+
+            <label for="key" id="keyLabel" style="display: none;">Pārbīde uz priekšu  (ja nepieciešams):</label>
+            <input type="text" id="key" placeholder="Neobligāta nobīde" style="display: none;">
+
+            <div class="button-group">
+                <button id="encodeButton">Kodēt</button>
+                <button id="decodeButton">Atkodēt</button>
+            </div>
+        </section>
+        <section class="result-section">
+            <h2>Rezultāts:</h2>
+            <p id="result"></p>
+            <button class="button-copy" id="copyButton" style="display: none;">Kopēt</button>
+        </section>
+    </main>
+    <script src="AtbashCipher.js"></script>
+    <script src="CeaserCipher.js"></script>
+    <script src="VigenereCipher.js"></script>
+    <script src="base64.js"></script>
+    <script src="morse.js"></script>
+    <script src="htmlEncoder.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

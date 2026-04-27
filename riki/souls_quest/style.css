@@ -1,0 +1,37 @@
+.filterDiv {
+	float: left;
+	background-color: transparent;
+	border: 2px solid black;
+	background-repeat: no-repeat;
+	color: #f44336;
+	border-color: #f44336;
+	width: 400px;
+	min-height:150px;
+	line-height: 150px;
+	text-align: center;
+	margin-top:20px;
+	margin-left:20px;
+	font-size:26px;
+	display: none; /* Hidden by default */
+	padding: 4px 8px;
+	cursor: pointer;
+	border-radius: 9px;
+}
+.filterDiv:hover {
+	background: #f44336;
+	color: white;
+}
+.filterDiv span{
+}
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+h1 {
+	color:blue;
+}
+#fillerDiv{
+	height:300px;
+	background-image:url('https://cdn.wccftech.com/wp-content/uploads/2017/03/01_1490346156-2048x1152.jpg');
+	background-position:0% 50%;
+}
