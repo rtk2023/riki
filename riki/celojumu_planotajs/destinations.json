@@ -1,0 +1,512 @@
+
+[
+  {
+  "valsts": "Itālija",
+  "tips": ["pilsēta", "atpūta"],
+  "budžets": 800,
+  "ilgums": 5,
+  "aktivitātes": ["Ekskursijas", "Ēdiens", "Muzeji"],
+  "apraksts": "Ideāli piemērots kultūras un vēstures cienītājiem.",
+  "kontinents": "Eiropa",
+  "klimats": "silts",
+
+  "sezona": ["pavasaris","vasara","rudens"],
+  "valūta": "EUR",
+  "iedzīvotāji": "59 miljoni",
+
+  "valodas": ["itāļu"],
+  "laimes_līmenis": 7,
+  "slavenākā_vieta": "Kolizejs",
+  "attēls": "https://images.unsplash.com/photo-1636804907108-fa8d2e0f7a90?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+
+  {
+  "valsts": "Norvēģija",
+  "tips": ["daba","piedzīvojumi"],
+  "budžets": 1200,
+  "ilgums": 7,
+  "aktivitātes": ["Pārgājieni","Fiordi"],
+  "apraksts": "Elpu aizraujoša daba un aktīvā atpūta.",
+  "kontinents": "Eiropa",
+  "klimats": "auksts",
+  "sezona": ["vasara","ziema"],
+  "valūta": "NOK ",
+  "iedzīvotāji": "5 miljoni",
+
+
+  "valodas": ["norvēģu"],
+  "laimes_līmenis": 8,
+  "slavenākā_vieta": "Geiranger fjords",
+  "attēls": "https://images.unsplash.com/photo-1695824630486-11e484874934?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+
+
+
+
+  {
+  "valsts": "Spānija",
+  "tips": ["pilsēta","atpūta",  "daba"],
+  "budžets": 700,
+  "ilgums": 6,
+  "aktivitātes": ["Pludmale","Ekskursijas","Vīns"],
+  "apraksts": "Saulains klimats un bagāta kultūra.",
+  "kontinents": "Eiropa",
+  "klimats": "silts",
+  "sezona": ["pavasaris ","vasara","rudens"],
+  "valūta": "EUR",
+  "iedzīvotāji": "47 miljoni",
+
+  "valodas": ["spāņu"],
+  "laimes_līmenis": 7,
+  "slavenākā_vieta": "Sagrada Familia",
+  "attēls": "https://images.unsplash.com/photo-1728249960363-13079cc2c6f6?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8U2FncmFkYSUyMEZhbWlsaWF8ZW58MHx8MHx8fDA%3D"
+  },
+
+  {
+  "valsts": "Islandija",
+  "tips": ["daba","piedzīvojumi"],
+  "budžets": 1500,
+  "ilgums": 7,
+  "aktivitātes": ["Ledāji","Geizeri"],
+  "apraksts": "Unikāla daba un vulkāniskā ainava.",
+  "kontinents": "Eiropa",
+  "klimats": "auksts",
+  "sezona": ["vasara","ziema"],
+  "valūta": "ISK",
+  "iedzīvotāji": "0.4 miljoni",
+  "valodas": ["islandiesu "],
+  "laimes_līmenis": 8,
+
+  "slavenākā_vieta": "Blue Lagoon",
+  "attēls": "https://images.unsplash.com/photo-1462993340984-49bd9e0f32dd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+
+  {
+  "valsts": "Francija",
+  "tips": ["pilsēta","atpūta"],
+  "budžets": 1000,
+  "ilgums": 5,
+  "aktivitātes": ["Muzeji","Gastronomija"],
+  "apraksts": "Romantika un kultūra",
+  "kontinents": "Eiropa",
+  "klimats": "mērens",
+  "sezona": ["pavasaris","vasara","rudens"],
+  "valūta": "EUR",
+  "iedzīvotāji": "67 miljoni",
+  "valodas": ["franču"],
+  "laimes_līmenis": 7,
+  "slavenākā_vieta": "Eifeļa Tornis",
+  "attēls": "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+
+  {
+  "valsts": "Japāna",
+  "tips": ["pilsēta","daba","piedzīvojumi"],
+  "budžets": 1800,
+  "ilgums": 10,
+  "aktivitātes": ["Templi","Dabas parki"],
+  "apraksts": "Tradicījas un modernisms vienā vietā",
+  "kontinents": "Āzija",
+  "klimats": "mērens",
+  "sezona": ["pavasaris","rudens"],
+  "valūta": "JPY",
+  "iedzīvotāji": "125 miljoni",
+  "valodas": ["japāņu"],
+  "laimes_līmenis": 7,
+  "slavenākā_vieta": "Fudži kalns",
+  "attēls": "https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=1192&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+
+  {
+  "valsts": "Portugāle",
+  "tips": ["pilsēta","atpūta"],
+  "budžets": 650,
+  "ilgums": 5,
+  "aktivitātes": ["Pludmale","Ekskursijas"],
+  "apraksts": "Relaksējoša atmosfēra pie okeāna.",
+  "kontinents": "Eiropa",
+  "klimats": "silts",
+  "sezona": ["pavasaris","vasara"],
+	  
+  "valūta": "EUR",
+  "iedzīvotāji": "10 miljoni",
+  "valodas": ["portugāļu"],
+  "laimes_līmenis": 7,
+  "slavenākā_vieta": "Lisabona",
+  "attēls": "https://images.unsplash.com/photo-1683578366276-8fba1c24123a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+
+  {
+  "valsts": "Horvātija",
+  "tips": ["pilsēta","atpūta","daba"],
+  "budžets": 700,
+  "ilgums": 6,
+  "aktivitātes": ["Pludmale","Pārgājieni"],
+  "apraksts": "Adrijas jūras piekraste.",
+  "kontinents": "Eiropa",
+  "klimats": "silts",
+  "sezona": ["vasara"],
+  "valūta": "EUR",
+  "iedzīvotāji": "4 miljoni",
+  "valodas": ["horvātu"],
+  "laimes_līmenis": 7,
+
+  "slavenākā_vieta": "Dubrovnika",
+  "attēls": "https://images.unsplash.com/photo-1632153604500-3b11a79da8de?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZHVicm92bmlrYXxlbnwwfHwwfHx8MA%3D%3D"
+  },
+
+
+
+
+
+  {
+  "valsts": "Taizeme",
+  "tips": ["atpūta","piedzīvojumi"],
+  "budžets": 1200,
+  "ilgums": 8,
+  "aktivitātes": ["Pludmale","Tirgi"],
+  "apraksts": "Tropiska paradīze.",
+  "kontinents": "Āzija",
+  "klimats": "tropisks",
+  "sezona": ["ziema","pavasaris"],
+  "valūta": "THB",
+  "iedzīvotāji": "70 miljoni",
+  "valodas": ["taju"],
+  "laimes_līmenis": 7,
+  "slavenākā_vieta": "Phuket",
+  "attēls": "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGh1a2V0fGVufDB8fDB8fHww"
+  },
+
+
+  {
+  "valsts": "Šveice",
+  "tips": ["daba","piedzīvojumi"],
+  "budžets": 1600,
+  "ilgums": 7,
+  "aktivitātes": ["Slēpošana","Kalni"],
+  "apraksts": "Alpu skaistums.",
+  "kontinents": "Eiropa",
+  "klimats": "auksts",
+  "sezona": ["ziema"],
+  "valūta": "CHF",
+
+  "iedzīvotāji": "8 miljoni",
+  "valodas": ["vācu","franču"],
+  "laimes_līmenis": 8,
+  "slavenākā_vieta": "Matterhorn",
+  "attēls":  "https://images.unsplash.com/photo-1595090947130-23c5948a2993?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+
+  {
+  "valsts": "Grieķija",
+  "tips": ["pilsēta","atpūta"],
+  "budžets": 700,
+  "ilgums": 6,
+  "aktivitātes": ["Pludmale","Vēsture"],
+  "apraksts": "Senā vēsture un jūra.",
+  "kontinents": "Eiropa",
+  "klimats": "silts",
+  "sezona": ["vasara"],
+  "valūta": "EUR",
+
+
+
+  "iedzīvotāji": "10 miljoni",
+  "valodas": ["grieķu"],
+  "laimes_līmenis": 6,
+  "slavenākā_vieta": "Akropole",
+  "attēls": "https://images.unsplash.com/photo-1661501760606-88ee3a22d645?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+
+
+
+
+
+
+
+
+
+
+  {
+  "valsts": "Kanāda",
+  "tips": ["daba","piedzīvojumi"],
+  "budžets": 2000,
+  "ilgums": 10,
+  "aktivitātes": ["Nacionālie parki"],
+  "apraksts": "Milzīga daba.",
+  "kontinents": "Ziemeļamerika",
+  "klimats": "auksts",
+  "sezona": ["vasara","ziema"],
+  "valūta": "CAD",
+  "iedzīvotāji": "38 miljoni",
+  "valodas": ["angļu","franču"],
+  "laimes_līmenis": 8,
+  "slavenākā_vieta": "Banff parks",
+  "attēls": "https://images.unsplash.com/photo-1659588868851-0f215cc59b47?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFuZmYlMjBwYXJrJTIwY2FuYWRhfGVufDB8fDB8fHww"
+  },
+
+  {
+  "valsts": "Meksika",
+  "tips": ["atpūta","piedzīvojumi"],
+  "budžets": 1100,
+  "ilgums": 7,
+  "aktivitātes": ["Pludmale","Kultūra"],
+  "apraksts": "Krāsaina kultūra.",
+  "kontinents": "Ziemeļamerika",
+  "klimats": "tropisks",
+  "sezona": ["ziema","pavasaris"],
+  "valūta": "MXN",
+  "iedzīvotāji": "126 miljoni",
+  "valodas": ["spāņu"],
+  "laimes_līmenis": 7,
+
+  "slavenākā_vieta": "Chichen Itza",
+  "attēls": "https://images.unsplash.com/photo-1695385246146-1e12a7479410?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y2hpY2hlbiUyMGl0emF8ZW58MHx8MHx8fDA%3D"
+  },
+
+  {
+  "valsts": "Vācija",
+  "tips": ["pilsēta","daba"],
+  "budžets": 900,
+  "ilgums": 6,
+  "aktivitātes": ["Muzeji"],
+  "apraksts": "Kultūra un tehnoloģijas.",
+  "kontinents": "Eiropa",
+  "klimats": "mērens",
+  "sezona": ["pavasaris","rudens"],
+  "valūta": "EUR",
+  "iedzīvotāji": "83 miljoni",
+  "valodas": ["vācu"],
+  "laimes_līmenis": 7,
+  "slavenākā_vieta": "Berlīnes siena",
+  "attēls": "https://images.unsplash.com/photo-1560969185-ee68ef9080c0?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmVybGluJTIwd2FsbHxlbnwwfHwwfHx8MA%3D%3D"
+  },
+
+  {
+  "valsts": "Turcija",
+  "tips": ["pilsēta","atpūta"],
+  "budžets": 800,
+  "ilgums": 7,
+  "aktivitātes": ["Pludmale","Ekskursijas"],
+  "apraksts": "Austrumu un Rietumu sajaukums.",
+  "kontinents": "Āzija",
+  "klimats": "silts",
+  "sezona": ["vasara"],
+  "valūta": "TRY",
+  "iedzīvotāji": "85 miljoni",
+
+  "valodas": ["turku"],
+  "laimes_līmenis": 6,
+  "slavenākā_vieta": "Hagia Sophia",
+  "attēls": "https://images.unsplash.com/photo-1683874350903-8151d987fef4?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGFnaWElMjBzb3BoaWF8ZW58MHx8MHx8fDA%3D"
+  },
+
+
+
+
+  {
+  "valsts": "Ēģipte",
+  "tips": ["pilsēta","atpūta"],
+  "budžets": 850,
+  "ilgums": 6,
+  "aktivitātes": ["Piramīdas"],
+  "apraksts": "Senā civilizācija.",
+  "kontinents": "Āfrika",
+  "klimats": "karsts",
+  "sezona": ["ziema","pavasaris"],
+  "valūta": "EGP",
+  "iedzīvotāji": "100 miljoni",
+  "valodas": ["arābu"],
+  "laimes_līmenis": 6,
+  "slavenākā_vieta": "Gīzas piramīdas",
+  "attēls": "https://plus.unsplash.com/premium_photo-1694475067252-eb9cd7688d2b?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Z2l6YSUyMHB5cmFtaWR8ZW58MHx8MHx8fDA%3D"
+  },
+
+  {
+  "valsts": "Austrālija",
+  "tips": ["daba","piedzīvojumi","pilsēta"],
+  "budžets": 2500,
+  "ilgums": 14,
+  "aktivitātes": ["Pludmale","Piedzīvojumi"],
+  "apraksts": "Eksotiska daba.",
+  "kontinents": "Austrālija",
+  "klimats": "silts",
+  "sezona": ["vasara"],
+  "valūta": "AUD",
+  "iedzīvotāji": "26 miljoni",
+  "valodas": ["angļu"],
+  "laimes_līmenis": 8,
+  "slavenākā_vieta": "Sidnejas opera",
+  "attēls": "https://images.unsplash.com/photo-1523059623039-a9ed027e7fad?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3lkbmV5JTIwb3BlcmElMjBob3VzZXxlbnwwfHwwfHx8MA%3D%3D"
+  },
+
+
+
+  {
+
+  "valsts": "Brazīlija",
+  "tips": ["atpūta","piedzīvojumi"],
+  "budžets": 1300,
+  "ilgums": 10,
+  "aktivitātes": ["Pludmale","Festivāli"],
+  "apraksts": "Dzīvīga kultūra.",
+  "kontinents": "Dienvidamerika",
+  "klimats": "tropisks",
+  "sezona": ["vasara"],
+  "valūta": "BRL",
+  "iedzīvotāji": "213 miljoni",
+  "valodas": ["portugāļu"],
+  "laimes_līmenis": 7,
+  "slavenākā_vieta": "Kristus Pestītājs",
+  "attēls": "https://images.unsplash.com/photo-1584045529534-834b66ad51a7?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2hyaXN0JTIwc3RhdHVlfGVufDB8fDB8fHww"
+
+  },
+
+  {
+  "valsts": "Indija",
+  "tips": ["pilsēta","daba","piedzīvojumi"],
+  "budžets": 900,
+  "ilgums": 10,
+  "aktivitātes": ["Tempļi","Tirgus"],
+  "apraksts": "Daudzveidīga kultūra.",
+	  
+  "kontinents": "Āzija",
+  "klimats": "karsts",
+  "sezona": ["ziema","pavasaris"],
+  "valūta": "INR",
+  "iedzīvotāji": "1.4 miljardi",
+  "valodas": ["hindi","angļu"],
+  "laimes_līmenis": 6,
+  "slavenākā_vieta": "Taj Mahal",
+  "attēls": "https://plus.unsplash.com/premium_photo-1661885523029-fc960a2bb4f3?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dGFqJTIwbWFoYWx8ZW58MHx8MHx8fDA%3D"
+  },
+
+
+
+  {
+  "valsts": "Somija",
+  "tips": ["daba","atpūta"],
+  "budžets": 1100,
+  "ilgums": 6,
+  "aktivitātes": ["Ziemeļblāzma"],
+  "apraksts": "Miers un daba.",
+  "kontinents": "Eiropa",
+  "klimats": "auksts",
+  "sezona": ["ziema"],
+  "valūta": "EUR",
+  "iedzīvotāji": "5 miljoni",
+  "valodas": ["somu"],
+  "laimes_līmenis": 9,
+
+  "slavenākā_vieta": "Lapzeme",
+  "attēls": "https://images.unsplash.com/photo-1579863197600-9f2bc8b3e66a?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bGFwbGFuZHxlbnwwfHwwfHx8MA%3D%3D"
+  },
+
+
+  {
+
+  "valsts": "ASV",
+  "tips": ["pilsēta","piedzīvojumi"],
+  "budžets": 2200,
+  "ilgums": 10,
+  "aktivitātes": ["Pilsētas","Nacionālie parki"],
+  "apraksts": "Daudzveidība vienā valstī.",
+  "kontinents": "Ziemeļamerika",
+  "klimats": "dažāds",
+  "sezona": ["visas"],
+  "valūta": "USD",
+  "iedzīvotāji": "331 miljoni",
+  "valodas": ["angļu"],
+  "laimes_līmenis": 7,
+  "slavenākā_vieta": "Statue of Liberty",
+  "attēls": "https://images.unsplash.com/photo-1605130284535-11dd9eedc58a?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGliZXJ0eSUyMHN0YXR1ZXxlbnwwfHwwfHx8MA%3D%3D"
+
+  },
+
+  {
+
+  "valsts": "Dienvidkoreja",
+  "tips": ["pilsēta","piedzīvojumi"],
+  "budžets": 1400,
+  "ilgums": 8,
+  "aktivitātes": ["Pilsētas izpēte","Kultūra","Tehnoloģijas"],
+  "apraksts": "Modernas pilsētas ar bagātu kultūras mantojumu.",
+  "kontinents": "Āzija",
+  "klimats": "mērens",
+  "sezona": ["pavasaris","rudens"],
+  "valūta": "KRW",
+  "iedzīvotāji": "51 miljons",
+  "valodas": ["korejiešu"],
+  "laimes_līmenis": 7,
+  "slavenākā_vieta": "Gyeongbokgung pils",
+  "attēls": "https://plus.unsplash.com/premium_photo-1661948404806-391a240d6d40?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Z3llb25nYm9rZ3VuZyUyMHBhbGFjZXxlbnwwfHwwfHx8MA%3D%3D"
+
+  },
+
+
+
+
+
+
+
+
+
+  {
+  "valsts": "Jaunzēlande",
+  "tips": ["daba","piedzīvojumi"],
+  "budžets": 2300,
+  "ilgums": 12,
+  "aktivitātes": ["Pārgājieni","Ekstrēmie sporti","Daba"],
+  "apraksts": "Ideāla vieta piedzīvojumu meklētājiem.",
+  "kontinents": "Austrālija",
+  "klimats": "mērens",
+  "sezona": ["vasara","pavasaris"],
+  "valūta": "NZD",
+  "iedzīvotāji": "5 miljoni",
+  "valodas": ["angļu"],
+  "laimes_līmenis": 8,
+  "slavenākā_vieta": "Milford Sound",
+  "attēls": "https://plus.unsplash.com/premium_photo-1661882273771-2d9a593a2a60?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWlsZm9yZCUyMHNvdW5kfGVufDB8fDB8fHww"
+  },
+
+
+  {
+  "valsts": "Maroka",
+  "tips": ["pilsēta","daba","piedzīvojumi"],
+  "budžets": 750,
+  "ilgums": 7,
+  "aktivitātes": ["Tirgus","Tuksnesis","Ekskursijas"],
+  "apraksts": "Eksotiska kultūra un Sahāras piedzīvojumi.",
+  "kontinents": "Āfrika",
+  "klimats": "karsts",
+  "sezona": ["pavasaris","rudens"],
+  "valūta": "MAD",
+  "iedzīvotāji": "37 miljoni",
+  "valodas": ["arābu","franču"],
+  "laimes_līmenis": 6,
+  "slavenākā_vieta": "Sahāras tuksnesis",
+  "attēls": "https://plus.unsplash.com/premium_photo-1661963573455-ba0446e2cab9?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2FoYXJhJTIwZGVzZXJ0fGVufDB8fDB8fHww"
+  },
+
+  {
+
+  "valsts": "Čehija",
+  "tips": ["pilsēta","atpūta"],
+  "budžets": 600,
+  "ilgums": 4,
+  "aktivitātes": ["Ekskursijas","Vēsture","Ēdiens"],
+  "apraksts": "Budžetam draudzīga Eiropas pilsēta ar bagātu vēsturi.",
+  "kontinents": "Eiropa",
+  "klimats": "mērens",
+  "sezona": ["pavasaris","vasara","rudens"],
+  "valūta": "CZK",
+  "iedzīvotāji": "10 miljoni",
+  "valodas": ["čehu"],
+  "laimes_līmenis": 7,
+  "slavenākā_vieta": "Prāgas pils",
+  "attēls": "https://plus.unsplash.com/premium_photo-1661963139522-22525f644234?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJhZ3VlJTIwY2FzdGxlfGVufDB8fDB8fHww"
+  
+  }
+
+
+]
