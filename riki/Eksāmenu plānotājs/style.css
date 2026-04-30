@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    transition: 0.3s;
+    background: url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1") no-repeat center/cover;
+}
+
+/* dark overlay */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: -1;
+}
+
+/* TOPBAR */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: rgba(0,0,0,0.5);
+    color: white;
+}
+
+/* SLIDES */
+.slide {
+    display: none;
+    padding: 20px;
+    color: white;
+}
+
+.slide.active {
+    display: block;
+}
+
+/* INPUTS */
+select, input {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 220px;
+    border-radius: 5px;
+    border: none;
+}
+
+/* BUTTONS */
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #4CAF50;
+    color: white;
+    margin: 5px;
+}
+
+/* TOPIC ITEM */
+.topic-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 8px auto;
+    padding: 8px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+}
+
+.done-btn {
+    background: #2196F3;
+    font-size: 12px;
+}
+
+/* PROGRESS */
+.progress-container {
+    width: 80%;
+    height: 18px;
+    background: rgba(255,255,255,0.2);
+    margin: auto;
+    border-radius: 10px;
+}
+
+#progressBar {
+    height: 100%;
+    width: 0%;
+    background: limegreen;
+    transition: 0.3s;
+}
+
+/* THEMES */
+.light {
+    background: #f5f5f5 !important;
+    color: black !important;
+}
+
+.dark {
+    background: #111 !important;
+    color: white !important;
+}
