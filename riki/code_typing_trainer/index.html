@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Typing Trainer</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="app-shell">
+    <section class="hero">
+        <p class="eyebrow">Typing practice for real JavaScript snippets</p>
+        <h1>Code Typing Trainer</h1>
+        <p class="hero-copy">Practice with actual code examples, switch between focused game modes, and track your latest sessions.</p>
+    </section>
+
+    <section class="control-panel">
+        <div class="controls-grid">
+            <label class="field">
+                <span class="field-label">Username</span>
+                <input id="usernameInput" type="text" maxlength="24" placeholder="Enter your name">
+            </label>
+
+            <div class="field field-wide">
+                <span class="field-label">Game Mode</span>
+                <input id="modeInput" type="hidden" value="time">
+                <div class="mode-picker" role="tablist" aria-label="Game mode">
+                    <button class="mode-button active" data-mode="time" type="button">Seconds</button>
+                    <button class="mode-button" data-mode="target" type="button">Code Goal</button>
+                    <button class="mode-button" data-mode="infinite" type="button">Infinite</button>
+                </div>
+            </div>
+
+            <label class="field" id="secondsLabel">
+                <span class="field-label">Seconds</span>
+                <input id="secondsInput" type="number" min="1" step="1" value="60">
+            </label>
+
+            <label class="field" id="targetLabel" hidden>
+                <span class="field-label">Correct Codes</span>
+                <input id="targetInput" type="number" min="1" step="1" value="10">
+            </label>
+
+            <label class="field">
+                <span class="field-label">Difficulty</span>
+                <select id="difficultySelect">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                    <option value="pro">Pro</option>
+                </select>
+            </label>
+
+            <button id="startBtn" class="start-button">Start Session</button>
+        </div>
+    </section>
+
+    <!-- Rakstīšanas lauks-->
+    <section class="game-container">
+        <div class="editor-panel">
+            <div class="panel-header">
+                <h2>Code Arena</h2>
+                <p>Read and type in the same field.</p>
+            </div>
+            <div id="codeArea" tabindex="0" aria-label="Code typing area"></div>
+        </div>
+    </section>
+
+    <!-- Statistika -->
+    <section class="stats" aria-label="Game stats">
+        <div class="stat-card">
+            <span class="stat-label" id="timeLabel">Progress</span>
+            <span class="stat-value" id="time">0</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-label">WPM</span>
+            <span class="stat-value" id="wpm">0</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-label">Errors</span>
+            <span class="stat-value" id="errors">0</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-label">Correct Codes</span>
+            <span class="stat-value" id="correct">0</span>
+        </div>
+    </section>
+
+    <section class="results-panel">
+        <div class="panel-header">
+            <h2>Latest Results</h2>
+            <p>Your most recent sessions are stored locally in this browser.</p>
+        </div>
+        <ul id="resultsList"></ul>
+    </section>
+</main>
+
+<div id="notificationOverlay" class="notification-overlay" hidden>
+    <div class="notification-card" role="alertdialog" aria-modal="true" aria-labelledby="notificationTitle" aria-describedby="notificationMessage">
+        <div class="notification-badge" id="notificationBadge">Notice</div>
+        <h2 id="notificationTitle">Notification</h2>
+        <p id="notificationMessage"></p>
+        <button id="notificationClose" class="notification-button" type="button">Close</button>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
