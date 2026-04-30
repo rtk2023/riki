@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ķermeņa tauku kalkulators</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ķermeņa tauku kalkulators</h1>
+        <form id="bodyFatForm">
+            <label for="gender">Dzimums:</label>
+            <select id="gender" required>
+                <option value="">Izvēlieties dzimumu</option>
+                <option value="male">Vīrietis</option>
+                <option value="female">Sieviete</option>
+            </select>
+
+            <label for="weight">Svars (kg):</label>
+            <input type="number" id="weight" min="1" required>
+
+            <label for="height">Augums (cm):</label>
+            <input type="number" id="height" min="50" required>
+
+            <label for="age">Vecums (gadi):</label>
+            <input type="number" id="age" min="1" required>
+
+            <button type="submit">Aprēķināt</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
