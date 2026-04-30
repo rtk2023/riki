@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <title>Eksāmenu plānotājs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+    <h2>📘 Eksāmenu plānotājs</h2>
+    <button id="themeToggle">🌙 / ☀️</button>
+</div>
+
+<!-- SLIDE 1 -->
+<div id="slide1" class="slide active">
+    <div class="container">
+
+        <label>Klase:</label>
+        <select id="grade">
+            <option value="">-- Izvēlies --</option>
+            <option value="9">9</option>
+            <option value="12">12</option>
+        </select>
+
+        <label>Eksāmens:</label>
+        <select id="exam">
+            <option value="">-- Izvēlies --</option>
+            <option value="math">Matemātika</option>
+            <option value="english">Angļu valoda</option>
+            <option value="latvian">Latviešu valoda</option>
+        </select>
+
+        <label>Datums:</label>
+        <input type="date" id="date">
+
+        <label>Stundas dienā:</label>
+        <input type="number" id="hours">
+
+        <button onclick="generatePlan()">Sākt</button>
+
+    </div>
+</div>
+
+<!-- SLIDE 2 -->
+<div id="slide2" class="slide">
+
+    <h2>📊 Plāns</h2>
+
+    <div id="planResult"></div>
+
+    <h3>Progress</h3>
+    <div class="progress-container">
+        <div id="progressBar"></div>
+    </div>
+    <p id="progressText"></p>
+
+    <button onclick="showSlide(1)">⬅ Atpakaļ</button>
+</div>
+
+<!-- SLIDE 3 -->
+<div id="slide3" class="slide">
+
+    <h2 id="topicTitle"></h2>
+
+    <div id="topicContent"></div>
+
+    <button onclick="showSlide(2)">⬅ Atpakaļ</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
