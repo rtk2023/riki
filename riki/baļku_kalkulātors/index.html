@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Balķa cenu kalkulators</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div>
+    <div class="card">
+      <div class="header">
+        <h1>Balķa cenu kalkulators</h1>
+        <p>Aprēķiniet koka balķu izmaksas pēc izmēriem un apstrādes</p>
+      </div>
+
+      <p class="section-label">Koksnes veids un apstrāde</p>
+      <div class="grid2">
+        <div class="field">
+          <label>Koksnes suga</label>
+          <select id="species">
+            <option value="priede">Priede / Egle</option>
+            <option value="ozols">Ozols</option>
+            <option value="berzs">Bērzs</option>
+            <option value="liepa">Liepa / Alksnis</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Apstrāde</label>
+          <select id="grade">
+            <option value="zagejalais">Zāģējamais (neapstrādāts)</option>
+            <option value="iezagets">Iezāģēts (aptēsts) +15%</option>
+            <option value="evertets">Ēvelēts (gluds) +30%</option>
+            <option value="impregnets">Impregnēts +45%</option>
+          </select>
+        </div>
+      </div>
+
+      <p class="section-label">Balķa izmēri</p>
+      <div class="grid3">
+        <div class="field">
+          <label>Platums (mm)</label>
+          <input type="number" id="width" value="100" min="20" max="500" />
+        </div>
+        <div class="field">
+          <label>Augstums (mm)</label>
+          <input type="number" id="height" value="150" min="20" max="600" />
+        </div>
+        <div class="field">
+          <label>Garums (m)</label>
+          <input type="number" id="length" value="6" min="0.5" max="12" step="0.1" />
+        </div>
+      </div>
+
+      <p class="section-label">Daudzums un cena</p>
+      <div class="grid2">
+        <div class="field">
+          <label>Gab. skaits</label>
+          <input type="number" id="qty" value="10" min="1" />
+        </div>
+        <div class="field">
+          <label>Bāzes cena par m³ (€)</label>
+          <input type="number" id="price" value="280" min="1" />
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <p class="section-label">Rezultāts</p>
+
+      <div class="results">
+        <div class="metric">
+          <div class="metric-label">Viena balķa tilpums</div>
+          <div class="metric-value" id="vol1">—</div>
+          <div class="metric-unit">m³</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Kopējais tilpums</div>
+          <div class="metric-value" id="volTotal">—</div>
+          <div class="metric-unit">m³</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Cena par vienu balķi</div>
+          <div class="metric-value" id="price1">—</div>
+          <div class="metric-unit">€ bez PVN</div>
+        </div>
+        <div class="metric accent">
+          <div class="metric-label">Kopējā cena</div>
+          <div class="metric-value" id="priceTotal">—</div>
+          <div class="metric-unit">€ bez PVN</div>
+        </div>
+      </div>
+
+      <div class="breakdown">
+        <div class="breakdown-row"><span>Materiāls</span><span id="b-mat">—</span></div>
+        <div class="breakdown-row"><span>Apstrāde</span><span id="b-grade">—</span></div>
+        <div class="breakdown-row"><span>Kopā bez PVN</span><span id="b-subtotal">—</span></div>
+        <div class="breakdown-row"><span>PVN 21%</span><span id="b-vat">—</span></div>
+        <div class="breakdown-row total"><span>Kopā ar PVN</span><span id="b-total">—</span></div>
+      </div>
+
+      <p class="note">* Cenas aprēķinātas orientējoši. Faktiskā cena var atšķirties atkarībā no piegādātāja un tirgus situācijas.</p>
+    </div>
+
+    <p class="footer">Balķa cenu kalkulators &mdash; bezmaksas rīks</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
