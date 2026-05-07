@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ēdienu plānotājs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>🍽️ Ēdienu plānotājs</h1>
+
+<div class="tabs">
+    <button onclick="openTab('food')">Ēdieni</button>
+    <button onclick="openTab('plan')">Nedēļas plāns</button>
+    <button onclick="openTab('shopping')">Iepirkumu saraksts</button>
+</div>
+
+<!-- 1. CILNE -->
+<div id="food" class="tab active">
+    <h2>Brokastis</h2>
+    <div class="grid" id="breakfast"></div>
+
+    <h2>Pusdienas</h2>
+    <div class="grid" id="lunch"></div>
+
+    <h2>Vakariņas / Launags</h2>
+    <div class="grid" id="dinner"></div>
+</div>
+
+<!-- 2. CILNE -->
+<div id="plan" class="tab">
+    <h2>Nedēļas plāns</h2>
+    <div id="week"></div>
+</div>
+
+<!-- 3. CILNE -->
+<div id="shopping" class="tab">
+    <h2>Iepirkumu saraksts</h2>
+    <ul id="shoppingList"></ul>
+</div>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <h3>Izvēlies dienu</h3>
+        <select id="daySelect"></select>
+        <button onclick="confirmAdd()">Pievienot</button>
+        <button onclick="closeModal()">Atcelt</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+<footer class="footer">
+    <p>
+        <a href="https://rtk2023.github.io/riki/index.html" target="_blank">Rīki</a> |
+        <a href="https://github.com/rtk2023/riki" target="_blank">Github</a>
+    </p>
+</footer>
+
+</body>
+</html>
