@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="lv">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Football Analytics</title>
+
+  <meta name="description" content="Football Analytics rīks analizešanai.">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+ 
+
+<main class="container">
+
+  <h1>Football Analytics</h1>
+
+  <div class="teams-section">
+
+    <!-- TEAM 1 -->
+    <div class="team-box">
+
+      <h2>Komanda 1</h2>
+
+      <input
+        type="text"
+        id="team1Input"
+        placeholder="Ievadi komandu"
+      >
+
+      <button id="searchTeam1Btn">
+        Meklēt
+      </button>
+
+      <div id="team1Results"></div>
+
+    </div>
+
+    <!-- TEAM 2 -->
+    <div class="team-box">
+
+      <h2>Komanda 2</h2>
+
+      <input
+        type="text"
+        id="team2Input"
+        placeholder="Ievadi komandu"
+      >
+
+      <button id="searchTeam2Btn">
+        Meklēt
+      </button>
+
+      <div id="team2Results"></div>
+
+    </div>
+
+  </div>
+
+  <button id="calculateBtn">
+    Aprēķināt
+  </button>
+
+  <div id="result"></div>
+
+</main>
+
+<script type="module" src="scripts/main.js"></script>
+
+<footer>
+  <nav>
+    <ul>
+      <li><a href="https://rtk2023.github.io/riki/">rīku saraksts</a></li>
+      <li><a href="https://github.com/rtk2023/riki">rīku github repositorijs</a></li>
+    </ul>
+  </nav>
+</footer>
+
+</body>
+</html>
